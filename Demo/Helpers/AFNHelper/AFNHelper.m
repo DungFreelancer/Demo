@@ -8,6 +8,7 @@
 
 #import "AFNHelper.h"
 #import <AFNetworking/AFNetworking.h>
+#import "UtilityClass.h"
 #import "Constant.h"
 
 @implementation AFNHelper
@@ -75,14 +76,16 @@
         dataBlock = [block copy];
     }
     
-    NSData *imageToUpload = UIImageJPEGRepresentation(image, 1.0);
+    UIImage *scaleImage = [[UtilityClass sharedInstance] scaleAndRotateImage:image];
+    NSData *imageToUpload = UIImageJPEGRepresentation(scaleImage, 1.0);
+    
     if (imageToUpload)
     {
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.requestSerializer.timeoutInterval = 600;
         [manager POST:url parameters:paramaters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             
-            [formData appendPartWithFileData:imageToUpload name:@"picture" fileName:@"temp.jpg" mimeType:@"image/jpg"];
+            [formData appendPartWithFileData:imageToUpload name:PARAM_IMAGE fileName:@"temp.jpg" mimeType:@"image/jpg"];
          } progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
              
              if (dataBlock) {
