@@ -50,11 +50,16 @@
 }
 
 - (void)didScanCard:(NSString *)result {
+    [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
     
-    [[HUDHelper sharedInstance] showLoadingWithTitle:@"Downloading..." onView:self.view];
+    NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
-    NSString *url = [NSString stringWithFormat:@"%@%@", API_STAFF_INFORMATION, result];
+    NSString *url = [NSString stringWithFormat:@"%@%@", API_STAFF_INFORMATION, arrResult[0]];
     [self.imgAvatar downloadFromURL:url withPlaceholder:nil];
+    [self.lbName setText:arrResult[1]];
+    [self.lbPosition setText:arrResult[2]];
+    [self.lbCompany setText:arrResult[3]];
+    [self.lbAddress setText:arrResult[4]];
     
     [[HUDHelper sharedInstance] hideLoading];
 }
