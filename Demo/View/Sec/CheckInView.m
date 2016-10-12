@@ -50,12 +50,13 @@
 }
 
 - (IBAction)checkIn:(UIButton *)sender {
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setObject:self.txtStore.text forKey:PARAM_NAME];
-    [params setObject:self.txtStore.text forKey:PARAM_CONTENT];
-    [params setObject:self.txtStore.text forKey:PARAM_User];
     
     if ([[UtilityClass sharedInstance] connected]) {
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setObject:self.txtStore.text forKey:PARAM_NAME];
+        [params setObject:self.txtStore.text forKey:PARAM_CONTENT];
+        [params setObject:self.txtStore.text forKey:PARAM_User];
+        
         [[AFNHelper sharedInstance] request:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
             DLOG(@"respone=%@", response);
             if ([[response valueForKey:@"success"] boolValue]) {
