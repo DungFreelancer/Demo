@@ -49,6 +49,7 @@
     }
 }
 
+// ScanCardDelegate.
 - (void)didScanCard:(NSString *)result {
     [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
     
