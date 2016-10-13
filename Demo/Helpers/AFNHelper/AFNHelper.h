@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
 
 #define POST_METHOD @"POST"
 #define GET_METHOD  @"GET"
@@ -14,9 +15,8 @@
 typedef void (^CompletionBlock)(id response, NSError *error);
 
 @interface AFNHelper : NSObject
-{
-    CompletionBlock dataBlock;
-}
+
+@property(nonatomic,strong) AFHTTPSessionManager *manager;
 
 + (AFNHelper *)sharedInstance;
 - (void)request:(NSString *)url method:(NSString *)method paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
