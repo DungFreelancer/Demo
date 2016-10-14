@@ -1,9 +1,9 @@
 //
-//  AFNHelper.h
-//  Tinder
+//  AFHelper.h
+//  TemplateObjC
 //
-//  Created by Elluminati - macbook on 04/04/14.
-//  Copyright (c) 2014 AppDupe. All rights reserved.
+//  Created by Dung Do on 9/18/16.
+//  Copyright © 2016 Dung Do. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,6 +13,7 @@
 #define GET_METHOD  @"GET"
 
 typedef void (^CompletionBlock)(id response, NSError *error);
+typedef void (^StatusBlock)(BOOL connected);
 
 @interface AFNHelper : NSObject
 
@@ -21,5 +22,6 @@ typedef void (^CompletionBlock)(id response, NSError *error);
 + (AFNHelper *)sharedInstance;
 - (void)request:(NSString *)url method:(NSString *)method paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
 - (void)request:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(CompletionBlock)block;
+- (void)connectionChange:(StatusBlock)block;
 
 @end

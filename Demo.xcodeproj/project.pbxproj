@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
+		9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */; };
+		9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */; };
 		9A5F19911D8E905700B2E5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19901D8E905700B2E5AB /* main.m */; };
 		9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19931D8E905700B2E5AB /* AppDelegate.m */; };
 		9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19961D8E905700B2E5AB /* StaffInformationView.m */; };
 		9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F19981D8E905700B2E5AB /* Main.storyboard */; };
-		9A5F199D1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F199B1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld */; };
 		9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F199E1D8E905700B2E5AB /* Assets.xcassets */; };
 		9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */; };
 		9A5F19B81D8E905700B2E5AB /* TemplateObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */; };
@@ -51,6 +52,10 @@
 		0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
+		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
+		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckInViewModel.h; path = Demo/Model/CheckInViewModel.h; sourceTree = SOURCE_ROOT; };
+		9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewModel.m; path = Demo/Model/CheckInViewModel.m; sourceTree = SOURCE_ROOT; };
 		9A5F198C1D8E905700B2E5AB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5F19901D8E905700B2E5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A5F19921D8E905700B2E5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		9A5F19951D8E905700B2E5AB /* StaffInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaffInformationView.h; sourceTree = "<group>"; };
 		9A5F19961D8E905700B2E5AB /* StaffInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = StaffInformationView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F19991D8E905700B2E5AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9A5F199C1D8E905700B2E5AB /* TemplateObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TemplateObjC.xcdatamodel; sourceTree = "<group>"; };
 		9A5F199E1D8E905700B2E5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		9A5F19A81D8E905700B2E5AB /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,8 @@
 		9A1DDCE61DACEB1D00E7AE23 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */,
+				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,7 +261,8 @@
 		9A5F19C71D8E907B00B2E5AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9A5F199B1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld */,
+				9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */,
+				9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,10 +578,11 @@
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
 				9A5F19E21D8EAB4700B2E5AB /* AFNHelper.m in Sources */,
+				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
-				9A5F199D1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld in Sources */,
+				9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */,
 				9AB5C3DF1D8F05440040E00E /* SidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,19 +843,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9A5F199B1D8E905700B2E5AB /* TemplateObjC.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9A5F199C1D8E905700B2E5AB /* TemplateObjC.xcdatamodel */,
-			);
-			currentVersion = 9A5F199C1D8E905700B2E5AB /* TemplateObjC.xcdatamodel */;
-			path = TemplateObjC.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9A5F19841D8E905700B2E5AB /* Project object */;
 }

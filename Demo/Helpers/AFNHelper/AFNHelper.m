@@ -87,4 +87,17 @@
     }
 }
 
+- (void)connectionChange:(StatusBlock)block {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        if (status > 0) {
+            block(YES);
+        } else {
+            block(NO);
+        }
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AFNHelper.h"
+#import "Constant.h"
+#import "CheckInViewModel.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Push offline data to service.
+    [[AFNHelper sharedInstance] connectionChange:^(BOOL connected) {
+        if (connected) {
+            CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+            [ciViewModel loadCheckIns];
+            for (CheckInModel *ci in ciViewModel.arrCheckIn) {
+                NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+                [params setObject:ci.store forKey:PARAM_NAME];
+                [params setObject:ci.content forKey:PARAM_CONTENT];
+                [params setObject:ci.sender forKey:PARAM_User];
+
+                [[AFNHelper sharedInstance] request:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
+            }
+            [ciViewModel clearCheckIns];
+        }
+    }];
+    
     return YES;
 }
 
