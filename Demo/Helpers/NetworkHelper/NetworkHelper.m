@@ -6,17 +6,19 @@
 //  Copyright (c) 2014 AppDupe. All rights reserved.
 //
 
-#import "AFNHelper.h"
+#import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "Constant.h"
 
-@implementation AFNHelper
+@implementation NetworkHelper
 
-+ (AFNHelper *)sharedInstance {
-    static AFNHelper *instance = nil;
++ (NetworkHelper *)sharedInstance {
+    static NetworkHelper *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[AFNHelper alloc] init];
+        instance = [[NetworkHelper alloc] init];
+        
+        [[AFNetworkReachabilityManager sharedManager] startMonitoring];
         
         instance.manager = [AFHTTPSessionManager manager];
         instance.manager.requestSerializer.timeoutInterval = 600;
@@ -94,8 +96,13 @@
             block(NO);
         }
     }];
-    
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+- (BOOL)isConnected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return networkStatus != NotReachable;
 }
 
 @end

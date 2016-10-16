@@ -41,7 +41,4 @@
 - (int)dateDiffrenceFromDateInString:(NSString *)date1 second:(NSString *)date2;
 - (int)dateDiffrenceFromDate:(NSDate *)startDate second:(NSDate *)endDate;
 
-//Reachability Helper
-- (BOOL)connected;
-
 @end

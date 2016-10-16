@@ -20,7 +20,7 @@
 		9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19D61D8EA2CB00B2E5AB /* Constant.m */; };
 		9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DA1D8EA41E00B2E5AB /* UIImageView+Download.m */; };
 		9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */; };
-		9A5F19E21D8EAB4700B2E5AB /* AFNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E11D8EAB4700B2E5AB /* AFNHelper.m */; };
+		9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */; };
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AA36ED51DB009DF003203A1 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AA36ED41DB009DF003203A1 /* temp.jpg */; };
@@ -77,8 +77,8 @@
 		9A5F19DA1D8EA41E00B2E5AB /* UIImageView+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIImageView+Download.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F19DD1D8EA99800B2E5AB /* UIView+RoundedCorners.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorners.h"; sourceTree = "<group>"; };
 		9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorners.m"; sourceTree = "<group>"; };
-		9A5F19E01D8EAB3D00B2E5AB /* AFNHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNHelper.h; sourceTree = "<group>"; };
-		9A5F19E11D8EAB4700B2E5AB /* AFNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelper.m; sourceTree = "<group>"; };
+		9A5F19E01D8EAB3D00B2E5AB /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		9A5F19E31D8EAB5D00B2E5AB /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UtilityClass.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UtilityClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		9A5F19C51D8E907700B2E5AB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9A5F19E61D8EAC8F00B2E5AB /* AFNHelper */,
+				9A5F19E61D8EAC8F00B2E5AB /* NetworkHelper */,
 				9A5F19D21D8EA15C00B2E5AB /* Constant */,
 				9AD419371D8EDCC1006FE776 /* HUDHelper */,
 				9A5F19D11D8EA14D00B2E5AB /* Localization */,
@@ -327,13 +327,13 @@
 			path = "UIView+RoundedCorners";
 			sourceTree = "<group>";
 		};
-		9A5F19E61D8EAC8F00B2E5AB /* AFNHelper */ = {
+		9A5F19E61D8EAC8F00B2E5AB /* NetworkHelper */ = {
 			isa = PBXGroup;
 			children = (
-				9A5F19E01D8EAB3D00B2E5AB /* AFNHelper.h */,
-				9A5F19E11D8EAB4700B2E5AB /* AFNHelper.m */,
+				9A5F19E01D8EAB3D00B2E5AB /* NetworkHelper.h */,
+				9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */,
 			);
-			path = AFNHelper;
+			path = NetworkHelper;
 			sourceTree = "<group>";
 		};
 		9A5F19E71D8EACD500B2E5AB /* UtilityClass */ = {
@@ -577,7 +577,7 @@
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
-				9A5F19E21D8EAB4700B2E5AB /* AFNHelper.m in Sources */,
+				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,

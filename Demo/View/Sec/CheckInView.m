@@ -8,7 +8,7 @@
 
 #import "CheckInView.h"
 #import "SWRevealViewController.h"
-#import "AFNHelper.h"
+#import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "HUDHelper.h"
 #import "CheckInViewModel.h"
@@ -57,7 +57,7 @@
 
 - (IBAction)checkIn:(UIButton *)sender {
     
-    if ([[UtilityClass sharedInstance] connected]) {
+    if ([[NetworkHelper sharedInstance] isConnected]) {
         // Push data to Service.
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
         [params setObject:self.txtStore.text forKey:PARAM_NAME];
@@ -65,7 +65,7 @@
         [params setObject:self.txtSender.text forKey:PARAM_User];
         
         [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
-        [[AFNHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
+        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
             [[HUDHelper sharedInstance] hideLoading];
             DLOG(@"respone=%@", response);
             if ([[response valueForKey:@"success"] boolValue]) {

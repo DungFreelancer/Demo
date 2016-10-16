@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AFNHelper.h"
+#import "NetworkHelper.h"
 #import "Constant.h"
 #import "CheckInViewModel.h"
 
@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
     
     // Push offline data to service.
-    [[AFNHelper sharedInstance] connectionChange:^(BOOL connected) {
+    [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
         if (connected) {
             CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
             [ciViewModel loadCheckIns];
@@ -32,7 +32,7 @@
                 [params setObject:ci.content forKey:PARAM_CONTENT];
                 [params setObject:ci.sender forKey:PARAM_User];
 
-                [[AFNHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
+                [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
             }
             [ciViewModel clearCheckIns];
         }

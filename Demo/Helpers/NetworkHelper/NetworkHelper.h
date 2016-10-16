@@ -7,18 +7,20 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
+#import <Reachability/Reachability.h>
 
 typedef void (^CompletionBlock)(id response, NSError *error);
 typedef void (^StatusBlock)(BOOL connected);
 
-@interface AFNHelper : NSObject
+@interface NetworkHelper : NSObject
 
 @property(nonatomic,strong) AFHTTPSessionManager *manager;
 
-+ (AFNHelper *)sharedInstance;
++ (NetworkHelper *)sharedInstance;
 - (void)requestGet:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
 - (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
 - (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(CompletionBlock)block;
 - (void)connectionChange:(StatusBlock)block;
+- (BOOL)isConnected;
 
 @end

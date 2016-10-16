@@ -7,7 +7,6 @@
 //
 
 #import "UtilityClass.h"
-#import <Reachability/Reachability.h>
 
 @implementation UtilityClass
 
@@ -359,15 +358,6 @@
         }
     }
     return dayDiff;
-}
-
-#pragma mark - Check connection
-
-- (BOOL)connected
-{
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
-    return networkStatus != NotReachable;
 }
 
 @end
