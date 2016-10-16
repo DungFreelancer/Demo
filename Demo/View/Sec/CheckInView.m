@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "AFNHelper.h"
 #import "UtilityClass.h"
+#import "HUDHelper.h"
 #import "CheckInViewModel.h"
 #import "Constant.h"
 
@@ -63,7 +64,9 @@
         [params setObject:self.txtContent.text forKey:PARAM_CONTENT];
         [params setObject:self.txtSender.text forKey:PARAM_User];
         
-        [[AFNHelper sharedInstance] request:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
+        [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
+        [[AFNHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
+            [[HUDHelper sharedInstance] hideLoading];
             DLOG(@"respone=%@", response);
             if ([[response valueForKey:@"success"] boolValue]) {
                 [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];

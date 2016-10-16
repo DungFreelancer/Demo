@@ -32,7 +32,7 @@
                 [params setObject:ci.content forKey:PARAM_CONTENT];
                 [params setObject:ci.sender forKey:PARAM_User];
 
-                [[AFNHelper sharedInstance] request:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
+                [[AFNHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
             }
             [ciViewModel clearCheckIns];
         }
