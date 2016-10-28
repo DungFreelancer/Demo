@@ -87,6 +87,10 @@
     }
 }
 
+- (void)setBasicAuthorizationWithUserName:(NSString *)userName password:(NSString *)password {
+    [self.manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userName password:password];
+}
+
 - (void)connectionChange:(StatusBlock)block {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
