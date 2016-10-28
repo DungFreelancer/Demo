@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "Base.h"
+#import "BaseView.h"
 
 @protocol ScanCardViewDelegate <NSObject>
 
@@ -14,7 +14,7 @@
 
 @end
 
-@interface ScanCardView : Base
+@interface ScanCardView : BaseView
 
 @property (strong, nonatomic) IBOutlet UIView *viewScan;
 @property (weak, nonatomic) id<ScanCardViewDelegate> delegate;

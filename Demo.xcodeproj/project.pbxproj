@@ -10,6 +10,7 @@
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
 		9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */; };
 		9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */; };
+		9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */; };
 		9A5F19911D8E905700B2E5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19901D8E905700B2E5AB /* main.m */; };
 		9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19931D8E905700B2E5AB /* AppDelegate.m */; };
 		9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19961D8E905700B2E5AB /* StaffInformationView.m */; };
@@ -24,7 +25,7 @@
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AA36ED51DB009DF003203A1 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AA36ED41DB009DF003203A1 /* temp.jpg */; };
-		9AB212951D9AC2AF0007E1CB /* Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* Base.m */; };
+		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3DF1D8F05440040E00E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
@@ -56,6 +57,8 @@
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
 		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckInViewModel.h; path = Demo/Model/CheckInViewModel.h; sourceTree = SOURCE_ROOT; };
 		9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewModel.m; path = Demo/Model/CheckInViewModel.m; sourceTree = SOURCE_ROOT; };
+		9A4C1EF81DC3AA2B00C601F9 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		9A5F198C1D8E905700B2E5AB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5F19901D8E905700B2E5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A5F19921D8E905700B2E5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,8 +87,8 @@
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
 		9AA36ED41DB009DF003203A1 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = "<group>"; };
-		9AB212931D9AC2A60007E1CB /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
-		9AB212941D9AC2AF0007E1CB /* Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base.m; sourceTree = "<group>"; };
+		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		9AB5C3DD1D8F053A0040E00E /* SidebarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		9AB5C3E01D8F0BB60040E00E /* CheckInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInView.h; sourceTree = "<group>"; };
@@ -165,6 +168,15 @@
 			);
 			name = CheckIn;
 			path = Sec;
+			sourceTree = "<group>";
+		};
+		9A4C1EF71DC3A9BA00C601F9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9A4C1EF81DC3AA2B00C601F9 /* LoginView.h */,
+				9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		9A5F19831D8E905700B2E5AB = {
@@ -249,6 +261,7 @@
 		9A5F19C61D8E907900B2E5AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A4C1EF71DC3A9BA00C601F9 /* Login */,
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A3D67211D90D81000A71D62 /* Sidebar */,
 				9A3D67221D90D83100A71D62 /* StaffInformation */,
@@ -357,8 +370,8 @@
 		9AB212921D9AC2830007E1CB /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				9AB212931D9AC2A60007E1CB /* Base.h */,
-				9AB212941D9AC2AF0007E1CB /* Base.m */,
+				9AB212931D9AC2A60007E1CB /* BaseView.h */,
+				9AB212941D9AC2AF0007E1CB /* BaseView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -569,7 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB212951D9AC2AF0007E1CB /* Base.m in Sources */,
+				9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */,
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
 				9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */,
@@ -580,6 +593,7 @@
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
+				9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
 				9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */,

@@ -6,9 +6,9 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "Base.h"
+#import "BaseView.h"
 
-@implementation Base
+@implementation BaseView
 
 - (void)setNavBarTitle:(NSString *)title {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];

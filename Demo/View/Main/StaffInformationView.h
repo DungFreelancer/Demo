@@ -6,9 +6,9 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "Base.h"
+#import "BaseView.h"
 
-@interface StaffInformationView : Base
+@interface StaffInformationView : BaseView
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *siderbarButton;
 

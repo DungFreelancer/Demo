@@ -6,10 +6,10 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "Base.h"
+#import "BaseView.h"
 #import <MTBBarcodeScanner/MTBBarcodeScanner.h>
 
-@interface CheckInView : Base <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
+@interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *siderbarButton;
 @property (weak, nonatomic) IBOutlet UITextField *txtStore;

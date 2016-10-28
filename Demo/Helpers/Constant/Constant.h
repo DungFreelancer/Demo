@@ -26,6 +26,10 @@
 #   define ELOG(...)
 #endif
 
+// API-------------------------------------------------------------------
+
+#define API_LOGIN @"http://ndhapi.epm.vn/api/rest/login"
+#define API_LOGIN_SESSION @"http://ndhapi.epm.vn/api/rest/loginsession"
 #define API_STAFF_INFORMATION @"http://test.epm.vn/test/getcard/"
 #define API_CHECK_IN @"http://test.epm.vn/test/uploadinfo"
 
@@ -34,3 +38,13 @@
 #define PARAM_User @"User"
 #define PARAM_IMAGE @"img"
 
+#define RESPONE_ID @"id"
+#define RESPONE_MESSAGE @"msg"
+#define RESPONE_USER @"user"
+#define RESPONE_TOKEN @"token"
+#define RESPONE_FUNCTION @"function"
+
+// PREFERRENCT-------------------------------------------------------------------
+
+#define PREF_USER @"user"
+#define PREF_TOKEN @"token"

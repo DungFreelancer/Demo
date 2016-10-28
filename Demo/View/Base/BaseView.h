@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Base : UIViewController {
+@interface BaseView : UIViewController {
     
 }
 
