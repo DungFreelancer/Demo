@@ -8,6 +8,8 @@
 
 #import "BaseView.h"
 
-@interface MenuView : BaseView
+@interface MenuView : BaseView <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tblMenu;
 
 @end

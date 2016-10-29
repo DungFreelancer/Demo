@@ -46,7 +46,7 @@
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
             NSString *token = [response valueForKey:RESPONE_TOKEN];
-            NSDictionary *function = [response valueForKey:RESPONE_FUNCTION];
+            NSArray<NSString *> *function = [response valueForKey:RESPONE_FUNCTION];
             
             // Check session.
             NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, userName, token];
@@ -62,6 +62,7 @@
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
                     [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
                     [USER_DEFAULT setObject:function forKey:PREF_FUNCTION];
+                    [USER_DEFAULT synchronize];
                 } else {
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)
