@@ -23,11 +23,19 @@
 }
 
 - (IBAction)onClickLogin:(id)sender {
+    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
     NSString *userName = self.txtUserName.text;
     NSString *password = self.txtPassword.text;
     [[NetworkHelper sharedInstance] setBasicAuthorizationWithUserName:userName password:password];
     
-    [[HUDHelper sharedInstance] showLoadingWithTitle:@"Đang xử lý..." onView:self.view];
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
     
     [[NetworkHelper sharedInstance] requestGet:API_LOGIN paramaters:nil completion:^(id response, NSError *error) {
         
@@ -38,7 +46,7 @@
             
             // Check session.
             NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, [USER_DEFAULT valueForKey:PREF_USER], [USER_DEFAULT valueForKey:PREF_TOKEN]];
-            [[HUDHelper sharedInstance] showLoadingWithTitle:@"Đang xử lý..." onView:self.view];
+            [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
             
             [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
                 
@@ -46,12 +54,19 @@
                 if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
                     [self performSegueWithIdentifier:@"segue_main" sender:nil];
                 } else {
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Lỗi" andMessage:@"Tài khoản đang được đăng nhập trên máy khác" andButton:@"OK"];
+                    [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                   withTitle:NSLocalizedString(@"ERROR", nil)
+                                                                  andMessage:NSLocalizedString(@"LOGIN_SESSION", nil)
+                                                                   andButton:NSLocalizedString(@"OK", nil)];
                 }
             }];
         } else {
-            [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Lỗi" andMessage:@"Tài khoản hoặc mật khẩu không chính xác" andButton:@"OK"];
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:NSLocalizedString(@"LOGIN_INCORRECT", nil)
+                                                           andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
 }
+
 @end

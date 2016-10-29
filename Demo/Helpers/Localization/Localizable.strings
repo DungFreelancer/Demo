@@ -5,3 +5,13 @@
   Created by Dung Do on 9/28/16.
   Copyright © 2016 Dung Do. All rights reserved.
 */
+
+"OK" = "OK";
+"ERROR" = "Lỗi";
+"LOADING" = "Đang xử lý...";
+"NO_INTERNET" = "Không thể kết nối internet.";
+
+// LoginView.
+"LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";
+"LOGIN_SESSION" = "Tài khoản đang được đăng nhập trên máy khác.";
+
