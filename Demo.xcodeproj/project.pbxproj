@@ -29,6 +29,7 @@
 		9AB5C3DF1D8F05440040E00E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
+		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
 		F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,8 @@
 		9AB5C3E11D8F0BC90040E00E /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInView.m; sourceTree = "<group>"; };
 		9AD419381D8EDD2F006FE776 /* HUDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HUDHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AD419391D8EDD3D006FE776 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
+		9AFDAF721DC4B8F70055CBB4 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		9AFDAF731DC4B9020055CBB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,6 +266,7 @@
 			children = (
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
+				9AFDAF711DC4B8E80055CBB4 /* Menu */,
 				9A3D67211D90D81000A71D62 /* Sidebar */,
 				9A3D67221D90D83100A71D62 /* StaffInformation */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
@@ -383,6 +387,15 @@
 				9AD419391D8EDD3D006FE776 /* HUDHelper.m */,
 			);
 			path = HUDHelper;
+			sourceTree = "<group>";
+		};
+		9AFDAF711DC4B8E80055CBB4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9AFDAF721DC4B8F70055CBB4 /* MenuView.h */,
+				9AFDAF731DC4B9020055CBB4 /* MenuView.m */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		AC335B873EECD59726E39A67 /* Pods */ = {
@@ -587,6 +600,7 @@
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
 				9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
+				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
