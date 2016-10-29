@@ -21,6 +21,7 @@
     // Template input
     [self.txtUserName setText:@"namlh"];
     [self.txtPassword setText:@"123456"];
+    [self onClickLogin:nil];
 }
 
 - (IBAction)onClickLogin:(id)sender {
