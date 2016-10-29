@@ -25,7 +25,7 @@
     UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
     btnRight.frame = CGRectMake(0, 0, 25, 25);
     [btnRight addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
-    [btnRight setImage:[UIImage imageNamed:@"a"] forState:UIControlStateNormal];
+    [btnRight setImage:[UIImage imageNamed:@"temp.jpg"] forState:UIControlStateNormal];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
     self.navigationItem.hidesBackButton = YES;
