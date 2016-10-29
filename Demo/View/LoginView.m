@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Setup navigation bar.
     self.navigationController.navigationBarHidden = YES;
     
     // Template input
@@ -43,11 +45,11 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
-            [USER_DEFAULT setObject:[response valueForKey:RESPONE_USER] forKey:PREF_USER];
-            [USER_DEFAULT setObject:[response valueForKey:RESPONE_TOKEN] forKey:PREF_TOKEN];
+            NSString *token = [response valueForKey:RESPONE_TOKEN];
+            NSDictionary *function = [response valueForKey:RESPONE_FUNCTION];
             
             // Check session.
-            NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, [USER_DEFAULT valueForKey:PREF_USER], [USER_DEFAULT valueForKey:PREF_TOKEN]];
+            NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, userName, token];
             [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
             
             [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
@@ -55,6 +57,11 @@
                 [[HUDHelper sharedInstance] hideLoading];
                 if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
                     [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+                    
+                    // Save user information.
+                    [USER_DEFAULT setObject:userName forKey:PREF_USER];
+                    [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
+                    [USER_DEFAULT setObject:function forKey:PREF_FUNCTION];
                 } else {
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)

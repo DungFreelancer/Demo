@@ -48,3 +48,4 @@
 
 #define PREF_USER @"user"
 #define PREF_TOKEN @"token"
+#define PREF_FUNCTION @"function"
