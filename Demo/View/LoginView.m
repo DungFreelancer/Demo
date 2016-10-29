@@ -52,7 +52,7 @@
                 
                 [[HUDHelper sharedInstance] hideLoading];
                 if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
-                    [self performSegueWithIdentifier:@"segue_main" sender:nil];
+                    [self performSegueWithIdentifier:@"segue_menu" sender:nil];
                 } else {
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)
