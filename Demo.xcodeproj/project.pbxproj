@@ -24,9 +24,7 @@
 		9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */; };
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
-		9AA36ED51DB009DF003203A1 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AA36ED41DB009DF003203A1 /* temp.jpg */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
-		9AB5C3DF1D8F05440040E00E /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
 		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
@@ -87,11 +85,8 @@
 		9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UtilityClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
-		9AA36ED41DB009DF003203A1 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
-		9AB5C3DD1D8F053A0040E00E /* SidebarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
-		9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		9AB5C3E01D8F0BB60040E00E /* CheckInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInView.h; sourceTree = "<group>"; };
 		9AB5C3E11D8F0BC90040E00E /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInView.m; sourceTree = "<group>"; };
 		9AD419381D8EDD2F006FE776 /* HUDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HUDHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -142,15 +137,6 @@
 				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9A3D67211D90D81000A71D62 /* Sidebar */ = {
-			isa = PBXGroup;
-			children = (
-				9AB5C3DD1D8F053A0040E00E /* SidebarViewController.h */,
-				9AB5C3DE1D8F05440040E00E /* SidebarViewController.m */,
-			);
-			path = Sidebar;
 			sourceTree = "<group>";
 		};
 		9A3D67221D90D83100A71D62 /* StaffInformation */ = {
@@ -267,10 +253,9 @@
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
 				9AFDAF711DC4B8E80055CBB4 /* Menu */,
-				9A3D67211D90D81000A71D62 /* Sidebar */,
+				9A3D67231D90D83C00A71D62 /* CheckIn */,
 				9A3D67221D90D83100A71D62 /* StaffInformation */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
-				9A3D67231D90D83C00A71D62 /* CheckIn */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,18 +280,9 @@
 		9A5F19C91D8E90A700B2E5AB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				9A5F19CA1D8E910E00B2E5AB /* Sidebar */,
 				9A5F199E1D8E905700B2E5AB /* Assets.xcassets */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		9A5F19CA1D8E910E00B2E5AB /* Sidebar */ = {
-			isa = PBXGroup;
-			children = (
-				9AA36ED41DB009DF003203A1 /* temp.jpg */,
-			);
-			path = Sidebar;
 			sourceTree = "<group>";
 		};
 		9A5F19D11D8EA14D00B2E5AB /* Localization */ = {
@@ -520,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */,
-				9AA36ED51DB009DF003203A1 /* temp.jpg in Resources */,
 				9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */,
 				9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */,
 			);
@@ -611,7 +586,6 @@
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
 				9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */,
-				9AB5C3DF1D8F05440040E00E /* SidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

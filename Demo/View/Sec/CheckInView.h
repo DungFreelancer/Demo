@@ -11,7 +11,6 @@
 
 @interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *siderbarButton;
 @property (weak, nonatomic) IBOutlet UITextField *txtStore;
 @property (weak, nonatomic) IBOutlet UITextField *txtContent;
 @property (weak, nonatomic) IBOutlet UITextField *txtSender;

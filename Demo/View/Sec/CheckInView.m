@@ -7,7 +7,6 @@
 //
 
 #import "CheckInView.h"
-#import "SWRevealViewController.h"
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "HUDHelper.h"
@@ -27,14 +26,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     ciViewModel = [[CheckInViewModel alloc] init];
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController)
-    {
-        [self.siderbarButton setTarget: self.revealViewController];
-        [self.siderbarButton setAction: @selector(revealToggle:)];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
     
     self.txtStore.delegate = self;
     self.txtContent.delegate = self;

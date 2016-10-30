@@ -8,7 +8,6 @@
 
 #import "StaffInformationView.h"
 #import <Reachability/Reachability.h>
-#import "SWRevealViewController.h"
 #import "UIImageView+Download.h"
 #import "Constant.h"
 #import "ScanCardView.h"
@@ -22,13 +21,6 @@
 
 @synthesize imgAvatar;
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"ScanCard"]) {
-        ScanCardView *scv = [segue destinationViewController];
-        scv.delegate = self;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -38,20 +30,18 @@
     self.btnScan.layer.borderWidth = 1;
     self.btnScan.layer.borderColor = self.btnScan.tintColor.CGColor;
     self.btnScan.layer.masksToBounds = true;
-    
-    // Reveal.
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController)
-    {
-        [self.siderbarButton setTarget:self.revealViewController];
-        [self.siderbarButton setAction:@selector(revealToggle:)];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segue_scan_card"]) {
+        ScanCardView *scv = [segue destinationViewController];
+        scv.delegate = self;
     }
 }
 
 // ScanCardDelegate.
 - (void)didScanCard:(NSString *)result {
-    [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
     
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     

@@ -10,8 +10,6 @@
 
 @interface StaffInformationView : BaseView
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *siderbarButton;
-
 @property (weak, nonatomic) IBOutlet UILabel *lbName;
 @property (weak, nonatomic) IBOutlet UILabel *lbPosition;
 @property (weak, nonatomic) IBOutlet UILabel *lbCompany;
