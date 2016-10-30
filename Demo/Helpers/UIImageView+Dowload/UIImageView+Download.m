@@ -81,8 +81,10 @@
                 }
                 else
                 {
-                    [ai stopAnimating];
-                    block(NO);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [ai stopAnimating];
+                        block(NO);
+                    });
                 }
             });
         }
