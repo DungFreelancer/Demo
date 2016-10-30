@@ -18,3 +18,6 @@
 // StaffInformation.
 "STAFF_NO_IMAGE" = "Không tìm thấy hình của nhân viên.";
 
+// CheckInView.
+"CHECKIN_SUCCESS" = "Check In thành công.";
+"CHECKIN_FAIL" = "Không thể Check In.";

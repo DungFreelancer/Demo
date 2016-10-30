@@ -8,6 +8,7 @@
 
 #import "CheckInView.h"
 #import "NetworkHelper.h"
+#import "CALayer+BorderShadow.h"
 #import "UtilityClass.h"
 #import "HUDHelper.h"
 #import "CheckInViewModel.h"
@@ -18,27 +19,39 @@
 @end
 
 @implementation CheckInView {
-    CheckInViewModel *ciViewModel;
+//    CheckInViewModel *ciViewModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    ciViewModel = [[CheckInViewModel alloc] init];
+    // Request get user's location.
+    if ([CLLocationManager locationServicesEnabled]) {
+        [self getLocation];
+    } else {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:@""
+                                                      andMessage:NSLocalizedString(@"LOCATION_SERVICES", nil)
+                                                   andMainButton:NSLocalizedString(@"OK", nil)
+                                                  andOtherButton:nil
+                                               CompletionHandler:^(UIAlertAction *action) {
+                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                               }];
+    }
     
-    self.txtStore.delegate = self;
-    self.txtContent.delegate = self;
-    self.txtSender.delegate = self;
+//    ciViewModel = [[CheckInViewModel alloc] init];
     
-    // Border button
-    self.btnCheckIn.layer.cornerRadius = 5;
-    self.btnCheckIn.layer.borderWidth = 1;
-    self.btnCheckIn.layer.borderColor = self.btnCheckIn.tintColor.CGColor;
-    self.btnCheckIn.layer.masksToBounds = true;
+//    self.txtComment.delegate = self;
+//    
+//    // Setup button.
+//    [self.btnTakePicture.layer setShadowWithRadius:1.0f];
+//    [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
+//    [self.btnCheckIn.layer setShadowWithRadius:1.0f];
+//    [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
 }
 
-- (IBAction)takeAPicture:(UIButton *)sender {
+- (IBAction)onClickTakePicture:(UIButton *)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -46,41 +59,100 @@
     [self presentViewController:imagePickerController animated:TRUE completion:nil];
 }
 
-- (IBAction)checkIn:(UIButton *)sender {
+- (IBAction)onClickCheckIn:(UIButton *)sender {
     
-    if ([[NetworkHelper sharedInstance] isConnected]) {
+//    if ([[NetworkHelper sharedInstance] isConnected]) {
+//        // Push data to Service.
+//        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+//        [params setObject:self.txtStore.text forKey:PARAM_NAME];
+//        [params setObject:self.txtContent.text forKey:PARAM_CONTENT];
+//        [params setObject:self.txtSender.text forKey:PARAM_User];
+//        
+//        [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
+//        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
+//            [[HUDHelper sharedInstance] hideLoading];
+//            DLOG(@"respone=%@", response);
+//            if ([[response valueForKey:@"success"] boolValue]) {
+//                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
+//            } else {
+//                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Fail" andMessage:@"Can't check in." andButton:@"OK"];
+//            }
+//        }];
+//    } else {
+//        [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
+//        // Store to database.
+//        CheckInModel *a = [[CheckInModel alloc] init];
+//        a.store = self.txtStore.text;
+//        a.content = self.txtContent.text;
+//        a.sender = self.txtSender.text;
+//        a.image = UIImageJPEGRepresentation(self.imgAvatar.image, 1.0);
+//        [ciViewModel.arrCheckIn addObject:a];
+//        [ciViewModel saveCheckIns];
+//    }
+    
+    
+    if ([[NetworkHelper sharedInstance]  isConnected]) {
         // Push data to Service.
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-        [params setObject:self.txtStore.text forKey:PARAM_NAME];
-        [params setObject:self.txtContent.text forKey:PARAM_CONTENT];
-        [params setObject:self.txtSender.text forKey:PARAM_User];
+        [params setObject:@".jpg" forKey:PARAM_EXTENSION];
+        [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+        [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
         
-        [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
-        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
+        [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+        
+        [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:self.imgPicture.image completion:^(id response, NSError *error) {
+            
             [[HUDHelper sharedInstance] hideLoading];
-            DLOG(@"respone=%@", response);
-            if ([[response valueForKey:@"success"] boolValue]) {
-                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
+            
+            if ([[response valueForKey:RESPONE_ID] intValue] == 1) {
+                CLLocationCoordinate2D coordinate = [self getLocation];
+                NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
+                NSString *longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
+                
+                NSString *image = [response valueForKey:RESPONE_MESSAGE];
+                
+                [params setObject:latitude forKey:PARAM_LATITUDE];
+                [params setObject:longtitude forKey:PARAM_LONGTITUDE];
+                [params setObject:image forKey:PARAM_IMAGE];
+                [params setObject:self.txtComment.text forKey:PARAM_COMMENT];
+                
+                [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
+                    DLOG(@"respone=%@", response);
+                    [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                   withTitle:nil
+                                                                  andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
+                                                                   andButton:NSLocalizedString(@"OK", nil)];
+                }];
             } else {
-                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Fail" andMessage:@"Can't check in." andButton:@"OK"];
+                [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                               withTitle:NSLocalizedString(@"ERROR", nil)
+                                                              andMessage:NSLocalizedString(@"CHECKIN_FAIL", nil)
+                                                               andButton:NSLocalizedString(@"OK", nil)];
             }
         }];
     } else {
-        [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
-        // Store to database.
-        CheckInModel *a = [[CheckInModel alloc] init];
-        a.store = self.txtStore.text;
-        a.content = self.txtContent.text;
-        a.sender = self.txtSender.text;
-        a.image = UIImageJPEGRepresentation(self.imgAvatar.image, 1.0);
-        [ciViewModel.arrCheckIn addObject:a];
-        [ciViewModel saveCheckIns];
+        
     }
+    
+    
+}
+
+- (CLLocationCoordinate2D) getLocation
+{
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
 }
 
 // UIImagePickerControllerDelegate.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    [self.imgAvatar setImage:[info valueForKey:UIImagePickerControllerEditedImage]];
+    [self.imgPicture setImage:[info valueForKey:UIImagePickerControllerEditedImage]];
     [picker dismissViewControllerAnimated:TRUE completion:nil];
 }
 
