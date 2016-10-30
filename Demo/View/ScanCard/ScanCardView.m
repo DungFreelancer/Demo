@@ -8,6 +8,8 @@
 
 #import "ScanCardView.h"
 #import <MTBBarcodeScanner/MTBBarcodeScanner.h>
+#import "NetworkHelper.h"
+#import "UtilityClass.h"
 #import "Constant.h"
 
 @interface ScanCardView ()
@@ -29,6 +31,14 @@
             NSError *error = nil;
             [scanner startScanningWithResultBlock:^(NSArray *codes) {
                 [scanner freezeCapture];
+                
+                if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+                    [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"NO_INTERNET", nil) andMainButton:NSLocalizedString(@"OK", nil) andOtherButton:nil CompletionHandler:^(UIAlertAction *action) {
+                        [scanner unfreezeCapture];
+                    }];
+                    
+                    return;
+                }
 //                [scanner stopScanning]; // Hide the scan view
                 
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
