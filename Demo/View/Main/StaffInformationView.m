@@ -29,7 +29,12 @@
     self.btnScan.layer.cornerRadius = 5;
     self.btnScan.layer.borderWidth = 1;
     self.btnScan.layer.borderColor = self.btnScan.tintColor.CGColor;
-    self.btnScan.layer.masksToBounds = true;
+    self.btnScan.layer.masksToBounds = NO;
+    
+    self.btnScan.layer.shadowColor = [[UIColor grayColor] CGColor];
+    self.btnScan.layer.shadowOffset = CGSizeMake(0, 2.0f);
+    self.btnScan.layer.shadowOpacity = 1.0f;
+    self.btnScan.layer.shadowRadius = 1.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

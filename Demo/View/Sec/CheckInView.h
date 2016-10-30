@@ -7,7 +7,6 @@
 //
 
 #import "BaseView.h"
-#import <MTBBarcodeScanner/MTBBarcodeScanner.h>
 
 @interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 
