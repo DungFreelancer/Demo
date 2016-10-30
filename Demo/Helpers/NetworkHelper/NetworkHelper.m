@@ -87,8 +87,9 @@
     }
 }
 
-- (void)setBasicAuthorizationWithUserName:(NSString *)userName password:(NSString *)password {
+- (void)requestGetBasicAuthorization:(NSString *)url userName:(NSString *)userName password:(NSString *)password completion:(CompletionBlock)block {
     [self.manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userName password:password];
+    [self requestGet:url paramaters:nil completion:block];
 }
 
 - (void)connectionChange:(StatusBlock)block {

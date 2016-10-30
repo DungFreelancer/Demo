@@ -40,13 +40,11 @@
         return;
     }
     
-    NSString *userName = self.txtUserName.text;
-    NSString *password = self.txtPassword.text;
-    [[NetworkHelper sharedInstance] setBasicAuthorizationWithUserName:userName password:password];
-    
     [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
     
-    [[NetworkHelper sharedInstance] requestGet:API_LOGIN paramaters:nil completion:^(id response, NSError *error) {
+    NSString *userName = self.txtUserName.text;
+    NSString *password = self.txtPassword.text;
+    [[NetworkHelper sharedInstance] requestGetBasicAuthorization:API_LOGIN userName:userName password:password completion:^(id response, NSError *error) {
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {

@@ -20,7 +20,7 @@ typedef void (^StatusBlock)(BOOL connected);
 - (void)requestGet:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
 - (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block;
 - (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(CompletionBlock)block;
-- (void)setBasicAuthorizationWithUserName:(NSString *)userName password:(NSString *)password;
+- (void)requestGetBasicAuthorization:(NSString *)url userName:(NSString *)userName password:(NSString *)password completion:(CompletionBlock)block;
 - (void)connectionChange:(StatusBlock)block;
 - (BOOL)isConnected;
 
