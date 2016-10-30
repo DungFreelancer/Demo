@@ -7,11 +7,11 @@
 //
 
 #import "StaffInformationView.h"
-#import <Reachability/Reachability.h>
 #import "UIImageView+Download.h"
 #import "Constant.h"
 #import "ScanCardView.h"
 #import "HUDHelper.h"
+#import "UtilityClass.h"
 
 @interface StaffInformationView()<ScanCardViewDelegate>
 
@@ -41,18 +41,22 @@
 
 // ScanCardDelegate.
 - (void)didScanCard:(NSString *)result {
-    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+//    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
     
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
     NSString *url = [NSString stringWithFormat:@"%@%@", API_STAFF_INFORMATION, arrResult[0]];
-    [self.imgAvatar downloadFromURL:url withPlaceholder:nil];
+    [self.imgAvatar downloadFromURL:url withPlaceholder:nil handleCompletion:^(BOOL success) {
+        
+//        [[HUDHelper sharedInstance] hideLoading];
+        if (!success) {
+            [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_IMAGE", nil) andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];
     [self.lbName setText:arrResult[1]];
     [self.lbPosition setText:arrResult[2]];
     [self.lbCompany setText:arrResult[3]];
     [self.lbAddress setText:arrResult[4]];
-    
-    [[HUDHelper sharedInstance] hideLoading];
 }
 
 @end

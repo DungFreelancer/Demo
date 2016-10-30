@@ -15,3 +15,6 @@
 "LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";
 "LOGIN_SESSION" = "Tài khoản đang được đăng nhập trên máy khác.";
 
+// StaffInformation.
+"STAFF_NO_IMAGE" = "Không tìm thấy hình của nhân viên.";
+
