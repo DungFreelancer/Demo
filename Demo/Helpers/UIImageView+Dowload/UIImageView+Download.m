@@ -27,6 +27,7 @@
         [self addSubview:ai];
         [ai startAnimating];
         
+        // Load cache image from folder what isn't library folder.
         if ([url rangeOfString:@"/Library/"].location != NSNotFound)
         {
             [ai stopAnimating];
@@ -45,10 +46,7 @@
         NSCharacterSet *set = [NSCharacterSet URLFragmentAllowedCharacterSet];
         NSString *strImgName = [[[url stringByAddingPercentEncodingWithAllowedCharacters:set] componentsSeparatedByString:@"/"] lastObject];
         
-        AppDelegate *app = APP_DELEGATE;
-        [app applicationCacheDirectoryString];
-        
-        NSString *imagePath = [NSString stringWithFormat:@"%@%@",[app applicationCacheDirectoryString],strImgName];
+        NSString *imagePath = [NSString stringWithFormat:@"%@%@",[APP_DELEGATE applicationCacheDirectoryString],strImgName];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *aURL=[url stringByAddingPercentEncodingWithAllowedCharacters:set];
         
@@ -62,8 +60,15 @@
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
             dispatch_async(queue, ^(void) {
                 
+                // Download image from url.
                 NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:aURL]];
-                //[imageData writeToFile:imagePath atomically:YES];
+                if (!imageData) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [ai stopAnimating];
+                        block(NO);
+                    });
+                    return;
+                }
                 
                 UIImage* image = [[UIImage alloc] initWithData:imageData];
                 UIImage *imgUpload = [[UtilityClass sharedInstance]scaleAndRotateImage:image];
@@ -71,26 +76,19 @@
                 [dataS writeToFile:imagePath atomically:YES];
                 
                 imageData = nil;
-                if (imgUpload) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [ai stopAnimating];
-                        [self setImage:imgUpload];
-                        [self setNeedsLayout];
-                        block(YES);
-                    });
-                }
-                else
-                {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [ai stopAnimating];
-                        block(NO);
-                    });
-                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [ai stopAnimating];
+                    [self setImage:imgUpload];
+                    [self setNeedsLayout];
+                    block(YES);
+                });
             });
         }
         else{
             [ai stopAnimating];
             ai = nil;
+            
+            // Load cache image from library folder.
             NSData *imageData=[NSData dataWithContentsOfFile:imagePath];
             UIImage* image = [[UIImage alloc] initWithData:imageData];
             if (image) {
