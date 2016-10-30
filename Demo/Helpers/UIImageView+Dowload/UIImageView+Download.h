@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^CompletionBlock)(BOOL success);
+
 @interface UIImageView (Download)
 
-- (void)downloadFromURL:(NSString *)url withPlaceholder:(UIImage *)placehold;
+- (void)downloadFromURL:(NSString *)url withPlaceholder:(UIImage *)placehold handleCompletion:(CompletionBlock)block;
 
 @end

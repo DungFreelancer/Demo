@@ -13,7 +13,7 @@
 
 @implementation UIImageView (Download)
 
-- (void)downloadFromURL:(NSString *)url withPlaceholder:(UIImage *)placehold
+- (void)downloadFromURL:(NSString *)url withPlaceholder:(UIImage *)placehold handleCompletion:(CompletionBlock)block
 {
     if (placehold) {
         [self setImage:placehold];
@@ -38,6 +38,7 @@
                 [self setNeedsLayout];
                 imageData = nil;
             }
+            block(YES);
             return;
         }
         
@@ -75,11 +76,13 @@
                         [ai stopAnimating];
                         [self setImage:imgUpload];
                         [self setNeedsLayout];
+                        block(YES);
                     });
                 }
                 else
                 {
                     [ai stopAnimating];
+                    block(NO);
                 }
             });
         }
@@ -93,6 +96,7 @@
                 [self setNeedsLayout];
             }
             imageData = nil;
+            block(YES);
         }
     }
 }
