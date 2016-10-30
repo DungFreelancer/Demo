@@ -8,6 +8,7 @@
 
 #import "StaffInformationView.h"
 #import "UIImageView+Download.h"
+#import "CALayer+BorderShadow.h"
 #import "Constant.h"
 #import "ScanCardView.h"
 #import "HUDHelper.h"
@@ -26,8 +27,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // Setup button.
-    [[UtilityClass sharedInstance] setBorder:self.btnScan.layer withColor:self.btnScan.tintColor.CGColor];
-    [[UtilityClass sharedInstance] setShadow:self.btnScan.layer withRadius:1.0f];
+    [self.btnScan.layer setShadowWithRadius:1.0f];
+    [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

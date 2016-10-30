@@ -26,6 +26,7 @@
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
+		9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
 		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
 		F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */; };
@@ -89,6 +90,8 @@
 		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		9AB5C3E01D8F0BB60040E00E /* CheckInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInView.h; sourceTree = "<group>"; };
 		9AB5C3E11D8F0BC90040E00E /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInView.m; sourceTree = "<group>"; };
+		9AD3A3311DC63E6C00073E15 /* CALayer+BorderShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderShadow.h"; sourceTree = "<group>"; };
+		9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderShadow.m"; sourceTree = "<group>"; };
 		9AD419381D8EDD2F006FE776 /* HUDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HUDHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AD419391D8EDD3D006FE776 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
 		9AFDAF721DC4B8F70055CBB4 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 				9A5F19D21D8EA15C00B2E5AB /* Constant */,
 				9AD419371D8EDCC1006FE776 /* HUDHelper */,
 				9A5F19D11D8EA14D00B2E5AB /* Localization */,
+				9AD3A3301DC63E5200073E15 /* CALayer+BorderShadow */,
 				9A5F19D81D8EA33300B2E5AB /* UIImageView+Dowload */,
 				9A5F19DC1D8EA97700B2E5AB /* UIView+RoundedCorners */,
 				9A5F19E71D8EACD500B2E5AB /* UtilityClass */,
@@ -354,6 +358,15 @@
 				9AB212941D9AC2AF0007E1CB /* BaseView.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		9AD3A3301DC63E5200073E15 /* CALayer+BorderShadow */ = {
+			isa = PBXGroup;
+			children = (
+				9AD3A3311DC63E6C00073E15 /* CALayer+BorderShadow.h */,
+				9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */,
+			);
+			name = "CALayer+BorderShadow";
 			sourceTree = "<group>";
 		};
 		9AD419371D8EDCC1006FE776 /* HUDHelper */ = {
@@ -575,6 +588,7 @@
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
 				9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
+				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,

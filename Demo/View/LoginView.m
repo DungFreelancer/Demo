@@ -9,6 +9,7 @@
 #import "LoginView.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
+#import "CALayer+BorderShadow.h"
 #import "UtilityClass.h"
 #import "Constant.h"
 
@@ -21,8 +22,8 @@
     self.navigationController.navigationBarHidden = YES;
     
     // Setup button.
-    [[UtilityClass sharedInstance] setBorder:self.btnLogin.layer withColor:self.btnLogin.tintColor.CGColor];
-    [[UtilityClass sharedInstance] setShadow:self.btnLogin.layer withRadius:1.0f];
+    [self.btnLogin.layer setShadowWithRadius:1.0f];
+    [self.btnLogin.layer setBorderWithColor:self.btnLogin.tintColor.CGColor];
     
     // Template input
     [self.txtUserName setText:@"namlh"];
