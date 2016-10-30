@@ -25,16 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // Border button
-    self.btnScan.layer.cornerRadius = 5;
-    self.btnScan.layer.borderWidth = 1;
-    self.btnScan.layer.borderColor = self.btnScan.tintColor.CGColor;
-    self.btnScan.layer.masksToBounds = NO;
-    
-    self.btnScan.layer.shadowColor = [[UIColor grayColor] CGColor];
-    self.btnScan.layer.shadowOffset = CGSizeMake(0, 2.0f);
-    self.btnScan.layer.shadowOpacity = 1.0f;
-    self.btnScan.layer.shadowRadius = 1.0f;
+    // Setup button.
+    [[UtilityClass sharedInstance] setBorder:self.btnScan.layer withColor:self.btnScan.tintColor.CGColor];
+    [[UtilityClass sharedInstance] setShadow:self.btnScan.layer withRadius:1.0f];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

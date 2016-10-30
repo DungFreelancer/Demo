@@ -20,21 +20,14 @@
     // Setup navigation bar.
     self.navigationController.navigationBarHidden = YES;
     
-    // Border button
-    self.btnLogin.layer.cornerRadius = 5;
-    self.btnLogin.layer.borderWidth = 1;
-    self.btnLogin.layer.borderColor = self.btnLogin.tintColor.CGColor;
-    self.btnLogin.layer.masksToBounds = NO;
-    
-    self.btnLogin.layer.shadowColor = [[UIColor grayColor] CGColor];
-    self.btnLogin.layer.shadowOffset = CGSizeMake(0, 2.0f);
-    self.btnLogin.layer.shadowOpacity = 1.0f;
-    self.btnLogin.layer.shadowRadius = 1.0f;
+    // Setup button.
+    [[UtilityClass sharedInstance] setBorder:self.btnLogin.layer withColor:self.btnLogin.tintColor.CGColor];
+    [[UtilityClass sharedInstance] setShadow:self.btnLogin.layer withRadius:1.0f];
     
     // Template input
     [self.txtUserName setText:@"namlh"];
     [self.txtPassword setText:@"123456"];
-//    [self onClickLogin:nil];
+    [self onClickLogin:nil];
 }
 
 - (IBAction)onClickLogin:(id)sender {

@@ -173,6 +173,23 @@
     return imageCopy;
 }
 
+# pragma mark - Set border & shadow
+
+- (void)setBorder:(CALayer *)layer withColor:(CGColorRef)color {
+    layer.cornerRadius = 5;
+    layer.borderWidth = 1;
+    layer.borderColor = color;
+    layer.masksToBounds = NO;
+}
+
+- (void)setShadow:(CALayer *)layer  withRadius:(CGFloat)radius {
+    layer.masksToBounds = NO;
+    layer.shadowColor = [[UIColor grayColor] CGColor];
+    layer.shadowOffset = CGSizeMake(0, 2.0f);
+    layer.shadowOpacity = 1.0f;
+    layer.shadowRadius = radius;
+}
+
 # pragma mark - Check Validation
 
 -(BOOL)isValidEmail:(NSString *)email

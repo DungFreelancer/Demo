@@ -7,6 +7,7 @@
 //
 
 #import "MenuView.h"
+#import "UtilityClass.h"
 #import "Constant.h"
 
 @implementation MenuView {
@@ -38,12 +39,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
     
-    
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowColor = [[UIColor grayColor] CGColor];
-    cell.layer.shadowOffset = CGSizeMake(0, 2.0f);
-    cell.layer.shadowOpacity = 1.0f;
-    cell.layer.shadowRadius = 2.0f;
+    [[UtilityClass sharedInstance] setShadow:cell.layer withRadius:2.0f];
     
     return cell;
 }

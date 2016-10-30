@@ -24,6 +24,10 @@
 //Scale and Rotate according to Orientation
 - (UIImage *)scaleAndRotateImage:(UIImage *)image;
 
+//Set border & shadow
+- (void)setBorder:(CALayer *)layer withColor:(CGColorRef)color;
+- (void)setShadow:(CALayer *)layer withRadius:(CGFloat)radius;
+
 //Check Validation
 - (BOOL)isValidEmail:(NSString *)email;
 - (BOOL)isvalidPassword:(NSString *)password;
