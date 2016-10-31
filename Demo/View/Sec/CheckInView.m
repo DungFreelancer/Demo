@@ -27,6 +27,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self setBackBarItem];
+    
     // Request get user's location.
     if ([CLLocationManager locationServicesEnabled]) {
         [self getLocation];

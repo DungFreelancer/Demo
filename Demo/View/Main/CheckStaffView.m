@@ -26,6 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self setBackBarItem];
+    
     // Setup button.
     [self.btnScan.layer setShadowWithRadius:1.0f];
     [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
