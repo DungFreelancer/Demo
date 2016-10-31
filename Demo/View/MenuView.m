@@ -7,7 +7,7 @@
 //
 
 #import "MenuView.h"
-#import "UtilityClass.h"
+#import "CALayer+BorderShadow.h"
 #import "Constant.h"
 
 @implementation MenuView {
@@ -39,7 +39,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
     
-    [[UtilityClass sharedInstance] setShadow:cell.layer withRadius:2.0f];
+    [cell.layer setShadowWithRadius:2.0f];
     
     return cell;
 }
