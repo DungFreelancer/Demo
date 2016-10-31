@@ -50,6 +50,7 @@
         if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
             NSString *token = [response valueForKey:RESPONE_TOKEN];
             NSArray<NSString *> *function = [response valueForKey:RESPONE_FUNCTION];
+            NSString *role = [response valueForKey:RESPONE_ROLE];
             
             // Check session.
             NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, userName, token];
@@ -65,6 +66,7 @@
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
                     [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
                     [USER_DEFAULT setObject:function forKey:PREF_FUNCTION];
+                    [USER_DEFAULT setObject:role forKey:PREF_ROLE];
                     [USER_DEFAULT synchronize];
                 } else {
                     [[UtilityClass sharedInstance] showAlertOnViewController:self

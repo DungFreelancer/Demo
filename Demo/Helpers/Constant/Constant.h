@@ -47,9 +47,13 @@
 #define RESPONE_USER @"user"
 #define RESPONE_TOKEN @"token"
 #define RESPONE_FUNCTION @"function"
+#define RESPONE_ROLE @"Role"
 
-// PREFERRENCT-------------------------------------------------------------------
+// PREFERENCE-------------------------------------------------------------------
 
 #define PREF_USER @"user"
 #define PREF_TOKEN @"token"
 #define PREF_FUNCTION @"function"
+#define PREF_ROLE @"role"
+
+
