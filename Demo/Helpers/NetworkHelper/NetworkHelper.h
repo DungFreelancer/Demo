@@ -9,8 +9,15 @@
 #import <AFNetworking/AFNetworking.h>
 #import <Reachability/Reachability.h>
 
+#ifndef COMPLETION_BLOCK
+#define COMPLETION_BLOCK
 typedef void (^CompletionBlock)(id response, NSError *error);
+#endif
+
+#ifndef STATUS_BLOCK
+#define STATUS_BLOCK
 typedef void (^StatusBlock)(BOOL connected);
+#endif
 
 @interface NetworkHelper : NSObject
 

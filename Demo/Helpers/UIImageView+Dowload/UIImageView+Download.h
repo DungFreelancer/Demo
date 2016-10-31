@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef COMPLETION_BLOCK
+#define COMPLETION_BLOCK
 typedef void (^CompletionBlock)(BOOL success);
+#endif
 
 @interface UIImageView (Download)
 
