@@ -13,7 +13,7 @@
 		9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */; };
 		9A5F19911D8E905700B2E5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19901D8E905700B2E5AB /* main.m */; };
 		9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19931D8E905700B2E5AB /* AppDelegate.m */; };
-		9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19961D8E905700B2E5AB /* StaffInformationView.m */; };
+		9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19961D8E905700B2E5AB /* CheckStaffView.m */; };
 		9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F19981D8E905700B2E5AB /* Main.storyboard */; };
 		9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F199E1D8E905700B2E5AB /* Assets.xcassets */; };
 		9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */; };
@@ -63,8 +63,8 @@
 		9A5F19901D8E905700B2E5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A5F19921D8E905700B2E5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A5F19931D8E905700B2E5AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9A5F19951D8E905700B2E5AB /* StaffInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaffInformationView.h; sourceTree = "<group>"; };
-		9A5F19961D8E905700B2E5AB /* StaffInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = StaffInformationView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A5F19951D8E905700B2E5AB /* CheckStaffView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckStaffView.h; sourceTree = "<group>"; };
+		9A5F19961D8E905700B2E5AB /* CheckStaffView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckStaffView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F19991D8E905700B2E5AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A5F199E1D8E905700B2E5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -142,13 +142,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9A3D67221D90D83100A71D62 /* StaffInformation */ = {
+		9A3D67221D90D83100A71D62 /* CheckStaff */ = {
 			isa = PBXGroup;
 			children = (
-				9A5F19951D8E905700B2E5AB /* StaffInformationView.h */,
-				9A5F19961D8E905700B2E5AB /* StaffInformationView.m */,
+				9A5F19951D8E905700B2E5AB /* CheckStaffView.h */,
+				9A5F19961D8E905700B2E5AB /* CheckStaffView.m */,
 			);
-			name = StaffInformation;
+			name = CheckStaff;
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -258,7 +258,7 @@
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
 				9AFDAF711DC4B8E80055CBB4 /* Menu */,
 				9A3D67231D90D83C00A71D62 /* CheckIn */,
-				9A3D67221D90D83100A71D62 /* StaffInformation */,
+				9A3D67221D90D83100A71D62 /* CheckStaff */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
 			);
 			path = View;
@@ -586,7 +586,7 @@
 				9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */,
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
-				9A5F19971D8E905700B2E5AB /* StaffInformationView.m in Sources */,
+				9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,

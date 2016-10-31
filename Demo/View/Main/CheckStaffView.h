@@ -8,7 +8,7 @@
 
 #import "BaseView.h"
 
-@interface StaffInformationView : BaseView
+@interface CheckStaffView : BaseView
 
 @property (weak, nonatomic) IBOutlet UILabel *lbName;
 @property (weak, nonatomic) IBOutlet UILabel *lbPosition;

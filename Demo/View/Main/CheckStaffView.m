@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "StaffInformationView.h"
+#import "CheckStaffView.h"
 #import "UIImageView+Download.h"
 #import "CALayer+BorderShadow.h"
 #import "Constant.h"
@@ -14,11 +14,11 @@
 #import "HUDHelper.h"
 #import "UtilityClass.h"
 
-@interface StaffInformationView()<ScanCardViewDelegate>
+@interface CheckStaffView()<ScanCardViewDelegate>
 
 @end
 
-@implementation StaffInformationView
+@implementation CheckStaffView
 
 @synthesize imgAvatar;
 
