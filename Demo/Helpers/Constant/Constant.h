@@ -41,6 +41,7 @@
 #define PARAM_COMMENT @"comment"
 #define PARAM_LATITUDE @"latitude"
 #define PARAM_LONGTITUDE @"longtitude"
+#define PARAM_DATE @"date"
 
 #define RESPONE_ID @"id"
 #define RESPONE_MESSAGE @"msg"

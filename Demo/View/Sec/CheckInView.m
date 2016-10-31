@@ -104,21 +104,24 @@
         [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:self.imgPicture.image completion:^(id response, NSError *error) {
             
             [[HUDHelper sharedInstance] hideLoading];
-            
             if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
+                NSString *image = [response valueForKey:RESPONE_MESSAGE];
+                NSString *date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
                 CLLocationCoordinate2D coordinate = [self getLocation];
                 NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
                 NSString *longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
                 
-                NSString *image = [response valueForKey:RESPONE_MESSAGE];
-                
-                [params setObject:latitude forKey:PARAM_LATITUDE];
-                [params setObject:longtitude forKey:PARAM_LONGTITUDE];
                 [params setObject:image forKey:PARAM_IMAGE];
                 [params setObject:self.txtComment.text forKey:PARAM_COMMENT];
+                [params setObject:date forKey:PARAM_DATE];
+                [params setObject:latitude forKey:PARAM_LATITUDE];
+                [params setObject:longtitude forKey:PARAM_LONGTITUDE];
+                
+                [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
                 
                 [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
-                    DLOG(@"respone=%@", response);
+                    
+                    [[HUDHelper sharedInstance] hideLoading];
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:nil
                                                                   andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
@@ -134,8 +137,6 @@
     } else {
         
     }
-    
-    
 }
 
 - (CLLocationCoordinate2D) getLocation
