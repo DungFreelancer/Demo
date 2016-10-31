@@ -20,6 +20,7 @@
 
 @implementation CheckInView {
 //    CheckInViewModel *ciViewModel;
+    CLLocationManager *locationManager;
 }
 
 - (void)viewDidLoad {
@@ -104,7 +105,7 @@
             
             [[HUDHelper sharedInstance] hideLoading];
             
-            if ([[response valueForKey:RESPONE_ID] intValue] == 1) {
+            if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
                 CLLocationCoordinate2D coordinate = [self getLocation];
                 NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
                 NSString *longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
@@ -139,7 +140,7 @@
 
 - (CLLocationCoordinate2D) getLocation
 {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
