@@ -72,7 +72,7 @@
     if (imageToUpload) {
         [self.manager POST:url parameters:paramaters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             
-            [formData appendPartWithFileData:imageToUpload name:PARAM_IMG fileName:@"temp.jpg" mimeType:@"image/jpg"];
+            [formData appendPartWithFileData:imageToUpload name:PARAM_IMAGE fileName:@"temp.jpg" mimeType:@"image/jpg"];
          } progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
              
              if (block) {
