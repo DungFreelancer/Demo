@@ -53,7 +53,7 @@
             NSString *role = [response valueForKey:RESPONE_ROLE];
             
             // Check session.
-            NSString *url = [NSString stringWithFormat:@"%@?user=%@&token=%@", API_LOGIN_SESSION, userName, token];
+            NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@", API_LOGIN_SESSION, PARAM_USER, userName, PARAM_TOKEN, token];
             [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
             
             [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
