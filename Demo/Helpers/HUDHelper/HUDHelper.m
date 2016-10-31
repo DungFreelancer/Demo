@@ -23,38 +23,36 @@
 
 - (void) showLoadingWithTitle:(nonnull NSString *)title onView:(UIView *)view
 {
-    if (hud == nil) {
-        hud = [[MBProgressHUD alloc] initWithView:view];
-        [view addSubview:hud];
-    }
+    self.hud = [[MBProgressHUD alloc] initWithView:view];
+    [view addSubview:self.hud];
     
     if (title == nil || [title isEqualToString:@""]) {
-        hud.label.text = @"Loading...";
+        self.hud.label.text = @"Loading...";
     } else {
-        hud.label.text = title;
+        self.hud.label.text = title;
     }
     
-    [hud showAnimated:TRUE];
+    [self.hud showAnimated:TRUE];
 }
 
 - (void) hideLoading
 {
-    [hud hideAnimated:TRUE];
+    [self.hud hideAnimated:TRUE];
 }
 
 - (void)showToastWithMessage:(NSString *)message onView:(UIView *)view
 {
-    if (hud == nil) {
-        hud = [[MBProgressHUD alloc] initWithView:view];
-        [view addSubview:hud];
+    if (self.hud == nil) {
+        self.hud = [[MBProgressHUD alloc] initWithView:view];
+        [view addSubview:self.hud];
     }
     
-    hud.mode = MBProgressHUDModeText;
-    hud.detailsLabel.text = message;
-    hud.margin = 10.f;
-    [hud setOffset:CGPointMake(0, 150.f)];
-    [hud showAnimated:TRUE];
-    [hud hideAnimated:TRUE afterDelay:3.5];
+    self.hud.mode = MBProgressHUDModeText;
+    self.hud.detailsLabel.text = message;
+    self.hud.margin = 10.f;
+    [self.hud setOffset:CGPointMake(0, 150.f)];
+    [self.hud showAnimated:TRUE];
+    [self.hud hideAnimated:TRUE afterDelay:3.5];
 }
 
 @end
