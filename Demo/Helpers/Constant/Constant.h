@@ -30,7 +30,7 @@
 
 #define API_LOGIN @"http://ndhapi.epm.vn/api/rest/login"
 #define API_LOGIN_SESSION @"http://ndhapi.epm.vn/api/rest/loginsession"
-#define API_STAFF_INFORMATION @"http://test.epm.vn/test/getcard/"
+#define API_CHECK_STAFF @"http://ndhapi.epm.vn/api/rest/checkStaff"
 #define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
 #define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
 
@@ -42,6 +42,7 @@
 #define PARAM_LATITUDE @"latitude"
 #define PARAM_LONGTITUDE @"longtitude"
 #define PARAM_DATE @"date"
+#define PARAM_CODE @"code"
 
 #define RESPONE_ID @"id"
 #define RESPONE_MESSAGE @"msg"
@@ -49,6 +50,9 @@
 #define RESPONE_TOKEN @"token"
 #define RESPONE_FUNCTION @"function"
 #define RESPONE_ROLE @"Role"
+#define RESPONE_AVATAR @"avatar"
+#define RESPONE_SIGNATURE @"signature"
+#define RESPONE_STATUS @"status"
 
 // PREFERENCE-------------------------------------------------------------------
 
