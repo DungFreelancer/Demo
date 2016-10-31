@@ -31,7 +31,7 @@
     return instance;
 }
 
-- (void)requestGet:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block {
+- (void)requestGet:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(NetworkHelperBlock)block {
     [self.manager GET:url parameters:paramaters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if (block) {
@@ -48,7 +48,7 @@
     }];
 }
 
-- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(CompletionBlock)block {
+- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(NetworkHelperBlock)block {
     [self.manager POST:url parameters:paramaters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if (block) {
@@ -65,7 +65,7 @@
     }];
 }
 
-- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(CompletionBlock)block {
+- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(NetworkHelperBlock)block {
     UIImage *imageScale = [[UtilityClass sharedInstance] scaleAndRotateImage:image];
     NSData *imageToUpload = UIImageJPEGRepresentation(imageScale, 1.0);
     
@@ -87,12 +87,12 @@
     }
 }
 
-- (void)requestGetBasicAuthorization:(NSString *)url userName:(NSString *)userName password:(NSString *)password completion:(CompletionBlock)block {
+- (void)requestGetBasicAuthorization:(NSString *)url userName:(NSString *)userName password:(NSString *)password completion:(NetworkHelperBlock)block {
     [self.manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userName password:password];
     [self requestGet:url paramaters:nil completion:block];
 }
 
-- (void)connectionChange:(StatusBlock)block {
+- (void)connectionChange:(NetworkHelperStatus)block {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
         if (status > 0) {
