@@ -124,10 +124,18 @@
                 [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
                     
                     [[HUDHelper sharedInstance] hideLoading];
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                                   withTitle:nil
-                                                                  andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
-                                                                   andButton:NSLocalizedString(@"OK", nil)];
+                    
+                    if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
+                        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                       withTitle:nil
+                                                                      andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
+                                                                       andButton:NSLocalizedString(@"OK", nil)];
+                    } else {
+                        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                                      andMessage:NSLocalizedString(@"CHECKIN_FAIL", nil)
+                                                                       andButton:NSLocalizedString(@"OK", nil)];
+                    }
                 }];
             } else {
                 [[UtilityClass sharedInstance] showAlertOnViewController:self
