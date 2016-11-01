@@ -19,7 +19,7 @@
 @end
 
 @implementation CheckInView {
-//    CheckInViewModel *ciViewModel;
+    CheckInViewModel *ciViewModel;
     CLLocationManager *locationManager;
 }
 
@@ -43,7 +43,7 @@
                                                }];
     }
     
-//    ciViewModel = [[CheckInViewModel alloc] init];
+    ciViewModel = [[CheckInViewModel alloc] init];
     
 //    self.txtComment.delegate = self;
 //    
@@ -63,37 +63,6 @@
 }
 
 - (IBAction)onClickCheckIn:(UIButton *)sender {
-    
-//    if ([[NetworkHelper sharedInstance] isConnected]) {
-//        // Push data to Service.
-//        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-//        [params setObject:self.txtStore.text forKey:PARAM_NAME];
-//        [params setObject:self.txtContent.text forKey:PARAM_CONTENT];
-//        [params setObject:self.txtSender.text forKey:PARAM_User];
-//        
-//        [[HUDHelper sharedInstance] showLoadingWithTitle:@"Loading..." onView:self.view];
-//        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:self.imgAvatar.image completion:^(id response, NSError *error) {
-//            [[HUDHelper sharedInstance] hideLoading];
-//            DLOG(@"respone=%@", response);
-//            if ([[response valueForKey:@"success"] boolValue]) {
-//                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
-//            } else {
-//                [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Fail" andMessage:@"Can't check in." andButton:@"OK"];
-//            }
-//        }];
-//    } else {
-//        [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:@"Success" andMessage:@"Check in complete." andButton:@"OK"];
-//        // Store to database.
-//        CheckInModel *a = [[CheckInModel alloc] init];
-//        a.store = self.txtStore.text;
-//        a.content = self.txtContent.text;
-//        a.sender = self.txtSender.text;
-//        a.image = UIImageJPEGRepresentation(self.imgAvatar.image, 1.0);
-//        [ciViewModel.arrCheckIn addObject:a];
-//        [ciViewModel saveCheckIns];
-//    }
-    
-    
     if ([[NetworkHelper sharedInstance]  isConnected]) {
         // Push data to Service.
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -145,7 +114,22 @@
             }
         }];
     } else {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:@"Success"
+                                                      andMessage:NSLocalizedString(@"CHECKIN_SAVE_OFFLINE", nil)
+                                                       andButton:@"OK"];
+        // Store to database.
+        CheckInModel *ci = [[CheckInModel alloc] init];
+        ci.image = UIImageJPEGRepresentation(self.imgPicture.image, 1.0);
+        ci.extension = @".jpg";
+        ci.comment = self.txtComment.text;
+        ci.date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
+        CLLocationCoordinate2D coordinate = [self getLocation];
+        ci.latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
+        ci.longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
         
+        [ciViewModel.arrCheckIn addObject:ci];
+        [ciViewModel saveCheckIns];
     }
 }
 

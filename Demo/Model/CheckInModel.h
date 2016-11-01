@@ -10,9 +10,11 @@
 
 @interface CheckInModel : NSObject <NSCoding>
 
-@property(nonatomic,strong)NSString *store;
-@property(nonatomic,strong)NSString *content;
-@property(nonatomic,strong)NSString *sender;
 @property(nonatomic,strong)NSData *image;
+@property(nonatomic,strong)NSString *extension;
+@property(nonatomic,strong)NSString *comment;
+@property(nonatomic,strong)NSString *date;
+@property(nonatomic,strong)NSString *latitude;
+@property(nonatomic,strong)NSString *longtitude;
 
 @end

@@ -9,13 +9,17 @@
 #import "AppDelegate.h"
 #import "NetworkHelper.h"
 #import "Constant.h"
+#import "HUDHelper.h"
+#import "UtilityClass.h"
 #import "CheckInViewModel.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate 
+@implementation AppDelegate {
+    int countTask;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -46,21 +50,48 @@
 //            [reach startNotifier];
 //        }];
 //    } else {
-//        [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
-//            if (connected) {
-//                CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
-//                [ciViewModel loadCheckIns];
-//                for (CheckInModel *ci in ciViewModel.arrCheckIn) {
-//                    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-//                    [params setObject:ci.store forKey:PARAM_NAME];
-//                    [params setObject:ci.content forKey:PARAM_CONTENT];
-//                    [params setObject:ci.sender forKey:PARAM_User];
-//                    
-//                    [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
-//                }
-//                [ciViewModel clearCheckIns];
-//            }
-//        }];
+        [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
+            CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+            [ciViewModel loadCheckIns];
+            
+            if (connected && ciViewModel.arrCheckIn.count > 0) {
+                
+                countTask = 0;
+                for (CheckInModel *ci in ciViewModel.arrCheckIn) {
+                    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+                    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+                    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+                    [params setObject:ci.extension forKey:PARAM_EXTENSION];
+                
+                    [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:[UIImage imageWithData:ci.image] completion:^(id response, NSError *error) {
+                        
+                        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                            [params setObject:[response valueForKey:RESPONSE_MESSAGE] forKey:PARAM_IMAGE];
+                            [params setObject:ci.comment forKey:PARAM_COMMENT];
+                            [params setObject:ci.date forKey:PARAM_DATE];
+                            [params setObject:ci.latitude forKey:PARAM_LATITUDE];
+                            [params setObject:ci.longtitude forKey:PARAM_LONGTITUDE];
+                            
+                            [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
+                                
+                                if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                                    ++countTask;
+                                    
+                                    if(countTask == ciViewModel.arrCheckIn.count) {
+                                        [ciViewModel clearCheckIns];
+                                        UINavigationController *nv =  (UINavigationController *)self.window.rootViewController;
+                                        [[UtilityClass sharedInstance] showAlertOnViewController:nv.visibleViewController
+                                                                                       withTitle:nil
+                                                                                      andMessage:NSLocalizedString(@"CHECKIN_DONE_OFFLINE", nil)
+                                                                                       andButton:NSLocalizedString(@"OK", nil)];
+                                    }
+                                }
+                            }];
+                        }
+                    }];
+                }
+            }
+        }];
 //    }
     
     return YES;

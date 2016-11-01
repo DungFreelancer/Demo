@@ -136,8 +136,7 @@
 		9A1DDCE61DACEB1D00E7AE23 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */,
-				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
+				9A664C411DC8F58300AB9CEE /* CheckIn */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -267,8 +266,7 @@
 		9A5F19C71D8E907B00B2E5AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */,
-				9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */,
+				9A664C401DC8F57400AB9CEE /* CheckIn */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +338,24 @@
 				9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */,
 			);
 			path = UtilityClass;
+			sourceTree = "<group>";
+		};
+		9A664C401DC8F57400AB9CEE /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */,
+				9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */,
+			);
+			name = CheckIn;
+			sourceTree = "<group>";
+		};
+		9A664C411DC8F58300AB9CEE /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */,
+				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
+			);
+			name = CheckIn;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {

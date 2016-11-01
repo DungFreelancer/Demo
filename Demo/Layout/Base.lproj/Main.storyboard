@@ -495,9 +495,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="CUM-Zn-3vG">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="Zsu-ec-RGy"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="r85-cD-ErK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Thoát" id="r85-cD-ErK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tblMenu" destination="RF9-p6-c6R" id="pzV-rJ-SFg"/>
                     </connections>

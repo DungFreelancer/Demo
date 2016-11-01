@@ -11,18 +11,22 @@
 @implementation CheckInModel
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.store forKey:@"store"];
-    [aCoder encodeObject:self.content forKey:@"content"];
-    [aCoder encodeObject:self.sender forKey:@"sender"];
     [aCoder encodeObject:self.image forKey:@"image"];
+    [aCoder encodeObject:self.extension forKey:@"extension"];
+    [aCoder encodeObject:self.comment forKey:@"comment"];
+    [aCoder encodeObject:self.date forKey:@"date"];
+    [aCoder encodeObject:self.latitude forKey:@"latitude"];
+    [aCoder encodeObject:self.longtitude forKey:@"longtitude"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        self.store = [aDecoder decodeObjectForKey:@"store"];
-        self.content = [aDecoder decodeObjectForKey:@"content"];
-        self.sender = [aDecoder decodeObjectForKey:@"sender"];
         self.image = [aDecoder decodeObjectForKey:@"image"];
+        self.extension = [aDecoder decodeObjectForKey:@"extension"];
+        self.comment = [aDecoder decodeObjectForKey:@"comment"];
+        self.date = [aDecoder decodeObjectForKey:@"date"];
+        self.latitude = [aDecoder decodeObjectForKey:@"latitude"];
+        self.longtitude = [aDecoder decodeObjectForKey:@"longtitude"];
     }
     
     return self;
