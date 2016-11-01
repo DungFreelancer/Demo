@@ -42,10 +42,8 @@
 
 - (void)showToastWithMessage:(NSString *)message onView:(UIView *)view
 {
-    if (self.hud == nil) {
-        self.hud = [[MBProgressHUD alloc] initWithView:view];
-        [view addSubview:self.hud];
-    }
+    self.hud = [[MBProgressHUD alloc] initWithView:view];
+    [view addSubview:self.hud];
     
     self.hud.mode = MBProgressHUDModeText;
     self.hud.detailsLabel.text = message;
