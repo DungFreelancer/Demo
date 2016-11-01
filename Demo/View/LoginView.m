@@ -26,7 +26,7 @@
     [self.btnLogin.layer setBorderWithColor:self.btnLogin.tintColor.CGColor];
     
     // Template input
-    [self.txtUserName setText:@"namlh"];
+    [self.txtUserName setText:@"test"];
     [self.txtPassword setText:@"123456"];
     [self onClickLogin:nil];
 }
