@@ -66,10 +66,10 @@
     [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
         
         [[HUDHelper sharedInstance] hideLoading];
-        if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
-            NSString *status = [response valueForKey:RESPONE_STATUS];
-            NSString *urlAvatar = [response valueForKey:RESPONE_AVATAR];
-            NSString *urlSignature = [response valueForKey:RESPONE_SIGNATURE];
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            NSString *status = [response valueForKey:RESPONSE_STATUS];
+            NSString *urlAvatar = [response valueForKey:RESPONSE_AVATAR];
+            NSString *urlSignature = [response valueForKey:RESPONSE_SIGNATURE];
             
             [self.lbstatus setText:status];
             

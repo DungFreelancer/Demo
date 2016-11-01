@@ -44,15 +44,15 @@
 #define PARAM_DATE @"date"
 #define PARAM_CODE @"code"
 
-#define RESPONE_ID @"id"
-#define RESPONE_MESSAGE @"msg"
-#define RESPONE_USER @"user"
-#define RESPONE_TOKEN @"token"
-#define RESPONE_FUNCTION @"function"
-#define RESPONE_ROLE @"Role"
-#define RESPONE_AVATAR @"avatar"
-#define RESPONE_SIGNATURE @"signature"
-#define RESPONE_STATUS @"status"
+#define RESPONSE_ID @"id"
+#define RESPONSE_MESSAGE @"msg"
+#define RESPONSE_USER @"user"
+#define RESPONSE_TOKEN @"token"
+#define RESPONSE_FUNCTION @"function"
+#define RESPONSE_ROLE @"Role"
+#define RESPONSE_AVATAR @"avatar"
+#define RESPONSE_SIGNATURE @"signature"
+#define RESPONSE_STATUS @"status"
 
 // PREFERENCE-------------------------------------------------------------------
 

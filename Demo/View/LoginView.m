@@ -47,10 +47,10 @@
     [[NetworkHelper sharedInstance] requestGetBasicAuthorization:API_LOGIN userName:userName password:password completion:^(id response, NSError *error) {
         
         [[HUDHelper sharedInstance] hideLoading];
-        if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
-            NSString *token = [response valueForKey:RESPONE_TOKEN];
-            NSArray<NSString *> *function = [response valueForKey:RESPONE_FUNCTION];
-            NSString *role = [response valueForKey:RESPONE_ROLE];
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            NSString *token = [response valueForKey:RESPONSE_TOKEN];
+            NSArray<NSString *> *function = [response valueForKey:RESPONSE_FUNCTION];
+            NSString *role = [response valueForKey:RESPONSE_ROLE];
             
             // Check session.
             NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@", API_LOGIN_SESSION, PARAM_USER, userName, PARAM_TOKEN, token];
@@ -59,7 +59,7 @@
             [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
                 
                 [[HUDHelper sharedInstance] hideLoading];
-                if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
+                if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
                     [self performSegueWithIdentifier:@"segue_menu" sender:nil];
                     
                     // Save user information.

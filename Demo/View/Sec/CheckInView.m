@@ -106,8 +106,8 @@
         [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:self.imgPicture.image completion:^(id response, NSError *error) {
             
             [[HUDHelper sharedInstance] hideLoading];
-            if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
-                NSString *image = [response valueForKey:RESPONE_MESSAGE];
+            if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                NSString *image = [response valueForKey:RESPONSE_MESSAGE];
                 NSString *date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
                 CLLocationCoordinate2D coordinate = [self getLocation];
                 NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
@@ -125,7 +125,7 @@
                     
                     [[HUDHelper sharedInstance] hideLoading];
                     
-                    if ([[response valueForKey:RESPONE_ID] isEqualToString:@"1"]) {
+                    if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:nil
                                                                       andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
