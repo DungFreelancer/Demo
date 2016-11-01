@@ -74,7 +74,8 @@
 
 - (void)requestPost:(NSString *)url
          paramaters:(NSMutableDictionary *)paramaters
-              image:(UIImage *)image completion:(void (^)(id response, NSError *error))block
+              image:(UIImage *)image
+         completion:(void (^)(id response, NSError *error))block
 {
     UIImage *imageScale = [[UtilityClass sharedInstance] scaleAndRotateImage:image];
     NSData *imageToUpload = UIImageJPEGRepresentation(imageScale, 1.0);
