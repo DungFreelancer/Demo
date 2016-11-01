@@ -13,7 +13,9 @@
 
 @implementation UIImageView (Download)
 
-- (void)downloadFromURL:(NSString *)url withPlaceholder:(UIImage *)placehold handleCompletion:(UIImageViewDownloadBlock)block
+- (void)downloadFromURL:(NSString *)url
+        withPlaceholder:(UIImage *)placehold
+       handleCompletion:(void (^)(BOOL success))block
 {
     if (placehold) {
         [self setImage:placehold];

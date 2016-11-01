@@ -1,5 +1,5 @@
 //
-//  AFNHelper.m
+//  NetworkHelper.m
 //  Tinder
 //
 //  Created by Elluminati - macbook on 04/04/14.
@@ -12,7 +12,8 @@
 
 @implementation NetworkHelper
 
-+ (NetworkHelper *)sharedInstance {
++ (NetworkHelper *)sharedInstance
+{
     static NetworkHelper *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -31,7 +32,10 @@
     return instance;
 }
 
-- (void)requestGet:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(NetworkHelperBlock)block {
+- (void)requestGet:(NSString *)url
+        paramaters:(NSMutableDictionary *)paramaters
+        completion:(void (^)(id response, NSError *error))block
+{
     [self.manager GET:url parameters:paramaters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if (block) {
@@ -48,7 +52,10 @@
     }];
 }
 
-- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters completion:(NetworkHelperBlock)block {
+- (void)requestPost:(NSString *)url
+         paramaters:(NSMutableDictionary *)paramaters
+         completion:(void (^)(id response, NSError *error))block
+{
     [self.manager POST:url parameters:paramaters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if (block) {
@@ -65,7 +72,10 @@
     }];
 }
 
-- (void)requestPost:(NSString *)url paramaters:(NSMutableDictionary *)paramaters image:(UIImage *)image completion:(NetworkHelperBlock)block {
+- (void)requestPost:(NSString *)url
+         paramaters:(NSMutableDictionary *)paramaters
+              image:(UIImage *)image completion:(void (^)(id response, NSError *error))block
+{
     UIImage *imageScale = [[UtilityClass sharedInstance] scaleAndRotateImage:image];
     NSData *imageToUpload = UIImageJPEGRepresentation(imageScale, 1.0);
     
@@ -87,12 +97,17 @@
     }
 }
 
-- (void)requestGetBasicAuthorization:(NSString *)url userName:(NSString *)userName password:(NSString *)password completion:(NetworkHelperBlock)block {
+- (void)requestGetBasicAuthorization:(NSString *)url
+                            userName:(NSString *)userName
+                            password:(NSString *)password
+                          completion:(void (^)(id response, NSError *error))block
+{
     [self.manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userName password:password];
     [self requestGet:url paramaters:nil completion:block];
 }
 
-- (void)connectionChange:(NetworkHelperStatus)block {
+- (void)connectionChange:(void (^)(BOOL connected))block
+{
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
         if (status > 0) {
