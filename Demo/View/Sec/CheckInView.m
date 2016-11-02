@@ -46,6 +46,12 @@
     
     ciViewModel = [[CheckInViewModel alloc] init];
     
+    // Setup for buttons.
+    [self.btnTakePicture.layer setShadowWithRadius:1.0f];
+    [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
+    [self.btnCheckIn.layer setShadowWithRadius:1.0f];
+    [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
+    
 //    self.txtComment.delegate = self;
 //    
 //    // Setup button.
@@ -117,7 +123,7 @@
         }];
     } else {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:@"Success"
+                                                       withTitle:nil
                                                       andMessage:NSLocalizedString(@"CHECKIN_SAVE_OFFLINE", nil)
                                                        andButton:@"OK"];
         [self cleanAllView];
