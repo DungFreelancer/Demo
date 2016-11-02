@@ -37,10 +37,11 @@
                                                        withTitle:@""
                                                       andMessage:NSLocalizedString(@"LOCATION_SERVICES", nil)
                                                    andMainButton:NSLocalizedString(@"OK", nil)
-                                                  andOtherButton:nil
                                                CompletionHandler:^(UIAlertAction *action) {
                                                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-                                               }];
+                                               }
+                                                  andOtherButton:nil
+                                               CompletionHandler:nil];
     }
     
     ciViewModel = [[CheckInViewModel alloc] init];

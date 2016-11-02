@@ -33,9 +33,15 @@
                 [scanner freezeCapture];
                 
                 if ([[NetworkHelper sharedInstance]  isConnected] == false) {
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"NO_INTERNET", nil) andMainButton:NSLocalizedString(@"OK", nil) andOtherButton:nil CompletionHandler:^(UIAlertAction *action) {
-                        [scanner unfreezeCapture];
-                    }];
+                    [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                   withTitle:NSLocalizedString(@"ERROR", nil)
+                                                                  andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                               andMainButton:NSLocalizedString(@"OK", nil)
+                                                           CompletionHandler:^(UIAlertAction *action) {
+                                                               [scanner unfreezeCapture];
+                                                           }
+                                                              andOtherButton:nil
+                                                           CompletionHandler:nil];
                     
                     return;
                 }

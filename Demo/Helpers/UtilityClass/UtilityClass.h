@@ -30,7 +30,7 @@
 
 //Show Alert
 - (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andButton:(NSString *)button;
-- (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))handler;
+- (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton CompletionHandler:(void (^)(UIAlertAction *action))mainHandler andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))otherHandler;
 
 //Datetime helper
 - (NSDate *)stringToDate:(NSString *)dateString;
