@@ -61,6 +61,7 @@
                 [[HUDHelper sharedInstance] hideLoading];
                 if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
                     [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+                    [self cleanAllView];
                     
                     // Save user information.
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
@@ -82,6 +83,11 @@
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
+}
+
+- (void)cleanAllView {
+    self.txtUserName.text = @"";
+    self.txtPassword.text = @"";
 }
 
 @end

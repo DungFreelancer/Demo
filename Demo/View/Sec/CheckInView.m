@@ -99,6 +99,7 @@
                                                                        withTitle:nil
                                                                       andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
                                                                        andButton:NSLocalizedString(@"OK", nil)];
+                        [self cleanAllView];
                     } else {
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -118,6 +119,8 @@
                                                        withTitle:@"Success"
                                                       andMessage:NSLocalizedString(@"CHECKIN_SAVE_OFFLINE", nil)
                                                        andButton:@"OK"];
+        [self cleanAllView];
+        
         // Store to database.
         CheckInModel *ci = [[CheckInModel alloc] init];
         ci.image = UIImageJPEGRepresentation(self.imgPicture.image, 1.0);
@@ -133,7 +136,7 @@
     }
 }
 
-- (CLLocationCoordinate2D) getLocation
+- (CLLocationCoordinate2D)getLocation
 {
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -144,6 +147,11 @@
     CLLocation *location = [locationManager location];
     CLLocationCoordinate2D coordinate = [location coordinate];
     return coordinate;
+}
+
+- (void)cleanAllView{
+    self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
+    self.txtComment.text = @"";
 }
 
 // UIImagePickerControllerDelegate.
