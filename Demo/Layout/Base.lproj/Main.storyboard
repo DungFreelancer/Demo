@@ -305,7 +305,22 @@
                     <view key="view" contentMode="scaleToFill" id="bwL-He-Y7j">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-Zx-Htu">
+                                <rect key="frame" x="0.0" y="281.5" width="320" height="5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="LxL-pn-wiE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hVx-Zx-Htu" firstAttribute="centerY" secondItem="bwL-He-Y7j" secondAttribute="centerY" id="7hp-t3-J29"/>
+                            <constraint firstItem="hVx-Zx-Htu" firstAttribute="centerX" secondItem="bwL-He-Y7j" secondAttribute="centerX" id="AON-rz-NFl"/>
+                            <constraint firstItem="hVx-Zx-Htu" firstAttribute="leading" secondItem="bwL-He-Y7j" secondAttribute="leading" id="D2y-Ut-Ca0"/>
+                            <constraint firstAttribute="trailing" secondItem="hVx-Zx-Htu" secondAttribute="trailing" id="DFo-1y-xTj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="viewScan" destination="bwL-He-Y7j" id="tgT-Lt-QE5"/>
@@ -313,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQi-ZP-8LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="232"/>
+            <point key="canvasLocation" x="1702.5" y="231.33802816901408"/>
         </scene>
         <!--Login View-->
         <scene sceneID="i2c-ep-1rA">
