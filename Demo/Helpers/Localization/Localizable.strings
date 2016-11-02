@@ -23,4 +23,7 @@
 "CHECKIN_SUCCESS" = "Check In thành công.";
 "CHECKIN_FAIL" = "Không thể Check In.";
 "CHECKIN_SAVE_OFFLINE" = "Đã lưu check in vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";
-"CHECKIN_DONE_OFFLINE" = "Đã gửi check in thành công.";
+"CHECKIN_DONE_OFFLINE" = "Đã tự động gửi danh sách check in khi không kết nối internet lên server.";
+"CHECKIN_WARRNING" = "Danh sách check in được lưu khi không có mạng sẽ bị xoá, bạn có chắc không?";
+"CHECKIN_DELETE" = "Xoá";
+"CHECKIN_CANCEL" = "Không";

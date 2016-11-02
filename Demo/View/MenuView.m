@@ -8,6 +8,8 @@
 
 #import "MenuView.h"
 #import "CALayer+BorderShadow.h"
+#import "UtilityClass.h"
+#import "CheckInViewModel.h"
 #import "Constant.h"
 
 @implementation MenuView {
@@ -44,4 +46,27 @@
     return cell;
 }
 
+- (IBAction)onClickLogout:(id)sender {
+    CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+    [ciViewModel loadCheckIns];
+    
+    if (ciViewModel.arrCheckIn.count > 0) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:nil
+                                                      andMessage:NSLocalizedString(@"CHECKIN_WARRNING", nil)
+                                                   andMainButton:NSLocalizedString(@"CHECKIN_CANCEL", nil)
+                                               CompletionHandler:nil
+                                                  andOtherButton:NSLocalizedString(@"CHECKIN_DELETE", nil)
+                                               CompletionHandler:^(UIAlertAction *action) {
+                                                   [ciViewModel clearCheckIns];
+                                                   
+                                                   self.navigationController.navigationBarHidden = YES;
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                               }];
+        
+    } else {
+        self.navigationController.navigationBarHidden = YES;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end
