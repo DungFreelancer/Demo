@@ -45,4 +45,15 @@
     }
 }
 
+- (int)numberOfUnsended {
+    int count = 0;
+    for (int i = 0; i < arrCheckIn.count; ++i) {
+        if (!arrCheckIn[i].isSended) {
+            ++count;
+        }
+    }
+    
+    return count;
+}
+
 @end

@@ -17,6 +17,7 @@
     [aCoder encodeObject:self.date forKey:@"date"];
     [aCoder encodeObject:self.latitude forKey:@"latitude"];
     [aCoder encodeObject:self.longtitude forKey:@"longtitude"];
+    [aCoder encodeBool:self.isSended forKey:@"isSended"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -27,6 +28,7 @@
         self.date = [aDecoder decodeObjectForKey:@"date"];
         self.latitude = [aDecoder decodeObjectForKey:@"latitude"];
         self.longtitude = [aDecoder decodeObjectForKey:@"longtitude"];
+        self.isSended = [aDecoder decodeBoolForKey:@"isSended"];
     }
     
     return self;

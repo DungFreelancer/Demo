@@ -23,6 +23,8 @@
 		9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */; };
 		9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */; };
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
+		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
+		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
@@ -84,6 +86,10 @@
 		9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		9A5F19E31D8EAB5D00B2E5AB /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UtilityClass.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UtilityClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A7170021DCA4E0F00BC0C76 /* CheckInHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistory.h; sourceTree = "<group>"; };
+		9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistory.m; sourceTree = "<group>"; };
+		9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistoryCell.h; sourceTree = "<group>"; };
+		9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryCell.m; sourceTree = "<group>"; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		9A5F19C61D8E907900B2E5AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
 				9AFDAF711DC4B8E80055CBB4 /* Menu */,
@@ -356,6 +363,17 @@
 				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
 			);
 			name = CheckIn;
+			sourceTree = "<group>";
+		};
+		9A7170011DCA4DF100BC0C76 /* CheckInHistory */ = {
+			isa = PBXGroup;
+			children = (
+				9A7170021DCA4E0F00BC0C76 /* CheckInHistory.h */,
+				9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */,
+				9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */,
+				9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */,
+			);
+			name = CheckInHistory;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -612,9 +630,11 @@
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
+				9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */,
 				9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
+				9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */,
 				9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

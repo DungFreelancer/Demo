@@ -16,5 +16,6 @@
 @property(nonatomic,strong)NSString *date;
 @property(nonatomic,strong)NSString *latitude;
 @property(nonatomic,strong)NSString *longtitude;
+@property(nonatomic)BOOL isSended;
 
 @end

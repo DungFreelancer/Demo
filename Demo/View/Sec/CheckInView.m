@@ -51,6 +51,8 @@
     [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
     [self.btnCheckIn.layer setShadowWithRadius:1.0f];
     [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
+    [self.btnHistory.layer setShadowWithRadius:1.0f];
+    [self.btnHistory.layer setBorderWithColor:self.btnHistory.tintColor.CGColor];
     
 //    self.txtComment.delegate = self;
 //    
@@ -106,6 +108,7 @@
                                                                        withTitle:nil
                                                                       andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
                                                                        andButton:NSLocalizedString(@"OK", nil)];
+                        [self saveLogCheckInWithSended:YES];
                         [self cleanAllView];
                     } else {
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -126,21 +129,26 @@
                                                        withTitle:nil
                                                       andMessage:NSLocalizedString(@"CHECKIN_SAVE_OFFLINE", nil)
                                                        andButton:@"OK"];
+        [self saveLogCheckInWithSended:NO];
         [self cleanAllView];
-        
-        // Store to database.
-        CheckInModel *ci = [[CheckInModel alloc] init];
-        ci.image = UIImageJPEGRepresentation(self.imgPicture.image, 1.0);
-        ci.extension = @".jpg";
-        ci.comment = self.txtComment.text;
-        ci.date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
-        CLLocationCoordinate2D coordinate = [self getLocation];
-        ci.latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
-        ci.longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
-        
-        [ciViewModel.arrCheckIn addObject:ci];
-        [ciViewModel saveCheckIns];
     }
+}
+
+- (void)saveLogCheckInWithSended:(BOOL)sended {
+    CheckInModel *ci = [[CheckInModel alloc] init];
+    
+    ci.image = UIImageJPEGRepresentation(self.imgPicture.image, 1.0);
+    ci.extension = @".jpg";
+    ci.comment = self.txtComment.text;
+    ci.date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
+    CLLocationCoordinate2D coordinate = [self getLocation];
+    ci.latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
+    ci.longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
+    ci.isSended = sended;
+    
+    [ciViewModel loadCheckIns];
+    [ciViewModel.arrCheckIn addObject:ci];
+    [ciViewModel saveCheckIns];
 }
 
 - (CLLocationCoordinate2D)getLocation

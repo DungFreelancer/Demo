@@ -17,5 +17,6 @@
 - (void)loadCheckIns;
 - (void)saveCheckIns;
 - (void)clearCheckIns;
+- (int)numberOfUnsended;
 
 @end

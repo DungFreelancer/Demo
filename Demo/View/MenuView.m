@@ -48,7 +48,6 @@
 
 - (IBAction)onClickLogout:(id)sender {
     CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
-    [ciViewModel loadCheckIns];
     
     if (ciViewModel.arrCheckIn.count > 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
