@@ -228,16 +228,16 @@
     [viewController presentViewController:alert animated:TRUE completion:nil];
 }
 
-- (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))handler
+- (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton CompletionHandler:(void (^)(UIAlertAction *action))mainHandler andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))otherHandler
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     if (mainButton != nil) {
-        UIAlertAction *mainAction = [UIAlertAction actionWithTitle:mainButton style:UIAlertActionStyleDefault handler:handler];
+        UIAlertAction *mainAction = [UIAlertAction actionWithTitle:mainButton style:UIAlertActionStyleDefault handler:mainHandler];
         [alert addAction:mainAction];
     }
     if (otherButton != nil) {
-        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButton style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButton style:UIAlertActionStyleCancel handler:otherHandler];
         [alert addAction:otherAction];
     }
     
