@@ -64,8 +64,10 @@
                         [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
                         [params setObject:ci.extension forKey:PARAM_EXTENSION];
                         
+                        [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
                         [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:[UIImage imageWithData:ci.image] completion:^(id response, NSError *error) {
                             
+                            [[HUDHelper sharedInstance] hideLoading];
                             if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
                                 [params setObject:[response valueForKey:RESPONSE_MESSAGE] forKey:PARAM_IMAGE];
                                 [params setObject:ci.comment forKey:PARAM_COMMENT];
@@ -73,8 +75,10 @@
                                 [params setObject:ci.latitude forKey:PARAM_LATITUDE];
                                 [params setObject:ci.longtitude forKey:PARAM_LONGTITUDE];
                                 
+                                [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
                                 [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
                                     
+                                    [[HUDHelper sharedInstance] hideLoading];
                                     if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
                                         ++countSended;
                                         ci.isSended = YES;

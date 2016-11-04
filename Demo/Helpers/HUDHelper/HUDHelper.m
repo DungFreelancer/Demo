@@ -8,7 +8,9 @@
 
 #import "HUDHelper.h"
 
-@implementation HUDHelper
+@implementation HUDHelper {
+    UIView *oldView;
+}
 
 @synthesize hud;
 
@@ -23,8 +25,11 @@
 
 - (void) showLoadingWithTitle:(nonnull NSString *)title onView:(UIView *)view
 {
-    self.hud = [[MBProgressHUD alloc] initWithView:view];
-    [view addSubview:self.hud];
+    if (view != oldView) {
+        self.hud = [[MBProgressHUD alloc] initWithView:view];
+        [view addSubview:self.hud];
+        oldView = view;
+    }
     
     if (title == nil || [title isEqualToString:@""]) {
         self.hud.label.text = @"Loading...";
