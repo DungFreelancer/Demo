@@ -20,6 +20,7 @@
 "STAFF_NO_SIGNATURE" = "Không tìm thấy chử ký của nhân viên.";
 
 // CheckInView.
+"CHECKIN_LOCATION" = "Ứng dụng cần sử dụng vị trí của bạn mới có thể check in.";
 "CHECKIN_SUCCESS" = "Check In thành công.";
 "CHECKIN_FAIL" = "Không thể Check In.";
 "CHECKIN_SAVE_OFFLINE" = "Đã lưu check in vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";

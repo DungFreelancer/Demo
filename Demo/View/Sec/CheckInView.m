@@ -29,23 +29,6 @@
     
     [self setBackBarItem];
     
-    // Request get user's location.
-    if ([CLLocationManager locationServicesEnabled]) {
-        [self getLocation];
-    } else {
-        [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:@""
-                                                      andMessage:NSLocalizedString(@"LOCATION_SERVICES", nil)
-                                                   andMainButton:NSLocalizedString(@"OK", nil)
-                                               CompletionHandler:^(UIAlertAction *action) {
-                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-                                               }
-                                                  andOtherButton:nil
-                                               CompletionHandler:nil];
-    }
-    
-    ciViewModel = [[CheckInViewModel alloc] init];
-    
     // Setup for buttons.
     [self.btnTakePicture.layer setShadowWithRadius:1.0f];
     [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
@@ -54,13 +37,24 @@
     [self.btnHistory.layer setShadowWithRadius:1.0f];
     [self.btnHistory.layer setBorderWithColor:self.btnHistory.tintColor.CGColor];
     
-//    self.txtComment.delegate = self;
-//    
-//    // Setup button.
-//    [self.btnTakePicture.layer setShadowWithRadius:1.0f];
-//    [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
-//    [self.btnCheckIn.layer setShadowWithRadius:1.0f];
-//    [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
+    //    self.txtComment.delegate = self;
+    
+    ciViewModel = [[CheckInViewModel alloc] init];
+    
+    // Request get user's location.
+    if ([CLLocationManager locationServicesEnabled]) {
+        [self getLocation];
+    } else {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:@""
+                                                      andMessage:NSLocalizedString(@"CHECKIN_LOCATION", nil)
+                                                   andMainButton:NSLocalizedString(@"OK", nil)
+                                               CompletionHandler:^(UIAlertAction *action) {
+                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                               }
+                                                  andOtherButton:nil
+                                               CompletionHandler:nil];
+    }
 }
 
 - (IBAction)onClickTakePicture:(UIButton *)sender {
