@@ -25,10 +25,17 @@
     [self.btnLogin.layer setShadowWithRadius:1.0f];
     [self.btnLogin.layer setBorderWithColor:self.btnLogin.tintColor.CGColor];
     
+    self.txtUserName.delegate = self;
+    self.txtPassword.delegate = self;
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    singleTapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+    
     // Template input
-    [self.txtUserName setText:@"test"];
-    [self.txtPassword setText:@"123456"];
-    [self onClickLogin:nil];
+//    [self.txtUserName setText:@"test"];
+//    [self.txtPassword setText:@"123456"];
+//    [self onClickLogin:nil];
 }
 
 - (IBAction)onClickLogin:(id)sender {
@@ -88,6 +95,25 @@
 - (void)cleanAllView {
     self.txtUserName.text = @"";
     self.txtPassword.text = @"";
+}
+
+// MARK: - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtUserName) {
+        [self.txtUserName resignFirstResponder];
+        [self.txtPassword becomeFirstResponder];
+    } else if (textField == self.txtPassword) {
+        [self.txtPassword resignFirstResponder];
+        [self onClickLogin:nil];
+    }
+    
+    return true;
+}
+
+// MARK: - UIGestureRecognizerDelegate
+-(void)handleSingleTapGesture {
+    [self.txtUserName resignFirstResponder];
+    [self.txtPassword resignFirstResponder];
 }
 
 @end

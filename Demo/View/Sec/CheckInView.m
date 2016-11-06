@@ -37,7 +37,11 @@
     [self.btnHistory.layer setShadowWithRadius:1.0f];
     [self.btnHistory.layer setBorderWithColor:self.btnHistory.tintColor.CGColor];
     
-    //    self.txtComment.delegate = self;
+    self.txtComment.delegate = self;
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    singleTapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
     
     ciViewModel = [[CheckInViewModel alloc] init];
     
@@ -172,6 +176,11 @@
 // UITextFieldDelefate.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return [textField resignFirstResponder];
+}
+
+// MARK: - UIGestureRecognizerDelegate
+-(void)handleSingleTapGesture {
+    [self.txtComment resignFirstResponder];
 }
 
 @end

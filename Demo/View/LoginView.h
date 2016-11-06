@@ -8,7 +8,7 @@
 
 #import "BaseView.h"
 
-@interface LoginView : BaseView
+@interface LoginView : BaseView <UITextFieldDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;

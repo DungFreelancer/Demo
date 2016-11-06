@@ -32,7 +32,7 @@
     // Setup button.
     [self.btnScan.layer setShadowWithRadius:1.0f];
     [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
-    [self didScanCard:@"0276\nNGUYỄN NGỌC HƯƠNG GIANG\nNhân viên kế toán\nCÔNG TY CỔ PHẦN NÔNG DƯỢC HAI-CHI NHÁNH AN GIANG\n79 Ấp Hòa Phú 1, Thị Trấn An Châu, Huyện Châu Thành, Tỉnh An Giang"];
+//    [self didScanCard:@"0276\nNGUYỄN NGỌC HƯƠNG GIANG\nNhân viên kế toán\nCÔNG TY CỔ PHẦN NÔNG DƯỢC HAI-CHI NHÁNH AN GIANG\n79 Ấp Hòa Phú 1, Thị Trấn An Châu, Huyện Châu Thành, Tỉnh An Giang"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

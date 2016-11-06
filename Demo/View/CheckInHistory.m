@@ -8,6 +8,7 @@
 
 #import "CheckInHistory.h"
 #import "CheckInHistoryCell.h"
+#import "UtilityClass.h"
 #import "CheckInViewModel.h"
 
 @implementation CheckInHistory {
@@ -33,8 +34,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CheckInHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"history_cell" forIndexPath:indexPath];
     
+    NSDate *date = [[UtilityClass sharedInstance] stringToDate:ciViewModel.arrCheckIn[indexPath.row].date withFormate:@"MM/dd/yyyy HH:mm"];
+    cell.txtDate.text = [[UtilityClass sharedInstance] DateToString:date withFormate:@"dd/MM/yyyy - HH:mm"];
     cell.imgPicture.image = [UIImage imageWithData:ciViewModel.arrCheckIn[indexPath.row].image];
-    cell.txtDate.text = ciViewModel.arrCheckIn[indexPath.row].date;
     cell.txtComment.text = ciViewModel.arrCheckIn[indexPath.row].comment;
     
     if (ciViewModel.arrCheckIn[indexPath.row].isSended) {

@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setBackBarItem];
+    
     MTBBarcodeScanner *scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.viewScan];
     
     [MTBBarcodeScanner requestCameraPermissionWithSuccess:^(BOOL success) {
