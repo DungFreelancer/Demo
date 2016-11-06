@@ -70,6 +70,21 @@
 }
 
 - (IBAction)onClickCheckIn:(UIButton *)sender {
+    // GPS is off or be denied on app.
+    if (![CLLocationManager locationServicesEnabled] ||
+        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:@""
+                                                      andMessage:NSLocalizedString(@"CHECKIN_LOCATION", nil)
+                                                   andMainButton:NSLocalizedString(@"OK", nil)
+                                               CompletionHandler:^(UIAlertAction *action) {
+                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                               }
+                                                  andOtherButton:nil
+                                               CompletionHandler:nil];
+        return;
+    }
+    
     if ([[NetworkHelper sharedInstance]  isConnected]) {
         // Push data to Service.
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];

@@ -44,6 +44,13 @@
 
 // ScanCardDelegate.
 - (void)didScanCard:(NSString *)result {
+    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
     
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
