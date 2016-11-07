@@ -12,6 +12,7 @@
 #import "CALayer+BorderShadow.h"
 #import "UtilityClass.h"
 #import "Constant.h"
+#import "CheckInViewModel.h"
 
 @implementation LoginView
 
@@ -28,9 +29,13 @@
     self.txtUserName.delegate = self;
     self.txtPassword.delegate = self;
     
+    // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     singleTapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
+    
+    // Check login status.
+    [self checkLoginStatus];
     
     // Template input
 //    [self.txtUserName setText:@"test"];
@@ -90,6 +95,15 @@
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
+}
+
+- (void)checkLoginStatus {
+    NSString *userName = [USER_DEFAULT valueForKey:PREF_USER];
+    NSString *token = [USER_DEFAULT valueForKey:RESPONSE_TOKEN];
+    
+    if (userName && token) { // Already login.
+        [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+    }
 }
 
 - (void)cleanAllView {

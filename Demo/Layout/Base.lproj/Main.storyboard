@@ -329,7 +329,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rJ-ZU-zCx" id="TGR-oj-kNO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gpx-Af-vc7">
@@ -580,21 +580,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Kiểm tra thông tin nhân viên." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koi-Ua-MXR">
-                                                    <rect key="frame" x="127" y="50" width="240" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Kiểm tra thông tin nhân viên." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koi-Ua-MXR">
+                                                    <rect key="frame" x="127" y="50" width="185" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="42" id="4QD-kK-6Rr"/>
-                                                <constraint firstItem="l4x-pT-T5E" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="10" id="MEP-gh-oWu"/>
-                                                <constraint firstItem="x6d-aR-oXQ" firstAttribute="leading" secondItem="l4x-pT-T5E" secondAttribute="trailing" constant="23" id="VNn-YX-qRU"/>
-                                                <constraint firstItem="l4x-pT-T5E" firstAttribute="leading" secondItem="0Je-Vo-37F" secondAttribute="leadingMargin" constant="15" id="XXT-No-pQz"/>
-                                                <constraint firstItem="x6d-aR-oXQ" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="14" id="cxC-Cg-qaA"/>
-                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="leading" secondItem="l4x-pT-T5E" secondAttribute="trailing" constant="40" id="l4U-aY-1sy"/>
-                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="trailing" secondItem="0Je-Vo-37F" secondAttribute="trailingMargin" id="vZn-2l-Up0"/>
+                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="42" id="1vE-kD-8pm"/>
+                                                <constraint firstItem="x6d-aR-oXQ" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="14" id="52b-Qx-WbZ"/>
+                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="leading" secondItem="l4x-pT-T5E" secondAttribute="trailing" constant="40" id="6Vm-fV-vdA"/>
+                                                <constraint firstItem="l4x-pT-T5E" firstAttribute="leading" secondItem="0Je-Vo-37F" secondAttribute="leadingMargin" constant="15" id="Fq5-U8-dIe"/>
+                                                <constraint firstItem="koi-Ua-MXR" firstAttribute="trailing" secondItem="0Je-Vo-37F" secondAttribute="trailingMargin" id="Hlh-T6-brf"/>
+                                                <constraint firstItem="x6d-aR-oXQ" firstAttribute="leading" secondItem="l4x-pT-T5E" secondAttribute="trailing" constant="23" id="WPB-05-KGk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="l4x-pT-T5E" secondAttribute="bottom" constant="9" id="XyG-Ed-gne"/>
+                                                <constraint firstItem="l4x-pT-T5E" firstAttribute="top" secondItem="0Je-Vo-37F" secondAttribute="topMargin" constant="10" id="kGz-s3-BQA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
