@@ -38,8 +38,8 @@
     [self checkLoginStatus];
     
     // Template input
-//    [self.txtUserName setText:@"test"];
-//    [self.txtPassword setText:@"123456"];
+    [self.txtUserName setText:@"test"];
+    [self.txtPassword setText:@"123456"];
 //    [self onClickLogin:nil];
 }
 
