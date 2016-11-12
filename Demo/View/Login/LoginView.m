@@ -75,6 +75,11 @@
                     [self performSegueWithIdentifier:@"segue_menu" sender:nil];
                     [self cleanAllView];
                     
+                    // Check with old user login.
+                    if ([userName isEqualToString:[USER_DEFAULT objectForKey:PREF_USER]] == false) {
+                        [self clearAllUserLog];
+                    }
+                    
                     // Save user information.
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
                     [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
@@ -109,6 +114,12 @@
 - (void)cleanAllView {
     self.txtUserName.text = @"";
     self.txtPassword.text = @"";
+}
+
+- (void)clearAllUserLog {
+    CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+    
+    [ciViewModel clearCheckIns];
 }
 
 // MARK: - UITextFieldDelegate

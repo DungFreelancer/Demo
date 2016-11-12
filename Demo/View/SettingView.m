@@ -15,6 +15,14 @@
 
 @implementation SettingView
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setBackBarItem];
+}
+
+
+// MARK: - UITextFieldDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
@@ -44,13 +52,11 @@
     if ([ciViewModel numberOfUnsended] > 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:nil
-                                                      andMessage:NSLocalizedString(@"CHECKIN_WARRNING", nil)
-                                                   andMainButton:NSLocalizedString(@"CHECKIN_CANCEL", nil)
+                                                      andMessage:NSLocalizedString(@"SETTING_WARRNING", nil)
+                                                   andMainButton:NSLocalizedString(@"SETTING_CANCEL", nil)
                                                CompletionHandler:nil
-                                                  andOtherButton:NSLocalizedString(@"CHECKIN_DELETE", nil)
+                                                  andOtherButton:NSLocalizedString(@"SETTING_OK", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
-                                                   
-                                                   [ciViewModel clearCheckIns];
                                                    [self logoutUser];
                                                }];
         
@@ -75,10 +81,24 @@
         } else {
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
-                                                          andMessage:NSLocalizedString(@"LOGIN_LOGOUT", nil)
+                                                          andMessage:NSLocalizedString(@"SETTING_LOGOUT", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
+}
+
+- (void)setBackBarItem {
+    UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnRight.frame = CGRectMake(0, 0, 25, 25);
+    [btnRight addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
+    [btnRight setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
+    self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)onClickBackBarItem:(id)sender {
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 @end
