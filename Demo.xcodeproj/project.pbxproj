@@ -57,8 +57,8 @@
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
-		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckInViewModel.h; path = Demo/Model/CheckInViewModel.h; sourceTree = SOURCE_ROOT; };
-		9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewModel.m; path = Demo/Model/CheckInViewModel.m; sourceTree = SOURCE_ROOT; };
+		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInViewModel.h; sourceTree = "<group>"; };
+		9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewModel.m; sourceTree = "<group>"; };
 		9A4C1EF81DC3AA2B00C601F9 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LoginView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F198C1D8E905700B2E5AB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 		9A5F19961D8E905700B2E5AB /* CheckStaffView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckStaffView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F19991D8E905700B2E5AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A5F199E1D8E905700B2E5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5F19A81D8E905700B2E5AB /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateObjCTests.m; sourceTree = "<group>"; };
 		9A5F19AE1D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,8 +153,7 @@
 				9A5F19951D8E905700B2E5AB /* CheckStaffView.h */,
 				9A5F19961D8E905700B2E5AB /* CheckStaffView.m */,
 			);
-			name = CheckStaff;
-			path = Main;
+			path = CheckStaff;
 			sourceTree = "<group>";
 		};
 		9A3D67231D90D83C00A71D62 /* CheckIn */ = {
@@ -163,8 +162,7 @@
 				9AB5C3E01D8F0BB60040E00E /* CheckInView.h */,
 				9AB5C3E11D8F0BC90040E00E /* CheckInView.m */,
 			);
-			name = CheckIn;
-			path = Sec;
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		9A4C1EF71DC3A9BA00C601F9 /* Login */ = {
@@ -173,7 +171,7 @@
 				9A4C1EF81DC3AA2B00C601F9 /* LoginView.h */,
 				9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */,
 			);
-			name = Login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		9A5F19831D8E905700B2E5AB = {
@@ -353,7 +351,7 @@
 				9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */,
 				9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */,
 			);
-			name = CheckIn;
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		9A664C411DC8F58300AB9CEE /* CheckIn */ = {
@@ -362,7 +360,7 @@
 				9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */,
 				9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */,
 			);
-			name = CheckIn;
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		9A7170011DCA4DF100BC0C76 /* CheckInHistory */ = {
@@ -373,7 +371,7 @@
 				9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */,
 				9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */,
 			);
-			name = CheckInHistory;
+			path = CheckInHistory;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -400,7 +398,7 @@
 				9AD3A3311DC63E6C00073E15 /* CALayer+BorderShadow.h */,
 				9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */,
 			);
-			name = "CALayer+BorderShadow";
+			path = "CALayer+BorderShadow";
 			sourceTree = "<group>";
 		};
 		9AD419371D8EDCC1006FE776 /* HUDHelper */ = {
@@ -418,7 +416,7 @@
 				9AFDAF721DC4B8F70055CBB4 /* MenuView.h */,
 				9AFDAF731DC4B9020055CBB4 /* MenuView.m */,
 			);
-			name = Menu;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		AC335B873EECD59726E39A67 /* Pods */ = {
@@ -782,7 +780,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 39FN3TTXLD;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo;
@@ -797,7 +795,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 39FN3TTXLD;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo;
