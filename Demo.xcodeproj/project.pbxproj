@@ -25,6 +25,7 @@
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
 		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
 		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
+		9A79BBFE1DD6E496007099C7 /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A79BBFD1DD6E496007099C7 /* CheckInView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
@@ -90,6 +91,8 @@
 		9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistory.m; sourceTree = "<group>"; };
 		9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistoryCell.h; sourceTree = "<group>"; };
 		9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryCell.m; sourceTree = "<group>"; };
+		9A79BBFC1DD6E47C007099C7 /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		9A79BBFD1DD6E496007099C7 /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInView.m; sourceTree = "<group>"; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 		9A5F19C61D8E907900B2E5AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A79BBFB1DD6E439007099C7 /* Setting */,
 				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
@@ -372,6 +376,15 @@
 				9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */,
 			);
 			path = CheckInHistory;
+			sourceTree = "<group>";
+		};
+		9A79BBFB1DD6E439007099C7 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9A79BBFC1DD6E47C007099C7 /* SettingView.h */,
+				9A79BBFD1DD6E496007099C7 /* CheckInView.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -615,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A79BBFE1DD6E496007099C7 /* CheckInView.m in Sources */,
 				9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */,
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,

@@ -12,6 +12,4 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tblMenu;
 
-- (IBAction)onClickLogout:(id)sender;
-
 @end
