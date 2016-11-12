@@ -7,13 +7,14 @@
 */
 
 "OK" = "OK";
-"ERROR" = "Lỗi";
+"ERROR" = "Lỗi!";
 "LOADING" = "Đang xử lý...";
 "NO_INTERNET" = "Không thể kết nối internet.";
 
 // LoginView.
 "LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";
 "LOGIN_SESSION" = "Tài khoản đang được đăng nhập trên máy khác.";
+"LOGIN_LOGOUT" = "Không thể đăng xuất tài khoản.";
 
 // CheckStaffView.
 "STAFF_NO_AVATAR" = "Không tìm thấy hình của nhân viên.";

@@ -7,6 +7,8 @@
 //
 
 #import "MenuView.h"
+#import "NetworkHelper.h"
+#import "HUDHelper.h"
 #import "CALayer+BorderShadow.h"
 #import "UtilityClass.h"
 #import "CheckInViewModel.h"
@@ -47,6 +49,14 @@
 }
 
 - (IBAction)onClickLogout:(id)sender {
+    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
     CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
     
     if ([ciViewModel numberOfUnsended] > 0) {
@@ -57,15 +67,36 @@
                                                CompletionHandler:nil
                                                   andOtherButton:NSLocalizedString(@"CHECKIN_DELETE", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
-                                                   [ciViewModel clearCheckIns];
                                                    
-                                                   self.navigationController.navigationBarHidden = YES;
-                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                   [ciViewModel clearCheckIns];
+                                                   [self logoutUser];
                                                }];
         
     } else {
-        self.navigationController.navigationBarHidden = YES;
-        [self.navigationController popViewControllerAnimated:YES];
+        [self logoutUser];
     }
 }
+
+- (void)logoutUser {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+    
+    [[NetworkHelper sharedInstance] requestPost:API_LOGOUT paramaters:params completion:^(id response, NSError *error) {
+        
+        [[HUDHelper sharedInstance] hideLoading];
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            self.navigationController.navigationBarHidden = YES;
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:NSLocalizedString(@"LOGIN_LOGOUT", nil)
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];
+}
+
 @end

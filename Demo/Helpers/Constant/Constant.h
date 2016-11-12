@@ -30,6 +30,7 @@
 
 #define API_LOGIN @"http://ndhapi.epm.vn/api/rest/login"
 #define API_LOGIN_SESSION @"http://ndhapi.epm.vn/api/rest/loginsession"
+#define API_LOGOUT @"http://ndhapi.epm.vn/api/rest/logout"
 #define API_CHECK_STAFF @"http://ndhapi.epm.vn/api/rest/checkStaff"
 #define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
 #define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
