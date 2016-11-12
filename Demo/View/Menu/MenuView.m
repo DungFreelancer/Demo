@@ -43,8 +43,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
     
-    [cell.layer setShadowWithRadius:2.0f];
-    
     return cell;
 }
 
