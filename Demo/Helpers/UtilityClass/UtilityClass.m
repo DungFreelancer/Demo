@@ -221,7 +221,14 @@
 
 - (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andButton:(NSString *)button
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert;
+    
+    if ([title isEqualToString:@""]) {
+        alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    } else {
+        alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    }
+    
     UIAlertAction *action = [UIAlertAction actionWithTitle:button style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action];
     
@@ -230,7 +237,13 @@
 
 - (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton CompletionHandler:(void (^)(UIAlertAction *action))mainHandler andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))otherHandler
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert;
+    
+    if ([title isEqualToString:@""]) {
+        alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    } else {
+        alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    }
     
     if (mainButton != nil) {
         UIAlertAction *mainAction = [UIAlertAction actionWithTitle:mainButton style:UIAlertActionStyleDefault handler:mainHandler];
