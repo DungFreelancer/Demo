@@ -49,7 +49,7 @@
 - (IBAction)onClickLogout:(id)sender {
     CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
     
-    if (ciViewModel.arrCheckIn.count > 0) {
+    if ([ciViewModel numberOfUnsended] > 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:nil
                                                       andMessage:NSLocalizedString(@"CHECKIN_WARRNING", nil)
