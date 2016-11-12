@@ -313,7 +313,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Cài đặt" image="checkin_nav">
+                                <state key="normal" title="Cài đặt" image="setting_nav">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -731,11 +731,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="CUM-Zn-3vG">
-                        <barButtonItem key="rightBarButtonItem" title="Thoát" id="r85-cD-ErK">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="H09-xl-gbc" kind="show" id="L9Z-nv-5cL"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zL5-kB-DTi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ypc-GW-CN9">
+                                <rect key="frame" x="272" y="6" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="setting_nav"/>
+                                <connections>
+                                    <segue destination="H09-xl-gbc" kind="show" id="wqs-j8-c9Y"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -776,6 +780,7 @@
         <image name="logofull" width="150" height="39"/>
         <image name="no_picture" width="168" height="226"/>
         <image name="sended" width="21" height="21"/>
+        <image name="setting_nav" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="0.33725490196078434" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
