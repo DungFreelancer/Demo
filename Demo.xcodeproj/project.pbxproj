@@ -263,15 +263,15 @@
 		9A5F19C61D8E907900B2E5AB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9ADE8E431DD87B5600A010E2 /* Support */,
-				9A79BBFB1DD6E439007099C7 /* Setting */,
-				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9AB212921D9AC2830007E1CB /* Base */,
 				9A4C1EF71DC3A9BA00C601F9 /* Login */,
 				9AFDAF711DC4B8E80055CBB4 /* Menu */,
 				9A3D67231D90D83C00A71D62 /* CheckIn */,
+				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9A3D67221D90D83100A71D62 /* CheckStaff */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
+				9A79BBFB1DD6E439007099C7 /* Setting */,
+				9ADE8E431DD87B5600A010E2 /* Support */,
 			);
 			path = View;
 			sourceTree = "<group>";

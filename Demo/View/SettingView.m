@@ -61,7 +61,15 @@
                                                }];
         
     } else {
-        [self logoutUser];
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:nil
+                                                      andMessage:NSLocalizedString(@"SETTING_LOGOUT", nil)
+                                                   andMainButton:NSLocalizedString(@"SETTING_CANCEL", nil)
+                                               CompletionHandler:nil
+                                                  andOtherButton:NSLocalizedString(@"SETTING_OK", nil)
+                                               CompletionHandler:^(UIAlertAction *action) {
+                                                   [self logoutUser];
+                                               }];
     }
 }
 
@@ -81,7 +89,7 @@
         } else {
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
-                                                          andMessage:NSLocalizedString(@"SETTING_LOGOUT", nil)
+                                                          andMessage:NSLocalizedString(@"SETTING_LOGOUT_ERROR", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];

@@ -16,7 +16,8 @@
 "LOGIN_SESSION" = "Tài khoản đang được đăng nhập trên máy khác.";
 
 // SettingView.
-"SETTING_LOGOUT" = "Không thể đăng xuất tài khoản.";
+"SETTING_LOGOUT_ERROR" = "Không thể đăng xuất tài khoản.";
+"SETTING_LOGOUT" = "Bạn có chắc muốn thoát ứng dụng không?";
 "SETTING_WARRNING" = "Danh sách check in được lưu khi không có mạng vẫn chưa gửi hết lên server, bạn có chắc muốn thoát không?";
 "SETTING_OK" = "Có";
 "SETTING_CANCEL" = "Không";
