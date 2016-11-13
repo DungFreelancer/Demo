@@ -31,6 +31,7 @@
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
+		9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE8E451DD87B8100A010E2 /* SupportView.m */; };
 		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
 		F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderShadow.m"; sourceTree = "<group>"; };
 		9AD419381D8EDD2F006FE776 /* HUDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HUDHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AD419391D8EDD3D006FE776 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
+		9ADE8E441DD87B6D00A010E2 /* SupportView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportView.h; sourceTree = "<group>"; };
+		9ADE8E451DD87B8100A010E2 /* SupportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportView.m; sourceTree = "<group>"; };
 		9AFDAF721DC4B8F70055CBB4 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		9AFDAF731DC4B9020055CBB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 		9A5F19C61D8E907900B2E5AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9ADE8E431DD87B5600A010E2 /* Support */,
 				9A79BBFB1DD6E439007099C7 /* Setting */,
 				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9AB212921D9AC2830007E1CB /* Base */,
@@ -421,6 +425,15 @@
 				9AD419391D8EDD3D006FE776 /* HUDHelper.m */,
 			);
 			path = HUDHelper;
+			sourceTree = "<group>";
+		};
+		9ADE8E431DD87B5600A010E2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9ADE8E441DD87B6D00A010E2 /* SupportView.h */,
+				9ADE8E451DD87B8100A010E2 /* SupportView.m */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 		9AFDAF711DC4B8E80055CBB4 /* Menu */ = {
@@ -633,6 +646,7 @@
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
 				9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */,
+				9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
