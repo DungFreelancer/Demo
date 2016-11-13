@@ -34,8 +34,6 @@
     [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
     [self.btnCheckIn.layer setShadowWithRadius:1.0f];
     [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
-    [self.btnHistory.layer setShadowWithRadius:1.0f];
-    [self.btnHistory.layer setBorderWithColor:self.btnHistory.tintColor.CGColor];
     
     [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtComment setTextColor:[UIColor lightGrayColor]];

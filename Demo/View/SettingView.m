@@ -88,12 +88,12 @@
 }
 
 - (void)setBackBarItem {
-    UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnRight.frame = CGRectMake(0, 0, 25, 25);
-    [btnRight addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
-    [btnRight setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnLeft.frame = CGRectMake(0, 0, 25, 25);
+    [btnLeft addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
+    [btnLeft setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
     self.navigationItem.hidesBackButton = YES;
 }
 

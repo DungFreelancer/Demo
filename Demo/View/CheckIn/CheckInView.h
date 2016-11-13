@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckIn;
 @property (weak, nonatomic) IBOutlet UIButton *btnTakePicture;
-@property (weak, nonatomic) IBOutlet UIButton *btnHistory;
 
 @property (weak, nonatomic) IBOutlet UIButton *onClickTakePicture;
 @property (weak, nonatomic) IBOutlet UIButton *onClickCheckIn;
