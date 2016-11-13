@@ -7,6 +7,8 @@
 */
 
 "OK" = "OK";
+"YES" = "Có";
+"NO" = "Không";
 "ERROR" = "Lỗi!";
 "LOADING" = "Đang xử lý...";
 "NO_INTERNET" = "Không thể kết nối internet.";
@@ -19,8 +21,6 @@
 "SETTING_LOGOUT_ERROR" = "Không thể đăng xuất tài khoản.";
 "SETTING_LOGOUT" = "Bạn có chắc muốn thoát ứng dụng không?";
 "SETTING_WARRNING" = "Danh sách check in được lưu khi không có mạng vẫn chưa gửi hết lên server, bạn có chắc muốn thoát không?";
-"SETTING_OK" = "Có";
-"SETTING_CANCEL" = "Không";
 
 // CheckStaffView.
 "STAFF_NO_AVATAR" = "Không tìm thấy hình của nhân viên.";

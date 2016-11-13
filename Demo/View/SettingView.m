@@ -53,9 +53,9 @@
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:nil
                                                       andMessage:NSLocalizedString(@"SETTING_WARRNING", nil)
-                                                   andMainButton:NSLocalizedString(@"SETTING_CANCEL", nil)
+                                                   andMainButton:NSLocalizedString(@"NO", nil)
                                                CompletionHandler:nil
-                                                  andOtherButton:NSLocalizedString(@"SETTING_OK", nil)
+                                                  andOtherButton:NSLocalizedString(@"YES", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
                                                    [self logoutUser];
                                                }];
@@ -64,9 +64,9 @@
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:nil
                                                       andMessage:NSLocalizedString(@"SETTING_LOGOUT", nil)
-                                                   andMainButton:NSLocalizedString(@"SETTING_CANCEL", nil)
+                                                   andMainButton:NSLocalizedString(@"NO", nil)
                                                CompletionHandler:nil
-                                                  andOtherButton:NSLocalizedString(@"SETTING_OK", nil)
+                                                  andOtherButton:NSLocalizedString(@"YES", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
                                                    [self logoutUser];
                                                }];
