@@ -14,7 +14,6 @@
     self.cornerRadius = 5;
     self.borderWidth = 1;
     self.borderColor = color;
-    self.masksToBounds = NO;
 }
 
 - (void)setShadowWithRadius:(CGFloat)radius {
