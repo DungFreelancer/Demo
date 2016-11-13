@@ -180,7 +180,8 @@
 
 - (void)cleanAllView{
     self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
-    self.txtComment.text = @"";
+    self.txtComment.text = @"Chú thích";
+    [self.txtComment setTextColor:[UIColor lightGrayColor]];
 }
 
 // UIImagePickerControllerDelegate.
