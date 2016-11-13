@@ -29,7 +29,7 @@
     
     [self setBackBarItem];
     
-    // Setup for buttons.
+    // Setup for buttons & text view.
     [self.btnTakePicture.layer setShadowWithRadius:1.0f];
     [self.btnTakePicture.layer setBorderWithColor:self.btnTakePicture.tintColor.CGColor];
     [self.btnCheckIn.layer setShadowWithRadius:1.0f];
@@ -37,8 +37,11 @@
     [self.btnHistory.layer setShadowWithRadius:1.0f];
     [self.btnHistory.layer setBorderWithColor:self.btnHistory.tintColor.CGColor];
     
+    [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    [self.txtComment setTextColor:[UIColor lightGrayColor]];
     self.txtComment.delegate = self;
     
+    // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     singleTapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
@@ -188,9 +191,19 @@
     [picker dismissViewControllerAnimated:TRUE completion:nil];
 }
 
-// UITextFieldDelefate.
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    return [textField resignFirstResponder];
+// MARK: - UITextViewDelegate
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"Chú thích"]) {
+        textView.text = @"";
+        [textView setTextColor:[UIColor darkTextColor]];
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Chú thích";
+        [textView setTextColor:[UIColor lightGrayColor]];
+    }
 }
 
 // MARK: - UIGestureRecognizerDelegate
