@@ -33,7 +33,8 @@
     self.tblMenu.delegate = self;
     
     // Get function list.
-    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
+//    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
+    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

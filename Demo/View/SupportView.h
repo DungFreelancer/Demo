@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UIButton *btnSendRequest;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
 
 - (IBAction)onClickStatus:(id)sender;
 - (IBAction)onClickSendRequest:(id)sender;

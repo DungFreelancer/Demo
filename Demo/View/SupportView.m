@@ -37,6 +37,7 @@
 
 - (IBAction)onClickStatus:(id)sender {
     UISegmentedControl *seg = (UISegmentedControl *) sender;
+    
     if (seg.selectedSegmentIndex == 0) {
         DLOG(@"00000");
     } else if (seg.selectedSegmentIndex == 1) {
@@ -46,6 +47,14 @@
 
 - (IBAction)onClickSendRequest:(id)sender {
     
+    [self cleanAllView];
+}
+
+- (void)cleanAllView {
+    [self.segStatus setSelectedSegmentIndex:0];
+    
+    self.txtComment.text = @"Nội dung";
+    [self.txtComment setTextColor:[UIColor lightGrayColor]];
 }
 
 // MARK: - UITextViewDelegate
