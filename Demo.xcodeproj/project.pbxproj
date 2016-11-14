@@ -26,6 +26,9 @@
 		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
 		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
 		9A79BBFE1DD6E496007099C7 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A79BBFD1DD6E496007099C7 /* SettingView.m */; };
+		9A89660C1DDA119800A8703E /* ProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660B1DDA119800A8703E /* ProductsView.m */; };
+		9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660E1DDA11CB00A8703E /* ScanProductView.m */; };
+		9A8966121DDA123400A8703E /* AgencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8966111DDA123400A8703E /* AgencyView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
@@ -94,6 +97,12 @@
 		9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryCell.m; sourceTree = "<group>"; };
 		9A79BBFC1DD6E47C007099C7 /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		9A79BBFD1DD6E496007099C7 /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
+		9A89660A1DDA118700A8703E /* ProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsView.h; sourceTree = "<group>"; };
+		9A89660B1DDA119800A8703E /* ProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsView.m; sourceTree = "<group>"; };
+		9A89660D1DDA11BF00A8703E /* ScanProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanProductView.h; sourceTree = "<group>"; };
+		9A89660E1DDA11CB00A8703E /* ScanProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanProductView.m; sourceTree = "<group>"; };
+		9A8966101DDA122800A8703E /* AgencyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgencyView.h; sourceTree = "<group>"; };
+		9A8966111DDA123400A8703E /* AgencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyView.m; sourceTree = "<group>"; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -270,6 +279,9 @@
 				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9A3D67221D90D83100A71D62 /* CheckStaff */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
+				9A8966071DDA10FE00A8703E /* Products */,
+				9A8966081DDA110B00A8703E /* ScanProduct */,
+				9A8966091DDA113200A8703E /* Agency */,
 				9A79BBFB1DD6E439007099C7 /* Setting */,
 				9ADE8E431DD87B5600A010E2 /* Support */,
 			);
@@ -389,6 +401,33 @@
 				9A79BBFD1DD6E496007099C7 /* SettingView.m */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		9A8966071DDA10FE00A8703E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A89660A1DDA118700A8703E /* ProductsView.h */,
+				9A89660B1DDA119800A8703E /* ProductsView.m */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A8966081DDA110B00A8703E /* ScanProduct */ = {
+			isa = PBXGroup;
+			children = (
+				9A89660D1DDA11BF00A8703E /* ScanProductView.h */,
+				9A89660E1DDA11CB00A8703E /* ScanProductView.m */,
+			);
+			name = ScanProduct;
+			sourceTree = "<group>";
+		};
+		9A8966091DDA113200A8703E /* Agency */ = {
+			isa = PBXGroup;
+			children = (
+				9A8966101DDA122800A8703E /* AgencyView.h */,
+				9A8966111DDA123400A8703E /* AgencyView.m */,
+			);
+			name = Agency;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -642,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A79BBFE1DD6E496007099C7 /* SettingView.m in Sources */,
+				9A8966121DDA123400A8703E /* AgencyView.m in Sources */,
 				9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */,
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
@@ -651,12 +691,14 @@
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
+				9A89660C1DDA119800A8703E /* ProductsView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
 				9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */,
+				9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */,
 				9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,

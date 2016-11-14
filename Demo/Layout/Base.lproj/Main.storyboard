@@ -140,7 +140,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
-                                                <state key="normal" title="Quét mã">
+                                                <state key="normal" title="Quét Mã">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -220,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="841.875" y="232.3943661971831"/>
         </scene>
-        <!--Quản lý sản phẩm-->
+        <!--Products-->
         <scene sceneID="C7p-mb-sSE">
             <objects>
-                <viewController id="zWx-hm-LMY" sceneMemberID="viewController">
+                <viewController id="zWx-hm-LMY" customClass="ProductsView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Dd-lS-gQj"/>
                         <viewControllerLayoutGuide type="bottom" id="hxc-co-eqc"/>
@@ -244,8 +244,8 @@
                                     <constraint firstAttribute="width" constant="145" id="JVX-rh-R2v"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Nhập kho"/>
-                                    <segment title="Xuất kho"/>
+                                    <segment title="Nhập Kho"/>
+                                    <segment title="Xuất Kho"/>
                                 </segments>
                                 <connections>
                                     <action selector="onClickStatus:" destination="fTJ-vH-dfd" eventType="valueChanged" id="wvs-TO-s6U"/>
@@ -260,7 +260,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
-                                <state key="normal" title="Quét mã">
+                                <state key="normal" title="Quét Mã">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -276,7 +276,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
-                                <state key="normal" title="Cập nhật">
+                                <state key="normal" title="Cập Nhật">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -284,7 +284,7 @@
                                 <rect key="frame" x="0.0" y="384" width="320" height="184"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fwA-rK-iDx" style="IBUITableViewCellStyleDefault" id="zWt-fi-hwh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="code_cell" textLabel="fwA-rK-iDx" style="IBUITableViewCellStyleDefault" id="zWt-fi-hwh">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zWt-fi-hwh" id="F1e-gL-YpS">
@@ -336,6 +336,9 @@
                                     <constraint firstAttribute="height" constant="22" id="Aqa-dE-eaX"/>
                                     <constraint firstAttribute="width" constant="22" id="y9q-SG-auj"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="hRU-eu-cif" kind="show" id="buY-Mj-1yy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,16 +369,17 @@
                             <constraint firstItem="adJ-je-RhX" firstAttribute="centerY" secondItem="RWr-fO-1kb" secondAttribute="centerY" id="xSh-Pn-8FR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Quản lý sản phẩm" id="HEa-QO-LxI"/>
+                    <navigationItem key="navigationItem" title="Products" id="HEa-QO-LxI"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzp-8R-bqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841.875" y="1279.2253521126761"/>
         </scene>
-        <!--Quét mã-->
+        <!--Quét Mã-->
         <scene sceneID="pQZ-dr-AOm">
             <objects>
-                <viewController id="xmJ-RT-gZV" sceneMemberID="viewController">
+                <viewController id="xmJ-RT-gZV" customClass="ScanProductView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wE6-ch-PFR"/>
                         <viewControllerLayoutGuide type="bottom" id="FkV-cE-t7M"/>
@@ -384,32 +388,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-Pl-3dj">
-                                <rect key="frame" x="0.0" y="283" width="320" height="2"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2.5" id="axD-RE-D6f"/>
-                                </constraints>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6uT-pa-gfy">
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="code_cell" textLabel="dJf-SE-KmI" style="IBUITableViewCellStyleDefault" id="Lqs-fA-8Aq">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lqs-fA-8Aq" id="chg-ek-pVz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJf-SE-KmI">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tổng số lượng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHG-2m-mBo">
+                                <rect key="frame" x="16" y="339" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5K-wh-v6e">
+                                <rect key="frame" x="138" y="339" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEo-Ut-UCu">
+                                <rect key="frame" x="16" y="262" width="288" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.33725490200000002" green="0.67450980390000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
+                                <state key="normal" title="Dừng Quét">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-ke-iFf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="190"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-Pl-3dj">
+                                        <rect key="frame" x="0.0" y="94" width="320" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fWo-Pl-3dj" firstAttribute="centerX" secondItem="t6O-ZW-r6j" secondAttribute="centerX" id="Kph-nE-MOV"/>
-                            <constraint firstAttribute="trailing" secondItem="fWo-Pl-3dj" secondAttribute="trailing" id="Sqv-Oa-BbN"/>
-                            <constraint firstItem="fWo-Pl-3dj" firstAttribute="leading" secondItem="t6O-ZW-r6j" secondAttribute="leading" id="l41-DO-PRR"/>
-                            <constraint firstItem="fWo-Pl-3dj" firstAttribute="centerY" secondItem="t6O-ZW-r6j" secondAttribute="centerY" id="pY2-eY-luR"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Quét mã" id="SCP-R0-hiF"/>
+                    <navigationItem key="navigationItem" title="Quét Mã" id="SCP-R0-hiF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0r5-bQ-Wzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1702" y="931"/>
+            <point key="canvasLocation" x="1700.625" y="930.63380281690138"/>
         </scene>
-        <!--View Controller-->
+        <!--Đại Lý-->
         <scene sceneID="MLf-0E-asj">
             <objects>
-                <viewController id="hRU-eu-cif" sceneMemberID="viewController">
+                <viewController id="hRU-eu-cif" customClass="AgencyView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w9L-RV-2Re"/>
                         <viewControllerLayoutGuide type="bottom" id="igD-nh-8qQ"/>
@@ -417,12 +469,43 @@
                     <view key="view" contentMode="scaleToFill" id="gnC-eS-0M6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SiM-98-aLG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="agency_cell" textLabel="aMC-OL-BIg" style="IBUITableViewCellStyleDefault" id="kOf-Fy-b5c">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kOf-Fy-b5c" id="BJu-gt-tp4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aMC-OL-BIg">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Đại Lý" id="baS-vs-ZGo"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tbAgency" destination="SiM-98-aLG" id="guA-Id-E2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65X-TL-Tp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1701" y="1640"/>
+            <point key="canvasLocation" x="1700.625" y="1639.4366197183099"/>
         </scene>
         <!--Settings-->
         <scene sceneID="G8k-KV-yDQ">
@@ -477,7 +560,7 @@
                                         <rect key="frame" x="0.0" y="201" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6QC-9m-eKK" id="66c-4X-Nka">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gửi yêu cầu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ejx-S7-6r1">
@@ -502,12 +585,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="oaf-A7-42k"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbA-ol-6eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="-1165"/>
         </scene>
-        <!--Gửi yêu cầu-->
+        <!--Gửi Yêu Cầu-->
         <scene sceneID="sDv-c4-uNt">
             <objects>
                 <viewController id="fTJ-vH-dfd" customClass="SupportView" sceneMemberID="viewController">
@@ -525,8 +609,8 @@
                                     <constraint firstAttribute="width" constant="145" id="ljZ-7G-Daq"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Hổ trợ"/>
-                                    <segment title="Sự cố"/>
+                                    <segment title="Hổ Trợ"/>
+                                    <segment title="Sự Cố"/>
                                 </segments>
                                 <connections>
                                     <action selector="onClickStatus:" destination="fTJ-vH-dfd" eventType="valueChanged" id="wKx-OM-mgb"/>
@@ -541,7 +625,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
-                                <state key="normal" title="Gửi yêu cầu">
+                                <state key="normal" title="Gửi Yêu Cầu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -575,7 +659,7 @@
                             <constraint firstItem="jBz-Qj-Uh6" firstAttribute="centerY" secondItem="mbE-5m-r7K" secondAttribute="centerY" id="vx3-Tx-KEc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Gửi yêu cầu" id="3n4-kx-rXX"/>
+                    <navigationItem key="navigationItem" title="Gửi Yêu Cầu" id="3n4-kx-rXX"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnSendRequest" destination="Oph-r3-Xwp" id="uRU-Qa-HyN"/>
@@ -611,7 +695,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="5"/>
-                                <state key="normal" title="Chụp hình">
+                                <state key="normal" title="Chụp Hình">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -682,7 +766,7 @@
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="-462.8185907046477"/>
         </scene>
-        <!--Lịch sử-->
+        <!--Lịch Sử-->
         <scene sceneID="kR2-RA-Otn">
             <objects>
                 <viewController id="QP3-dj-hza" customClass="CheckInHistory" sceneMemberID="viewController">
@@ -699,7 +783,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="history_cell" id="1rJ-ZU-zCx" customClass="CheckInHistoryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="history_cell" id="1rJ-ZU-zCx" customClass="CheckInHistoryCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rJ-ZU-zCx" id="TGR-oj-kNO">
@@ -757,7 +841,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Lịch sử" id="cHO-9r-3Jt"/>
+                    <navigationItem key="navigationItem" title="Lịch Sử" id="cHO-9r-3Jt"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tbHistory" destination="nuw-Qb-ohL" id="NLp-4Q-1bk"/>
                     </connections>
@@ -766,7 +851,7 @@
             </objects>
             <point key="canvasLocation" x="1702.5" y="-463.73239436619718"/>
         </scene>
-        <!--Quét mã-->
+        <!--Quét Mã-->
         <scene sceneID="Tk1-3Q-NS3">
             <objects>
                 <viewController id="YPn-ty-c7b" customClass="ScanCardView" sceneMemberID="viewController">
@@ -794,7 +879,8 @@
                             <constraint firstAttribute="trailing" secondItem="hVx-Zx-Htu" secondAttribute="trailing" id="DFo-1y-xTj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Quét mã" id="5Tm-f0-4Ie"/>
+                    <navigationItem key="navigationItem" title="Quét Mã" id="5Tm-f0-4Ie"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="viewScan" destination="bwL-He-Y7j" id="tgT-Lt-QE5"/>
                     </connections>
@@ -824,7 +910,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Đăng nhập"/>
+                                        <state key="normal" title="Đăng Nhập"/>
                                         <connections>
                                             <action selector="onClickLogin:" destination="bP8-81-lV7" eventType="touchUpInside" id="3Qx-Qs-40L"/>
                                         </connections>
