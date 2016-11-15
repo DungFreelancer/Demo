@@ -81,13 +81,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"agency_cell" forIndexPath:indexPath];
     
     if ([txtSearch.searchBar.text isEqualToString:@""]) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@-%@",
-                               [arrAgency[indexPath.row] valueForKey:@"store"],
-                               [arrAgency[indexPath.row] valueForKey:@"deputy"]];
+        cell.textLabel.text = [arrAgency[indexPath.row] valueForKey:@"store"];
+        cell.detailTextLabel.text = [arrAgency[indexPath.row] valueForKey:@"deputy"];
     } else {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@-%@",
-                               [arrFilteredAgency[indexPath.row] valueForKey:@"store"],
-                               [arrFilteredAgency[indexPath.row] valueForKey:@"deputy"]];
+        cell.textLabel.text = [arrFilteredAgency[indexPath.row] valueForKey:@"store"];
+        cell.detailTextLabel.text = [arrFilteredAgency[indexPath.row] valueForKey:@"deputy"];
     }
     
     return cell;
