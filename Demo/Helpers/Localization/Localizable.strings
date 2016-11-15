@@ -36,3 +36,6 @@
 // SupportView.
 "SUPPORT_SENDED" = "Đã gửi yêu cầu thành công.";
 "SUPPORT_ERROR" = "Không thể gửi yêu cầu lên server.";
+
+// AgencyView.
+"AGENCY_ERROR" = "Không thể lấy danh sách đại lý.";

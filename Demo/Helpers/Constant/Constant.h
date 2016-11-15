@@ -35,6 +35,7 @@
 #define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
 #define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
 #define API_SUPPORT @"http://ndhapi.epm.vn/api/rest/msgtohai"
+#define API_GET_AGENCYS @"http://ndhapi.epm.vn/api/rest/getagency"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -57,6 +58,7 @@
 #define RESPONSE_AVATAR @"avatar"
 #define RESPONSE_SIGNATURE @"signature"
 #define RESPONSE_STATUS @"status"
+#define RESPONSE_AGENCY @"agency"
 
 // PREFERENCE-------------------------------------------------------------------
 
