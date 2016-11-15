@@ -560,7 +560,7 @@
                                         <rect key="frame" x="0.0" y="201" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6QC-9m-eKK" id="66c-4X-Nka">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gửi yêu cầu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ejx-S7-6r1">
@@ -612,9 +612,6 @@
                                     <segment title="Hổ Trợ"/>
                                     <segment title="Sự Cố"/>
                                 </segments>
-                                <connections>
-                                    <action selector="onClickStatus:" destination="fTJ-vH-dfd" eventType="valueChanged" id="wKx-OM-mgb"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oph-r3-Xwp">
                                 <rect key="frame" x="80" y="454" width="160" height="44"/>
@@ -663,7 +660,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnSendRequest" destination="Oph-r3-Xwp" id="uRU-Qa-HyN"/>
-                        <outlet property="segStatus" destination="jBz-Qj-Uh6" id="UQd-Ty-LgA"/>
+                        <outlet property="segType" destination="jBz-Qj-Uh6" id="Ia5-GX-9XG"/>
                         <outlet property="txtComment" destination="TTu-12-dhS" id="M5Z-mw-g00"/>
                     </connections>
                 </viewController>

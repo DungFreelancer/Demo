@@ -10,11 +10,10 @@
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "CALayer+BorderShadow.h"
+#import "HUDHelper.h"
 #import "Constant.h"
 
-@implementation SupportView {
-    
-}
+@implementation SupportView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,26 +34,55 @@
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
-- (IBAction)onClickStatus:(id)sender {
-    UISegmentedControl *seg = (UISegmentedControl *) sender;
-    
-    if (seg.selectedSegmentIndex == 0) {
-        DLOG(@"00000");
-    } else if (seg.selectedSegmentIndex == 1) {
-        DLOG(@"11111");
-    }
-}
-
 - (IBAction)onClickSendRequest:(id)sender {
+    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
     
-    [self cleanAllView];
+    NSString *type;
+    if ([self.segType selectedSegmentIndex] == 0) {
+        type = @"sp";
+    } else {
+        type = @"sc";
+    }
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    [params setObject:self.txtComment.text forKey:PARAM_CONTENT];
+    [params setObject:type forKey:PARAM_TYPE];
+    
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+    
+    [[NetworkHelper sharedInstance] requestPost:API_SUPPORT paramaters:params completion:^(id response, NSError *error) {
+        
+        [[HUDHelper sharedInstance] hideLoading];
+        DLOG(@"%@ \n %@", params, response);
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:nil
+                                                          andMessage:NSLocalizedString(@"SUPPORT_SENDED", nil)
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+            [self cleanAllView];
+        } else {
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:nil
+                                                          andMessage:NSLocalizedString(@"SUPPORT_ERROR", nil)
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];    
 }
 
 - (void)cleanAllView {
-    [self.segStatus setSelectedSegmentIndex:0];
+    [self.segType setSelectedSegmentIndex:0];
     
     self.txtComment.text = @"Nội dung";
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
+    [self handleSingleTapGesture];
 }
 
 // MARK: - UITextViewDelegate

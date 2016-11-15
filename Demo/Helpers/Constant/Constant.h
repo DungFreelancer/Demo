@@ -34,6 +34,7 @@
 #define API_CHECK_STAFF @"http://ndhapi.epm.vn/api/rest/checkStaff"
 #define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
 #define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
+#define API_SUPPORT @"http://ndhapi.epm.vn/api/rest/msgtohai"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -44,6 +45,8 @@
 #define PARAM_LONGTITUDE @"longtitude"
 #define PARAM_DATE @"date"
 #define PARAM_CODE @"code"
+#define PARAM_TYPE @"type"
+#define PARAM_CONTENT @"content"
 
 #define RESPONSE_ID @"id"
 #define RESPONSE_MESSAGE @"msg"
