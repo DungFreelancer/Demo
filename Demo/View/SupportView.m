@@ -70,7 +70,7 @@
             [self cleanAllView];
         } else {
             [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                           withTitle:nil
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:NSLocalizedString(@"SUPPORT_ERROR", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
