@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Ứng dụng cần sử dụng camera của bạn để quét mã code.</string>
+	<string>Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Ứng dụng cần sử dụng vị trí của bạn để check in.</string>
 	<key>UILaunchStoryboardName</key>
