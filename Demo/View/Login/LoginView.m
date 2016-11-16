@@ -81,6 +81,7 @@
                     }
                     
                     // Save user information.
+                    [USER_DEFAULT setBool:YES forKey:PREF_ALRAEDY_LOGIN];
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
                     [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
                     [USER_DEFAULT setObject:function forKey:PREF_FUNCTION];
@@ -103,11 +104,25 @@
 }
 
 - (void)checkLoginStatus {
+    BOOL alreadyLogin = [USER_DEFAULT boolForKey:PREF_ALRAEDY_LOGIN];
     NSString *userName = [USER_DEFAULT valueForKey:PREF_USER];
     NSString *token = [USER_DEFAULT valueForKey:RESPONSE_TOKEN];
     
-    if (userName && token) { // Already login.
-        [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+    if (alreadyLogin) {
+        // Check session.
+        NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@", API_LOGIN_SESSION, PARAM_USER, userName, PARAM_TOKEN, token];
+        [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+        
+        [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
+            
+            [[HUDHelper sharedInstance] hideLoading];
+            if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+            } else {
+                [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
+                [USER_DEFAULT synchronize];
+            }
+        }];
     }
 }
 

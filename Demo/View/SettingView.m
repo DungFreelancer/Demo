@@ -84,6 +84,8 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
+            [USER_DEFAULT synchronize];
             self.navigationController.navigationBarHidden = YES;
             [self.navigationController popToRootViewControllerAnimated:YES];
         } else {
