@@ -51,7 +51,7 @@
         [self getLocation];
     } else {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:@""
+                                                       withTitle:nil
                                                       andMessage:NSLocalizedString(@"CHECKIN_LOCATION", nil)
                                                    andMainButton:NSLocalizedString(@"OK", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
@@ -75,7 +75,7 @@
     if (![CLLocationManager locationServicesEnabled] ||
         [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:@""
+                                                       withTitle:nil
                                                       andMessage:NSLocalizedString(@"CHECKIN_LOCATION", nil)
                                                    andMainButton:NSLocalizedString(@"OK", nil)
                                                CompletionHandler:^(UIAlertAction *action) {
