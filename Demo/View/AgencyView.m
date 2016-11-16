@@ -91,6 +91,16 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([txtSearch.searchBar.text isEqualToString:@""]) {
+        [self.delegate didGetAgency:arrAgency[indexPath.row]];
+    } else {
+        [self.delegate didGetAgency:arrFilteredAgency[indexPath.row]];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 // MARK: - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"store CONTAINS[cd] %@ || deputy CONTAINS[cd] %@", searchController.searchBar.text, searchController.searchBar.text];

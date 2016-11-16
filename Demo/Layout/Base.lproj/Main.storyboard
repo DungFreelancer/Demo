@@ -247,9 +247,6 @@
                                     <segment title="Nhập Kho"/>
                                     <segment title="Xuất Kho"/>
                                 </segments>
-                                <connections>
-                                    <action selector="onClickStatus:" destination="fTJ-vH-dfd" eventType="valueChanged" id="wvs-TO-s6U"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5d-LH-wMY">
                                 <rect key="frame" x="80" y="191" width="160" height="44"/>
@@ -264,7 +261,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xmJ-RT-gZV" kind="show" id="2oE-YL-kYz"/>
+                                    <segue destination="xmJ-RT-gZV" kind="show" identifier="scan_code" id="2oE-YL-kYz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-8I-vXT">
@@ -279,6 +276,9 @@
                                 <state key="normal" title="Cập Nhật">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickUpdate:" destination="zWx-hm-LMY" eventType="touchUpInside" id="HNs-OW-oXe"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-HH-Y9m">
                                 <rect key="frame" x="0.0" y="384" width="320" height="184"/>
@@ -337,7 +337,7 @@
                                     <constraint firstAttribute="width" constant="22" id="y9q-SG-auj"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="hRU-eu-cif" kind="show" id="buY-Mj-1yy"/>
+                                    <segue destination="hRU-eu-cif" kind="show" identifier="agency" id="buY-Mj-1yy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -371,6 +371,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Products" id="HEa-QO-LxI"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="lbAgency" destination="eDi-2j-YNk" id="WeK-g3-Yrf"/>
+                        <outlet property="lbTotal" destination="adJ-je-RhX" id="0dj-q0-lk8"/>
+                        <outlet property="segStatus" destination="311-eG-5FN" id="kKg-mD-5kf"/>
+                        <outlet property="tbCode" destination="KFh-HH-Y9m" id="Xh3-kI-gcM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzp-8R-bqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -437,11 +443,11 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-ke-iFf">
-                                <rect key="frame" x="0.0" y="64" width="320" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-Pl-3dj">
-                                        <rect key="frame" x="0.0" y="94" width="320" height="2"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="2"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -453,6 +459,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Quét Mã" id="SCP-R0-hiF"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="lbTotal" destination="A5K-wh-v6e" id="ide-3Y-wvQ"/>
+                        <outlet property="tbCode" destination="6uT-pa-gfy" id="91l-yp-z2X"/>
+                        <outlet property="viewScan" destination="DbP-ke-iFf" id="vMX-QQ-H2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0r5-bQ-Wzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -564,7 +575,7 @@
                             <tableViewSection headerTitle="Trợ giúp" id="6gS-Qf-z8Y">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="support" textLabel="Ejx-S7-6r1" style="IBUITableViewCellStyleDefault" id="6QC-9m-eKK">
-                                        <rect key="frame" x="0.0" y="201" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6QC-9m-eKK" id="66c-4X-Nka">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -791,7 +802,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rJ-ZU-zCx" id="TGR-oj-kNO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gpx-Af-vc7">

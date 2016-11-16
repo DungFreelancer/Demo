@@ -7,8 +7,16 @@
 //
 
 #import "BaseView.h"
+#import "AgencyView.h"
+#import "ScanProductView.h"
 
-@interface ProductsView : BaseView
+@interface ProductsView : BaseView <AgencyViewDelegate,ScanProductViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
+@property (weak, nonatomic) IBOutlet UILabel *lbAgency;
+@property (weak, nonatomic) IBOutlet UILabel *lbTotal;
+@property (weak, nonatomic) IBOutlet UITableView *tbCode;
+
+- (IBAction)onClickUpdate:(id)sender;
 
 @end

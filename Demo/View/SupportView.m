@@ -61,7 +61,6 @@
     [[NetworkHelper sharedInstance] requestPost:API_SUPPORT paramaters:params completion:^(id response, NSError *error) {
         
         [[HUDHelper sharedInstance] hideLoading];
-        DLOG(@"%@ \n %@", params, response);
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:nil

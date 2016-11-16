@@ -36,6 +36,7 @@
 #define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
 #define API_SUPPORT @"http://ndhapi.epm.vn/api/rest/msgtohai"
 #define API_GET_AGENCYS @"http://ndhapi.epm.vn/api/rest/getagency"
+#define API_UPDATE_PRODUCT @"http://ndhapi.epm.vn/api/rest/updateproduct"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -48,6 +49,9 @@
 #define PARAM_CODE @"code"
 #define PARAM_TYPE @"type"
 #define PARAM_CONTENT @"content"
+#define PARAM_PRODUCTS @"products"
+#define PARAM_AGENCY @"agency"
+#define PARAM_STATUS @"status"
 
 #define RESPONSE_ID @"id"
 #define RESPONSE_MESSAGE @"msg"

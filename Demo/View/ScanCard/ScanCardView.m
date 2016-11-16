@@ -56,6 +56,15 @@
             
         } else {
             // The user denied access to the camera
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:nil
+                                                          andMessage:NSLocalizedString(@"NO_CAMERA", nil)
+                                                       andMainButton:NSLocalizedString(@"OK", nil)
+                                                   CompletionHandler:^(UIAlertAction *action) {
+                                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                                   }
+                                                      andOtherButton:nil
+                                                   CompletionHandler:nil];
         }
     }];
 }

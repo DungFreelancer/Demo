@@ -12,6 +12,7 @@
 "ERROR" = "Lỗi!";
 "LOADING" = "Đang xử lý...";
 "NO_INTERNET" = "Không thể kết nối internet.";
+"NO_CAMERA" = "Ứng dụng cần sử dụng camera của bạn để chụp ảnh.";
 
 // LoginView.
 "LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";
@@ -39,3 +40,9 @@
 
 // AgencyView.
 "AGENCY_ERROR" = "Không thể lấy danh sách đại lý.";
+
+// ProductsView.
+"PRODUCTS_UPDATED" = "Đã cập nhật thành công.";
+"PRODUCTS_ERROR" = "Không thể cập nhật.";
+"PRODUCTS_AGENCY_ERROR" = "Chưa chọn đại lý.";
+"PRODUCTS_PRODUCTS_ERROR" = "Chưa quét mã sản phẩm.";
