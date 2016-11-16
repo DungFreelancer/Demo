@@ -31,7 +31,7 @@
     
     txtSearch.searchResultsUpdater = self;
     txtSearch.dimsBackgroundDuringPresentation = NO;
-    txtSearch.searchBar.placeholder = @"Đại lý";
+    txtSearch.searchBar.placeholder = @"Tìm Đại lý";
     txtSearch.searchBar.barTintColor = [[self view] tintColor];
     self.definesPresentationContext = YES;
     self.tbAgency.tableHeaderView = txtSearch.searchBar;
