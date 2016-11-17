@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
 @property (weak, nonatomic) IBOutlet UILabel *lbAgency;
+@property (weak, nonatomic) IBOutlet UIButton *btnScanProduct;
+@property (weak, nonatomic) IBOutlet UIButton *btnUpdate;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotal;
 @property (weak, nonatomic) IBOutlet UITableView *tbCode;
 

@@ -10,6 +10,7 @@
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "UtilityClass.h"
+#import "CALayer+BorderShadow.h"
 #import "Constant.h"
 
 @implementation ProductsView {
@@ -24,6 +25,12 @@
     
     self.tbCode.dataSource = self;
     self.tbCode.delegate = self;
+    
+    // Setup for buttons & text view.
+    [self.btnScanProduct.layer setShadowWithRadius:1.0f];
+    [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
+    [self.btnUpdate.layer setShadowWithRadius:1.0f];
+    [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
