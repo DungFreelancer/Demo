@@ -34,7 +34,7 @@
     
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
-    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", nil];
+    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
