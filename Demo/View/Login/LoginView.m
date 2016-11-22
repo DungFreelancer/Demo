@@ -44,6 +44,7 @@
 
 - (IBAction)onClickLogin:(id)sender {
     if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
@@ -59,6 +60,7 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
             NSString *token = [response valueForKey:RESPONSE_TOKEN];
             NSArray<NSString *> *function = [response valueForKey:RESPONSE_FUNCTION];
             NSString *role = [response valueForKey:RESPONSE_ROLE];
@@ -71,6 +73,7 @@
                 
                 [[HUDHelper sharedInstance] hideLoading];
                 if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                    DLOG(@"%@", response);
                     [self performSegueWithIdentifier:@"segue_menu" sender:nil];
                     [self cleanAllView];
                     
@@ -87,6 +90,7 @@
                     [USER_DEFAULT setObject:role forKey:PREF_ROLE];
                     [USER_DEFAULT synchronize];
                 } else {
+                    ELOG(@"%@", response);
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)
                                                                   andMessage:NSLocalizedString(@"LOGIN_SESSION", nil)
@@ -94,6 +98,7 @@
                 }
             }];
         } else {
+            ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:NSLocalizedString(@"LOGIN_INCORRECT", nil)
@@ -116,8 +121,10 @@
             
             [[HUDHelper sharedInstance] hideLoading];
             if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                DLOG(@"%@", response);
                 [self performSegueWithIdentifier:@"segue_menu" sender:nil];
             } else {
+                ELOG(@"%@", response);
                 [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
                 [USER_DEFAULT synchronize];
             }

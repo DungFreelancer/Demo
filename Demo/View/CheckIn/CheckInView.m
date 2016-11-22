@@ -98,6 +98,7 @@
             
             [[HUDHelper sharedInstance] hideLoading];
             if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                DLOG(@"%@", response);
                 NSString *image = [response valueForKey:RESPONSE_MESSAGE];
                 NSString *date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
                 CLLocationCoordinate2D coordinate = [self getLocation];
@@ -117,6 +118,7 @@
                     [[HUDHelper sharedInstance] hideLoading];
                     
                     if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                        DLOG(@"%@", response);
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:nil
                                                                       andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
@@ -124,6 +126,7 @@
                         [self saveLogCheckInWithSended:YES];
                         [self cleanAllView];
                     } else {
+                        ELOG(@"%@", response);
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                                       andMessage:NSLocalizedString(@"CHECKIN_FAIL", nil)

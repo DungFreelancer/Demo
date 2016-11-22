@@ -45,6 +45,7 @@
 // ScanCardDelegate.
 - (void)didScanCard:(NSString *)result {
     if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
@@ -74,6 +75,7 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
             NSString *status = [response valueForKey:RESPONSE_STATUS];
             NSString *urlAvatar = [response valueForKey:RESPONSE_AVATAR];
             NSString *urlSignature = [response valueForKey:RESPONSE_SIGNATURE];
@@ -86,6 +88,7 @@
                 
                 [[HUDHelper sharedInstance] hideLoading];
                 if (!success) {
+                    ELOG(@"%d", success);
                     [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_AVATAR", nil) andButton:NSLocalizedString(@"OK", nil)];
                 }
             }];
@@ -94,9 +97,12 @@
                 
                 [[HUDHelper sharedInstance] hideLoading];
                 if (!success) {
+                    ELOG(@"%d", success);
                     [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_SIGNATURE", nil) andButton:NSLocalizedString(@"OK", nil)];
                 }
             }];
+        } else {
+            ELOG(@"%@", response);
         }
     }];
 }

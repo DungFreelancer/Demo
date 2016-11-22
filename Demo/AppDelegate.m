@@ -51,6 +51,7 @@
 //        }];
 //    } else {
         [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
+            DLOG(@"%d", connected);
             CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
             
             if (connected && ciViewModel.arrCheckIn.count > 0) {
@@ -69,6 +70,7 @@
                             
                             [[HUDHelper sharedInstance] hideLoading];
                             if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                                DLOG(@"%@", response);
                                 [params setObject:[response valueForKey:RESPONSE_MESSAGE] forKey:PARAM_IMAGE];
                                 [params setObject:ci.comment forKey:PARAM_COMMENT];
                                 [params setObject:ci.date forKey:PARAM_DATE];
@@ -80,6 +82,7 @@
                                     
                                     [[HUDHelper sharedInstance] hideLoading];
                                     if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                                        DLOG(@"%@", response);
                                         ++countSended;
                                         ci.isSended = YES;
                                         [ciViewModel saveCheckIns];
@@ -91,8 +94,12 @@
                                                                                           andMessage:NSLocalizedString(@"CHECKIN_DONE_OFFLINE", nil)
                                                                                            andButton:NSLocalizedString(@"OK", nil)];
                                         }
+                                    } else {
+                                        ELOG(@"%@", response);
                                     }
                                 }];
+                            } else {
+                                ELOG(@"%@", response);
                             }
                         }];
                     }

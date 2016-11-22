@@ -35,6 +35,7 @@
 
 - (IBAction)onClickSendRequest:(id)sender {
     if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
@@ -61,12 +62,14 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:nil
                                                           andMessage:NSLocalizedString(@"SUPPORT_SENDED", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
             [self cleanAllView];
         } else {
+            ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:NSLocalizedString(@"SUPPORT_ERROR", nil)

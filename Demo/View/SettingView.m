@@ -40,6 +40,7 @@
 
 - (void)logoutApp {
     if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
@@ -84,11 +85,13 @@
         
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
             [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
             [USER_DEFAULT synchronize];
             self.navigationController.navigationBarHidden = YES;
             [self.navigationController popToRootViewControllerAnimated:YES];
         } else {
+            ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:NSLocalizedString(@"SETTING_LOGOUT_ERROR", nil)

@@ -41,6 +41,7 @@
 
 - (void)getAllAgency {
     if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
@@ -57,9 +58,11 @@
         [[HUDHelper sharedInstance] hideLoading];
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
             arrAgency = [response valueForKey:RESPONSE_AGENCY];
             [self.tbAgency reloadData];
         } else {
+            ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:NSLocalizedString(@"AGENCY_ERROR", nil)

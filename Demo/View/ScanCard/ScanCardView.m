@@ -35,6 +35,7 @@
                 [scanner freezeCapture];
                 
                 if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+                    ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)
                                                                   andMessage:NSLocalizedString(@"NO_INTERNET", nil)
