@@ -30,7 +30,6 @@
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
-    singleTapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
