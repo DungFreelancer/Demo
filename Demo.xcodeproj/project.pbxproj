@@ -594,18 +594,18 @@
 				TargetAttributes = {
 					9A5F198B1D8E905700B2E5AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 39FN3TTXLD;
+						DevelopmentTeam = A5R29KHVUM;
 						ProvisioningStyle = Automatic;
 					};
 					9A5F19A71D8E905700B2E5AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 39FN3TTXLD;
+						DevelopmentTeam = A5R29KHVUM;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A5F198B1D8E905700B2E5AB;
 					};
 					9A5F19B21D8E905700B2E5AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 39FN3TTXLD;
+						DevelopmentTeam = A5R29KHVUM;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A5F198B1D8E905700B2E5AB;
 					};
@@ -883,7 +883,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,7 +898,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -911,7 +911,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = TemplateObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCTests;
@@ -924,7 +924,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = TemplateObjCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCTests;
@@ -936,7 +936,7 @@
 		9A5F19C31D8E905800B2E5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = TemplateObjCUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCUITests;
@@ -948,7 +948,7 @@
 		9A5F19C41D8E905800B2E5AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 39FN3TTXLD;
+				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = TemplateObjCUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.TemplateObjCUITests;
