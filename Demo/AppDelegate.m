@@ -12,6 +12,7 @@
 #import "HUDHelper.h"
 #import "UtilityClass.h"
 #import "CheckInViewModel.h"
+#import <Firebase.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Push notification.
+    [FIRApp configure];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                         |UIUserNotificationTypeSound
+                                                                                         |UIUserNotificationTypeAlert) categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
     // Override point for customization after application launch.
     
     // Push offline data to service.
@@ -111,6 +122,9 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    DLOG(@"%@", userInfo);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

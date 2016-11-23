@@ -34,12 +34,13 @@
 		9A8966121DDA123400A8703E /* AgencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8966111DDA123400A8703E /* AgencyView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
+		9AB3AF8B1DE5F9D100C713A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
 		9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE8E451DD87B8100A010E2 /* SupportView.m */; };
 		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
-		F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */; };
+		B88483551D989B96D650045A /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F310FDE6DDD75C987404FF53 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0843613295E9D247630BF7BF /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
+		993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
@@ -114,8 +117,10 @@
 		9A8966111DDA123400A8703E /* AgencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyView.m; sourceTree = "<group>"; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardView.m; sourceTree = "<group>"; };
+		9AA76C1A1DE5E9EA00681BB7 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Demo.entitlements; path = ../Demo.entitlements; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AB5C3E01D8F0BB60040E00E /* CheckInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInView.h; sourceTree = "<group>"; };
 		9AB5C3E11D8F0BC90040E00E /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckInView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AD3A3311DC63E6C00073E15 /* CALayer+BorderShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderShadow.h"; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 		9ADE8E451DD87B8100A010E2 /* SupportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportView.m; sourceTree = "<group>"; };
 		9AFDAF721DC4B8F70055CBB4 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		9AFDAF731DC4B9020055CBB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		F310FDE6DDD75C987404FF53 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9DE20E3E3AA3231ADEDFE63 /* Pods_TemplateObjC.framework in Frameworks */,
+				B88483551D989B96D650045A /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8F85E509237067D4D98C60 /* Pods_TemplateObjC.framework */,
+				F310FDE6DDD75C987404FF53 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +246,8 @@
 		9A5F198F1D8E905700B2E5AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */,
+				9AA76C1A1DE5E9EA00681BB7 /* Demo.entitlements */,
 				9A5F19A31D8E905700B2E5AB /* Info.plist */,
 				9A5F19901D8E905700B2E5AB /* main.m */,
 			);
@@ -520,6 +529,8 @@
 			children = (
 				FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */,
 				95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */,
+				993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */,
+				0843613295E9D247630BF7BF /* Pods-Demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -596,6 +607,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = A5R29KHVUM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9A5F19A71D8E905700B2E5AB = {
 						CreatedOnToolsVersion = 8.0;
@@ -637,6 +656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */,
+				9AB3AF8B1DE5F9D100C713A7 /* GoogleService-Info.plist in Resources */,
 				9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */,
 				9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */,
 			);
@@ -671,7 +691,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDC540DD95AEC6DDC9D4E1D5 /* [CP] Check Pods Manifest.lock */ = {
@@ -701,7 +721,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -879,30 +899,32 @@
 		};
 		9A5F19BD1D8E905800B2E5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA0B15B8E26EFE988C319D71 /* Pods-TemplateObjC.debug.xcconfig */;
+			baseConfigurationReference = 993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo.XXX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		9A5F19BE1D8E905800B2E5AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */;
+			baseConfigurationReference = 0843613295E9D247630BF7BF /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dungdo.Demo.XXX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

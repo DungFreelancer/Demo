@@ -29,6 +29,10 @@
 	<string>Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Ứng dụng cần sử dụng vị trí của bạn để check in.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
