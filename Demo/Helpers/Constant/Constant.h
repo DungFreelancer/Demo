@@ -28,15 +28,15 @@
 
 // API-------------------------------------------------------------------
 
-#define API_LOGIN @"http://ndhapi.epm.vn/api/rest/login"
-#define API_LOGIN_SESSION @"http://ndhapi.epm.vn/api/rest/loginsession"
-#define API_LOGOUT @"http://ndhapi.epm.vn/api/rest/logout"
-#define API_CHECK_STAFF @"http://ndhapi.epm.vn/api/rest/checkStaff"
+#define API_LOGIN @"http://221.133.7.92:802/api/rest/login"
+#define API_LOGIN_SESSION @"http://221.133.7.92:802/api/rest/loginsession"
+#define API_LOGOUT @"http://221.133.7.92:802/api/rest/logout"
+#define API_CHECK_STAFF @"http://221.133.7.92:802/api/rest/checkStaff"
 #define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
-#define API_CHECK_IN @"http://ndhapi.epm.vn/api/rest/checkin"
-#define API_SUPPORT @"http://ndhapi.epm.vn/api/rest/msgtohai"
-#define API_GET_AGENCYS @"http://ndhapi.epm.vn/api/rest/getagency"
-#define API_UPDATE_PRODUCT @"http://ndhapi.epm.vn/api/rest/updateproduct"
+#define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
+#define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
+#define API_GET_AGENCYS @"http://221.133.7.92:802/api/rest/getagency"
+#define API_UPDATE_PRODUCT @"http://221.133.7.92:802/api/rest/updateproduct"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
