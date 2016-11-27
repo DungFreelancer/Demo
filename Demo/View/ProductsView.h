@@ -13,7 +13,9 @@
 @interface ProductsView : BaseView <AgencyViewDelegate,ScanProductViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
+@property (strong, nonatomic) IBOutlet UIView *lbNameAgency;
 @property (weak, nonatomic) IBOutlet UILabel *lbAgency;
+@property (weak, nonatomic) IBOutlet UIButton *btnAgency;
 @property (weak, nonatomic) IBOutlet UIButton *btnScanProduct;
 @property (weak, nonatomic) IBOutlet UIButton *btnUpdate;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotal;

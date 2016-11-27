@@ -31,6 +31,12 @@
     [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
     [self.btnUpdate.layer setShadowWithRadius:1.0f];
     [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
+    
+    if ([[USER_DEFAULT objectForKey:PREF_ROLE] isEqualToString:@"Warehouse"] == NO) {
+        self.lbNameAgency.hidden = YES;
+        self.lbAgency.hidden = YES;
+        self.btnAgency.hidden= YES;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
