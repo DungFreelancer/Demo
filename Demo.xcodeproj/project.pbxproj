@@ -25,6 +25,7 @@
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
 		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
 		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
+		9A78CDAF1DEAC5E1009CF23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A78CDAE1DEAC5E1009CF23C /* LaunchScreen.storyboard */; };
 		9A79BBFE1DD6E496007099C7 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A79BBFD1DD6E496007099C7 /* SettingView.m */; };
 		9A849AC81DDF71F9009EFEC3 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849AC71DDF71F9009EFEC3 /* EventView.m */; };
 		9A849ACC1DDF7269009EFEC3 /* EventDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */; };
@@ -100,6 +101,7 @@
 		9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistory.m; sourceTree = "<group>"; };
 		9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistoryCell.h; sourceTree = "<group>"; };
 		9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryCell.m; sourceTree = "<group>"; };
+		9A78CDAE1DEAC5E1009CF23C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A79BBFC1DD6E47C007099C7 /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		9A79BBFD1DD6E496007099C7 /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A849AC61DDF71E8009EFEC3 /* EventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				9A5F19981D8E905700B2E5AB /* Main.storyboard */,
+				9A78CDAE1DEAC5E1009CF23C /* LaunchScreen.storyboard */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */,
 				9AB3AF8B1DE5F9D100C713A7 /* GoogleService-Info.plist in Resources */,
 				9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */,
+				9A78CDAF1DEAC5E1009CF23C /* LaunchScreen.storyboard in Resources */,
 				9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
