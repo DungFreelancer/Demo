@@ -114,8 +114,6 @@
         
         [self.tbCode reloadData];
     }
-    
-    [self.txtCode resignFirstResponder];
 }
 
 - (void)cleanAllView {
