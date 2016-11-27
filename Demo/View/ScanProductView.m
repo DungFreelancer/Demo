@@ -28,13 +28,8 @@
     self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
     
     // Setup for buttons & text view.
-    [self.btnSave.layer setShadowWithRadius:1.0f];
-    [self.btnSave.layer setBorderWithColor:self.btnSave.tintColor.CGColor];
-    [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
-    
-    // Handle single tap.
-    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
-    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+    [self.btnStop.layer setShadowWithRadius:1.0f];
+    [self.btnStop.layer setBorderWithColor:self.btnStop.tintColor.CGColor];
     
     scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.viewScan];
     
@@ -76,14 +71,8 @@
     [self.delegate didScanProducts:self.arrCodes];
 }
 
-- (IBAction)onClickSave:(id)sender {
-    if ([self.txtCode.text isEqualToString:self.arrCodes.lastObject] == NO) {
-        [self.arrCodes addObject:self.txtCode.text];
-        self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
-        self.txtCode.text = @"";
-        
-        [self.tbCode reloadData];
-    }
+- (IBAction)onClickStop:(id)sender {
+    
 }
 
 // MARK: - UITableViewDataSource & UItableView Delegate
@@ -96,11 +85,6 @@
     cell.textLabel.text = self.arrCodes[indexPath.row];
     
     return cell;
-}
-
-// MARK: - UIGestureRecognizerDelegate
--(void)handleSingleTapGesture {
-    [self.txtCode resignFirstResponder];
 }
 
 @end

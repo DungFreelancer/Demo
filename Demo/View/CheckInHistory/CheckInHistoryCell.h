@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (weak, nonatomic) IBOutlet UILabel *txtDate;
 @property (weak, nonatomic) IBOutlet UILabel *txtComment;
-@property (weak, nonatomic) IBOutlet UIImageView *imgSended;
+@property (weak, nonatomic) IBOutlet UILabel *txtStatus;
 
 @end

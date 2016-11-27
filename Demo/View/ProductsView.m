@@ -24,12 +24,22 @@
     
     self.tbCode.dataSource = self;
     self.tbCode.delegate = self;
+    self.txtCode.delegate = self;
+    
+    arrCodes = [[NSMutableArray alloc] init];
     
     // Setup for buttons & text view.
     [self.btnScanProduct.layer setShadowWithRadius:1.0f];
     [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
     [self.btnUpdate.layer setShadowWithRadius:1.0f];
     [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
+    [self.btnSave.layer setShadowWithRadius:1.0f];
+    [self.btnSave.layer setBorderWithColor:self.btnSave.tintColor.CGColor];
+    [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    
+    // Handle single tap.
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -37,9 +47,6 @@
         ScanProductView *viewScanProduct = (ScanProductView *) [segue destinationViewController];
         viewScanProduct.delegate = self;
         
-        if (arrCodes == nil) {
-            arrCodes = [[NSMutableArray alloc] init];
-        }
         viewScanProduct.arrCodes = arrCodes;
     }
 }
@@ -98,9 +105,23 @@
     }];
 }
 
+- (IBAction)onClickSave:(id)sender {
+    if ([self.txtCode.text isEqualToString:@""] == NO &&
+        [self.txtCode.text isEqualToString:arrCodes.lastObject] == NO) {
+        [arrCodes addObject:self.txtCode.text];
+        self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrCodes.count];
+        self.txtCode.text = @"";
+        
+        [self.tbCode reloadData];
+    }
+    
+    [self.txtCode resignFirstResponder];
+}
+
 - (void)cleanAllView {
     [self.segStatus setSelectedSegmentIndex:0];
-    self.lbTotal.text = @"";
+    self.lbTotal.text = @"0";
+    self.txtCode.text = @"";
     arrCodes = [[NSMutableArray alloc] init];
     [self.tbCode reloadData];
 }
@@ -123,6 +144,18 @@
     cell.textLabel.text = arrCodes[indexPath.row];
     
     return cell;
+}
+
+// MARK: - UIGestureRecognizerDelegate
+- (void)handleSingleTapGesture {
+    [self.txtCode resignFirstResponder];
+}
+
+// MARK: - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self onClickSave:nil];
+    
+    return YES;
 }
 
 @end

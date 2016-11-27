@@ -40,9 +40,9 @@
     cell.txtComment.text = vmCheckIn.arrCheckIn[indexPath.row].comment;
     
     if (vmCheckIn.arrCheckIn[indexPath.row].isSended) {
-        cell.imgSended.image = [UIImage imageNamed:@"sended"];
+        cell.txtStatus.text = @"Đã cập nhật.";
     } else {
-        cell.imgSended.image = nil;
+        cell.txtStatus.text = @"Chưa cập nhật hoàn thành!";
     }
     
     return cell;

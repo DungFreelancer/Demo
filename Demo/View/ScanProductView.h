@@ -14,17 +14,16 @@
 
 @end
 
-@interface ScanProductView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
+@interface ScanProductView : BaseView <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak,nonatomic) id<ScanProductViewDelegate> delegate;
 @property (strong,nonatomic) NSMutableArray *arrCodes;
 
 @property (weak, nonatomic) IBOutlet UIView *viewScan;
-@property (weak, nonatomic) IBOutlet UITextField *txtCode;
-@property (weak, nonatomic) IBOutlet UIButton *btnSave;
+@property (weak, nonatomic) IBOutlet UIButton *btnStop;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotal;
 @property (weak, nonatomic) IBOutlet UITableView *tbCode;
 
-- (IBAction)onClickSave:(id)sender;
+- (IBAction)onClickStop:(id)sender;
 
 @end
