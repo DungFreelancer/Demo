@@ -35,7 +35,6 @@
 #define API_UPLOAD_IMAGE @"http://221.133.7.92:801/upload/checkin"
 #define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
-#define API_GET_AGENCYS @"http://221.133.7.92:802/api/rest/getagency"
 #define API_UPDATE_PRODUCT @"http://221.133.7.92:802/api/rest/updateproduct"
 
 #define PARAM_USER @"user"
