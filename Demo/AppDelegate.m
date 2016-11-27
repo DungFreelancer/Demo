@@ -62,7 +62,7 @@
 //        }];
 //    } else {
         [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
-            DLOG(@"%d", connected);
+            DLOG(@"Connection Status:%d", connected);
             CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
             
             if (connected && vmCheckIn.arrCheckIn.count > 0) {
