@@ -11,6 +11,7 @@
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "UtilityClass.h"
+#import "UIImageView+Download.h"
 #import "Constant.h"
 
 @implementation EventView {
@@ -24,6 +25,8 @@
     
     self.tbEvent.dataSource = self;
     self.tbEvent.delegate = self;
+    
+    arrEvent = [[NSMutableArray alloc] init];
     
     [self getAllEvent];
 }
@@ -44,13 +47,13 @@
     
     [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
     
-    [[NetworkHelper sharedInstance] requestGet:API_EVENT paramaters:params completion:^(id response, NSError *error) {
+    [[NetworkHelper sharedInstance] requestPost:API_EVENT paramaters:params completion:^(id response, NSError *error) {
     
         [[HUDHelper sharedInstance] hideLoading];
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
-//            arrEvent = response
+            arrEvent = [response valueForKey:RESPONSE_EVENTS];
             [self.tbEvent reloadData];
         } else {
             ELOG(@"%@", response);
@@ -69,9 +72,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"event_cell" forIndexPath:indexPath];
     
-    cell.imgBanner = [arrEvent valueForKey:@""];
-    cell.lbTitle = [arrEvent valueForKey:@""];
-    cell.lbDate = [arrEvent valueForKey:@""];
+    [cell.imgBanner downloadFromURL:[arrEvent[indexPath.row] valueForKey:RESPONSE_EVENTS_IMAGE] withPlaceholder:nil handleCompletion:^(BOOL success) {}];
+    cell.lbTitle.text = [arrEvent[indexPath.row] valueForKey:RESPONSE_EVENTS_NAME];
+    cell.lbDate.text = [arrEvent[indexPath.row] valueForKey:RESPONSE_EVENTS_TIME];
     
     return cell;
 }
