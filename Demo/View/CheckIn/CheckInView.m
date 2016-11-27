@@ -121,7 +121,7 @@
                         DLOG(@"%@", response);
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:nil
-                                                                      andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"CHECKIN_SUCCESS", nil)
+                                                                      andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
                                                                        andButton:NSLocalizedString(@"OK", nil)];
                         [self saveLogCheckInWithSended:YES];
                         [self cleanAllView];

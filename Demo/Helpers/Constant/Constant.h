@@ -32,7 +32,7 @@
 #define API_LOGIN_SESSION @"http://221.133.7.92:802/api/rest/loginsession"
 #define API_LOGOUT @"http://221.133.7.92:802/api/rest/logout"
 #define API_CHECK_STAFF @"http://221.133.7.92:802/api/rest/checkStaff"
-#define API_UPLOAD_IMAGE @"http://test.epm.vn/upload/checkin"
+#define API_UPLOAD_IMAGE @"http://221.133.7.92:801/upload/checkin"
 #define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 #define API_GET_AGENCYS @"http://221.133.7.92:802/api/rest/getagency"
