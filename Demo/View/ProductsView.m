@@ -61,7 +61,7 @@
         return;
     }
     
-    if (arrCodes == nil) {
+    if (arrCodes.count == 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"PRODUCTS_PRODUCTS_ERROR", nil)
