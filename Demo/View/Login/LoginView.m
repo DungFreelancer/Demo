@@ -143,8 +143,8 @@
 }
 
 - (void)clearAllUserLog {
-    CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
-    [ciViewModel clearCheckIns];
+    CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
+    [vmCheckIn clearCheckIns];
     
     SupportViewModel *vmSupport = [[SupportViewModel alloc] init];
     [vmSupport clearSupports];

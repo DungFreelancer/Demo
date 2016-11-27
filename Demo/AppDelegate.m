@@ -44,9 +44,9 @@
 //            reach.reachableBlock = ^(Reachability*reach)
 //            {
 //                dispatch_async(dispatch_get_main_queue(), ^{
-//                    CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
-//                    [ciViewModel loadCheckIns];
-//                    for (CheckInModel *ci in ciViewModel.arrCheckIn) {
+//                    CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
+//                    [vmCheckIn loadCheckIns];
+//                    for (CheckInModel *ci in vmCheckIn.arrCheckIn) {
 //                        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 //                        [params setObject:ci.store forKey:PARAM_NAME];
 //                        [params setObject:ci.content forKey:PARAM_CONTENT];
@@ -54,7 +54,7 @@
 //                        
 //                        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
 //                    }
-//                    [ciViewModel clearCheckIns];
+//                    [vmCheckIn clearCheckIns];
 //                });
 //            };
 //            
@@ -63,13 +63,13 @@
 //    } else {
         [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
             DLOG(@"%d", connected);
-            CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+            CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
             
-            if (connected && ciViewModel.arrCheckIn.count > 0) {
+            if (connected && vmCheckIn.arrCheckIn.count > 0) {
                 
                 countSended = 0;
-                int numberOfUnsended = [ciViewModel numberOfUnsended];
-                for (CheckInModel *ci in ciViewModel.arrCheckIn) {
+                int numberOfUnsended = [vmCheckIn numberOfUnsended];
+                for (CheckInModel *ci in vmCheckIn.arrCheckIn) {
                     if (ci.isSended == NO) {
                         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
                         [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
@@ -96,7 +96,7 @@
                                         DLOG(@"%@", response);
                                         ++countSended;
                                         ci.isSended = YES;
-                                        [ciViewModel saveCheckIns];
+                                        [vmCheckIn saveCheckIns];
                                         
                                         if(countSended == numberOfUnsended) {
                                             UINavigationController *nv =  (UINavigationController *)self.window.rootViewController;

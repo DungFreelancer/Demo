@@ -48,9 +48,9 @@
         return;
     }
     
-    CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
+    CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
     
-    if ([ciViewModel numberOfUnsended] > 0) {
+    if ([vmCheckIn numberOfUnsended] > 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:nil
                                                       andMessage:NSLocalizedString(@"SETTING_WARRNING", nil)
