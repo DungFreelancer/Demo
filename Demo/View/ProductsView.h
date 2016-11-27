@@ -7,10 +7,9 @@
 //
 
 #import "BaseView.h"
-#import "AgencyView.h"
 #import "ScanProductView.h"
 
-@interface ProductsView : BaseView <AgencyViewDelegate,ScanProductViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ProductsView : BaseView <ScanProductViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
 @property (strong, nonatomic) IBOutlet UIView *lbNameAgency;

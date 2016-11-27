@@ -14,7 +14,6 @@
 #import "Constant.h"
 
 @implementation ProductsView {
-    NSDictionary *currentAgency;
     NSMutableArray *arrCodes;
 }
 
@@ -31,19 +30,10 @@
     [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
     [self.btnUpdate.layer setShadowWithRadius:1.0f];
     [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
-    
-    if ([[USER_DEFAULT objectForKey:PREF_ROLE] isEqualToString:@"Warehouse"] == NO) {
-        self.lbNameAgency.hidden = YES;
-        self.lbAgency.hidden = YES;
-        self.btnAgency.hidden= YES;
-    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"agency"]) {
-        AgencyView *viewAgency = (AgencyView *) [segue destinationViewController];
-        viewAgency.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"scan_code"]) {
+    if ([segue.identifier isEqualToString:@"scan_code"]) {
         ScanProductView *viewScanProduct = (ScanProductView *) [segue destinationViewController];
         viewScanProduct.delegate = self;
         
@@ -60,14 +50,6 @@
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
-                                                       andButton:NSLocalizedString(@"OK", nil)];
-        return;
-    }
-    
-    if (currentAgency == nil) {
-        [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"PRODUCTS_AGENCY_ERROR", nil)
                                                        andButton:NSLocalizedString(@"OK", nil)];
         return;
     }
@@ -91,7 +73,6 @@
     [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
     [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
     [params setObject:arrCodes forKey:PARAM_PRODUCTS];
-    [params setObject:[currentAgency valueForKey:@"id"] forKey:PARAM_AGENCY];
     [params setObject:status forKey:PARAM_STATUS];
     
     [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
@@ -122,12 +103,6 @@
     self.lbTotal.text = @"";
     arrCodes = [[NSMutableArray alloc] init];
     [self.tbCode reloadData];
-}
-
-// MARK: - AgencyViewDelegate
-- (void)didGetAgency:(NSDictionary *)agency {
-    currentAgency = agency;
-    self.lbAgency.text = [currentAgency valueForKey:@"store"];
 }
 
 // MARK: - ScanProductViewDelegate
