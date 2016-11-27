@@ -15,6 +15,7 @@
 
 @implementation ScanProductView {
     MTBBarcodeScanner *scanner;
+    BOOL isStop;
 }
 
 - (void)viewDidLoad {
@@ -32,6 +33,7 @@
     [self.btnStop.layer setBorderWithColor:self.btnStop.tintColor.CGColor];
     
     scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.viewScan];
+    isStop = NO;
     
     [MTBBarcodeScanner requestCameraPermissionWithSuccess:^(BOOL success) {
         if (success) {
@@ -72,7 +74,15 @@
 }
 
 - (IBAction)onClickStop:(id)sender {
-    
+    if (!isStop) {
+        [scanner freezeCapture];
+        isStop = YES;
+        [self.btnStop setTitle:@"Quét tiếp" forState:UIControlStateNormal];
+    } else {
+        [scanner unfreezeCapture];
+        isStop = NO;
+        [self.btnStop setTitle:@"Dừng Quét" forState:UIControlStateNormal];
+    }
 }
 
 // MARK: - UITableViewDataSource & UItableView Delegate
