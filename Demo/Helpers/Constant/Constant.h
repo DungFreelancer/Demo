@@ -34,8 +34,9 @@
 #define API_CHECK_STAFF @"http://221.133.7.92:802/api/rest/checkStaff"
 #define API_UPLOAD_IMAGE @"http://221.133.7.92:801/upload/checkin"
 #define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
-#define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 #define API_UPDATE_PRODUCT @"http://221.133.7.92:802/api/rest/updateproduct"
+#define API_EVENT @"http://221.133.7.92:802/api/rest/loyaltyevent"
+#define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"

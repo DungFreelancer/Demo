@@ -24,6 +24,42 @@
     
     self.tbEvent.dataSource = self;
     self.tbEvent.delegate = self;
+    
+    [self getAllEvent];
+}
+
+- (void)getAllEvent {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+    
+    [[NetworkHelper sharedInstance] requestGet:API_EVENT paramaters:params completion:^(id response, NSError *error) {
+    
+        [[HUDHelper sharedInstance] hideLoading];
+        
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
+//            arrEvent = response
+            [self.tbEvent reloadData];
+        } else {
+            ELOG(@"%@", response);
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE]
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
