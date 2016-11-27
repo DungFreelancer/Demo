@@ -47,7 +47,7 @@
 //                [scanner stopScanning]; // Hide the scan view
                 
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
-                if ([code.stringValue isEqualToString:self.arrCodes.lastObject] == false) {
+                if ([code.stringValue isEqualToString:self.arrCodes.lastObject] == NO) {
                     [self.arrCodes addObject:code.stringValue];
                     self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
                     
@@ -77,7 +77,7 @@
 }
 
 - (IBAction)onClickSave:(id)sender {
-    if ([self.txtCode.text isEqualToString:self.arrCodes.lastObject] == false) {
+    if ([self.txtCode.text isEqualToString:self.arrCodes.lastObject] == NO) {
         [self.arrCodes addObject:self.txtCode.text];
         self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
         self.txtCode.text = @"";

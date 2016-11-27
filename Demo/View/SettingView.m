@@ -39,7 +39,7 @@
 }
 
 - (void)logoutApp {
-    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
         ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -111,7 +111,7 @@
 }
 
 - (void)onClickBackBarItem:(id)sender {
-    [self.navigationController popViewControllerAnimated:TRUE];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

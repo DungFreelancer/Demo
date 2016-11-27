@@ -37,12 +37,12 @@
         self.hud.label.text = title;
     }
     
-    [self.hud showAnimated:TRUE];
+    [self.hud showAnimated:YES];
 }
 
 - (void) hideLoading
 {
-    [self.hud hideAnimated:TRUE];
+    [self.hud hideAnimated:YES];
 }
 
 - (void)showToastWithMessage:(NSString *)message onView:(UIView *)view
@@ -54,8 +54,8 @@
     self.hud.detailsLabel.text = message;
     self.hud.margin = 10.f;
     [self.hud setOffset:CGPointMake(0, 150.f)];
-    [self.hud showAnimated:TRUE];
-    [self.hud hideAnimated:TRUE afterDelay:3.5];
+    [self.hud showAnimated:YES];
+    [self.hud hideAnimated:YES afterDelay:3.5];
 }
 
 @end

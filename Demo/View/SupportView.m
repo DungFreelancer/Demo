@@ -34,7 +34,7 @@
 }
 
 - (IBAction)onClickSendRequest:(id)sender {
-    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
         ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)

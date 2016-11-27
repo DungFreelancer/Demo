@@ -43,7 +43,7 @@
 }
 
 - (IBAction)onClickLogin:(id)sender {
-    if ([[NetworkHelper sharedInstance]  isConnected] == false) {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
         ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -78,7 +78,7 @@
                     [self cleanAllView];
                     
                     // Check with old user login.
-                    if ([userName isEqualToString:[USER_DEFAULT objectForKey:PREF_USER]] == false) {
+                    if ([userName isEqualToString:[USER_DEFAULT objectForKey:PREF_USER]] == NO) {
                         [self clearAllUserLog];
                     }
                     
@@ -157,7 +157,7 @@
         [self onClickLogin:nil];
     }
     
-    return true;
+    return YES;
 }
 
 // MARK: - UIGestureRecognizerDelegate

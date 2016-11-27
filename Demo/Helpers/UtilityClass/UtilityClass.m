@@ -232,7 +232,7 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:button style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action];
     
-    [viewController presentViewController:alert animated:TRUE completion:nil];
+    [viewController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)showAlertOnViewController:(UIViewController *)viewController withTitle:(NSString *)title andMessage:(NSString *)message andMainButton:(NSString *)mainButton CompletionHandler:(void (^)(UIAlertAction *action))mainHandler andOtherButton:(NSString *)otherButton CompletionHandler:(void (^)(UIAlertAction *action))otherHandler
@@ -254,7 +254,7 @@
         [alert addAction:otherAction];
     }
     
-    [viewController presentViewController:alert animated:TRUE completion:nil];
+    [viewController presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - datetime helper

@@ -33,7 +33,7 @@
     NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"temp.plist" ];
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject: arrCheckIn];
-    [data writeToFile:path atomically:TRUE];
+    [data writeToFile:path atomically:YES];
 }
 
 - (void)clearCheckIns {

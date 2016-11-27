@@ -65,8 +65,8 @@
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePickerController.allowsEditing = TRUE;
-    [self presentViewController:imagePickerController animated:TRUE completion:nil];
+    imagePickerController.allowsEditing = YES;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 - (IBAction)onClickCheckIn:(UIButton *)sender {
@@ -190,7 +190,7 @@
 // UIImagePickerControllerDelegate.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [self.imgPicture setImage:[info valueForKey:UIImagePickerControllerEditedImage]];
-    [picker dismissViewControllerAnimated:TRUE completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 // MARK: - UITextViewDelegate
