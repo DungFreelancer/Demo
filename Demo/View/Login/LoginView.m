@@ -93,7 +93,7 @@
                     ELOG(@"%@", response);
                     [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                    withTitle:NSLocalizedString(@"ERROR", nil)
-                                                                  andMessage:NSLocalizedString(@"LOGIN_SESSION", nil)
+                                                                  andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"LOGIN_SESSION", nil)
                                                                    andButton:NSLocalizedString(@"OK", nil)];
                 }
             }];
@@ -101,7 +101,7 @@
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
-                                                          andMessage:NSLocalizedString(@"LOGIN_INCORRECT", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"LOGIN_INCORRECT", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
@@ -125,6 +125,10 @@
                 [self performSegueWithIdentifier:@"segue_menu" sender:nil];
             } else {
                 ELOG(@"%@", response);
+                [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                               withTitle:NSLocalizedString(@"ERROR", nil)
+                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"LOGIN_SESSION", nil)
+                                                               andButton:NSLocalizedString(@"OK", nil)];
                 [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
                 [USER_DEFAULT synchronize];
             }

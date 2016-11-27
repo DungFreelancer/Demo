@@ -121,7 +121,7 @@
                         DLOG(@"%@", response);
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:nil
-                                                                      andMessage:NSLocalizedString(@"CHECKIN_SUCCESS", nil)
+                                                                      andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"CHECKIN_SUCCESS", nil)
                                                                        andButton:NSLocalizedString(@"OK", nil)];
                         [self saveLogCheckInWithSended:YES];
                         [self cleanAllView];
@@ -129,14 +129,15 @@
                         ELOG(@"%@", response);
                         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                        withTitle:NSLocalizedString(@"ERROR", nil)
-                                                                      andMessage:NSLocalizedString(@"CHECKIN_FAIL", nil)
+                                                                      andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"CHECKIN_FAIL", nil)
                                                                        andButton:NSLocalizedString(@"OK", nil)];
                     }
                 }];
             } else {
+                ELOG(@"%@", response);
                 [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                withTitle:NSLocalizedString(@"ERROR", nil)
-                                                              andMessage:NSLocalizedString(@"CHECKIN_FAIL", nil)
+                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"CHECKIN_FAIL", nil)
                                                                andButton:NSLocalizedString(@"OK", nil)];
             }
         }];

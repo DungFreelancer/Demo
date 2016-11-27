@@ -103,6 +103,10 @@
             }];
         } else {
             ELOG(@"%@", response);
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"STAFF_NO_SIGNATURE", nil)
+                                                           andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
 }

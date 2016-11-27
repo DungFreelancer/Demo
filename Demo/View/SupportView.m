@@ -72,7 +72,7 @@
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
-                                                          andMessage:NSLocalizedString(@"SUPPORT_ERROR", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"SUPPORT_ERROR", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];    
