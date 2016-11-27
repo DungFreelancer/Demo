@@ -64,7 +64,7 @@
     if (arrCodes.count == 0) {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"PRODUCTS_PRODUCTS_ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"PRODUCTS_COUNT_ERROR", nil)
                                                        andButton:NSLocalizedString(@"OK", nil)];
         return;
     }
@@ -90,11 +90,26 @@
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
-            [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                           withTitle:nil
-                                                          andMessage:NSLocalizedString(@"PRODUCTS_UPDATED", nil)
-                                                           andButton:NSLocalizedString(@"OK", nil)];
-            [self cleanAllView];
+            
+            [arrCodes removeAllObjects];
+            for (NSString *code in [response valueForKey:RESPONSE_PRODUCTS]) {
+                [arrCodes addObject:code];
+            }
+            
+            if (arrCodes.count > 0) {
+                [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                               withTitle:nil
+                                                              andMessage:[NSString stringWithFormat:NSLocalizedString(@"PRODUCTS_DUPLICATE", nil), arrCodes.count]
+                                                               andButton:NSLocalizedString(@"OK", nil)];
+                self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrCodes.count];
+                [self.tbCode reloadData];
+            } else {
+                [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                               withTitle:nil
+                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"PRODUCTS_UPDATED", nil)
+                                                               andButton:NSLocalizedString(@"OK", nil)];
+                [self cleanAllView];
+            }
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -120,7 +135,8 @@
     [self.segStatus setSelectedSegmentIndex:0];
     self.lbTotal.text = @"0";
     self.txtCode.text = @"";
-    arrCodes = [[NSMutableArray alloc] init];
+    [self.txtCode resignFirstResponder];
+    [arrCodes removeAllObjects];
     [self.tbCode reloadData];
 }
 

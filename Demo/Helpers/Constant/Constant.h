@@ -62,7 +62,7 @@
 #define RESPONSE_AVATAR @"avatar"
 #define RESPONSE_SIGNATURE @"signature"
 #define RESPONSE_STATUS @"status"
-#define RESPONSE_AGENCY @"agency"
+#define RESPONSE_PRODUCTS @"products"
 #define RESPONSE_EVENTS @"events"
 #define RESPONSE_EVENTS_ID @"eid"
 #define RESPONSE_EVENTS_IMAGE @"eimage"
