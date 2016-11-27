@@ -10,45 +10,46 @@
 #import "UtilityClass.h"
 
 @implementation CheckInViewModel
-@synthesize arrCheckIn;
 
--(id)init{
-    if((self = [super init])){
-        arrCheckIn = [[NSMutableArray<CheckInModel *> alloc] init];
+- (id)init{
+    if ((self = [super init])){
+        self.arrCheckIn = [[NSMutableArray<CheckInModel *> alloc] init];
         [self loadCheckIns];
     }
     return self;
 }
 
 - (void)loadCheckIns {
-    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"temp.plist" ];
+    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"CheckIn.plist"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    
     if ([fileManager fileExistsAtPath:path]) {
         NSData *data = [NSData dataWithContentsOfFile:path];
-        arrCheckIn = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        self.arrCheckIn = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     }
 }
 
 - (void)saveCheckIns {
-    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"temp.plist" ];
+    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"CheckIn.plist"];
     
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject: arrCheckIn];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject: self.arrCheckIn];
     [data writeToFile:path atomically:YES];
 }
 
 - (void)clearCheckIns {
-    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"temp.plist" ];
+    NSString *path = [NSString stringWithFormat:@"%@/%@", [[UtilityClass sharedInstance] applicationDocumentDirectoryString], @"CheckIn.plist"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    
     if ([fileManager fileExistsAtPath:path]) {
         [fileManager removeItemAtPath:path error:nil];
-        [arrCheckIn removeAllObjects];
+        [self.arrCheckIn removeAllObjects];
     }
 }
 
 - (int)numberOfUnsended {
     int count = 0;
-    for (int i = 0; i < arrCheckIn.count; ++i) {
-        if (!arrCheckIn[i].isSended) {
+    for (int i = 0; i < self.arrCheckIn.count; ++i) {
+        if (!self.arrCheckIn[i].isSended) {
             ++count;
         }
     }

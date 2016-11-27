@@ -26,6 +26,9 @@
 		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
 		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
 		9A78CDAF1DEAC5E1009CF23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A78CDAE1DEAC5E1009CF23C /* LaunchScreen.storyboard */; };
+		9A78CDB41DEACF01009CF23C /* SupportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A78CDB31DEACF01009CF23C /* SupportModel.m */; };
+		9A78CDB71DEACFB6009CF23C /* SupportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A78CDB61DEACFB6009CF23C /* SupportViewModel.m */; };
+		9A78CDBA1DEAD9A3009CF23C /* SupportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A78CDB91DEAD9A3009CF23C /* SupportCell.m */; };
 		9A79BBFE1DD6E496007099C7 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A79BBFD1DD6E496007099C7 /* SettingView.m */; };
 		9A849AC81DDF71F9009EFEC3 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849AC71DDF71F9009EFEC3 /* EventView.m */; };
 		9A849ACC1DDF7269009EFEC3 /* EventDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */; };
@@ -102,6 +105,12 @@
 		9A7170051DCA53F100BC0C76 /* CheckInHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistoryCell.h; sourceTree = "<group>"; };
 		9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryCell.m; sourceTree = "<group>"; };
 		9A78CDAE1DEAC5E1009CF23C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A78CDB21DEACEF0009CF23C /* SupportModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportModel.h; sourceTree = "<group>"; };
+		9A78CDB31DEACF01009CF23C /* SupportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportModel.m; sourceTree = "<group>"; };
+		9A78CDB51DEACFA8009CF23C /* SupportViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportViewModel.h; sourceTree = "<group>"; };
+		9A78CDB61DEACFB6009CF23C /* SupportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportViewModel.m; sourceTree = "<group>"; };
+		9A78CDB81DEAD992009CF23C /* SupportCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportCell.h; sourceTree = "<group>"; };
+		9A78CDB91DEAD9A3009CF23C /* SupportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportCell.m; sourceTree = "<group>"; };
 		9A79BBFC1DD6E47C007099C7 /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		9A79BBFD1DD6E496007099C7 /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A849AC61DDF71E8009EFEC3 /* EventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
@@ -173,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9A664C411DC8F58300AB9CEE /* CheckIn */,
+				9A78CDB11DEACEB3009CF23C /* Support */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				9A664C401DC8F57400AB9CEE /* CheckIn */,
+				9A78CDB01DEACEAB009CF23C /* Support */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,6 +424,24 @@
 			path = CheckInHistory;
 			sourceTree = "<group>";
 		};
+		9A78CDB01DEACEAB009CF23C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9A78CDB21DEACEF0009CF23C /* SupportModel.h */,
+				9A78CDB31DEACF01009CF23C /* SupportModel.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		9A78CDB11DEACEB3009CF23C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9A78CDB51DEACFA8009CF23C /* SupportViewModel.h */,
+				9A78CDB61DEACFB6009CF23C /* SupportViewModel.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		9A79BBFB1DD6E439007099C7 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +530,8 @@
 			children = (
 				9ADE8E441DD87B6D00A010E2 /* SupportView.h */,
 				9ADE8E451DD87B8100A010E2 /* SupportView.m */,
+				9A78CDB81DEAD992009CF23C /* SupportCell.h */,
+				9A78CDB91DEAD9A3009CF23C /* SupportCell.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -730,7 +761,10 @@
 				9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */,
 				9A849ACF1DDF73F9009EFEC3 /* EventCell.m in Sources */,
 				9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */,
+				9A78CDBA1DEAD9A3009CF23C /* SupportCell.m in Sources */,
+				9A78CDB41DEACF01009CF23C /* SupportModel.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
+				9A78CDB71DEACFB6009CF23C /* SupportViewModel.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,

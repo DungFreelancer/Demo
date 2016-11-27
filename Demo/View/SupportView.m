@@ -7,13 +7,17 @@
 //
 
 #import "SupportView.h"
+#import "SupportViewModel.h"
+#import "SupportCell.h"
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "CALayer+BorderShadow.h"
 #import "HUDHelper.h"
 #import "Constant.h"
 
-@implementation SupportView
+@implementation SupportView {
+    SupportViewModel *vmSupport;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +31,12 @@
     [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     self.txtComment.delegate = self;
+    
+    self.tbSupport.dataSource = self;
+    self.tbSupport.delegate = self;
+    
+    vmSupport = [[SupportViewModel alloc] init];
+    [vmSupport loadSupports];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -67,7 +77,9 @@
                                                            withTitle:nil
                                                           andMessage:NSLocalizedString(@"SUPPORT_SENDED", nil)
                                                            andButton:NSLocalizedString(@"OK", nil)];
+            [self saveLogSupport];
             [self cleanAllView];
+            [self.tbSupport reloadData];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -78,12 +90,44 @@
     }];    
 }
 
+- (void)saveLogSupport {
+    NSString *type;
+    if ([self.segType selectedSegmentIndex] == 0) {
+        type = @"Hổ trợ";
+    } else {
+        type = @"Sự cố";
+    }
+    
+    SupportModel *support = [[SupportModel alloc] init];
+    support.type = type;
+    support.comment = self.txtComment.text;
+    support.date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"dd/MM/yyyy HH:mm"];
+    
+    [vmSupport.arrSupport addObject:support];
+    [vmSupport saveSupports];
+}
+
 - (void)cleanAllView {
     [self.segType setSelectedSegmentIndex:0];
     
     self.txtComment.text = @"Nội dung";
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     [self handleSingleTapGesture];
+}
+
+// MARK: - UITableViewDataSource & Delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return vmSupport.arrSupport.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SupportCell *cell = (SupportCell *) [tableView dequeueReusableCellWithIdentifier:@"support_cell" forIndexPath:indexPath];
+    
+    cell.lbType.text = vmSupport.arrSupport[indexPath.row].type;
+    cell.lbComment.text = vmSupport.arrSupport[indexPath.row].comment;
+    cell.lbDate.text = vmSupport.arrSupport[indexPath.row].date;
+    
+    return cell;
 }
 
 // MARK: - UITextViewDelegate

@@ -8,11 +8,12 @@
 
 #import "BaseView.h"
 
-@interface SupportView : BaseView <UIGestureRecognizerDelegate,UITextViewDelegate>
+@interface SupportView : BaseView <UIGestureRecognizerDelegate,UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UIButton *btnSendRequest;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segType;
+@property (weak, nonatomic) IBOutlet UITableView *tbSupport;
 
 - (IBAction)onClickSendRequest:(id)sender;
 

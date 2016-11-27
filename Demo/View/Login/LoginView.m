@@ -7,6 +7,7 @@
 //
 
 #import "LoginView.h"
+#import "SupportViewModel.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "CALayer+BorderShadow.h"
@@ -143,8 +144,10 @@
 
 - (void)clearAllUserLog {
     CheckInViewModel *ciViewModel = [[CheckInViewModel alloc] init];
-    
     [ciViewModel clearCheckIns];
+    
+    SupportViewModel *vmSupport = [[SupportViewModel alloc] init];
+    [vmSupport clearSupports];
 }
 
 // MARK: - UITextFieldDelegate

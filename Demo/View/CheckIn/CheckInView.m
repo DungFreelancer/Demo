@@ -19,7 +19,7 @@
 @end
 
 @implementation CheckInView {
-    CheckInViewModel *ciViewModel;
+    CheckInViewModel *vmCheckIn;
     CLLocationManager *locationManager;
 }
 
@@ -43,7 +43,7 @@
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
     
-    ciViewModel = [[CheckInViewModel alloc] init];
+    vmCheckIn = [[CheckInViewModel alloc] init];
     
     // Request get user's location.
     if ([CLLocationManager locationServicesEnabled]) {
@@ -163,9 +163,9 @@
     ci.longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
     ci.isSended = sended;
     
-    [ciViewModel loadCheckIns];
-    [ciViewModel.arrCheckIn addObject:ci];
-    [ciViewModel saveCheckIns];
+    [vmCheckIn loadCheckIns];
+    [vmCheckIn.arrCheckIn addObject:ci];
+    [vmCheckIn saveCheckIns];
 }
 
 - (CLLocationCoordinate2D)getLocation
