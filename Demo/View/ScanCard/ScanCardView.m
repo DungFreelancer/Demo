@@ -33,21 +33,6 @@
             NSError *error = nil;
             [scanner startScanningWithResultBlock:^(NSArray *codes) {
                 [scanner freezeCapture];
-                
-                if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
-                    ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                                   withTitle:NSLocalizedString(@"ERROR", nil)
-                                                                  andMessage:NSLocalizedString(@"NO_INTERNET", nil)
-                                                               andMainButton:NSLocalizedString(@"OK", nil)
-                                                           CompletionHandler:^(UIAlertAction *action) {
-                                                               [scanner unfreezeCapture];
-                                                           }
-                                                              andOtherButton:nil
-                                                           CompletionHandler:nil];
-                    
-                    return;
-                }
 //                [scanner stopScanning]; // Hide the scan view
                 
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
