@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
 		9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */; };
+		9A1BEA791DEC90E700A792B9 /* SaveProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */; };
+		9A1BEA7C1DEC913600A792B9 /* CheckProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA7B1DEC913600A792B9 /* CheckProductsView.m */; };
 		9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */; };
 		9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */; };
 		9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */; };
@@ -72,6 +74,10 @@
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsManagerView.h; sourceTree = "<group>"; };
 		9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsManagerView.m; sourceTree = "<group>"; };
+		9A1BEA771DEC90DB00A792B9 /* SaveProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveProductsView.h; sourceTree = "<group>"; };
+		9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveProductsView.m; sourceTree = "<group>"; };
+		9A1BEA7A1DEC912B00A792B9 /* CheckProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckProductsView.h; sourceTree = "<group>"; };
+		9A1BEA7B1DEC913600A792B9 /* CheckProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckProductsView.m; sourceTree = "<group>"; };
 		9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
 		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInViewModel.h; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 		9A1BEA721DEC8F1800A792B9 /* SaveProducts */ = {
 			isa = PBXGroup;
 			children = (
+				9A1BEA771DEC90DB00A792B9 /* SaveProductsView.h */,
+				9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */,
 			);
 			name = SaveProducts;
 			sourceTree = "<group>";
@@ -200,6 +208,8 @@
 		9A1BEA731DEC8F2A00A792B9 /* CheckProducts */ = {
 			isa = PBXGroup;
 			children = (
+				9A1BEA7A1DEC912B00A792B9 /* CheckProductsView.h */,
+				9A1BEA7B1DEC913600A792B9 /* CheckProductsView.m */,
 			);
 			name = CheckProducts;
 			sourceTree = "<group>";
@@ -800,6 +810,7 @@
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
 				9A89660C1DDA119800A8703E /* IEProductsView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
+				9A1BEA791DEC90E700A792B9 /* SaveProductsView.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
@@ -808,6 +819,7 @@
 				9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */,
 				9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */,
 				9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */,
+				9A1BEA7C1DEC913600A792B9 /* CheckProductsView.m in Sources */,
 				9A5F19911D8E905700B2E5AB /* main.m in Sources */,
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
 				9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */,

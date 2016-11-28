@@ -33,8 +33,6 @@
     [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
     [self.btnUpdate.layer setShadowWithRadius:1.0f];
     [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
-    [self.btnSave.layer setShadowWithRadius:1.0f];
-    [self.btnSave.layer setBorderWithColor:self.btnSave.tintColor.CGColor];
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     
     // Handle single tap.
