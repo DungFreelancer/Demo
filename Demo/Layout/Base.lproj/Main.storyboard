@@ -368,7 +368,7 @@
         <!--Quản lý sản phẩm-->
         <scene sceneID="I7W-ks-286">
             <objects>
-                <viewController id="9Ss-wU-uzs" sceneMemberID="viewController">
+                <viewController id="9Ss-wU-uzs" customClass="ProductsManager" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vYd-l3-xZd"/>
                         <viewControllerLayoutGuide type="bottom" id="O38-2Z-mEN"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
+		9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */; };
 		9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */; };
 		9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */; };
 		9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */; };
@@ -69,6 +70,8 @@
 		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
 		993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsManagerView.h; sourceTree = "<group>"; };
+		9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsManagerView.m; sourceTree = "<group>"; };
 		9A207CA91DB13BE600AFB3A7 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
 		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInViewModel.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 		9A1BEA711DEC8F0700A792B9 /* ProductsManager */ = {
 			isa = PBXGroup;
 			children = (
+				9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */,
+				9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */,
 			);
 			name = ProductsManager;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				9A78CDBA1DEAD9A3009CF23C /* SupportCell.m in Sources */,
 				9A78CDB41DEACF01009CF23C /* SupportModel.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
+				9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */,
 				9A78CDB71DEACFB6009CF23C /* SupportViewModel.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
