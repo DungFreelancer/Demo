@@ -33,7 +33,7 @@
 		9A849AC81DDF71F9009EFEC3 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849AC71DDF71F9009EFEC3 /* EventView.m */; };
 		9A849ACC1DDF7269009EFEC3 /* EventDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */; };
 		9A849ACF1DDF73F9009EFEC3 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849ACE1DDF73F9009EFEC3 /* EventCell.m */; };
-		9A89660C1DDA119800A8703E /* ProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660B1DDA119800A8703E /* ProductsView.m */; };
+		9A89660C1DDA119800A8703E /* IEProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660B1DDA119800A8703E /* IEProductsView.m */; };
 		9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660E1DDA11CB00A8703E /* ScanProductView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
@@ -119,8 +119,8 @@
 		9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailView.m; sourceTree = "<group>"; };
 		9A849ACD1DDF73CF009EFEC3 /* EventCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		9A849ACE1DDF73F9009EFEC3 /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
-		9A89660A1DDA118700A8703E /* ProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsView.h; sourceTree = "<group>"; };
-		9A89660B1DDA119800A8703E /* ProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ProductsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A89660A1DDA118700A8703E /* IEProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEProductsView.h; sourceTree = "<group>"; };
+		9A89660B1DDA119800A8703E /* IEProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IEProductsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A89660D1DDA11BF00A8703E /* ScanProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanProductView.h; sourceTree = "<group>"; };
 		9A89660E1DDA11CB00A8703E /* ScanProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanProductView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
@@ -176,6 +176,27 @@
 				F310FDE6DDD75C987404FF53 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A1BEA711DEC8F0700A792B9 /* ProductsManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ProductsManager;
+			sourceTree = "<group>";
+		};
+		9A1BEA721DEC8F1800A792B9 /* SaveProducts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SaveProducts;
+			sourceTree = "<group>";
+		};
+		9A1BEA731DEC8F2A00A792B9 /* CheckProducts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CheckProducts;
 			sourceTree = "<group>";
 		};
 		9A1DDCE61DACEB1D00E7AE23 /* ViewModel */ = {
@@ -306,8 +327,11 @@
 				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
 				9A3D67221D90D83100A71D62 /* CheckStaff */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
-				9A8966071DDA10FE00A8703E /* Products */,
+				9A1BEA711DEC8F0700A792B9 /* ProductsManager */,
+				9A8966071DDA10FE00A8703E /* IEProducts */,
 				9A8966081DDA110B00A8703E /* ScanProduct */,
+				9A1BEA721DEC8F1800A792B9 /* SaveProducts */,
+				9A1BEA731DEC8F2A00A792B9 /* CheckProducts */,
 				9A849AC41DDF718A009EFEC3 /* Event */,
 				9A849AC51DDF7193009EFEC3 /* EventDetail */,
 				9A79BBFB1DD6E439007099C7 /* Setting */,
@@ -471,13 +495,13 @@
 			name = EventDetail;
 			sourceTree = "<group>";
 		};
-		9A8966071DDA10FE00A8703E /* Products */ = {
+		9A8966071DDA10FE00A8703E /* IEProducts */ = {
 			isa = PBXGroup;
 			children = (
-				9A89660A1DDA118700A8703E /* ProductsView.h */,
-				9A89660B1DDA119800A8703E /* ProductsView.m */,
+				9A89660A1DDA118700A8703E /* IEProductsView.h */,
+				9A89660B1DDA119800A8703E /* IEProductsView.m */,
 			);
-			name = Products;
+			name = IEProducts;
 			sourceTree = "<group>";
 		};
 		9A8966081DDA110B00A8703E /* ScanProduct */ = {
@@ -768,7 +792,7 @@
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,
-				9A89660C1DDA119800A8703E /* ProductsView.m in Sources */,
+				9A89660C1DDA119800A8703E /* IEProductsView.m in Sources */,
 				9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */,
 				9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */,
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,

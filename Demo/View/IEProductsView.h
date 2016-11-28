@@ -1,5 +1,5 @@
 //
-//  ProductsView.h
+//  IEProductsView.h
 //  Demo
 //
 //  Created by Dung Do on 11/14/16.

@@ -1,12 +1,12 @@
 //
-//  ProductsView.m
+//  IEProductsView.m
 //  Demo
 //
 //  Created by Dung Do on 11/14/16.
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "ProductsView.h"
+#import "IEProductsView.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "UtilityClass.h"
