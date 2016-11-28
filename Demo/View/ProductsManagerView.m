@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dung Do. All rights reserved.
 //
 
-#import "ProductsManager.h"
+#import "ProductsManagerView.h"
 
 @implementation ProductsManagerView
 
