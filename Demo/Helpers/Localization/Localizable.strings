@@ -46,3 +46,6 @@
 "PRODUCTS_ERROR" = "Không thể cập nhật.";
 "PRODUCTS_COUNT_ERROR" = "Chưa có mã sản phẩm nào.";
 "PRODUCTS_DUPLICATE" = "Có %lu mã sản phẩm bị trùng.";
+
+// TrackingProduct.
+"TRACKING_NO_CODE" = "Chưa nhập mã sản phẩm.";

@@ -36,6 +36,7 @@
 #define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
 #define API_UPDATE_PRODUCT @"http://221.133.7.92:802/api/rest/updateproduct"
 #define API_SAVE_PRODUCT @"http://221.133.7.92:802/api/rest/sendcodeevent"
+#define API_TRACKING_PRODUCT @"http://221.133.7.92:802/api/rest/tracking"
 #define API_EVENT @"http://221.133.7.92:802/api/rest/loyaltyevent"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 
