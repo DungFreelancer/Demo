@@ -38,7 +38,7 @@
     [self checkLoginStatus];
     
     // Template input
-    [self.txtUserName setText:@"hai"]; //cap1, cap2
+    [self.txtUserName setText:@"cap2"];
     [self.txtPassword setText:@"123456"];
 //    [self onClickLogin:nil];
 }
