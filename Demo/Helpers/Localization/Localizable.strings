@@ -45,4 +45,4 @@
 "PRODUCTS_UPDATED" = "Đã cập nhật thành công.";
 "PRODUCTS_ERROR" = "Không thể cập nhật.";
 "PRODUCTS_COUNT_ERROR" = "Chưa có mã sản phẩm nào.";
-"PRODUCTS_DUPLICATE" = "Có %lu sản phẩm bị trùng.";
+"PRODUCTS_DUPLICATE" = "Có %lu mã sản phẩm bị trùng.";

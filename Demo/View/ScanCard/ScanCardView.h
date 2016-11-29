@@ -16,8 +16,10 @@
 
 @interface ScanCardView : BaseView
 
-@property (strong, nonatomic) IBOutlet UIView *viewScan;
 @property (weak, nonatomic) id<ScanCardViewDelegate> delegate;
+@property (strong,nonatomic) NSMutableArray *arrCodes;
+@property (strong, nonatomic) IBOutlet UIView *viewScan;
+@property (weak, nonatomic) IBOutlet UILabel *lbTotal;
 
 @end
 

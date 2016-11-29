@@ -35,6 +35,7 @@
 #define API_UPLOAD_IMAGE @"http://221.133.7.92:801/upload/checkin"
 #define API_CHECK_IN @"http://221.133.7.92:802/api/rest/checkin"
 #define API_UPDATE_PRODUCT @"http://221.133.7.92:802/api/rest/updateproduct"
+#define API_SAVE_PRODUCT @"http://221.133.7.92:802/api/rest/sendcodeevent"
 #define API_EVENT @"http://221.133.7.92:802/api/rest/loyaltyevent"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 
@@ -50,7 +51,7 @@
 #define PARAM_TYPE @"type"
 #define PARAM_CONTENT @"content"
 #define PARAM_PRODUCTS @"products"
-#define PARAM_AGENCY @"agency"
+#define PARAM_CODES @"codes"
 #define PARAM_STATUS @"status"
 
 #define RESPONSE_ID @"id"
@@ -68,6 +69,7 @@
 #define RESPONSE_EVENTS_IMAGE @"eimage"
 #define RESPONSE_EVENTS_NAME @"ename"
 #define RESPONSE_EVENTS_TIME @"etime"
+#define RESPONSE_CODES @"codes"
 
 // PREFERENCE-------------------------------------------------------------------
 

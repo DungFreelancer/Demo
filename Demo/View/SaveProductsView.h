@@ -9,7 +9,7 @@
 #import "BaseView.h"
 #import "ScanCardView.h"
 
-@interface SaveProductsView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, ScanCardViewDelegate>
+@interface SaveProductsView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtCode;
 @property (weak, nonatomic) IBOutlet UIButton *btnScan;

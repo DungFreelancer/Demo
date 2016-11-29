@@ -7,6 +7,8 @@
 //
 
 #import "ScanCardView.h"
+#import "CheckStaffView.h"
+#import "CALayer+BorderShadow.h"
 #import <MTBBarcodeScanner/MTBBarcodeScanner.h>
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
@@ -25,6 +27,15 @@
     
     [self setBackBarItem];
     
+    if ([[self.navigationController parentViewController] isKindOfClass:[CheckStaffView class]]) {
+        self.lbTotal.hidden = YES;
+    } else {
+        self.lbTotal.hidden = NO;
+        [self.lbTotal.layer setBorderWithColor:[UIColor redColor].CGColor];
+        
+        self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
+    }
+    
     MTBBarcodeScanner *scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.viewScan];
     
     [MTBBarcodeScanner requestCameraPermissionWithSuccess:^(BOOL success) {
@@ -33,13 +44,21 @@
             NSError *error = nil;
             [scanner startScanningWithResultBlock:^(NSArray *codes) {
                 [scanner freezeCapture];
-//                [scanner stopScanning]; // Hide the scan view
                 
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
-                [delegate didScanCard:code.stringValue];
-                [[self navigationController] popViewControllerAnimated:YES];
-            } error:&error];
+                DLOG(@"Code=%@", code.stringValue);
             
+                if ([[self.navigationController parentViewController] isKindOfClass:[CheckStaffView class]]) {
+                    [delegate didScanCard:code.stringValue];
+                    [[self navigationController] popViewControllerAnimated:YES];
+                } else {
+                    if ([code.stringValue isEqualToString:self.arrCodes.lastObject] == NO) {
+                        [self.arrCodes addObject:code.stringValue];
+                        self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
+                    }
+                    [scanner unfreezeCapture];
+                }
+            } error:&error];
         } else {
             // The user denied access to the camera
             [[UtilityClass sharedInstance] showAlertOnViewController:self
