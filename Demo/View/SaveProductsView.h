@@ -7,7 +7,6 @@
 //
 
 #import "BaseView.h"
-#import "ScanCardView.h"
 
 @interface SaveProductsView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 

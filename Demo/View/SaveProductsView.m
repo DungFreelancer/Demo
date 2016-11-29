@@ -7,6 +7,7 @@
 //
 
 #import "SaveProductsView.h"
+#import "ScanCardView.h"
 #import "CALayer+BorderShadow.h"
 #import "HUDHelper.h"
 #import "NetworkHelper.h"
@@ -41,7 +42,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.tbCodes reloadData];
+    [self.tbCodes reloadData]; // Reload table after scan code.
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

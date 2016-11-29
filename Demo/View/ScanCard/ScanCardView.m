@@ -7,7 +7,7 @@
 //
 
 #import "ScanCardView.h"
-#import "CheckStaffView.h"
+#import "SaveProductsView.h"
 #import "CALayer+BorderShadow.h"
 #import <MTBBarcodeScanner/MTBBarcodeScanner.h>
 #import "NetworkHelper.h"
@@ -27,13 +27,13 @@
     
     [self setBackBarItem];
     
-    if ([[self.navigationController parentViewController] isKindOfClass:[CheckStaffView class]]) {
-        self.lbTotal.hidden = YES;
-    } else {
+    if ([[self.navigationController parentViewController] isKindOfClass:[SaveProductsView class]]) {
         self.lbTotal.hidden = NO;
         [self.lbTotal.layer setBorderWithColor:[UIColor redColor].CGColor];
         
         self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
+    } else {
+        self.lbTotal.hidden = YES;
     }
     
     MTBBarcodeScanner *scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:self.viewScan];
@@ -48,15 +48,15 @@
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
                 DLOG(@"Code=%@", code.stringValue);
             
-                if ([[self.navigationController parentViewController] isKindOfClass:[CheckStaffView class]]) {
-                    [delegate didScanCard:code.stringValue];
-                    [[self navigationController] popViewControllerAnimated:YES];
-                } else {
+                if ([[self.navigationController parentViewController] isKindOfClass:[SaveProductsView class]]) {
                     if ([code.stringValue isEqualToString:self.arrCodes.lastObject] == NO) {
                         [self.arrCodes addObject:code.stringValue];
                         self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
                     }
                     [scanner unfreezeCapture];
+                } else {
+                    [delegate didScanCard:code.stringValue];
+                    [[self navigationController] popViewControllerAnimated:YES];
                 }
             } error:&error];
         } else {
