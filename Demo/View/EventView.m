@@ -8,6 +8,7 @@
 
 #import "EventView.h"
 #import "EventCell.h"
+#import "EventDetailView.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "UtilityClass.h"
@@ -16,6 +17,8 @@
 
 @implementation EventView {
     NSMutableArray <NSDictionary *> *arrEvent;
+    NSString *eventID;
+    UIImage *banner;
 }
 
 - (void)viewDidLoad {
@@ -29,6 +32,14 @@
     arrEvent = [[NSMutableArray alloc] init];
     
     [self getAllEvent];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segue_event_detail"]) {
+        EventDetailView *viewED = segue.destinationViewController;
+        viewED.eventID = eventID;
+        viewED.banner = banner;
+    }
 }
 
 - (void)getAllEvent {
@@ -77,6 +88,13 @@
     cell.lbDate.text = [arrEvent[indexPath.row] valueForKey:RESPONSE_EVENTS_TIME];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    eventID = [arrEvent[indexPath.row] valueForKey:RESPONSE_EVENTS_ID];
+    banner = ((EventCell *) [tableView cellForRowAtIndexPath:indexPath]).imgBanner.image;
+    
+    [self performSegueWithIdentifier:@"segue_event_detail" sender:nil];
 }
 
 @end

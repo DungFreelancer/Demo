@@ -38,6 +38,7 @@
 #define API_SAVE_PRODUCT @"http://221.133.7.92:802/api/rest/sendcodeevent"
 #define API_TRACKING_PRODUCT @"http://221.133.7.92:802/api/rest/tracking"
 #define API_EVENT @"http://221.133.7.92:802/api/rest/loyaltyevent"
+#define API_EVENT_DETAIL @"http://221.133.7.92:802/api/rest/eventdetail"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 
 #define PARAM_USER @"user"
@@ -54,6 +55,7 @@
 #define PARAM_PRODUCTS @"products"
 #define PARAM_CODES @"codes"
 #define PARAM_STATUS @"status"
+#define PARAM_EVENT_ID @"eventId"
 
 #define RESPONSE_ID @"id"
 #define RESPONSE_MESSAGE @"msg"
@@ -70,6 +72,9 @@
 #define RESPONSE_EVENTS_IMAGE @"eimage"
 #define RESPONSE_EVENTS_NAME @"ename"
 #define RESPONSE_EVENTS_TIME @"etime"
+#define RESPONSE_EVENTS_DESCRIBE @"edescribe"
+#define RESPONSE_EVENTS_AWARDS @"awards"
+#define RESPONSE_EVENTS_PRODUCTS @"products"
 #define RESPONSE_CODES @"codes"
 
 // PREFERENCE-------------------------------------------------------------------
