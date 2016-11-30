@@ -102,7 +102,7 @@
 
 - (void)setBackBarItem {
     UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnLeft.frame = CGRectMake(0, 0, 25, 25);
+    btnLeft.frame = CGRectMake(0, 0, 30, 30);
     [btnLeft addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
     [btnLeft setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     
