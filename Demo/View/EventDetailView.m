@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailView.h"
+#import "EventDetailCell.h"
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "UIImageView+Download.h"
@@ -15,7 +16,7 @@
 #import "Constant.h"
 
 @implementation EventDetailView {
-    
+    NSArray<NSDictionary *> *arrAward, *arrProduct;
 }
 
 - (void)viewDidLoad {
@@ -63,6 +64,8 @@
             self.lbContent.text = [response valueForKey:RESPONSE_EVENTS_DESCRIBE];
             self.lbDate.text = [response valueForKey:RESPONSE_EVENTS_TIME];
             
+            arrAward = [response valueForKey:RESPONSE_EVENTS_AWARDS];
+            arrProduct = [response valueForKey:RESPONSE_EVENTS_PRODUCTS];
             
             [self.tbReward reloadData];
         } else {
@@ -79,12 +82,51 @@
 }
 
 // MARK: - UITableViewDataSource & Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    if (section == 0) {
+        return arrAward.count;
+    } else {
+        return arrProduct.count;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        if (arrAward.count == 0) {
+            return nil;
+        } else {
+            return @"Phần thưởng";
+        }
+    } else {
+        if (arrProduct.count == 0) {
+            return nil;
+        } else {
+            return @"Sản phẩm sử dụng tích điểm";
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    EventDetailCell *cell;
+    
+    if (indexPath.section == 0) {
+        cell = (EventDetailCell *) [tableView dequeueReusableCellWithIdentifier:@"reward_cell" forIndexPath:indexPath];
+        [cell.imgAward downloadFromURL:[arrAward[indexPath.row] valueForKey:@"image"]
+                       withPlaceholder:nil handleCompletion:^(BOOL success) {}];
+        cell.lbName.text = [arrAward[indexPath.row] valueForKey:@"name"];
+        cell.lbPoint.text = [arrAward[indexPath.row] valueForKey:@"point"];
+    } else {
+        cell = (EventDetailCell *) [tableView dequeueReusableCellWithIdentifier:@"product_cell" forIndexPath:indexPath];
+        cell.lbName.text = [arrProduct[indexPath.row] valueForKey:@"name"];
+        cell.lbPoint.text = [arrProduct[indexPath.row] valueForKey:@"point"];
+    }
+    
+    return cell;
 }
 
 @end

@@ -26,6 +26,7 @@
 		9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */; };
 		9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */; };
 		9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */; };
+		9A68D0841DEF46C100DFD4A9 /* EventDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A68D0831DEF46C100DFD4A9 /* EventDetailCell.m */; };
 		9A6B4D181DEDE005002330AE /* TrackingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B4D171DEDE005002330AE /* TrackingCell.m */; };
 		9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170031DCA4E2000BC0C76 /* CheckInHistory.m */; };
 		9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7170061DCA53FE00BC0C76 /* CheckInHistoryCell.m */; };
@@ -110,6 +111,8 @@
 		9A5F19E11D8EAB4700B2E5AB /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		9A5F19E31D8EAB5D00B2E5AB /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UtilityClass.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A5F19E41D8EAB5D00B2E5AB /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UtilityClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A68D0821DEF46AE00DFD4A9 /* EventDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailCell.h; sourceTree = "<group>"; };
+		9A68D0831DEF46C100DFD4A9 /* EventDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailCell.m; sourceTree = "<group>"; };
 		9A6B4D161DEDDFEA002330AE /* TrackingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackingCell.h; sourceTree = "<group>"; };
 		9A6B4D171DEDE005002330AE /* TrackingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingCell.m; sourceTree = "<group>"; };
 		9A7170021DCA4E0F00BC0C76 /* CheckInHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInHistory.h; sourceTree = "<group>"; };
@@ -511,6 +514,8 @@
 			children = (
 				9A849ACA1DDF7258009EFEC3 /* EventDetailView.h */,
 				9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */,
+				9A68D0821DEF46AE00DFD4A9 /* EventDetailCell.h */,
+				9A68D0831DEF46C100DFD4A9 /* EventDetailCell.m */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -830,6 +835,7 @@
 				9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */,
 				9A7170041DCA4E2000BC0C76 /* CheckInHistory.m in Sources */,
 				9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */,
+				9A68D0841DEF46C100DFD4A9 /* EventDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
