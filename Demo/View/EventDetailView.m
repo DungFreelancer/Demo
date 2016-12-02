@@ -24,10 +24,6 @@
     
     [self setBackBarItem];
     
-    // Setup button
-    [self.btnMessage.layer setShadowWithRadius:1.0f];
-    [self.btnMessage.layer setBorderWithColor: self.btnMessage.tintColor.CGColor];
-    
     self.tbReward.dataSource = self;
     self.tbReward.delegate = self;
     
@@ -78,9 +74,6 @@
     }];
 }
 
-- (IBAction)onClickMessage:(id)sender {
-}
-
 // MARK: - UITableViewDataSource & Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -100,13 +93,13 @@
         if (arrAward.count == 0) {
             return nil;
         } else {
-            return @"Phần thưởng";
+            return @"Phần thưởng:";
         }
     } else {
         if (arrProduct.count == 0) {
             return nil;
         } else {
-            return @"Sản phẩm sử dụng tích điểm";
+            return @"Sản phẩm sử dụng tích điểm:";
         }
     }
 }

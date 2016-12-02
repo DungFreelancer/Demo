@@ -15,11 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBanner;
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
-@property (weak, nonatomic) IBOutlet UIButton *btnMessage;
 @property (weak, nonatomic) IBOutlet UILabel *lbContent;
 @property (weak, nonatomic) IBOutlet UILabel *lbDate;
 @property (weak, nonatomic) IBOutlet UITableView *tbReward;
-
-- (IBAction)onClickMessage:(id)sender;
 
 @end
