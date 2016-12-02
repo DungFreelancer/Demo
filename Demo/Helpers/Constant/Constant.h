@@ -40,6 +40,7 @@
 #define API_EVENT @"http://221.133.7.92:802/api/rest/loyaltyevent"
 #define API_EVENT_DETAIL @"http://221.133.7.92:802/api/rest/eventdetail"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
+#define API_USER_INFORMATION @"http://221.133.7.92:802/api/rest/userinfo"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -76,6 +77,12 @@
 #define RESPONSE_EVENTS_AWARDS @"awards"
 #define RESPONSE_EVENTS_PRODUCTS @"products"
 #define RESPONSE_CODES @"codes"
+#define RESPONSE_TYPE @"type"
+#define RESPONSE_FULLNAME @"fullname"
+#define RESPONSE_ADDRESS @"address"
+#define RESPONSE_PHONE @"phone"
+#define RESPONSE_BIRTHDAY @"birthday"
+#define RESPONSE_AREA @"area"
 
 // PREFERENCE-------------------------------------------------------------------
 
