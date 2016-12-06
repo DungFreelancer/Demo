@@ -25,7 +25,7 @@
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
     
-    NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7)];
+    NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
     self.imgBanner.image = [UIImage imageNamed:name];
     
     // Get function list.
