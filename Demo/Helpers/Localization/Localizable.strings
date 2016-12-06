@@ -13,6 +13,8 @@
 "LOADING" = "Đang xử lý...";
 "NO_INTERNET" = "Không thể kết nối internet.";
 "NO_CAMERA" = "Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.";
+"NO_COMMENT" = "Chưa nhập nội dung.";
+"NO_PICTURE" = "Chưa có hình ảnh.";
 
 // LoginView.
 "LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";

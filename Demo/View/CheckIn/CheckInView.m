@@ -86,6 +86,24 @@
         return;
     }
     
+    if ([self.imgPicture.image isEqual:[UIImage imageNamed:@"no_picture"]]) {
+        ELOG(@"%@", NSLocalizedString(@"NO_PICTURE", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_PICTURE", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
+    if ([self.txtComment.text isEqualToString:@"Nội dung"]) {
+        ELOG(@"%@", NSLocalizedString(@"NO_COMMENT", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_COMMENT", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
     if ([[NetworkHelper sharedInstance]  isConnected]) {
         // Push data to Service.
         NSMutableDictionary *params = [[NSMutableDictionary alloc] init];

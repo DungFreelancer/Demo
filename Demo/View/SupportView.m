@@ -53,6 +53,15 @@
         return;
     }
     
+    if ([self.txtComment.text isEqualToString:@"Nội dung"]) {
+        ELOG(@"%@", NSLocalizedString(@"NO_COMMENT", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_COMMENT", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
     NSString *type;
     if ([self.segType selectedSegmentIndex] == 0) {
         type = @"sp";
