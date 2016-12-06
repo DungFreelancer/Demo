@@ -21,13 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Setup navigation bar.
-    self.navigationController.navigationBarHidden = NO;
-    self.navigationController.navigationBar.barTintColor = [[self view] tintColor];
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.backgroundColor = [[self view] tintColor];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    
     // Setup table view.
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
@@ -35,6 +28,17 @@
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
     function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", @"setting", nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Setup navigation bar.
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBar.barTintColor = [[self view] tintColor];
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.backgroundColor = [[self view] tintColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

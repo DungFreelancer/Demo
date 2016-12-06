@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self setBackBarItem];
+    self.navigationController.navigationBarHidden = NO;
     
     // Setup button.
     [self.btnScan.layer setShadowWithRadius:1.0f];

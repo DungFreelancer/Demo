@@ -25,6 +25,7 @@
     [super viewDidLoad];
     
     [self setBackBarItem];
+    self.navigationController.navigationBarHidden = NO;
     
     self.tbEvent.dataSource = self;
     self.tbEvent.delegate = self;

@@ -14,6 +14,7 @@
     [super viewDidLoad];
     
     [self setBackBarItem];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 @end
