@@ -1909,12 +1909,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-em-xVA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner_1" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-em-xVA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RF9-p6-c6R">
-                                <rect key="frame" x="0.0" y="117" width="320" height="451"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="404"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2253,6 +2253,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imgBanner" destination="Ah0-em-xVA" id="Q4c-Xa-uJJ"/>
                         <outlet property="tblMenu" destination="RF9-p6-c6R" id="pzV-rJ-SFg"/>
                     </connections>
                 </viewController>
@@ -2281,7 +2282,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="319" height="425"/>
-        <image name="banner" width="695" height="399"/>
+        <image name="banner_1" width="620" height="349"/>
         <image name="check_product" width="128" height="128"/>
         <image name="checkin" width="64" height="64"/>
         <image name="checkstaff" width="64" height="64"/>
@@ -2298,7 +2299,7 @@
         <image name="signture" width="200" height="119"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SBv-ep-Q9b"/>
+        <segue reference="x62-ih-F6D"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33725490196078434" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

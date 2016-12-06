@@ -25,6 +25,9 @@
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
     
+    NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7)];
+    self.imgBanner.image = [UIImage imageNamed:name];
+    
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
     function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", @"setting", nil];
