@@ -171,4 +171,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [arrCode removeObjectAtIndex:indexPath.row];
+        [self.tbCodes reloadData];
+    }
+}
+
 @end

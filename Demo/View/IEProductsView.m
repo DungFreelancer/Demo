@@ -158,6 +158,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [arrCodes removeObjectAtIndex:indexPath.row];
+        [self.tbCode reloadData];
+    }
+}
+
 // MARK: - UIGestureRecognizerDelegate
 - (void)handleSingleTapGesture {
     [self.txtCode resignFirstResponder];
