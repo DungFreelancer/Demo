@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lbContent;
 @property (weak, nonatomic) IBOutlet UILabel *lbDate;
-@property (weak, nonatomic) IBOutlet UITableView *tbReward;
+@property (weak, nonatomic) IBOutlet UITableView *tbAward;
 
 @end

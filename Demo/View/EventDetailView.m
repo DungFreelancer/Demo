@@ -7,7 +7,7 @@
 //
 
 #import "EventDetailView.h"
-#import "EventDetailCell.h"
+#import "EventAwardView.h"
 #import "NetworkHelper.h"
 #import "UtilityClass.h"
 #import "UIImageView+Download.h"
@@ -17,6 +17,7 @@
 
 @implementation EventDetailView {
     NSArray<NSDictionary *> *arrAward, *arrProduct;
+    NSString *type;
 }
 
 - (void)viewDidLoad {
@@ -24,12 +25,25 @@
     
     [self setBackBarItem];
     
-    self.tbReward.dataSource = self;
-    self.tbReward.delegate = self;
+    self.tbAward.dataSource = self;
+    self.tbAward.delegate = self;
     
     self.imgBanner.image = self.banner;
     
     [self getEvetDetail];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segue_event_award"]) {
+        EventAwardView *viewEA = segue.destinationViewController;
+        if ([type isEqualToString:@"award"]) {
+            viewEA.arrAward = arrAward;
+            viewEA.type = @"award";
+        } else {
+            viewEA.arrAward = arrProduct;
+            viewEA.type = @"product";
+        }
+    }
 }
 
 - (void)getEvetDetail {
@@ -63,7 +77,7 @@
             arrAward = [response valueForKey:RESPONSE_EVENTS_AWARDS];
             arrProduct = [response valueForKey:RESPONSE_EVENTS_PRODUCTS];
             
-            [self.tbReward reloadData];
+            [self.tbAward reloadData];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -75,51 +89,41 @@
 }
 
 // MARK: - UITableViewDataSource & Delegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return arrAward.count;
-    } else {
-        return arrProduct.count;
-    }
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    int rows = 0;
     
-    if (section == 0) {
-        if (arrAward.count == 0) {
-            return nil;
-        } else {
-            return @"Phần thưởng:";
-        }
-    } else {
-        if (arrProduct.count == 0) {
-            return nil;
-        } else {
-            return @"Sản phẩm sử dụng tích điểm:";
-        }
+    if (arrAward.count > 0) {
+        rows++;
     }
+    if (arrProduct.count > 0) {
+        rows++;
+    }
+    
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventDetailCell *cell;
+    UITableViewCell *cell = (UITableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"reward_cell" forIndexPath:indexPath];
     
-    if (indexPath.section == 0) {
-        cell = (EventDetailCell *) [tableView dequeueReusableCellWithIdentifier:@"reward_cell" forIndexPath:indexPath];
-        [cell.imgAward downloadFromURL:[arrAward[indexPath.row] valueForKey:@"image"]
-                       withPlaceholder:nil handleCompletion:^(BOOL success) {}];
-        cell.lbName.text = [arrAward[indexPath.row] valueForKey:@"name"];
-        cell.lbPoint.text = [arrAward[indexPath.row] valueForKey:@"point"];
-    } else {
-        cell = (EventDetailCell *) [tableView dequeueReusableCellWithIdentifier:@"product_cell" forIndexPath:indexPath];
-        cell.lbName.text = [arrProduct[indexPath.row] valueForKey:@"name"];
-        cell.lbPoint.text = [arrProduct[indexPath.row] valueForKey:@"point"];
+    if (arrAward.count > 0 && indexPath.row == 0) {
+        cell.textLabel.text = @"Phần thưởng:";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrAward.count];
+    } else if (arrProduct.count > 0 && indexPath.row == 1) {
+        cell.textLabel.text = @"Sản phẩm sử dụng tích điểm:";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrProduct.count];
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        type = @"award";
+    } else {
+        type = @"product";
+    }
+    
+    [self performSegueWithIdentifier:@"segue_event_award" sender:nil];
 }
 
 @end
