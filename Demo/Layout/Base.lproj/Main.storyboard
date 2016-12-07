@@ -1658,10 +1658,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_picture" translatesAutoresizingMaskIntoConstraints="NO" id="xax-vg-Vk4">
-                                <rect key="frame" x="20" y="114" width="160" height="162.5"/>
+                                <rect key="frame" x="20" y="89" width="160" height="162.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjP-fU-wrf">
-                                <rect key="frame" x="200" y="173.5" width="100" height="44"/>
+                                <rect key="frame" x="200" y="148.5" width="100" height="44"/>
                                 <color key="backgroundColor" red="0.33725490200000002" green="0.67450980390000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="eW4-XV-CPS"/>
@@ -1677,7 +1677,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Chú thích" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-U2-Nkx">
-                                <rect key="frame" x="16" y="306.5" width="288" height="150"/>
+                                <rect key="frame" x="16" y="311" width="288" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="H8f-Um-LnB"/>
@@ -1698,18 +1698,30 @@
                                     <action selector="onClickCheckIn:" destination="qeF-bI-U6j" eventType="touchUpInside" id="ljg-4T-u3K"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Mã khách hàng" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-nv-Voh">
+                                <rect key="frame" x="16" y="259" width="288" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="A14-ql-my8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cxl-U2-Nkx" firstAttribute="top" secondItem="xax-vg-Vk4" secondAttribute="bottom" constant="30" id="2dv-PM-EYa"/>
+                            <constraint firstItem="8hF-nv-Voh" firstAttribute="leading" secondItem="6yJ-vH-75y" secondAttribute="leadingMargin" id="3Zy-oQ-8yi"/>
                             <constraint firstItem="xax-vg-Vk4" firstAttribute="width" secondItem="6yJ-vH-75y" secondAttribute="width" multiplier="3/6" id="BAb-AB-IM6"/>
                             <constraint firstItem="xjP-fU-wrf" firstAttribute="leading" secondItem="xax-vg-Vk4" secondAttribute="trailing" constant="20" id="BRb-5A-ffE"/>
+                            <constraint firstItem="cxl-U2-Nkx" firstAttribute="top" secondItem="8hF-nv-Voh" secondAttribute="bottom" constant="8" id="GOn-x1-3dp"/>
                             <constraint firstItem="cxl-U2-Nkx" firstAttribute="trailing" secondItem="6yJ-vH-75y" secondAttribute="trailingMargin" id="Qmp-5g-x65"/>
                             <constraint firstItem="xax-vg-Vk4" firstAttribute="height" secondItem="6yJ-vH-75y" secondAttribute="height" multiplier="2/7" id="T3c-N3-iUu"/>
-                            <constraint firstItem="xax-vg-Vk4" firstAttribute="top" secondItem="MZR-ff-16v" secondAttribute="bottom" constant="50" id="aoV-uV-fBz"/>
+                            <constraint firstItem="xax-vg-Vk4" firstAttribute="top" secondItem="MZR-ff-16v" secondAttribute="bottom" constant="25" id="aoV-uV-fBz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8hF-nv-Voh" secondAttribute="trailing" id="eR7-tV-I0w"/>
                             <constraint firstItem="cxl-U2-Nkx" firstAttribute="leading" secondItem="6yJ-vH-75y" secondAttribute="leadingMargin" id="hLR-zV-tAp"/>
                             <constraint firstItem="xjP-fU-wrf" firstAttribute="centerY" secondItem="xax-vg-Vk4" secondAttribute="centerY" id="qiF-32-QTF"/>
                             <constraint firstItem="xax-vg-Vk4" firstAttribute="centerX" secondItem="6yJ-vH-75y" secondAttribute="centerX" constant="-60" id="sWd-1q-T8g"/>
+                            <constraint firstItem="8hF-nv-Voh" firstAttribute="top" secondItem="xax-vg-Vk4" secondAttribute="bottom" constant="8" id="vFe-YY-S36"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Check In" id="E8g-It-3vv">
@@ -1731,12 +1743,13 @@
                         <outlet property="imgPicture" destination="xax-vg-Vk4" id="Kj3-qr-H71"/>
                         <outlet property="onClickCheckIn" destination="h68-y3-enK" id="5cr-HF-wVX"/>
                         <outlet property="onClickTakePicture" destination="xjP-fU-wrf" id="RXS-Tf-4TR"/>
+                        <outlet property="txtAgency" destination="8hF-nv-Voh" id="Ab7-BK-SJ2"/>
                         <outlet property="txtComment" destination="cxl-U2-Nkx" id="BnP-hb-qjX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFc-0R-grz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="-1712"/>
+            <point key="canvasLocation" x="247.5" y="-1712.323943661972"/>
         </scene>
         <!--Lịch Sử Check In-->
         <scene sceneID="kR2-RA-Otn">

@@ -40,6 +40,9 @@
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     self.txtComment.delegate = self;
     
+    [self.txtAgency.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    self.txtAgency.delegate = self;
+    
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
@@ -95,7 +98,17 @@
         return;
     }
     
-    if ([self.txtComment.text isEqualToString:@"Nội dung"]) {
+    if ([self.txtAgency.text isEqualToString:@""]) {
+        ELOG(@"%@", NSLocalizedString(@"CHECKIN_NO_AGENCY", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"CHECKIN_NO_AGENCY", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
+    NSString *comment = [self.txtComment.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([comment isEqualToString:@"Nội dung"]) {
         ELOG(@"%@", NSLocalizedString(@"NO_COMMENT", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -125,6 +138,7 @@
                 NSString *longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
                 
                 [params setObject:image forKey:PARAM_IMAGE];
+                [params setObject:self.txtAgency.text forKey:PARAM_AGENCY];
                 [params setObject:self.txtComment.text forKey:PARAM_COMMENT];
                 [params setObject:date forKey:PARAM_DATE];
                 [params setObject:latitude forKey:PARAM_LATITUDE];
@@ -187,8 +201,7 @@
     [vmCheckIn saveCheckIns];
 }
 
-- (CLLocationCoordinate2D)getLocation
-{
+- (CLLocationCoordinate2D)getLocation {
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -202,6 +215,7 @@
 
 - (void)cleanAllView{
     self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
+    self.txtAgency.text = @"";
     self.txtComment.text = @"Chú thích";
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
 }
@@ -214,21 +228,34 @@
 
 // MARK: - UITextViewDelegate
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:@"Chú thích"]) {
+    if (textView == self.txtComment &&
+        [textView.text isEqualToString:@"Chú thích"]) {
         textView.text = @"";
         [textView setTextColor:[UIColor darkTextColor]];
     }
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:@""]) {
+    NSString *comment = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (textView == self.txtComment &&
+        [comment isEqualToString:@""]) {
         textView.text = @"Chú thích";
         [textView setTextColor:[UIColor lightGrayColor]];
     }
 }
 
+// MARK: - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtAgency) {
+        [self.txtAgency resignFirstResponder];
+    }
+    
+    return YES;
+}
+
 // MARK: - UIGestureRecognizerDelegate
--(void)handleSingleTapGesture {
+- (void)handleSingleTapGesture {
+    [self.txtAgency resignFirstResponder];
     [self.txtComment resignFirstResponder];
 }
 

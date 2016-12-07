@@ -9,8 +9,9 @@
 #import "BaseView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
+@interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate,UITextViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *txtAgency;
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckIn;

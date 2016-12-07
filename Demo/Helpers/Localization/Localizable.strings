@@ -35,6 +35,7 @@
 "CHECKIN_FAIL" = "Không thể Check In.";
 "CHECKIN_SAVE_OFFLINE" = "Đã lưu check in vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";
 "CHECKIN_DONE_OFFLINE" = "Đã tự động gửi danh sách check in khi không kết nối internet lên server.";
+"CHECKIN_NO_AGENCY" = "Chưa nhập mã khách hàng.";
 
 // SupportView.
 "SUPPORT_SENDED" = "Đã gửi yêu cầu thành công.";

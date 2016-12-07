@@ -46,6 +46,7 @@
 #define PARAM_TOKEN @"token"
 #define PARAM_EXTENSION @"extension"
 #define PARAM_IMAGE @"image"
+#define PARAM_AGENCY @"agency"
 #define PARAM_COMMENT @"comment"
 #define PARAM_LATITUDE @"latitude"
 #define PARAM_LONGTITUDE @"longtitude"
