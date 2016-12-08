@@ -26,6 +26,18 @@
     
     vmCheckIn = [[CheckInViewModel alloc] init];
     [vmCheckIn loadCheckIns];
+    [self scrollToNewCell];
+}
+
+- (void)scrollToNewCell {
+    NSInteger lastSection = self.tbHistory.numberOfSections - 1;
+    NSInteger lastRow = [self.tbHistory numberOfRowsInSection:lastSection] - 1;
+    if (lastRow < 0) {
+        return;
+    }
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
+    [self.tbHistory scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

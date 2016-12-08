@@ -50,6 +50,7 @@
                     self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
                     
                     [self.tbCode reloadData];
+                    [self scrollToNewCell];
                 }
                 
                 [scanner unfreezeCapture];
@@ -84,6 +85,17 @@
         isStop = NO;
         [self.btnStop setTitle:@"Dừng Quét" forState:UIControlStateNormal];
     }
+}
+
+- (void)scrollToNewCell {
+    NSInteger lastSection = self.tbCode.numberOfSections - 1;
+    NSInteger lastRow = [self.tbCode numberOfRowsInSection:lastSection] - 1;
+    if (lastRow < 0) {
+        return;
+    }
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
+    [self.tbCode scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 // MARK: - UITableViewDataSource & UItableView Delegate
