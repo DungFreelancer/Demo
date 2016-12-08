@@ -25,6 +25,7 @@
     
     self.tbAward.dataSource = self;
     self.tbAward.delegate = self;
+    self.tbAward.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
 }
 
 // MARK: - UITableViewDataSource & Delegate

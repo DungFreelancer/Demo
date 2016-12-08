@@ -29,6 +29,7 @@
     
     self.tbEvent.dataSource = self;
     self.tbEvent.delegate = self;
+    self.tbEvent.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     arrEvent = [[NSMutableArray alloc] init];
     

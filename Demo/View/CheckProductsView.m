@@ -25,6 +25,7 @@
     
     self.tbTracking.dataSource = self;
     self.tbTracking.delegate = self;
+    self.tbTracking.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtCode.delegate = self;
     
     arrTracking = [[NSMutableArray alloc] init];
@@ -34,6 +35,8 @@
     [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
     [self.btnCheck.layer setShadowWithRadius:1.0f];
     [self.btnCheck.layer setBorderWithColor:self.btnCheck.tintColor.CGColor];
+    
+    [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];

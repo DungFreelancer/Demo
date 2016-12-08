@@ -25,6 +25,7 @@
     
     self.tbCodes.dataSource = self;
     self.tbCodes.delegate = self;
+    self.tbCodes.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtCode.delegate = self;
     
     arrCode = [[NSMutableArray alloc] init];
@@ -36,6 +37,8 @@
     [self.btnSend.layer setBorderWithColor:self.btnSend.tintColor.CGColor];
     [self.btnAdd.layer setShadowWithRadius:1.0f];
     [self.btnAdd.layer setBorderWithColor:self.btnAdd.tintColor.CGColor];
+    
+    [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];

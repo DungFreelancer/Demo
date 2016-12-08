@@ -34,6 +34,7 @@
     
     self.tbSupport.dataSource = self;
     self.tbSupport.delegate = self;
+    self.tbSupport.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     vmSupport = [[SupportViewModel alloc] init];
     [vmSupport loadSupports];

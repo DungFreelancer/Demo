@@ -25,6 +25,7 @@
     
     self.tbCode.dataSource = self;
     self.tbCode.delegate = self;
+    self.tbCode.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
     
@@ -95,6 +96,13 @@
     cell.textLabel.text = self.arrCodes[indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.arrCodes removeObjectAtIndex:indexPath.row];
+        [self.tbCode reloadData];
+    }
 }
 
 @end

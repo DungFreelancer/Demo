@@ -24,6 +24,7 @@
     
     self.tbCode.dataSource = self;
     self.tbCode.delegate = self;
+    self.tbCode.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtCode.delegate = self;
     
     arrCodes = [[NSMutableArray alloc] init];
