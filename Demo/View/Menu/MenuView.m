@@ -44,6 +44,12 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
+// MARK: - Change Status's color
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+// MARK: - UItableViewDataSource & Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return function.count;
 }
