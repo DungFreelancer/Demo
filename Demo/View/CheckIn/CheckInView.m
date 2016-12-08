@@ -108,11 +108,11 @@
     }
     
     NSString *comment = [self.txtComment.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if ([comment isEqualToString:@"Nội dung"]) {
-        ELOG(@"%@", NSLocalizedString(@"NO_COMMENT", nil));
+    if ([comment isEqualToString:@"Chú thích"]) {
+        ELOG(@"%@", NSLocalizedString(@"CHECKIN_COMMENT", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"NO_COMMENT", nil)
+                                                      andMessage:NSLocalizedString(@"CHECKIN_COMMENT", nil)
                                                        andButton:NSLocalizedString(@"OK", nil)];
         return;
     }
