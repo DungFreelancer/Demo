@@ -22,6 +22,7 @@
     
     self.tbHistory.dataSource = self;
     self.tbHistory.delegate = self;
+    self.tbHistory.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     vmCheckIn = [[CheckInViewModel alloc] init];
     [vmCheckIn loadCheckIns];
@@ -38,6 +39,7 @@
     cell.txtDate.text = [[UtilityClass sharedInstance] DateToString:date withFormate:@"dd/MM/yyyy - HH:mm"];
     cell.imgPicture.image = [UIImage imageWithData:vmCheckIn.arrCheckIn[indexPath.row].image];
     cell.txtComment.text = vmCheckIn.arrCheckIn[indexPath.row].comment;
+    cell.txtAgencyCode.text = vmCheckIn.arrCheckIn[indexPath.row].agencyCode;
     
     if (vmCheckIn.arrCheckIn[indexPath.row].isSended) {
         cell.txtStatus.text = @"Đã cập nhật.";

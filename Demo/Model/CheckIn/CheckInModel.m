@@ -13,6 +13,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.image forKey:@"image"];
     [aCoder encodeObject:self.extension forKey:@"extension"];
+    [aCoder encodeObject:self.agencyCode forKey:@"agencyCode"];
     [aCoder encodeObject:self.comment forKey:@"comment"];
     [aCoder encodeObject:self.date forKey:@"date"];
     [aCoder encodeObject:self.latitude forKey:@"latitude"];
@@ -24,6 +25,7 @@
     if (self = [super init]) {
         self.image = [aDecoder decodeObjectForKey:@"image"];
         self.extension = [aDecoder decodeObjectForKey:@"extension"];
+        self.agencyCode = [aDecoder decodeObjectForKey:@"agencyCode"];
         self.comment = [aDecoder decodeObjectForKey:@"comment"];
         self.date = [aDecoder decodeObjectForKey:@"date"];
         self.latitude = [aDecoder decodeObjectForKey:@"latitude"];

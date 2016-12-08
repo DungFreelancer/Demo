@@ -11,7 +11,7 @@
 
 @interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate,UITextViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *txtAgency;
+@property (weak, nonatomic) IBOutlet UITextField *txtAgencyCode;
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckIn;

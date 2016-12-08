@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong)NSData *image;
 @property(nonatomic,strong)NSString *extension;
+@property(nonatomic,strong)NSString *agencyCode;
 @property(nonatomic,strong)NSString *comment;
 @property(nonatomic,strong)NSString *date;
 @property(nonatomic,strong)NSString *latitude;

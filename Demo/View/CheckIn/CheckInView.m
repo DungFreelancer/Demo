@@ -40,8 +40,8 @@
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     self.txtComment.delegate = self;
     
-    [self.txtAgency.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
-    self.txtAgency.delegate = self;
+    [self.txtAgencyCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    self.txtAgencyCode.delegate = self;
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -98,7 +98,7 @@
         return;
     }
     
-    if ([self.txtAgency.text isEqualToString:@""]) {
+    if ([self.txtAgencyCode.text isEqualToString:@""]) {
         ELOG(@"%@", NSLocalizedString(@"CHECKIN_NO_AGENCY", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -138,7 +138,7 @@
                 NSString *longtitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
                 
                 [params setObject:image forKey:PARAM_IMAGE];
-                [params setObject:self.txtAgency.text forKey:PARAM_AGENCY];
+                [params setObject:self.txtAgencyCode.text forKey:PARAM_AGENCY];
                 [params setObject:self.txtComment.text forKey:PARAM_COMMENT];
                 [params setObject:date forKey:PARAM_DATE];
                 [params setObject:latitude forKey:PARAM_LATITUDE];
@@ -189,6 +189,7 @@
     
     ci.image = UIImageJPEGRepresentation(self.imgPicture.image, 1.0);
     ci.extension = @".jpg";
+    ci.agencyCode = self.txtAgencyCode.text;
     ci.comment = self.txtComment.text;
     ci.date = [[UtilityClass sharedInstance] DateToString:[NSDate date] withFormate:@"MM/dd/yyyy HH:mm"];
     CLLocationCoordinate2D coordinate = [self getLocation];
@@ -215,7 +216,7 @@
 
 - (void)cleanAllView{
     self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
-    self.txtAgency.text = @"";
+    self.txtAgencyCode.text = @"";
     self.txtComment.text = @"Chú thích";
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
 }
@@ -246,8 +247,8 @@
 
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.txtAgency) {
-        [self.txtAgency resignFirstResponder];
+    if (textField == self.txtAgencyCode) {
+        [self.txtAgencyCode resignFirstResponder];
     }
     
     return YES;
@@ -255,7 +256,7 @@
 
 // MARK: - UIGestureRecognizerDelegate
 - (void)handleSingleTapGesture {
-    [self.txtAgency resignFirstResponder];
+    [self.txtAgencyCode resignFirstResponder];
     [self.txtComment resignFirstResponder];
 }
 
