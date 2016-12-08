@@ -108,7 +108,8 @@
     }
     
     NSString *comment = [self.txtComment.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if ([comment isEqualToString:@"Chú thích"]) {
+    if ([comment isEqualToString:@"Chú thích"] ||
+        [comment isEqualToString:@""]) {
         ELOG(@"%@", NSLocalizedString(@"CHECKIN_COMMENT", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)

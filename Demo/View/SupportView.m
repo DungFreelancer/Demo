@@ -54,7 +54,9 @@
         return;
     }
     
-    if ([self.txtComment.text isEqualToString:@"Nội dung"]) {
+    NSString *comment = [self.txtComment.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([comment isEqualToString:@"Nội dung"] ||
+        [comment isEqualToString:@""]) {
         ELOG(@"%@", NSLocalizedString(@"NO_COMMENT", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
