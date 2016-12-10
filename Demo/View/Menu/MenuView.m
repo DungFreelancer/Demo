@@ -25,8 +25,14 @@
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
     
+    // Set banner for table view.
     NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
-    self.imgBanner.image = [UIImage imageNamed:name];
+    UIView *imgBanner = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                 0,
+                                                                 self.view.frame.size.width,
+                                                                 self.view.frame.size.height / 4)];
+    [imgBanner setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:name]]];
+    [self.tblMenu setTableHeaderView:imgBanner];
     
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
