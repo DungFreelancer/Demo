@@ -25,14 +25,7 @@
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
     
-    // Set banner for table view.
-    NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
-    UIView *imgBanner = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                 0,
-                                                                 self.view.frame.size.width,
-                                                                 self.view.frame.size.height / 4)];
-    [imgBanner setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:name]]];
-    [self.tblMenu setTableHeaderView:imgBanner];
+    [self setBanner];
     
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
@@ -48,6 +41,32 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.backgroundColor = [[self view] tintColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)setBanner {
+    // Banner's image.
+    NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
+    UIView *imgBanner = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                 0,
+                                                                 self.view.frame.size.width,
+                                                                 self.view.frame.size.height / 4)];
+    [imgBanner setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:name]]];
+    
+    // Banner's title.
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(16, imgBanner.frame.size.height - 70 - 8, 70, 70)];
+    title.text = @"HAI";
+    title.font = [UIFont systemFontOfSize:50];
+    title.numberOfLines = 1;
+    title.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+    title.adjustsFontSizeToFitWidth = YES;
+    title.minimumScaleFactor = 10.0f/12.0f;
+    title.clipsToBounds = YES;
+    title.backgroundColor = [UIColor clearColor];
+    title.textColor = [UIColor whiteColor];
+    title.textAlignment = NSTextAlignmentLeft;
+    [imgBanner addSubview:title];
+    
+    [self.tblMenu setTableHeaderView:imgBanner];
 }
 
 // MARK: - Change Status's color
