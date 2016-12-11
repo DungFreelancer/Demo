@@ -46,11 +46,11 @@
 		9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660E1DDA11CB00A8703E /* ScanProductView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
-		9AB3AF8B1DE5F9D100C713A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
 		9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3A3321DC63E7900073E15 /* CALayer+BorderShadow.m */; };
 		9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD419391D8EDD3D006FE776 /* HUDHelper.m */; };
 		9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE8E451DD87B8100A010E2 /* SupportView.m */; };
+		9AEF94611DFDBF78008B874D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF94601DFDBF78008B874D /* GoogleService-Info.plist */; };
 		9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFDAF731DC4B9020055CBB4 /* MenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -150,7 +150,6 @@
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanCardView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BaseView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BaseView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AB5C3E01D8F0BB60040E00E /* CheckInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CheckInView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AB5C3E11D8F0BC90040E00E /* CheckInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckInView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AD3A3311DC63E6C00073E15 /* CALayer+BorderShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "CALayer+BorderShadow.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -159,6 +158,7 @@
 		9AD419391D8EDD3D006FE776 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HUDHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9ADE8E441DD87B6D00A010E2 /* SupportView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SupportView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9ADE8E451DD87B8100A010E2 /* SupportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SupportView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9AEF94601DFDBF78008B874D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AFDAF721DC4B8F70055CBB4 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MenuView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9AFDAF731DC4B9020055CBB4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MenuView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9E6F0C6F43E35CD015EEF840 /* Pods-HAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAI/Pods-HAI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4A604E1DFDB1E0004151B8 /* HAI.entitlements */,
-				9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */,
+				9AEF94601DFDBF78008B874D /* GoogleService-Info.plist */,
 				9A5F19A31D8E905700B2E5AB /* Info.plist */,
 				9A5F19901D8E905700B2E5AB /* main.m */,
 			);
@@ -751,8 +751,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */,
-				9AB3AF8B1DE5F9D100C713A7 /* GoogleService-Info.plist in Resources */,
 				9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */,
+				9AEF94611DFDBF78008B874D /* GoogleService-Info.plist in Resources */,
 				9A78CDAF1DEAC5E1009CF23C /* LaunchScreen.storyboard in Resources */,
 				9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */,
 			);
