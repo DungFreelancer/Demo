@@ -1,0 +1,56 @@
+/* 
+  File.strings
+  HAI
+
+  Created by Dung Do on 9/28/16.
+  Copyright © 2016 Dung Do. All rights reserved.
+*/
+
+"OK" = "OK";
+"YES" = "Có";
+"NO" = "Không";
+"ERROR" = "Lỗi!";
+"LOADING" = "Đang xử lý...";
+"NO_INTERNET" = "Không thể kết nối internet.";
+"NO_CAMERA" = "Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.";
+"NO_COMMENT" = "Chưa nhập nội dung.";
+"NO_PICTURE" = "Chưa có hình ảnh.";
+
+// LoginView.
+"LOGIN_INCORRECT" = "Tài khoản hoặc mật khẩu không chính xác.";
+"LOGIN_SESSION" = "Tài khoản đang được đăng nhập trên máy khác.";
+
+// SettingView.
+"SETTING_LOGOUT_ERROR" = "Không thể đăng xuất tài khoản.";
+"SETTING_LOGOUT" = "Bạn có chắc muốn thoát ứng dụng không?";
+"SETTING_WARRNING" = "Danh sách check in được lưu khi không có mạng vẫn chưa gửi hết lên server, bạn có chắc muốn thoát không?";
+
+// CheckStaffView.
+"STAFF_NO_AVATAR" = "Không tìm thấy hình của nhân viên.";
+"STAFF_NO_SIGNATURE" = "Không tìm thấy chử ký của nhân viên.";
+
+// CheckInView.
+"CHECKIN_LOCATION" = "Ứng dụng cần sử dụng vị trí của bạn mới có thể check in.";
+"CHECKIN_SUCCESS" = "Check In thành công.";
+"CHECKIN_FAIL" = "Không thể Check In.";
+"CHECKIN_SAVE_OFFLINE" = "Đã lưu check in vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";
+"CHECKIN_DONE_OFFLINE" = "Đã tự động gửi danh sách check in khi không kết nối internet lên server.";
+"CHECKIN_NO_AGENCY" = "Chưa nhập mã khách hàng.";
+"CHECKIN_COMMENT" = "Chưa nhập chú thích.";
+
+// SupportView.
+"SUPPORT_SENDED" = "Đã gửi yêu cầu thành công.";
+"SUPPORT_ERROR" = "Không thể gửi yêu cầu lên server.";
+
+// AgencyView.
+"AGENCY_ERROR" = "Không thể lấy danh sách đại lý.";
+
+// ProductsView.
+"PRODUCTS_UPDATED" = "Đã cập nhật thành công.";
+"PRODUCTS_ERROR" = "Không thể cập nhật.";
+"PRODUCTS_COUNT_ERROR" = "Chưa có mã sản phẩm nào.";
+"PRODUCTS_DUPLICATE" = "Có %lu mã sản phẩm bị trùng.";
+"PRODUCTS_NILL" = "Chưa nhập mã sản phẩm.";
+
+// TrackingProduct.
+"TRACKING_NO_CODE" = "Chưa nhập mã sản phẩm.";
