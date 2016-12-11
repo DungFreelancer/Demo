@@ -149,7 +149,7 @@
 		9A89660E1DDA11CB00A8703E /* ScanProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanProductView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCardView.h; sourceTree = "<group>"; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanCardView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		9AA76C1A1DE5E9EA00681BB7 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Demo.entitlements; path = ../Demo.entitlements; sourceTree = "<group>"; };
+		9AA76C1A1DE5E9EA00681BB7 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		9AB212941D9AC2AF0007E1CB /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BaseView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AB3AF8A1DE5F9D100C713A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */,
 				9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */,
 			);
-			name = ProductsManager;
+			path = ProductsManager;
 			sourceTree = "<group>";
 		};
 		9A1BEA721DEC8F1800A792B9 /* SaveProducts */ = {
@@ -217,7 +217,7 @@
 				9A1BEA771DEC90DB00A792B9 /* SaveProductsView.h */,
 				9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */,
 			);
-			name = SaveProducts;
+			path = SaveProducts;
 			sourceTree = "<group>";
 		};
 		9A1BEA731DEC8F2A00A792B9 /* CheckProducts */ = {
@@ -228,7 +228,7 @@
 				9A6B4D161DEDDFEA002330AE /* TrackingCell.h */,
 				9A6B4D171DEDE005002330AE /* TrackingCell.m */,
 			);
-			name = CheckProducts;
+			path = CheckProducts;
 			sourceTree = "<group>";
 		};
 		9A1DDCE61DACEB1D00E7AE23 /* ViewModel */ = {
@@ -246,7 +246,7 @@
 				9A3B709F1DF1CD6100427F28 /* UserInformationView.h */,
 				9A3B70A01DF1CD6F00427F28 /* UserInformationView.m */,
 			);
-			name = UserInformation;
+			path = UserInformation;
 			sourceTree = "<group>";
 		};
 		9A3D67221D90D83100A71D62 /* CheckStaff */ = {
@@ -284,18 +284,18 @@
 				9A57432A1DF8542E00E13D44 /* EventAwardView.h */,
 				9A57432B1DF8543D00E13D44 /* EventAwardView.m */,
 			);
-			name = EventAward;
+			path = EventAward;
 			sourceTree = "<group>";
 		};
 		9A5F19831D8E905700B2E5AB = {
 			isa = PBXGroup;
 			children = (
-				48C97E043069A5E7511F1953 /* Frameworks */,
-				AC335B873EECD59726E39A67 /* Pods */,
-				9A5F198D1D8E905700B2E5AB /* Products */,
 				9A5F198E1D8E905700B2E5AB /* Demo */,
 				9A5F19AB1D8E905700B2E5AB /* DemoTests */,
 				9A5F19B61D8E905700B2E5AB /* DemoUITests */,
+				48C97E043069A5E7511F1953 /* Frameworks */,
+				AC335B873EECD59726E39A67 /* Pods */,
+				9A5F198D1D8E905700B2E5AB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -508,7 +508,7 @@
 				9A78CDB21DEACEF0009CF23C /* SupportModel.h */,
 				9A78CDB31DEACF01009CF23C /* SupportModel.m */,
 			);
-			name = Support;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		9A78CDB11DEACEB3009CF23C /* Support */ = {
@@ -517,7 +517,7 @@
 				9A78CDB51DEACFA8009CF23C /* SupportViewModel.h */,
 				9A78CDB61DEACFB6009CF23C /* SupportViewModel.m */,
 			);
-			name = Support;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		9A79BBFB1DD6E439007099C7 /* Setting */ = {
@@ -526,7 +526,7 @@
 				9A79BBFC1DD6E47C007099C7 /* SettingView.h */,
 				9A79BBFD1DD6E496007099C7 /* SettingView.m */,
 			);
-			name = Setting;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		9A849AC41DDF718A009EFEC3 /* Event */ = {
@@ -537,7 +537,7 @@
 				9A849ACD1DDF73CF009EFEC3 /* EventCell.h */,
 				9A849ACE1DDF73F9009EFEC3 /* EventCell.m */,
 			);
-			name = Event;
+			path = Event;
 			sourceTree = "<group>";
 		};
 		9A849AC51DDF7193009EFEC3 /* EventDetail */ = {
@@ -546,7 +546,7 @@
 				9A849ACA1DDF7258009EFEC3 /* EventDetailView.h */,
 				9A849ACB1DDF7269009EFEC3 /* EventDetailView.m */,
 			);
-			name = EventDetail;
+			path = EventDetail;
 			sourceTree = "<group>";
 		};
 		9A8966071DDA10FE00A8703E /* IEProducts */ = {
@@ -555,7 +555,7 @@
 				9A89660A1DDA118700A8703E /* IEProductsView.h */,
 				9A89660B1DDA119800A8703E /* IEProductsView.m */,
 			);
-			name = IEProducts;
+			path = IEProducts;
 			sourceTree = "<group>";
 		};
 		9A8966081DDA110B00A8703E /* ScanProduct */ = {
@@ -564,7 +564,7 @@
 				9A89660D1DDA11BF00A8703E /* ScanProductView.h */,
 				9A89660E1DDA11CB00A8703E /* ScanProductView.m */,
 			);
-			name = ScanProduct;
+			path = ScanProduct;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -611,7 +611,7 @@
 				9A78CDB81DEAD992009CF23C /* SupportCell.h */,
 				9A78CDB91DEAD9A3009CF23C /* SupportCell.m */,
 			);
-			name = Support;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		9AFDAF711DC4B8E80055CBB4 /* Menu */ = {
@@ -1014,7 +1014,7 @@
 			baseConfigurationReference = 993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Demo/Supporting Files/Demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
@@ -1030,7 +1030,7 @@
 			baseConfigurationReference = 0843613295E9D247630BF7BF /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Demo/Supporting Files/Demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A5R29KHVUM;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
