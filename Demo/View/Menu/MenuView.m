@@ -7,6 +7,7 @@
 //
 
 #import "MenuView.h"
+#import "MenuCell.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "CALayer+BorderShadow.h"
@@ -80,9 +81,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
-    
-    return cell;
+    if ([function[indexPath.row] isEqualToString:@"event"]) {
+        MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
+        return cell;
+    }
 }
 
 @end
