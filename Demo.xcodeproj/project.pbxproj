@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
+		9A15980E1DFD270C005F611D /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A15980D1DFD270C005F611D /* MenuCell.m */; };
 		9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */; };
 		9A1BEA791DEC90E700A792B9 /* SaveProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */; };
 		9A1BEA7C1DEC913600A792B9 /* CheckProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA7B1DEC913600A792B9 /* CheckProductsView.m */; };
@@ -76,6 +77,8 @@
 		95B5BD93B7BEF0CC6059E667 /* Pods-TemplateObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateObjC/Pods-TemplateObjC.release.xcconfig"; sourceTree = "<group>"; };
 		993006BBC3EC151A0170137A /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9A15980C1DFD2700005F611D /* MenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		9A15980D1DFD270C005F611D /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsManagerView.h; sourceTree = "<group>"; };
 		9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsManagerView.m; sourceTree = "<group>"; };
 		9A1BEA771DEC90DB00A792B9 /* SaveProductsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveProductsView.h; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 			children = (
 				9AFDAF721DC4B8F70055CBB4 /* MenuView.h */,
 				9AFDAF731DC4B9020055CBB4 /* MenuView.m */,
+				9A15980C1DFD2700005F611D /* MenuCell.h */,
+				9A15980D1DFD270C005F611D /* MenuCell.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 				9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */,
 				9AD4193A1D8EDD3D006FE776 /* HUDHelper.m in Sources */,
 				9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */,
+				9A15980E1DFD270C005F611D /* MenuCell.m in Sources */,
 				9A849ACF1DDF73F9009EFEC3 /* EventCell.m in Sources */,
 				9ADE8E461DD87B8100A010E2 /* SupportView.m in Sources */,
 				9A78CDBA1DEAD9A3009CF23C /* SupportCell.m in Sources */,
