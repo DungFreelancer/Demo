@@ -14,10 +14,13 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segStatus;
 @property (weak, nonatomic) IBOutlet UIButton *btnScanProduct;
 @property (weak, nonatomic) IBOutlet UIButton *btnUpdate;
+@property (weak, nonatomic) IBOutlet UILabel *lbReceiver;
+@property (weak, nonatomic) IBOutlet UITextField *txtReceiver;
 @property (weak, nonatomic) IBOutlet UITextField *txtCode;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotal;
 @property (weak, nonatomic) IBOutlet UITableView *tbCode;
 
 - (IBAction)onClickUpdate:(id)sender;
+- (IBAction)onClickStatus:(id)sender;
 
 @end

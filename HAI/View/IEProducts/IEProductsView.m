@@ -7,6 +7,7 @@
 //
 
 #import "IEProductsView.h"
+#import "IEProductsCell.h"
 #import "NetworkHelper.h"
 #import "HUDHelper.h"
 #import "UtilityClass.h"
@@ -15,6 +16,7 @@
 
 @implementation ProductsView {
     NSMutableArray *arrCodes;
+    bool isCodesRespone;
 }
 
 - (void)viewDidLoad {
@@ -26,15 +28,21 @@
     self.tbCode.delegate = self;
     self.tbCode.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtCode.delegate = self;
+    self.txtReceiver.delegate = self;
     
     arrCodes = [[NSMutableArray alloc] init];
+    isCodesRespone = NO;
     
     // Setup for buttons & text view.
     [self.btnScanProduct.layer setShadowWithRadius:1.0f];
     [self.btnScanProduct.layer setBorderWithColor:self.btnScanProduct.tintColor.CGColor];
     [self.btnUpdate.layer setShadowWithRadius:1.0f];
     [self.btnUpdate.layer setBorderWithColor:self.btnUpdate.tintColor.CGColor];
+    [self.txtReceiver.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    
+    [self.lbReceiver setHidden:YES];
+    [self.txtReceiver setHidden:YES];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -43,9 +51,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"scan_code"]) {
+        if (isCodesRespone) {
+            isCodesRespone = NO;
+            [arrCodes removeAllObjects];
+        }
+        
         ScanProductView *viewScanProduct = (ScanProductView *) [segue destinationViewController];
         viewScanProduct.delegate = self;
-        
         viewScanProduct.arrCodes = arrCodes;
     }
 }
@@ -78,6 +90,7 @@
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
     [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    [params setObject:self.txtReceiver.text forKey:PARAM_RECEIVER];
     [params setObject:arrCodes forKey:PARAM_PRODUCTS];
     [params setObject:status forKey:PARAM_STATUS];
     
@@ -101,6 +114,8 @@
                                                               andMessage:[NSString stringWithFormat:NSLocalizedString(@"PRODUCTS_DUPLICATE", nil), arrCodes.count]
                                                                andButton:NSLocalizedString(@"OK", nil)];
                 self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrCodes.count];
+                
+                isCodesRespone = YES;
                 [self.tbCode reloadData];
                 [self scrollToNewCell];
             } else {
@@ -118,6 +133,16 @@
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
+}
+
+- (IBAction)onClickStatus:(id)sender {
+    if ([self.segStatus selectedSegmentIndex] == 0) {
+        [self.lbReceiver setHidden:YES];
+        [self.txtReceiver setHidden:YES];
+    } else {
+        [self.lbReceiver setHidden:NO];
+        [self.txtReceiver setHidden:NO];
+    }
 }
 
 - (IBAction)onClickSave:(id)sender {
@@ -167,10 +192,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"code_cell" forIndexPath:indexPath];
-    cell.textLabel.text = arrCodes[indexPath.row];
-    
-    return cell;
+    if (!isCodesRespone) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"code_cell_1" forIndexPath:indexPath];
+        cell.textLabel.text = arrCodes[indexPath.row];
+        
+        return cell;
+    } else {
+        IEProductsCell *cell = (IEProductsCell *) [tableView dequeueReusableCellWithIdentifier:@"code_cell_2" forIndexPath:indexPath];
+        cell.lbCode.text = [arrCodes[indexPath.row] valueForKey:@"code"];
+        cell.lbName.text = [arrCodes[indexPath.row] valueForKey:@"name"];
+        cell.lbStatus.text = [arrCodes[indexPath.row] valueForKey:@"status"];
+        
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,12 +216,22 @@
 
 // MARK: - UIGestureRecognizerDelegate
 - (void)handleSingleTapGesture {
+    [self.txtReceiver resignFirstResponder];
     [self.txtCode resignFirstResponder];
 }
 
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self onClickSave:nil];
+    if (textField == self.txtReceiver) {
+        [self.txtCode becomeFirstResponder];
+    } else if (textField == self.txtCode) {
+        if (isCodesRespone) {
+            isCodesRespone = NO;
+            [arrCodes removeAllObjects];
+        }
+        
+        [self onClickSave:nil];
+    }
     
     return YES;
 }
