@@ -14,9 +14,11 @@
 #import "UtilityClass.h"
 #import "CheckInViewModel.h"
 #import "Constant.h"
+#import <Firebase.h>
 
 @implementation MenuView {
     NSArray<NSString *> *function;
+    int encount;
 }
 
 - (void)viewDidLoad {
@@ -30,7 +32,9 @@
     
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
-    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", @"setting", nil];
+    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", @"newfeed", @"setting", nil];
+    
+    [self registerPushNotification];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,11 +51,11 @@
 - (void)setBanner {
     // Banner's image.
     NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
-    UIView *imgBanner = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                 0,
-                                                                 self.view.frame.size.width,
-                                                                 self.view.frame.size.height / 4)];
-    [imgBanner setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:name]]];
+    UIImageView *imgBanner = [[UIImageView alloc] initWithImage:[UIImage imageNamed:name]];
+    [imgBanner setFrame:CGRectMake(0,
+                                   0,
+                                   self.view.frame.size.width,
+                                   self.view.frame.size.height / 4)];
     
     // Banner's title.
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(16, imgBanner.frame.size.height - 70 - 8, 70, 70)];
@@ -65,9 +69,57 @@
     title.backgroundColor = [UIColor clearColor];
     title.textColor = [UIColor whiteColor];
     title.textAlignment = NSTextAlignmentLeft;
-    [imgBanner addSubview:title];
     
+    [imgBanner addSubview:title];
     [self.tblMenu setTableHeaderView:imgBanner];
+}
+
+- (void)registerPushNotification {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
+    // Get token.
+    NSString *refreshedToken = [[FIRInstanceID instanceID] token];
+    
+    // Send token to service.
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    [params setObject:refreshedToken forKey:PARAM_REG_ID];
+    
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+    
+    [[NetworkHelper sharedInstance] requestPost:API_UPDATE_REG paramaters:params completion:^(id response, NSError *error) {
+        [[HUDHelper sharedInstance] hideLoading];
+        
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
+            
+            // Show encount.
+            encount = [[response valueForKey:RESPONSE_ECOUNT] intValue];
+            [self.tblMenu reloadData];
+            
+            // Subscribe all topic.
+            NSArray<NSString *> *arrtopic = [response valueForKey:RESPONSE_TOPICS];
+            [USER_DEFAULT setObject:arrtopic forKey:PREF_TOPICS];
+            for (NSString *topic in arrtopic) {
+                NSString *name = [NSString stringWithFormat:@"/topics/%@", topic];
+                [[FIRMessaging messaging] subscribeToTopic:name];
+            }
+        } else {
+            ELOG(@"%@", response);
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE]
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];
 }
 
 // MARK: - Change Status's color
@@ -83,6 +135,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([function[indexPath.row] isEqualToString:@"event"]) {
         MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
+        cell.lbBadgeNumber.text = [NSString stringWithFormat:@"%d", encount];
+        
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];

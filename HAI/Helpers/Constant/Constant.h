@@ -41,6 +41,7 @@
 #define API_EVENT_DETAIL @"http://221.133.7.92:802/api/rest/eventdetail"
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 #define API_USER_INFORMATION @"http://221.133.7.92:802/api/rest/userinfo"
+#define API_UPDATE_REG @"http://221.133.7.92:802/api/rest/updatereg"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -58,6 +59,7 @@
 #define PARAM_CODES @"codes"
 #define PARAM_STATUS @"status"
 #define PARAM_EVENT_ID @"eventId"
+#define PARAM_REG_ID @"regId"
 
 #define RESPONSE_ID @"id"
 #define RESPONSE_MESSAGE @"msg"
@@ -84,6 +86,10 @@
 #define RESPONSE_PHONE @"phone"
 #define RESPONSE_BIRTHDAY @"birthday"
 #define RESPONSE_AREA @"area"
+#define RESPONSE_ECOUNT @"ecount"
+#define RESPONSE_TOPICS @"topics"
+#define RESPONSE_DATA @"data"
+#define RESPONSE_TITLE @"title"
 
 // PREFERENCE-------------------------------------------------------------------
 
@@ -92,5 +98,7 @@
 #define PREF_TOKEN @"token"
 #define PREF_FUNCTION @"function"
 #define PREF_ROLE @"role"
+#define PREF_NEWFEED @"newfeed"
+#define PREF_TOPICS @"topics"
 
 

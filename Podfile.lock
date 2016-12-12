@@ -14,8 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Firebase (3.10.0):
-    - Firebase/Core (= 3.10.0)
   - Firebase/Core (3.10.0):
     - FirebaseAnalytics (= 3.6.0)
     - FirebaseCore (= 3.4.5)
@@ -52,7 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
-  - Firebase
+  - Firebase/Core
   - Firebase/Messaging
   - MBProgressHUD (~> 1.0)
   - MTBBarcodeScanner (~> 3.0)
@@ -72,6 +70,6 @@ SPEC CHECKSUMS:
   MTBBarcodeScanner: 6d397077f1a4a886050df8e66584a59a1dc429e7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-PODFILE CHECKSUM: 21057c880a6a2ff46350f9f85830829d274964e2
+PODFILE CHECKSUM: 769685076abfa2ad650f1c69b577651d61b2ec68
 
 COCOAPODS: 1.1.1

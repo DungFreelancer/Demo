@@ -6,6 +6,6 @@ target ‘HAI’ do
   pod 'Reachability', '~> 3.2'
   pod 'MBProgressHUD', '~> 1.0'
   pod 'MTBBarcodeScanner', '~> 3.0'
-  pod 'Firebase'
-  pod 'Firebase/Messaging’
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end

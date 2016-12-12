@@ -12,6 +12,7 @@
 #import "HUDHelper.h"
 #import "CheckInViewModel.h"
 #import "Constant.h"
+#import <Firebase.h>
 
 @implementation SettingView
 
@@ -87,8 +88,17 @@
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
+            // Unsubscribe all topics.
+            NSArray<NSString *> *arrtopic = [USER_DEFAULT objectForKey:RESPONSE_TOPICS];
+            for (NSString *topic in arrtopic) {
+                NSString *name = [NSString stringWithFormat:@"/topics/%@", topic];
+                [[FIRMessaging messaging] unsubscribeFromTopic:name];
+            }
+            
+            [USER_DEFAULT removeObjectForKey:PREF_TOPICS];
             [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
             [USER_DEFAULT synchronize];
+            
             self.navigationController.navigationBarHidden = YES;
             [self.navigationController popToRootViewControllerAnimated:YES];
         } else {
