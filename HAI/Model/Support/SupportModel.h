@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SupportModel : NSObject
+@interface SupportModel : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *comment;
