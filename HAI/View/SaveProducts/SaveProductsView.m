@@ -48,7 +48,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tbCodes reloadData]; // Reload table after scan code.
-    [self scrollToNewCell];
+    [super scrollToBottomOnTableView:self.tbCodes];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -65,7 +65,7 @@
         self.txtCode.text = @"";
         
         [self.tbCodes reloadData];
-        [self scrollToNewCell];
+        [super scrollToBottomOnTableView:self.tbCodes];
     } else {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -117,7 +117,7 @@
                                                               andMessage:[NSString stringWithFormat:NSLocalizedString(@"PRODUCTS_DUPLICATE", nil), arrCode.count]
                                                                andButton:NSLocalizedString(@"OK", nil)];
                 [self.tbCodes reloadData];
-                [self scrollToNewCell];
+                [super scrollToBottomOnTableView:self.tbCodes];
             } else {
                 [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                withTitle:nil
@@ -142,17 +142,6 @@
     [self.tbCodes reloadData];
 }
 
-- (void)scrollToNewCell {
-    NSInteger lastSection = self.tbCodes.numberOfSections - 1;
-    NSInteger lastRow = [self.tbCodes numberOfRowsInSection:lastSection] - 1;
-    if (lastRow < 0) {
-        return;
-    }
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
-    [self.tbCodes scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-}
-
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([self.txtCode.text isEqualToString:@""] == NO &&
@@ -161,7 +150,7 @@
         textField.text = @"";
         
         [self.tbCodes reloadData];
-        [self scrollToNewCell];
+        [super scrollToBottomOnTableView:self.tbCodes];
     } else {
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)

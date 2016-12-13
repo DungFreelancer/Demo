@@ -92,7 +92,7 @@
             [self saveLogSupport];
             [self cleanAllView];
             [self.tbSupport reloadData];
-            [self scrollToNewCell];
+            [super scrollToBottomOnTableView:self.tbSupport];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -126,17 +126,6 @@
     self.txtComment.text = @"Nội dung";
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     [self handleSingleTapGesture];
-}
-
-- (void)scrollToNewCell {
-    NSInteger lastSection = self.tbSupport.numberOfSections - 1;
-    NSInteger lastRow = [self.tbSupport numberOfRowsInSection:lastSection] - 1;
-    if (lastRow < 0) {
-        return;
-    }
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
-    [self.tbSupport scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 // MARK: - UITableViewDataSource & Delegate

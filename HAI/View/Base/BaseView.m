@@ -35,4 +35,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)scrollToBottomOnTableView:(UITableView *)tableView {
+    NSInteger lastSection = tableView.numberOfSections - 1;
+    NSInteger lastRow = [tableView numberOfRowsInSection:lastSection] - 1;
+    if (lastRow < 0) {
+        return;
+    }
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
 @end

@@ -117,7 +117,7 @@
                 
                 isCodesRespone = YES;
                 [self.tbCode reloadData];
-                [self scrollToNewCell];
+                [super scrollToBottomOnTableView:self.tbCode];
             } else {
                 [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                withTitle:nil
@@ -153,7 +153,7 @@
         self.txtCode.text = @"";
         
         [self.tbCode reloadData];
-        [self scrollToNewCell];
+        [super scrollToBottomOnTableView:self.tbCode];
     }
 }
 
@@ -166,22 +166,11 @@
     [self.tbCode reloadData];
 }
 
-- (void)scrollToNewCell {
-    NSInteger lastSection = self.tbCode.numberOfSections - 1;
-    NSInteger lastRow = [self.tbCode numberOfRowsInSection:lastSection] - 1;
-    if (lastRow < 0) {
-        return;
-    }
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
-    [self.tbCode scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-}
-
 // MARK: - ScanProductViewDelegate
 - (void)didScanProducts:(NSMutableArray *)result {
     arrCodes = result;
     [self.tbCode reloadData];
-    [self scrollToNewCell];
+    [super scrollToBottomOnTableView:self.tbCode];
     
     self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrCodes.count];
 }

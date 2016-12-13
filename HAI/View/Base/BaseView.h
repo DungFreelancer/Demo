@@ -14,5 +14,6 @@
 
 -(void)setNavBarTitle:(NSString *)title;
 -(void)setBackBarItem;
+- (void)scrollToBottomOnTableView:(UITableView *)tableView;
 
 @end
