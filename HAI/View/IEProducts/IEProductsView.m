@@ -41,8 +41,8 @@
     [self.txtReceiver.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     
-    [self.lbReceiver setHidden:YES];
-    [self.txtReceiver setHidden:YES];
+    [self.lbReceiver setEnabled:NO];
+    [self.txtReceiver setEnabled:NO];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -137,11 +137,11 @@
 
 - (IBAction)onClickStatus:(id)sender {
     if ([self.segStatus selectedSegmentIndex] == 0) {
-        [self.lbReceiver setHidden:YES];
-        [self.txtReceiver setHidden:YES];
+        [self.lbReceiver setEnabled:NO];
+        [self.txtReceiver setEnabled:NO];
     } else {
-        [self.lbReceiver setHidden:NO];
-        [self.txtReceiver setHidden:NO];
+        [self.lbReceiver setEnabled:YES];
+        [self.txtReceiver setEnabled:YES];
     }
 }
 
