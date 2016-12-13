@@ -84,7 +84,7 @@
         return;
     }
     
-    // Get token.
+    // Get firebase token.
     NSString *refreshedToken = [[FIRInstanceID instanceID] token];
     
     // Send token to service.
@@ -101,7 +101,7 @@
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
             
-            // Show encount.
+            // Show encount on event cell.
             encount = [[response valueForKey:RESPONSE_ECOUNT] intValue];
             [self.tblMenu reloadData];
             
