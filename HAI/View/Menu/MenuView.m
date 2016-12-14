@@ -32,7 +32,7 @@
     
     // Get function list.
 //    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
-    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"products", @"event", @"newfeed", @"setting", nil];
+    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"products", @"setting", nil];
     
     [self registerPushNotification];
 }
@@ -55,10 +55,10 @@
     [imgBanner setFrame:CGRectMake(0,
                                    0,
                                    self.view.frame.size.width,
-                                   self.view.frame.size.height / 4)];
+                                   self.view.frame.size.height / 3)];
     
     // Banner's title.
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(16, imgBanner.frame.size.height - 70 - 8, 70, 70)];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(32, imgBanner.frame.size.height - 70 - 16, 70, 70)];
     title.text = @"HAI";
     title.font = [UIFont systemFontOfSize:50];
     title.numberOfLines = 1;

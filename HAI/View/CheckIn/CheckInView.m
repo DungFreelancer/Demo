@@ -37,8 +37,7 @@
     [self.btnCheckIn.layer setBorderWithColor:self.btnCheckIn.tintColor.CGColor];
     
     [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
-    [self.txtComment setTextColor:[UIColor lightGrayColor]];
-    self.txtComment.delegate = self;
+    [self.txtComment setTextColor:[UIColor darkTextColor]];
     
     [self.txtAgencyCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     self.txtAgencyCode.delegate = self;
@@ -108,8 +107,7 @@
     }
     
     NSString *comment = [self.txtComment.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if ([comment isEqualToString:@"Chú thích"] ||
-        [comment isEqualToString:@""]) {
+    if ([comment isEqualToString:@""]) {
         ELOG(@"%@", NSLocalizedString(@"CHECKIN_COMMENT", nil));
         [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
@@ -218,32 +216,13 @@
 - (void)cleanAllView{
     self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
     self.txtAgencyCode.text = @"";
-    self.txtComment.text = @"Chú thích";
-    [self.txtComment setTextColor:[UIColor lightGrayColor]];
+    self.txtComment.text = @"";
 }
 
 // UIImagePickerControllerDelegate.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [self.imgPicture setImage:[info valueForKey:UIImagePickerControllerEditedImage]];
     [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-// MARK: - UITextViewDelegate
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    if (textView == self.txtComment &&
-        [textView.text isEqualToString:@"Chú thích"]) {
-        textView.text = @"";
-        [textView setTextColor:[UIColor darkTextColor]];
-    }
-}
-
-- (void)textViewDidEndEditing:(UITextView *)textView {
-    NSString *comment = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if (textView == self.txtComment &&
-        [comment isEqualToString:@""]) {
-        textView.text = @"Chú thích";
-        [textView setTextColor:[UIColor lightGrayColor]];
-    }
 }
 
 // MARK: - UITextFieldDelegate

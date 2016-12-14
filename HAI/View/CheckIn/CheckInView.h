@@ -9,7 +9,7 @@
 #import "BaseView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate,UITextViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate>
+@interface CheckInView : BaseView <UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtAgencyCode;
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;

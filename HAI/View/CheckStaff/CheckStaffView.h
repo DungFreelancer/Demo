@@ -11,6 +11,7 @@
 @interface CheckStaffView : BaseView
 
 @property (weak, nonatomic) IBOutlet UILabel *lbName;
+@property (weak, nonatomic) IBOutlet UILabel *lbCode;
 @property (weak, nonatomic) IBOutlet UILabel *lbstatus;
 @property (weak, nonatomic) IBOutlet UILabel *lbPosition;
 @property (weak, nonatomic) IBOutlet UILabel *lbCompany;

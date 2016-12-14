@@ -57,6 +57,7 @@
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
     [self.lbName setText:arrResult[1]];
+    [self.lbCode setText:arrResult[0]];
     [self.lbPosition setText:arrResult[2]];
     [self.lbCompany setText:arrResult[3]];
     [self.lbAddress setText:arrResult[4]];
