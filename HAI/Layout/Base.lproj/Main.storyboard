@@ -368,27 +368,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TÍCH ĐIỂM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFn-8F-dpN">
-                                <rect key="frame" x="235" y="139" width="93" height="21.5"/>
+                                <rect key="frame" x="235" y="136.5" width="93" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KIỂM TRA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okl-QE-KDe">
-                                <rect key="frame" x="51.5" y="322.5" width="85" height="21.5"/>
+                                <rect key="frame" x="51.5" y="306.5" width="85" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NHẬP/XUẤT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-Wk-FIZ">
-                                <rect key="frame" x="41" y="139" width="106" height="21.5"/>
+                                <rect key="frame" x="41" y="136.5" width="106" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCF-aH-xD0">
-                                <rect key="frame" x="46" y="35.5" width="95.5" height="95.5"/>
+                                <rect key="frame" x="49.5" y="38.5" width="89.5" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UCF-aH-xD0" secondAttribute="height" multiplier="1:1" id="JDL-4T-y7r"/>
+                                    <constraint firstAttribute="height" constant="90" id="t3Q-48-TEi"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="import_export"/>
                                 <connections>
@@ -396,8 +397,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-ib-EDu">
-                                <rect key="frame" x="233.5" y="35.5" width="95.5" height="95.5"/>
+                                <rect key="frame" x="237" y="38.5" width="89.5" height="90"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="KBn-MO-Bu6"/>
                                     <constraint firstAttribute="width" secondItem="g3G-ib-EDu" secondAttribute="height" multiplier="1:1" id="aJQ-TF-h1w"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="save_point"/>
@@ -406,8 +408,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc9-sw-Jf4">
-                                <rect key="frame" x="46" y="219.5" width="95.5" height="95"/>
+                                <rect key="frame" x="48.5" y="208.5" width="90.5" height="90"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="D1l-id-may"/>
                                     <constraint firstAttribute="width" secondItem="Oc9-sw-Jf4" secondAttribute="height" multiplier="1:1" id="UXN-DW-iNp"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="check_product"/>
@@ -422,17 +425,14 @@
                             <constraint firstItem="iFn-8F-dpN" firstAttribute="centerX" secondItem="g3G-ib-EDu" secondAttribute="centerX" id="9AY-JW-EjK"/>
                             <constraint firstItem="jEp-Wk-FIZ" firstAttribute="centerX" secondItem="UCF-aH-xD0" secondAttribute="centerX" id="AIv-98-btp"/>
                             <constraint firstItem="okl-QE-KDe" firstAttribute="top" secondItem="Oc9-sw-Jf4" secondAttribute="bottom" constant="8" id="Ax3-to-kCC"/>
-                            <constraint firstItem="g3G-ib-EDu" firstAttribute="height" secondItem="M6m-12-dfs" secondAttribute="height" multiplier="1/7" id="DKX-kp-mzM"/>
                             <constraint firstItem="okl-QE-KDe" firstAttribute="centerX" secondItem="Oc9-sw-Jf4" secondAttribute="centerX" id="E3g-KC-3RI"/>
-                            <constraint firstItem="UCF-aH-xD0" firstAttribute="height" secondItem="M6m-12-dfs" secondAttribute="height" multiplier="1/7" id="Ejh-PS-xEB"/>
-                            <constraint firstItem="Oc9-sw-Jf4" firstAttribute="height" secondItem="M6m-12-dfs" secondAttribute="height" multiplier="1/7" id="IzS-Cc-CHz"/>
                             <constraint firstItem="UCF-aH-xD0" firstAttribute="centerY" secondItem="M6m-12-dfs" secondAttribute="centerY" multiplier="1/4" id="Q4t-jT-WLo"/>
+                            <constraint firstItem="Oc9-sw-Jf4" firstAttribute="top" secondItem="UCF-aH-xD0" secondAttribute="bottom" constant="80" id="XHj-bZ-cCh"/>
                             <constraint firstItem="g3G-ib-EDu" firstAttribute="centerX" secondItem="M6m-12-dfs" secondAttribute="centerX" multiplier="3/2" id="ZUc-1C-XZj"/>
                             <constraint firstItem="iFn-8F-dpN" firstAttribute="top" secondItem="g3G-ib-EDu" secondAttribute="bottom" constant="8" id="ele-gE-Hko"/>
                             <constraint firstItem="jEp-Wk-FIZ" firstAttribute="top" secondItem="UCF-aH-xD0" secondAttribute="bottom" constant="8" id="g6u-A2-Rye"/>
                             <constraint firstItem="UCF-aH-xD0" firstAttribute="centerX" secondItem="M6m-12-dfs" secondAttribute="centerX" multiplier="1/2" id="gt4-bQ-3n8"/>
                             <constraint firstItem="Oc9-sw-Jf4" firstAttribute="centerX" secondItem="M6m-12-dfs" secondAttribute="centerX" multiplier="1/2" id="kMX-lh-pnS"/>
-                            <constraint firstItem="Oc9-sw-Jf4" firstAttribute="centerY" secondItem="M6m-12-dfs" secondAttribute="centerY" multiplier="4/5" id="ohu-WN-fnv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Quản lý sản phẩm" id="TQM-hR-irg"/>
