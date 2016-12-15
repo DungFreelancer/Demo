@@ -22,5 +22,6 @@
 
 - (IBAction)onClickUpdate:(id)sender;
 - (IBAction)onClickStatus:(id)sender;
+- (IBAction)onClickAdd:(id)sender;
 
 @end

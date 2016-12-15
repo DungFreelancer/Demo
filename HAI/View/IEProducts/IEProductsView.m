@@ -145,6 +145,15 @@
     }
 }
 
+- (IBAction)onClickAdd:(id)sender {
+    if (isCodesRespone) {
+        isCodesRespone = NO;
+        [arrCodes removeAllObjects];
+    }
+    
+    [self onClickSave:nil];
+}
+
 - (IBAction)onClickSave:(id)sender {
     if ([self.txtCode.text isEqualToString:@""] == NO &&
         [self.txtCode.text isEqualToString:arrCodes.lastObject] == NO) {

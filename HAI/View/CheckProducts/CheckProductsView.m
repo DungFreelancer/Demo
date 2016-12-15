@@ -27,12 +27,11 @@
     self.tbTracking.delegate = self;
     self.tbTracking.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtCode.delegate = self;
+    [self.txtCode becomeFirstResponder];
     
     arrTracking = [[NSMutableArray alloc] init];
     
     // Setup button.
-    [self.btnScan.layer setShadowWithRadius:1.0f];
-    [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
     [self.btnCheck.layer setShadowWithRadius:1.0f];
     [self.btnCheck.layer setBorderWithColor:self.btnCheck.tintColor.CGColor];
     

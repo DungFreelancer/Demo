@@ -11,7 +11,6 @@
 @interface SaveProductsView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtCode;
-@property (weak, nonatomic) IBOutlet UIButton *btnAdd;
 @property (weak, nonatomic) IBOutlet UIButton *btnScan;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 @property (weak, nonatomic) IBOutlet UITableView *tbCodes;

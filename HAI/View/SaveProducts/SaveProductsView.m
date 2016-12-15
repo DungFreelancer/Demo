@@ -35,9 +35,6 @@
     [self.btnScan.layer setBorderWithColor:self.btnScan.tintColor.CGColor];
     [self.btnSend.layer setShadowWithRadius:1.0f];
     [self.btnSend.layer setBorderWithColor:self.btnSend.tintColor.CGColor];
-    [self.btnAdd.layer setShadowWithRadius:1.0f];
-    [self.btnAdd.layer setBorderWithColor:self.btnAdd.tintColor.CGColor];
-    
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     
     // Handle single tap.
@@ -66,11 +63,6 @@
         
         [self.tbCodes reloadData];
         [super scrollToBottomOnTableView:self.tbCodes];
-    } else {
-        [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"PRODUCTS_NILL", nil)
-                                                       andButton:NSLocalizedString(@"OK", nil)];
     }
 }
 
@@ -151,11 +143,6 @@
         
         [self.tbCodes reloadData];
         [super scrollToBottomOnTableView:self.tbCodes];
-    } else {
-        [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"PRODUCTS_NILL", nil)
-                                                       andButton:NSLocalizedString(@"OK", nil)];
     }
     
     return YES;
