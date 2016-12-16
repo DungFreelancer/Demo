@@ -15,6 +15,7 @@
 		9A1BEA7C1DEC913600A792B9 /* CheckProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA7B1DEC913600A792B9 /* CheckProductsView.m */; };
 		9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */; };
 		9A207CAE1DB13C8B00AFB3A7 /* CheckInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */; };
+		9A35B3E01E044BCA0058E3DD /* Contacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A35B3DF1E044BCA0058E3DD /* Contacts.m */; };
 		9A3B70A11DF1CD6F00427F28 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3B70A01DF1CD6F00427F28 /* UserInformationView.m */; };
 		9A4C1EFA1DC3AA3E00C601F9 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C1EF91DC3AA3E00C601F9 /* LoginView.m */; };
 		9A57432C1DF8543D00E13D44 /* EventAwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A57432B1DF8543D00E13D44 /* EventAwardView.m */; };
@@ -93,6 +94,8 @@
 		9A207CAA1DB13BF500AFB3A7 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckInModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A207CAC1DB13C7F00AFB3A7 /* CheckInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CheckInViewModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A207CAD1DB13C8B00AFB3A7 /* CheckInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CheckInViewModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A35B3DE1E044BC00058E3DD /* Contacts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contacts.h; sourceTree = "<group>"; };
+		9A35B3DF1E044BCA0058E3DD /* Contacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contacts.m; sourceTree = "<group>"; };
 		9A3B709F1DF1CD6100427F28 /* UserInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UserInformationView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A3B70A01DF1CD6F00427F28 /* UserInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserInformationView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A4A604E1DFDB1E0004151B8 /* HAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HAI.entitlements; path = ../HAI.entitlements; sourceTree = "<group>"; };
@@ -255,6 +258,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9A35B3DD1E044BAB0058E3DD /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				9A35B3DE1E044BC00058E3DD /* Contacts.h */,
+				9A35B3DF1E044BCA0058E3DD /* Contacts.m */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 		9A3B709E1DF1CD2B00427F28 /* UserInformation */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +419,7 @@
 				9A79BBFB1DD6E439007099C7 /* Setting */,
 				9ADE8E431DD87B5600A010E2 /* Support */,
 				9A3B709E1DF1CD2B00427F28 /* UserInformation */,
+				9A35B3DD1E044BAB0058E3DD /* Contacts */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -921,6 +934,7 @@
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9AFEA9D21DFED92B003FB9E1 /* NewfeedView.m in Sources */,
 				9A849AC81DDF71F9009EFEC3 /* EventView.m in Sources */,
+				9A35B3E01E044BCA0058E3DD /* Contacts.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,
 				9A7170071DCA53FE00BC0C76 /* CheckInHistoryCell.m in Sources */,
 				9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */,
