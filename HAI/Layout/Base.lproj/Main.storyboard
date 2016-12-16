@@ -1608,7 +1608,7 @@
         <!--Liên hệ-->
         <scene sceneID="jOF-Xv-OhW">
             <objects>
-                <viewController id="rkB-ss-hcF" sceneMemberID="viewController">
+                <viewController id="rkB-ss-hcF" customClass="ContactsView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WV7-Ae-Uad"/>
                         <viewControllerLayoutGuide type="bottom" id="Aqv-6s-IJi"/>
@@ -1627,7 +1627,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 Mạc Đĩnh Chi, Phường ĐaKao, Quận 1, Tp.Hồ Chí Minh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-I1-uAq">
-                                <rect key="frame" x="16" y="158" width="288" height="41"/>
+                                <rect key="frame" x="16" y="143" width="288" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="v40-f5-xd5"/>
                                 </constraints>
@@ -1636,31 +1636,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điện thoại: 0838.292.805" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-Vt-xxY">
-                                <rect key="frame" x="16" y="215" width="288" height="21"/>
+                                <rect key="frame" x="16" y="200" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fax: 0838.223.088" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-Ze-B52">
-                                <rect key="frame" x="16" y="252" width="288" height="21"/>
+                                <rect key="frame" x="16" y="237" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MST: 0301.242.080" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-fD-MtH">
-                                <rect key="frame" x="16" y="289" width="288" height="21"/>
+                                <rect key="frame" x="16" y="274" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: info@congtyhai.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn2-Y7-f1O">
-                                <rect key="frame" x="16" y="326" width="288" height="21"/>
+                                <rect key="frame" x="16" y="311" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hot_line" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-zA-jLX">
-                                <rect key="frame" x="16" y="397" width="204" height="71"/>
+                                <rect key="frame" x="16" y="382" width="204" height="71"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1678,7 +1678,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5oV-Ze-B52" secondAttribute="trailing" id="kUD-93-aIa"/>
                             <constraint firstItem="GZa-zK-Ijg" firstAttribute="top" secondItem="WV7-Ae-Uad" secondAttribute="bottom" constant="8" id="np8-et-rCY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b5P-I1-uAq" secondAttribute="trailing" id="nvw-Tf-hSY"/>
-                            <constraint firstItem="b5P-I1-uAq" firstAttribute="top" secondItem="GZa-zK-Ijg" secondAttribute="bottom" constant="45" id="tyc-yb-C3y"/>
+                            <constraint firstItem="b5P-I1-uAq" firstAttribute="top" secondItem="GZa-zK-Ijg" secondAttribute="bottom" constant="30" id="tyc-yb-C3y"/>
                             <constraint firstItem="HOF-fD-MtH" firstAttribute="leading" secondItem="mKQ-rj-qVL" secondAttribute="leadingMargin" id="uGp-ND-4TV"/>
                             <constraint firstItem="YY2-zA-jLX" firstAttribute="top" secondItem="vn2-Y7-f1O" secondAttribute="bottom" constant="50" id="uce-7Y-N4A"/>
                             <constraint firstItem="GZa-zK-Ijg" firstAttribute="leading" secondItem="mKQ-rj-qVL" secondAttribute="leadingMargin" id="wG0-6a-GYi"/>
