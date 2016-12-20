@@ -26,6 +26,11 @@
     
     vmCheckIn = [[CheckInViewModel alloc] init];
     [vmCheckIn loadCheckIns];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [super scrollToBottomOnTableView:self.tbHistory];
 }
 

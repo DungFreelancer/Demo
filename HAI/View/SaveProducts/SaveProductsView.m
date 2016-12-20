@@ -45,7 +45,9 @@
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self.tbCodes reloadData]; // Reload table after scan code.
     [super scrollToBottomOnTableView:self.tbCodes];
 }
