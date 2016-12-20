@@ -51,8 +51,6 @@
 "PRODUCTS_COUNT_ERROR" = "Chưa có mã sản phẩm nào.";
 "PRODUCTS_DUPLICATE" = "Có %lu mã sản phẩm bị trùng.";
 "PRODUCTS_NILL" = "Chưa nhập mã thẻ.";
-"PRODUCTS_DELETE_ALL" = "Xoá hết mã sản phẩm";
-"PRODUCTS_CANCEL" = "Huỷ";
 
 // TrackingProduct.
 "TRACKING_NO_CODE" = "Chưa nhập mã sản phẩm.";

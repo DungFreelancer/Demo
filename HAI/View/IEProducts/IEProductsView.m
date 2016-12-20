@@ -166,23 +166,6 @@
     }
 }
 
-- (void)onClickMore:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *actionDeleteAll = [UIAlertAction actionWithTitle:NSLocalizedString(@"PRODUCTS_DELETE_ALL", nil)
-                                                              style:UIAlertActionStyleDestructive
-                                                            handler:^(UIAlertAction * _Nonnull action) {
-                                                                [arrCodes removeAllObjects];
-                                                                [self.tbCode reloadData];
-    }];
-    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"PRODUCTS_CANCEL", nil)
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    
-    [alert addAction:actionDeleteAll];
-    [alert addAction:actionCancel];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 - (void)cleanAllView {
     [self.segStatus setSelectedSegmentIndex:0];
     self.lbTotal.text = @"0";
