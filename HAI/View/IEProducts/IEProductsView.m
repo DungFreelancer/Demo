@@ -110,15 +110,9 @@
             }
             
             if (arrCodes.count > 0) {
-                [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                               withTitle:nil
-                                                              andMessage:[NSString stringWithFormat:NSLocalizedString(@"PRODUCTS_DUPLICATE", nil), arrCodes.count]
-                                                               andButton:NSLocalizedString(@"OK", nil)];
-                self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrCodes.count];
-                
                 isCodesRespone = YES;
+                [self handleSingleTapGesture];
                 [self.tbCode reloadData];
-                [super scrollToBottomOnTableView:self.tbCode];
             } else {
                 [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                                withTitle:nil
@@ -174,7 +168,7 @@
     [self.segStatus setSelectedSegmentIndex:0];
     self.lbTotal.text = @"0";
     self.txtCode.text = @"";
-    [self.txtCode resignFirstResponder];
+    [self handleSingleTapGesture];
     [arrCodes removeAllObjects];
     [self.tbCode reloadData];
 }
