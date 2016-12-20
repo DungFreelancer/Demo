@@ -11,14 +11,14 @@
 @implementation NewfeedModel
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.title forKey:@"title"];
-    [aCoder encodeObject:self.message forKey:@"message"];
+    [aCoder encodeObject:self.newfeedID forKey:@"newfeedID"];
+    [aCoder encodeBool:self.isReaded forKey:@"isReaded"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        self.title = [aDecoder decodeObjectForKey:@"title"];
-        self.message = [aDecoder decodeObjectForKey:@"message"];
+        self.newfeedID = [aDecoder decodeObjectForKey:@"newfeedID"];
+        self.isReaded = [aDecoder decodeBoolForKey:@"isReaded"];
     }
     
     return self;

@@ -11,6 +11,7 @@
 @interface NewfeedCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
-@property (weak, nonatomic) IBOutlet UILabel *lbMessage;
+@property (weak, nonatomic) IBOutlet UILabel *lbContent;
+@property (weak, nonatomic) IBOutlet UILabel *lbTime;
 
 @end

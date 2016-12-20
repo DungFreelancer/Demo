@@ -10,7 +10,7 @@
 
 @interface NewfeedModel : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *message;
+@property (strong, nonatomic) NSString *newfeedID;
+@property (nonatomic) BOOL isReaded;
 
 @end

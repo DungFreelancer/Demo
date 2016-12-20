@@ -16,8 +16,10 @@
 #import "Constant.h"
 
 @implementation NewfeedView {
-    NewfeedViewModel *vmNewFeed;
+    NewfeedViewModel *vmNewfeed;
     NSInteger indexNewfeed;
+    NSMutableArray<NSDictionary *> *arrNewfeed;
+    int pageno;
 }
 
 - (void)viewDidLoad {
@@ -30,28 +32,68 @@
     self.tbNewfeed.delegate = self;
     self.tbNewfeed.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
-    vmNewFeed = [[NewfeedViewModel alloc] init];
-    [vmNewFeed loadNewfeeds];
+    vmNewfeed = [[NewfeedViewModel alloc] init];
+    [vmNewfeed loadNewfeeds];
+    pageno = 0;
+    [self getAllNewfeeds];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"segue_newfeed_detail"]) {
         NewfeedDetailView *viewND = (NewfeedDetailView *) [segue destinationViewController];
-        viewND.lbTitle.text = [vmNewFeed.arrNewfeed[indexNewfeed] valueForKey:@"title"];
-        viewND.lbMessage.text = [vmNewFeed.arrNewfeed[indexNewfeed] valueForKey:@"message"];
+        viewND.title = [arrNewfeed[indexNewfeed] valueForKey:@"title"];
+        viewND.content = [arrNewfeed[indexNewfeed] valueForKey:@"content"];
+        viewND.time = [arrNewfeed[indexNewfeed] valueForKey:@"time"];
     }
+}
+
+- (void)getAllNewfeeds {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+    [params setObject:[NSNumber numberWithInt:pageno] forKey:PARAM_PAGENO];
+    
+    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+    
+    [[NetworkHelper sharedInstance] requestPost:API_GET_NOTIFICATION paramaters:params completion:^(id response, NSError *error) {
+        
+        [[HUDHelper sharedInstance] hideLoading];
+        
+        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+            DLOG(@"%@", response);
+            pageno++;
+            arrNewfeed = [response valueForKey:RESPONSE_NOTIFICATION];
+            [self.tbNewfeed reloadData];
+        } else {
+            ELOG(@"%@", response);
+            [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                           withTitle:NSLocalizedString(@"ERROR", nil)
+                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE]
+                                                           andButton:NSLocalizedString(@"OK", nil)];
+        }
+    }];
 }
 
 // MARK: - UITableviewDataSource & Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return vmNewFeed.arrNewfeed.count;
+    return arrNewfeed.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewfeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newfeed_cell" forIndexPath:indexPath];
     
-    cell.lbTitle.text = [vmNewFeed.arrNewfeed[indexPath.row] valueForKey:@"title"];
-    cell.lbMessage.text = [vmNewFeed.arrNewfeed[indexPath.row] valueForKey:@"message"];
+    cell.lbTitle.text = [arrNewfeed[indexPath.row] valueForKey:@"title"];
+    cell.lbContent.text = [arrNewfeed[indexPath.row] valueForKey:@"content"];
+    cell.lbTime.text = [arrNewfeed[indexPath.row] valueForKey:@"time"];
     
     return cell;
 }

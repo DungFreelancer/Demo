@@ -10,7 +10,12 @@
 
 @interface NewfeedDetailView : BaseView
 
+@property (weak, nonatomic) NSString *title;
+@property (weak, nonatomic) NSString *time;
+@property (weak, nonatomic) NSString *content;
+
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
-@property (weak, nonatomic) IBOutlet UITextView *lbMessage;
+@property (weak, nonatomic) IBOutlet UILabel *lbTime;
+@property (weak, nonatomic) IBOutlet UITextView *lbContent;
 
 @end

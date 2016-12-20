@@ -14,6 +14,14 @@
     [super viewDidLoad];
     
     [super setBackBarItem];
+    
+    [self setContentView];
+}
+
+- (void)setContentView {
+    self.lbTitle.text = self.title;
+    self.lbTime.text = self.time;
+    self.lbContent.text = self.content;
 }
 
 @end
