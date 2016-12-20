@@ -41,9 +41,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"segue_newfeed_detail"]) {
         NewfeedDetailView *viewND = (NewfeedDetailView *) [segue destinationViewController];
-        viewND.title = [arrNewfeed[indexNewfeed] valueForKey:@"title"];
-        viewND.content = [arrNewfeed[indexNewfeed] valueForKey:@"content"];
-        viewND.time = [arrNewfeed[indexNewfeed] valueForKey:@"time"];
+        viewND.titleNF = [arrNewfeed[indexNewfeed] valueForKey:@"title"];
+        viewND.contentNF = [arrNewfeed[indexNewfeed] valueForKey:@"content"];
+        viewND.timeNF = [arrNewfeed[indexNewfeed] valueForKey:@"time"];
     }
 }
 

@@ -19,9 +19,9 @@
 }
 
 - (void)setContentView {
-    self.lbTitle.text = self.title;
-    self.lbTime.text = self.time;
-    self.lbContent.text = self.content;
+    self.lbTitle.text = self.titleNF;
+    self.lbTime.text = self.timeNF;
+    self.lbContent.text = self.contentNF;
 }
 
 @end
