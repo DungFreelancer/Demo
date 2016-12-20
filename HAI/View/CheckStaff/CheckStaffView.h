@@ -10,6 +10,7 @@
 
 @interface CheckStaffView : BaseView
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrStaff;
 @property (weak, nonatomic) IBOutlet UILabel *lbName;
 @property (weak, nonatomic) IBOutlet UILabel *lbCode;
 @property (weak, nonatomic) IBOutlet UILabel *lbstatus;

@@ -54,6 +54,10 @@
         return;
     }
     
+    // Scroll view to top.
+    CGPoint offset = CGPointMake(0, 0);
+    [self.scrStaff setContentOffset:offset animated:YES];
+    
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
     [self.lbName setText:arrResult[1]];

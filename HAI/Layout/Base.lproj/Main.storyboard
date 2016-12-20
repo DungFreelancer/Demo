@@ -215,6 +215,7 @@
                         <outlet property="lbName" destination="Kl2-Q0-6f8" id="78r-2F-l5X"/>
                         <outlet property="lbPosition" destination="nwU-jf-qOg" id="aPg-Bo-Tqc"/>
                         <outlet property="lbstatus" destination="aFZ-Mq-I3v" id="VHg-UO-vIU"/>
+                        <outlet property="scrStaff" destination="iqN-zM-Cwj" id="H9C-Th-c14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2203,7 +2204,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcK-EO-SC2">
                                 <rect key="frame" x="259" y="151" width="37" height="37"/>
