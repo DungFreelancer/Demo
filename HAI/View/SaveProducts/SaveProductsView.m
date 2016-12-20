@@ -56,6 +56,7 @@
     if ([segue.identifier isEqualToString:@"segue_scan_card"]) {
         ScanCardView *scv = [segue destinationViewController];
         scv.arrCodes = arrCode;
+        scv.delegate = self;
     } else if ([segue.identifier isEqualToString:@"segue_result"]) {
         ResultView *viewResult = [segue destinationViewController];
         viewResult.arrResult = arrResult;
@@ -123,6 +124,10 @@
     [self.txtCode resignFirstResponder];
     [arrCode removeAllObjects];
     [self.tbCodes reloadData];
+}
+
+// MARK: - ScanCardViewDelegate
+- (void)didScanCard:(NSString *)result {
 }
 
 // MARK: - UITextFieldDelegate

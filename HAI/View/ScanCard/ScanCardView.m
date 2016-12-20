@@ -27,7 +27,7 @@
     
     [self setBackBarItem];
     
-    if ([[self.navigationController parentViewController] isKindOfClass:[SaveProductsView class]]) {
+    if ([self.delegate isKindOfClass:[SaveProductsView class]]) {
         self.lbTotal.hidden = NO;
         [self.lbTotal.layer setBorderWithColor:[UIColor redColor].CGColor];
         
@@ -48,7 +48,7 @@
                 AVMetadataMachineReadableCodeObject *code = [codes firstObject];
                 DLOG(@"Code=%@", code.stringValue);
             
-                if ([[self.navigationController parentViewController] isKindOfClass:[SaveProductsView class]]) {
+                if ([self.delegate isKindOfClass:[SaveProductsView class]]) {
                     if ([code.stringValue isEqualToString:self.arrCodes.lastObject] == NO) {
                         [self.arrCodes addObject:code.stringValue];
                         self.lbTotal.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.arrCodes.count];
