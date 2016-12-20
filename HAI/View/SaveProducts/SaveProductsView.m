@@ -105,10 +105,10 @@
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
+            [self cleanAllView];
             
             arrResult = [response valueForKey:RESPONSE_CODES];
             [self performSegueWithIdentifier:@"segue_result" sender:nil];
-            [self cleanAllView];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
