@@ -37,87 +37,62 @@
     // Override point for customization after application launch.
     
     // Push offline data to service.
-//    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10")) {
-//        [NSTimer scheduledTimerWithTimeInterval:3600 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//            Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-//            
-//            reach.reachableBlock = ^(Reachability*reach)
-//            {
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
-//                    [vmCheckIn loadCheckIns];
-//                    for (CheckInModel *ci in vmCheckIn.arrCheckIn) {
-//                        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-//                        [params setObject:ci.store forKey:PARAM_NAME];
-//                        [params setObject:ci.content forKey:PARAM_CONTENT];
-//                        [params setObject:ci.sender forKey:PARAM_User];
-//                        
-//                        [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params image:[UIImage imageWithData:ci.image] completion:nil];
-//                    }
-//                    [vmCheckIn clearCheckIns];
-//                });
-//            };
-//            
-//            [reach startNotifier];
-//        }];
-//    } else {
-        [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
-            DLOG(@"Connection Status:%d", connected);
-            CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
+    [[NetworkHelper sharedInstance] connectionChange:^(BOOL connected) {
+        DLOG(@"Connection Status:%d", connected);
+        CheckInViewModel *vmCheckIn = [[CheckInViewModel alloc] init];
+        
+        if (connected && vmCheckIn.arrCheckIn.count > 0) {
             
-            if (connected && vmCheckIn.arrCheckIn.count > 0) {
-                
-                countSended = 0;
-                int numberOfUnsended = [vmCheckIn numberOfUnsended];
-                for (CheckInModel *ci in vmCheckIn.arrCheckIn) {
-                    if (ci.isSended == NO) {
-                        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-                        [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
-                        [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
-                        [params setObject:ci.extension forKey:PARAM_EXTENSION];
+            countSended = 0;
+            int numberOfUnsended = [vmCheckIn numberOfUnsended];
+            for (CheckInModel *ci in vmCheckIn.arrCheckIn) {
+                if (ci.isSended == NO) {
+                    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+                    [params setObject:[USER_DEFAULT objectForKey:PREF_USER] forKey:PARAM_USER];
+                    [params setObject:[USER_DEFAULT objectForKey:PREF_TOKEN] forKey:PARAM_TOKEN];
+                    [params setObject:ci.extension forKey:PARAM_EXTENSION];
+                    
+                    [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
+                    [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:[UIImage imageWithData:ci.image] completion:^(id response, NSError *error) {
                         
-                        [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
-                        [[NetworkHelper sharedInstance] requestPost:API_UPLOAD_IMAGE paramaters:params image:[UIImage imageWithData:ci.image] completion:^(id response, NSError *error) {
+                        [[HUDHelper sharedInstance] hideLoading];
+                        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                            DLOG(@"%@", response);
+                            [params setObject:[response valueForKey:RESPONSE_MESSAGE] forKey:PARAM_IMAGE];
+                            [params setObject:ci.comment forKey:PARAM_COMMENT];
+                            [params setObject:ci.date forKey:PARAM_DATE];
+                            [params setObject:ci.latitude forKey:PARAM_LATITUDE];
+                            [params setObject:ci.longtitude forKey:PARAM_LONGTITUDE];
                             
-                            [[HUDHelper sharedInstance] hideLoading];
-                            if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
-                                DLOG(@"%@", response);
-                                [params setObject:[response valueForKey:RESPONSE_MESSAGE] forKey:PARAM_IMAGE];
-                                [params setObject:ci.comment forKey:PARAM_COMMENT];
-                                [params setObject:ci.date forKey:PARAM_DATE];
-                                [params setObject:ci.latitude forKey:PARAM_LATITUDE];
-                                [params setObject:ci.longtitude forKey:PARAM_LONGTITUDE];
+                            [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
+                            [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
                                 
-                                [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.window];
-                                [[NetworkHelper sharedInstance] requestPost:API_CHECK_IN paramaters:params completion:^(id response, NSError *error) {
+                                [[HUDHelper sharedInstance] hideLoading];
+                                if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                                    DLOG(@"%@", response);
+                                    ++countSended;
+                                    ci.isSended = YES;
+                                    [vmCheckIn saveCheckIns];
                                     
-                                    [[HUDHelper sharedInstance] hideLoading];
-                                    if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
-                                        DLOG(@"%@", response);
-                                        ++countSended;
-                                        ci.isSended = YES;
-                                        [vmCheckIn saveCheckIns];
-                                        
-                                        if(countSended == numberOfUnsended) {
-                                            UINavigationController *nv =  (UINavigationController *)self.window.rootViewController;
-                                            [[UtilityClass sharedInstance] showAlertOnViewController:nv.visibleViewController
-                                                                                           withTitle:nil
-                                                                                          andMessage:NSLocalizedString(@"CHECKIN_DONE_OFFLINE", nil)
-                                                                                           andButton:NSLocalizedString(@"OK", nil)];
-                                        }
-                                    } else {
-                                        ELOG(@"%@", response);
+                                    if(countSended == numberOfUnsended) {
+                                        UINavigationController *nv =  (UINavigationController *)self.window.rootViewController;
+                                        [[UtilityClass sharedInstance] showAlertOnViewController:nv.visibleViewController
+                                                                                       withTitle:nil
+                                                                                      andMessage:NSLocalizedString(@"CHECKIN_DONE_OFFLINE", nil)
+                                                                                       andButton:NSLocalizedString(@"OK", nil)];
                                     }
-                                }];
-                            } else {
-                                ELOG(@"%@", response);
-                            }
-                        }];
-                    }
+                                } else {
+                                    ELOG(@"%@", response);
+                                }
+                            }];
+                        } else {
+                            ELOG(@"%@", response);
+                        }
+                    }];
                 }
             }
-        }];
-//    }
+        }
+    }];
     
     return YES;
 }
