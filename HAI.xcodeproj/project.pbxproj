@@ -45,6 +45,7 @@
 		9A849ACF1DDF73F9009EFEC3 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A849ACE1DDF73F9009EFEC3 /* EventCell.m */; };
 		9A89660C1DDA119800A8703E /* IEProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660B1DDA119800A8703E /* IEProductsView.m */; };
 		9A89660F1DDA11CB00A8703E /* ScanProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89660E1DDA11CB00A8703E /* ScanProductView.m */; };
+		9A8B7FBF1E0974E500F18A97 /* AgencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B7FBE1E0974E500F18A97 /* AgencyView.m */; };
 		9A9010621DAD37A900F04FC3 /* ScanCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9010611DAD37A900F04FC3 /* ScanCardView.m */; };
 		9AB212951D9AC2AF0007E1CB /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB212941D9AC2AF0007E1CB /* BaseView.m */; };
 		9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5C3E11D8F0BC90040E00E /* CheckInView.m */; };
@@ -155,6 +156,8 @@
 		9A89660B1DDA119800A8703E /* IEProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IEProductsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A89660D1DDA11BF00A8703E /* ScanProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ScanProductView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A89660E1DDA11CB00A8703E /* ScanProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanProductView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		9A8B7FBD1E0974DB00F18A97 /* AgencyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgencyView.h; sourceTree = "<group>"; };
+		9A8B7FBE1E0974E500F18A97 /* AgencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyView.m; sourceTree = "<group>"; };
 		9A9010601DAD379C00F04FC3 /* ScanCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ScanCardView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A9010611DAD37A900F04FC3 /* ScanCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScanCardView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AB212931D9AC2A60007E1CB /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BaseView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -404,6 +407,7 @@
 				9AFDAF711DC4B8E80055CBB4 /* Menu */,
 				9A3D67231D90D83C00A71D62 /* CheckIn */,
 				9A7170011DCA4DF100BC0C76 /* CheckInHistory */,
+				9A8B7FBC1E09748E00F18A97 /* Agency */,
 				9A3D67221D90D83100A71D62 /* CheckStaff */,
 				9A90105F1DAD375800F04FC3 /* ScanCard */,
 				9A1BEA711DEC8F0700A792B9 /* ProductsManager */,
@@ -598,6 +602,15 @@
 				9A89660E1DDA11CB00A8703E /* ScanProductView.m */,
 			);
 			path = ScanProduct;
+			sourceTree = "<group>";
+		};
+		9A8B7FBC1E09748E00F18A97 /* Agency */ = {
+			isa = PBXGroup;
+			children = (
+				9A8B7FBD1E0974DB00F18A97 /* AgencyView.h */,
+				9A8B7FBE1E0974E500F18A97 /* AgencyView.m */,
+			);
+			name = Agency;
 			sourceTree = "<group>";
 		};
 		9A90105F1DAD375800F04FC3 /* ScanCard */ = {
@@ -921,6 +934,7 @@
 				9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */,
 				9A78CDB71DEACFB6009CF23C /* SupportViewModel.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
+				9A8B7FBF1E0974E500F18A97 /* AgencyView.m in Sources */,
 				9AFEA9CA1DFED8D4003FB9E1 /* NewfeedViewModel.m in Sources */,
 				9AFDAF741DC4B9020055CBB4 /* MenuView.m in Sources */,
 				9AB5C3E21D8F0BC90040E00E /* CheckInView.m in Sources */,

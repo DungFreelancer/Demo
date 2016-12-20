@@ -64,6 +64,13 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segue_agency"]) {
+        AgencyView *viewAgency = (AgencyView *) [segue destinationViewController];
+        viewAgency.delegate = self;
+    }
+}
+
 - (IBAction)onClickTakePicture:(UIButton *)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
@@ -217,6 +224,10 @@
     self.imgPicture.image = [UIImage imageNamed:@"no_picture"];
     self.txtAgencyCode.text = @"";
     self.txtComment.text = @"";
+}
+
+- (void)didChooseAgency:(NSString *)code {
+    self.txtAgencyCode.text = code;
 }
 
 // UIImagePickerControllerDelegate.

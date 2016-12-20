@@ -42,6 +42,7 @@
 #define API_SUPPORT @"http://221.133.7.92:802/api/rest/msgtohai"
 #define API_USER_INFORMATION @"http://221.133.7.92:802/api/rest/userinfo"
 #define API_UPDATE_REG @"http://221.133.7.92:802/api/rest/updatereg"
+#define API_FIND_AGENCY @"http://221.133.7.92:802/api/rest/findagency"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
@@ -61,6 +62,7 @@
 #define PARAM_STATUS @"status"
 #define PARAM_EVENT_ID @"eventId"
 #define PARAM_REG_ID @"regId"
+#define PARAM_SEARCH @"search"
 
 #define RESPONSE_ID @"id"
 #define RESPONSE_MESSAGE @"msg"
@@ -91,6 +93,7 @@
 #define RESPONSE_TOPICS @"topics"
 #define RESPONSE_DATA @"data"
 #define RESPONSE_TITLE @"title"
+#define RESPONSE_AGENCES @"agences"
 
 // PREFERENCE-------------------------------------------------------------------
 
