@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27A007799414EFBFCA82B51F /* Pods_HAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE7040ACB7C5349D028E081 /* Pods_HAI.framework */; };
 		9A01041A1D9BD8D50000E677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A0104191D9BD8D50000E677 /* Localizable.strings */; };
+		9A08FF981E09812A0037DED9 /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08FF971E09812A0037DED9 /* ResultCell.m */; };
+		9A08FF9B1E0981C20037DED9 /* ResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A08FF9A1E0981C20037DED9 /* ResultView.m */; };
 		9A15980E1DFD270C005F611D /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A15980D1DFD270C005F611D /* MenuCell.m */; };
 		9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA751DEC8FC700A792B9 /* ProductsManagerView.m */; };
 		9A1BEA791DEC90E700A792B9 /* SaveProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1BEA781DEC90E700A792B9 /* SaveProductsView.m */; };
@@ -83,6 +85,10 @@
 		6CE7040ACB7C5349D028E081 /* Pods_HAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89767553407CD20C1AB92B11 /* Pods-HAI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAI.release.xcconfig"; path = "Pods/Target Support Files/Pods-HAI/Pods-HAI.release.xcconfig"; sourceTree = "<group>"; };
 		9A0104191D9BD8D50000E677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; path = Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
+		9A08FF961E09810E0037DED9 /* ResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
+		9A08FF971E09812A0037DED9 /* ResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
+		9A08FF991E0981B70037DED9 /* ResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultView.h; sourceTree = "<group>"; };
+		9A08FF9A1E0981C20037DED9 /* ResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultView.m; sourceTree = "<group>"; };
 		9A15980C1DFD2700005F611D /* MenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MenuCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A15980D1DFD270C005F611D /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MenuCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A1BEA741DEC8FB800A792B9 /* ProductsManagerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ProductsManagerView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -220,6 +226,17 @@
 				6CE7040ACB7C5349D028E081 /* Pods_HAI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A08FF951E0980F80037DED9 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				9A08FF961E09810E0037DED9 /* ResultCell.h */,
+				9A08FF971E09812A0037DED9 /* ResultCell.m */,
+				9A08FF991E0981B70037DED9 /* ResultView.h */,
+				9A08FF9A1E0981C20037DED9 /* ResultView.m */,
+			);
+			name = Result;
 			sourceTree = "<group>";
 		};
 		9A1BEA711DEC8F0700A792B9 /* ProductsManager */ = {
@@ -414,6 +431,7 @@
 				9A8966071DDA10FE00A8703E /* IEProducts */,
 				9A8966081DDA110B00A8703E /* ScanProduct */,
 				9A1BEA721DEC8F1800A792B9 /* SaveProducts */,
+				9A08FF951E0980F80037DED9 /* Result */,
 				9A1BEA731DEC8F2A00A792B9 /* CheckProducts */,
 				9A849AC41DDF718A009EFEC3 /* Event */,
 				9A849AC51DDF7193009EFEC3 /* EventDetail */,
@@ -931,6 +949,7 @@
 				9A3B70A11DF1CD6F00427F28 /* UserInformationView.m in Sources */,
 				9A78CDB41DEACF01009CF23C /* SupportModel.m in Sources */,
 				9A5F19E51D8EAB5D00B2E5AB /* UtilityClass.m in Sources */,
+				9A08FF981E09812A0037DED9 /* ResultCell.m in Sources */,
 				9A1BEA761DEC8FC700A792B9 /* ProductsManagerView.m in Sources */,
 				9A78CDB71DEACFB6009CF23C /* SupportViewModel.m in Sources */,
 				9AD3A3331DC63E7900073E15 /* CALayer+BorderShadow.m in Sources */,
@@ -947,6 +966,7 @@
 				9A5F19E21D8EAB4700B2E5AB /* NetworkHelper.m in Sources */,
 				9A207CAB1DB13BF500AFB3A7 /* CheckInModel.m in Sources */,
 				9AFEA9D21DFED92B003FB9E1 /* NewfeedView.m in Sources */,
+				9A08FF9B1E0981C20037DED9 /* ResultView.m in Sources */,
 				9A849AC81DDF71F9009EFEC3 /* EventView.m in Sources */,
 				9A35B3E01E044BCA0058E3DD /* Contacts.m in Sources */,
 				9A5F19941D8E905700B2E5AB /* AppDelegate.m in Sources */,

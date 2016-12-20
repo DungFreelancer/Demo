@@ -8,6 +8,7 @@
 
 #import "SaveProductsView.h"
 #import "ScanCardView.h"
+#import "ResultView.h"
 #import "CALayer+BorderShadow.h"
 #import "HUDHelper.h"
 #import "NetworkHelper.h"
@@ -16,6 +17,7 @@
 
 @implementation SaveProductsView {
     NSMutableArray<NSString *> *arrCode;
+    NSArray<NSDictionary *> *arrResult;
 }
 
 - (void)viewDidLoad {
@@ -52,6 +54,9 @@
     if ([segue.identifier isEqualToString:@"segue_scan_card"]) {
         ScanCardView *scv = [segue destinationViewController];
         scv.arrCodes = arrCode;
+    } else if ([segue.identifier isEqualToString:@"segue_result"]) {
+        ResultView *viewResult = [segue destinationViewController];
+        viewResult.arrResult = arrResult;
     }
 }
 
@@ -98,25 +103,9 @@
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
             
-            [arrCode removeAllObjects];
-            for (NSString *code in [response valueForKey:RESPONSE_CODES]) {
-                [arrCode addObject:code];
-            }
-            
-            if (arrCode.count > 0) {
-                [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                               withTitle:nil
-                                                              andMessage:[NSString stringWithFormat:NSLocalizedString(@"PRODUCTS_DUPLICATE", nil), arrCode.count]
-                                                               andButton:NSLocalizedString(@"OK", nil)];
-                [self.tbCodes reloadData];
-                [super scrollToBottomOnTableView:self.tbCodes];
-            } else {
-                [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                               withTitle:nil
-                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"PRODUCTS_UPDATED", nil)
-                                                               andButton:NSLocalizedString(@"OK", nil)];
-                [self cleanAllView];
-            }
+            arrResult = [response valueForKey:RESPONSE_CODES];
+            [self performSegueWithIdentifier:@"segue_result" sender:nil];
+            [self cleanAllView];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
