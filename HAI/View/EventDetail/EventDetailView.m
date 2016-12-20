@@ -111,6 +111,9 @@
     } else if (arrProduct.count > 0 && indexPath.row == 1) {
         cell.textLabel.text = @"Sản phẩm sử dụng tích điểm:";
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)arrProduct.count];
+    } else {
+        cell.textLabel.hidden = YES;
+        cell.detailTextLabel.hidden = YES;
     }
     
     return cell;
