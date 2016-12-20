@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="668"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqU-Nh-r9g">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HỌ VÀ TÊN" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl2-Q0-6f8">
                                                         <rect key="frame" x="162" y="16" width="150" height="41"/>
@@ -51,9 +51,9 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tình trạng" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-Mq-I3v">
-                                                        <rect key="frame" x="162" y="86" width="158" height="17"/>
+                                                        <rect key="frame" x="162" y="82" width="158" height="41"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="17" id="6us-PN-G72"/>
+                                                            <constraint firstAttribute="height" constant="41" id="6us-PN-G72"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,11 +64,11 @@
                                                 <constraints>
                                                     <constraint firstItem="dVH-Y3-kDX" firstAttribute="leading" secondItem="aqU-Nh-r9g" secondAttribute="leading" constant="162" id="5jl-gh-mWE"/>
                                                     <constraint firstItem="dVH-Y3-kDX" firstAttribute="top" secondItem="Kl2-Q0-6f8" secondAttribute="bottom" constant="4" id="6Xy-sQ-RXw"/>
-                                                    <constraint firstItem="aFZ-Mq-I3v" firstAttribute="top" secondItem="dVH-Y3-kDX" secondAttribute="bottom" constant="8" id="98T-gj-T8Z"/>
+                                                    <constraint firstItem="aFZ-Mq-I3v" firstAttribute="top" secondItem="dVH-Y3-kDX" secondAttribute="bottom" constant="4" id="98T-gj-T8Z"/>
                                                     <constraint firstItem="aFZ-Mq-I3v" firstAttribute="leading" secondItem="aqU-Nh-r9g" secondAttribute="leading" constant="162" id="ITr-lV-R0z"/>
                                                     <constraint firstItem="Kl2-Q0-6f8" firstAttribute="top" secondItem="aqU-Nh-r9g" secondAttribute="top" constant="16" id="ZHc-E2-yll"/>
                                                     <constraint firstAttribute="trailing" secondItem="Kl2-Q0-6f8" secondAttribute="trailing" constant="8" id="fcu-8g-ccZ"/>
-                                                    <constraint firstAttribute="height" constant="120" id="jCT-DH-IN2"/>
+                                                    <constraint firstAttribute="height" constant="130" id="jCT-DH-IN2"/>
                                                     <constraint firstItem="aFZ-Mq-I3v" firstAttribute="trailing" secondItem="aqU-Nh-r9g" secondAttribute="trailingMargin" constant="8" id="tsm-El-Ws3"/>
                                                     <constraint firstAttribute="trailing" secondItem="dVH-Y3-kDX" secondAttribute="trailing" constant="8" id="zO1-uS-uHS"/>
                                                     <constraint firstItem="Kl2-Q0-6f8" firstAttribute="leading" secondItem="aqU-Nh-r9g" secondAttribute="leading" constant="162" id="zyj-4f-IRI"/>
@@ -991,7 +991,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="scan"/>
                                 <connections>
-                                    <segue destination="YPn-ty-c7b" kind="show" id="Nyx-HU-1Gu"/>
+                                    <segue destination="YPn-ty-c7b" kind="show" identifier="segue_scan_card" id="Nyx-HU-1Gu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2706,7 +2706,7 @@
         <image name="signture" width="200" height="119"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x62-ih-F6D"/>
+        <segue reference="SBv-ep-Q9b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33725490196078434" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

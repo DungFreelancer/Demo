@@ -136,10 +136,16 @@
         [self.txtReceiver setEnabled:NO];
         self.txtReceiver.text = @"";
         [self.txtReceiver setBackgroundColor:[UIColor lightGrayColor]];
+        
+        [arrCodes removeAllObjects];
+        [self.tbCode reloadData];
     } else {
         [self.lbReceiver setEnabled:YES];
         [self.txtReceiver setEnabled:YES];
         [self.txtReceiver setBackgroundColor:[UIColor clearColor]];
+        
+        [arrCodes removeAllObjects];
+        [self.tbCode reloadData];
     }
 }
 
@@ -150,6 +156,9 @@
     }
     
     [self onClickSave:nil];
+}
+
+- (IBAction)onClick:(id)sender {
 }
 
 - (IBAction)onClickSave:(id)sender {
