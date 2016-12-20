@@ -43,6 +43,7 @@
     
     [self.lbReceiver setEnabled:NO];
     [self.txtReceiver setEnabled:NO];
+    [self.txtReceiver setBackgroundColor:[UIColor lightGrayColor]];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -139,9 +140,12 @@
     if ([self.segStatus selectedSegmentIndex] == 0) {
         [self.lbReceiver setEnabled:NO];
         [self.txtReceiver setEnabled:NO];
+        self.txtReceiver.text = @"";
+        [self.txtReceiver setBackgroundColor:[UIColor lightGrayColor]];
     } else {
         [self.lbReceiver setEnabled:YES];
         [self.txtReceiver setEnabled:YES];
+        [self.txtReceiver setBackgroundColor:[UIColor clearColor]];
     }
 }
 
