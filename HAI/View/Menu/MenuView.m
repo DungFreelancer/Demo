@@ -27,6 +27,7 @@
     // Setup table view.
     self.tblMenu.dataSource = self;
     self.tblMenu.delegate = self;
+    self.tblMenu.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     [self setBanner];
     
