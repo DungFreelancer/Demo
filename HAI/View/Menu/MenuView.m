@@ -31,8 +31,8 @@
     [self setBanner];
     
     // Get function list.
-//    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
-    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"products", @"setting", nil];
+    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
+//    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"products", @"setting", nil];
     
     [self registerPushNotification];
 }
@@ -133,13 +133,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([function[indexPath.row] isEqualToString:@"event"]) {
-        MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
+    if (indexPath.row == function.count - 1) {
+        // Move setting to bottom of table.
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[0]];
+        return cell;
+    } else if ([function[indexPath.row + 1] isEqualToString:@"event"]) {
+        // Set badge number to event.
+        MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row + 1]];
         cell.lbBadgeNumber.text = [NSString stringWithFormat:@"%d", encount];
         
         return cell;
     } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row]];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:function[indexPath.row + 1]];
         return cell;
     }
 }
