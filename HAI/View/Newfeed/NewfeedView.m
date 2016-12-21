@@ -33,7 +33,6 @@
     self.tbNewfeed.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     
     vmNewfeed = [[NewfeedViewModel alloc] init];
-    [vmNewfeed loadNewfeeds];
     pageno = 0;
     arrNewfeed = [[NSMutableArray alloc] init];
     [self getAllNewfeeds];
@@ -75,6 +74,7 @@
             if (((NSArray *) [response valueForKey:RESPONSE_NOTIFICATION]).count > 0) {
                 [arrNewfeed addObjectsFromArray:[response valueForKey:RESPONSE_NOTIFICATION]];
                 [self.tbNewfeed reloadData];
+                [self saveNewfeedsFromArray];
                 pageno++;
             }
         } else {
@@ -85,6 +85,33 @@
                                                            andButton:NSLocalizedString(@"OK", nil)];
         }
     }];
+}
+
+- (void)saveNewfeedsFromArray {
+    [vmNewfeed loadNewfeeds];
+    
+    for (int i = 0; i < arrNewfeed.count; ++i) {
+        
+        // Search from database.
+        BOOL isExist = NO;
+        for (int j = 0; j < vmNewfeed.arrNewfeed.count; ++j) {
+            if ([[arrNewfeed[i] valueForKey:@"id"] isEqualToString:vmNewfeed.arrNewfeed[j].newfeedID]) {
+                isExist = YES;
+                break;
+            }
+        }
+        
+        // Add to database if don't exist.
+        if (!isExist) {
+            NewfeedModel *newfeed = [[NewfeedModel alloc] init];
+            newfeed.newfeedID  = [arrNewfeed[i] valueForKey:@"id"];
+            newfeed.isReaded  = NO;
+            
+            [vmNewfeed.arrNewfeed addObject:newfeed];
+        }
+    }
+    
+    [vmNewfeed saveNewfeeds];
 }
 
 // MARK: - UITableviewDataSource & Delegate
@@ -99,6 +126,15 @@
     cell.lbContent.text = [arrNewfeed[indexPath.row] valueForKey:@"content"];
     cell.lbTime.text = [arrNewfeed[indexPath.row] valueForKey:@"time"];
     
+    // Make regular font when this newfeed was not readed.
+    for (int i = 0; i < vmNewfeed.arrNewfeed.count; ++i) {
+        if ([[arrNewfeed[indexPath.row] valueForKey:@"id"] isEqualToString:vmNewfeed.arrNewfeed[i].newfeedID] &&
+            vmNewfeed.arrNewfeed[i].isReaded) {
+            cell.lbTitle.font = [UIFont systemFontOfSize:17];
+            break;
+        }
+    }
+    
     if (indexPath.row == (arrNewfeed.count - 1)) { // Reach to last item will load more newfeed.
         [self getAllNewfeeds];
     }
@@ -107,6 +143,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Make this newfeed was readed.
+    vmNewfeed.arrNewfeed[indexPath.row].isReaded = YES;
+    [vmNewfeed saveNewfeeds];
+    [self.tbNewfeed reloadData];
+    
     indexNewfeed = indexPath.row;
     [self performSegueWithIdentifier:@"segue_newfeed_detail" sender:nil];
 }
