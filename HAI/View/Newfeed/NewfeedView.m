@@ -35,6 +35,7 @@
     vmNewfeed = [[NewfeedViewModel alloc] init];
     [vmNewfeed loadNewfeeds];
     pageno = 0;
+    arrNewfeed = [[NSMutableArray alloc] init];
     [self getAllNewfeeds];
 }
 
@@ -70,9 +71,12 @@
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
-            pageno++;
-            arrNewfeed = [response valueForKey:RESPONSE_NOTIFICATION];
-            [self.tbNewfeed reloadData];
+            
+            if (((NSArray *) [response valueForKey:RESPONSE_NOTIFICATION]).count > 0) {
+                [arrNewfeed addObjectsFromArray:[response valueForKey:RESPONSE_NOTIFICATION]];
+                [self.tbNewfeed reloadData];
+                pageno++;
+            }
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -94,6 +98,10 @@
     cell.lbTitle.text = [arrNewfeed[indexPath.row] valueForKey:@"title"];
     cell.lbContent.text = [arrNewfeed[indexPath.row] valueForKey:@"content"];
     cell.lbTime.text = [arrNewfeed[indexPath.row] valueForKey:@"time"];
+    
+    if (indexPath.row == (arrNewfeed.count - 1)) { // Reach to last item will load more newfeed.
+        [self getAllNewfeeds];
+    }
     
     return cell;
 }
