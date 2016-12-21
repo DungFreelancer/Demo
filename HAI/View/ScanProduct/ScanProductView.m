@@ -79,11 +79,11 @@
     if (!isStop) {
         [scanner freezeCapture];
         isStop = YES;
-        [self.btnStop setTitle:@"Quét tiếp" forState:UIControlStateNormal];
+        [self.btnStop setTitle:@"QUÉT TIẾP" forState:UIControlStateNormal];
     } else {
         [scanner unfreezeCapture];
         isStop = NO;
-        [self.btnStop setTitle:@"Dừng Quét" forState:UIControlStateNormal];
+        [self.btnStop setTitle:@"DỪNG QUÉT" forState:UIControlStateNormal];
     }
 }
 
