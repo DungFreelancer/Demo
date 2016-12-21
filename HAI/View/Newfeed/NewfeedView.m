@@ -130,7 +130,7 @@
     for (int i = 0; i < vmNewfeed.arrNewfeed.count; ++i) {
         if ([[arrNewfeed[indexPath.row] valueForKey:@"id"] isEqualToString:vmNewfeed.arrNewfeed[i].newfeedID] &&
             vmNewfeed.arrNewfeed[i].isReaded) {
-            cell.lbTitle.font = [UIFont systemFontOfSize:17];
+            cell.backgroundColor = [UIColor whiteColor];
             break;
         }
     }

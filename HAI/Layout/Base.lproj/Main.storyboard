@@ -242,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXA-SV-8g3" id="In6-WR-mX1">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-eM-PIa">
@@ -250,7 +250,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="9EE-gW-BgV"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -291,6 +291,7 @@
                                                 <constraint firstItem="0DG-Fe-bDy" firstAttribute="top" secondItem="QQC-eM-PIa" secondAttribute="bottom" id="oyj-Kr-V9E"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.98467427492141724" green="0.87750232219696045" blue="0.6958889365196228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="lbContent" destination="0DG-Fe-bDy" id="LGB-qC-VqQ"/>
                                             <outlet property="lbTime" destination="LK6-PZ-2pU" id="6ix-hG-Rv0"/>
@@ -1458,7 +1459,7 @@
             </objects>
             <point key="canvasLocation" x="2055" y="1363.7323943661972"/>
         </scene>
-        <!--Settings-->
+        <!--Quản lý ứng dụng-->
         <scene sceneID="G8k-KV-yDQ">
             <objects>
                 <tableViewController id="H09-xl-gbc" customClass="SettingView" sceneMemberID="viewController">
@@ -1558,7 +1559,7 @@
                             <outlet property="delegate" destination="H09-xl-gbc" id="2zg-2B-tGI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="oaf-A7-42k"/>
+                    <navigationItem key="navigationItem" title="Quản lý ứng dụng" id="oaf-A7-42k"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbA-ol-6eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

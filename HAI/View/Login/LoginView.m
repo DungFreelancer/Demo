@@ -14,6 +14,7 @@
 #import "UtilityClass.h"
 #import "Constant.h"
 #import "CheckInViewModel.h"
+#import "NewfeedViewModel.h"
 
 @implementation LoginView
 
@@ -148,6 +149,9 @@
     
     SupportViewModel *vmSupport = [[SupportViewModel alloc] init];
     [vmSupport clearSupports];
+    
+    NewfeedViewModel *vmNewfeed = [[NewfeedViewModel alloc] init];
+    [vmNewfeed clearNewfeeds];
 }
 
 // MARK: - UITextFieldDelegate
