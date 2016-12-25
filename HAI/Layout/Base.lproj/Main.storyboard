@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Check Staff-->
+        <!--Kiểm tra nhân viên-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CheckStaffView" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                             <constraint firstAttribute="trailing" secondItem="iqN-zM-Cwj" secondAttribute="trailing" id="reh-RZ-SKa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Check Staff" id="r0W-W2-kyS"/>
+                    <navigationItem key="navigationItem" title="Kiểm tra nhân viên" id="r0W-W2-kyS"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnScan" destination="C4W-Nw-LVo" id="pIf-0l-XiH"/>
@@ -242,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXA-SV-8g3" id="In6-WR-mX1">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-eM-PIa">
@@ -2064,7 +2064,7 @@
             </objects>
             <point key="canvasLocation" x="247.5" y="-1712.323943661972"/>
         </scene>
-        <!--Lịch Sử Check In-->
+        <!--Lịch sử ghé thăm-->
         <scene sceneID="kR2-RA-Otn">
             <objects>
                 <viewController id="QP3-dj-hza" customClass="CheckInHistory" sceneMemberID="viewController">
@@ -2185,7 +2185,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Lịch Sử Check In" id="cHO-9r-3Jt"/>
+                    <navigationItem key="navigationItem" title="Lịch sử ghé thăm" id="cHO-9r-3Jt"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tbHistory" destination="nuw-Qb-ohL" id="NLp-4Q-1bk"/>
@@ -2733,7 +2733,7 @@
         <image name="signture" width="200" height="119"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x62-ih-F6D"/>
+        <segue reference="SBv-ep-Q9b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33725490196078434" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -12,7 +12,7 @@
 "ERROR" = "Lỗi!";
 "LOADING" = "Đang xử lý...";
 "NO_INTERNET" = "Không thể kết nối internet.";
-"NO_CAMERA" = "Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.";
+"NO_CAMERA" = "Ứng dụng cần sử dụng camera của bạn để quét mã và chụp hình.";
 "NO_COMMENT" = "Chưa nhập nội dung.";
 "NO_PICTURE" = "Chưa có hình ảnh.";
 
@@ -23,18 +23,18 @@
 // SettingView.
 "SETTING_LOGOUT_ERROR" = "Không thể đăng xuất tài khoản.";
 "SETTING_LOGOUT" = "Bạn có chắc muốn thoát ứng dụng không?";
-"SETTING_WARRNING" = "Danh sách check in được lưu khi không có mạng vẫn chưa gửi hết lên server, bạn có chắc muốn thoát không?";
+"SETTING_WARRNING" = "Danh sách ghé thăm được lưu khi không có mạng vẫn chưa gửi hết lên server, bạn có chắc muốn thoát không?";
 
 // CheckStaffView.
 "STAFF_NO_AVATAR" = "Không tìm thấy hình của nhân viên.";
 "STAFF_NO_SIGNATURE" = "Không tìm thấy chử ký của nhân viên.";
 
 // CheckInView.
-"CHECKIN_LOCATION" = "Ứng dụng cần sử dụng vị trí của bạn mới có thể check in.";
-"CHECKIN_SUCCESS" = "Check In thành công.";
-"CHECKIN_FAIL" = "Không thể Check In.";
-"CHECKIN_SAVE_OFFLINE" = "Đã lưu check in vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";
-"CHECKIN_DONE_OFFLINE" = "Đã tự động gửi danh sách check in khi không kết nối internet lên server.";
+"CHECKIN_LOCATION" = "Ứng dụng cần sử dụng vị trí của bạn mới có thể ghé thăm.";
+"CHECKIN_SUCCESS" = "Ghé thăm thành công.";
+"CHECKIN_FAIL" = "Không thể ghé thăm.";
+"CHECKIN_SAVE_OFFLINE" = "Đã lưu lịch sử ghé thăm vào bộ nhớ. Kết nối internet sẽ tự động gửi lên server.";
+"CHECKIN_DONE_OFFLINE" = "Đã tự động gửi lịch sử ghé thăm khi không kết nối internet lên server.";
 "CHECKIN_NO_AGENCY" = "Chưa nhập mã khách hàng.";
 "CHECKIN_COMMENT" = "Chưa nhập chú thích.";
 
