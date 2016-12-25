@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -29,6 +29,8 @@
 	<string>Ứng dụng cần sử dụng camera của bạn để quét mã code và chụp hình.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Ứng dụng cần sử dụng vị trí của bạn để check in.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng cần sử dụng thư viện ảnh của bạn để lưu ảnh sau khi chụp.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
