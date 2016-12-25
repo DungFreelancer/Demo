@@ -60,61 +60,63 @@
     
     NSArray<NSString *> *arrResult = [result componentsSeparatedByString:@"\n"];
     
-    [self.lbName setText:arrResult[1]];
-    [self.lbCode setText:arrResult[0]];
-    [self.lbPosition setText:arrResult[2]];
-    [self.lbCompany setText:arrResult[3]];
-    [self.lbAddress setText:arrResult[4]];
-    
-    NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@&%@=%@",
-                     API_CHECK_STAFF,
-                     PARAM_CODE,
-                     arrResult[0],
-                     PARAM_USER,
-                     [USER_DEFAULT objectForKey:PREF_USER],
-                     PARAM_TOKEN,
-                     [USER_DEFAULT objectForKey:PREF_TOKEN]];
-    
-    [[HUDHelper sharedInstance] showLoadingWithTitle:@"LOADING" onView:self.view];
-    
-    [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
+    if (arrResult.count == 5) {
+        [self.lbName setText:arrResult[1]];
+        [self.lbCode setText:arrResult[0]];
+        [self.lbPosition setText:arrResult[2]];
+        [self.lbCompany setText:arrResult[3]];
+        [self.lbAddress setText:arrResult[4]];
         
-        [[HUDHelper sharedInstance] hideLoading];
-        if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
-            DLOG(@"%@", response);
-            NSString *status = [response valueForKey:RESPONSE_STATUS];
-            NSString *urlAvatar = [response valueForKey:RESPONSE_AVATAR];
-            NSString *urlSignature = [response valueForKey:RESPONSE_SIGNATURE];
+        NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@&%@=%@",
+                         API_CHECK_STAFF,
+                         PARAM_CODE,
+                         arrResult[0],
+                         PARAM_USER,
+                         [USER_DEFAULT objectForKey:PREF_USER],
+                         PARAM_TOKEN,
+                         [USER_DEFAULT objectForKey:PREF_TOKEN]];
+        
+        [[HUDHelper sharedInstance] showLoadingWithTitle:@"LOADING" onView:self.view];
+        
+        [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
             
-            [self.lbstatus setText:status];
-            
-            [[HUDHelper sharedInstance] showLoadingWithTitle:@"LOADING" onView:self.view];
-            
-            [self.imgAvatar downloadFromURL:urlAvatar withPlaceholder:nil handleCompletion:^(BOOL success) {
+            [[HUDHelper sharedInstance] hideLoading];
+            if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                DLOG(@"%@", response);
+                NSString *status = [response valueForKey:RESPONSE_STATUS];
+                NSString *urlAvatar = [response valueForKey:RESPONSE_AVATAR];
+                NSString *urlSignature = [response valueForKey:RESPONSE_SIGNATURE];
                 
-                [[HUDHelper sharedInstance] hideLoading];
-                if (!success) {
-                    ELOG(@"%d", success);
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_AVATAR", nil) andButton:NSLocalizedString(@"OK", nil)];
-                }
-            }];
-            
-            [self.imgSignature downloadFromURL:urlSignature withPlaceholder:nil handleCompletion:^(BOOL success) {
+                [self.lbstatus setText:status];
                 
-                [[HUDHelper sharedInstance] hideLoading];
-                if (!success) {
-                    ELOG(@"%d", success);
-                    [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_SIGNATURE", nil) andButton:NSLocalizedString(@"OK", nil)];
-                }
-            }];
-        } else {
-            ELOG(@"%@", response);
-            [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                           withTitle:NSLocalizedString(@"ERROR", nil)
-                                                          andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"STAFF_NO_SIGNATURE", nil)
-                                                           andButton:NSLocalizedString(@"OK", nil)];
-        }
-    }];
+                [[HUDHelper sharedInstance] showLoadingWithTitle:@"LOADING" onView:self.view];
+                
+                [self.imgAvatar downloadFromURL:urlAvatar withPlaceholder:nil handleCompletion:^(BOOL success) {
+                    
+                    [[HUDHelper sharedInstance] hideLoading];
+                    if (!success) {
+                        ELOG(@"%d", success);
+                        [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_AVATAR", nil) andButton:NSLocalizedString(@"OK", nil)];
+                    }
+                }];
+                
+                [self.imgSignature downloadFromURL:urlSignature withPlaceholder:nil handleCompletion:^(BOOL success) {
+                    
+                    [[HUDHelper sharedInstance] hideLoading];
+                    if (!success) {
+                        ELOG(@"%d", success);
+                        [[UtilityClass sharedInstance] showAlertOnViewController:self withTitle:NSLocalizedString(@"ERROR", nil) andMessage:NSLocalizedString(@"STAFF_NO_SIGNATURE", nil) andButton:NSLocalizedString(@"OK", nil)];
+                    }
+                }];
+            } else {
+                ELOG(@"%@", response);
+                [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                               withTitle:NSLocalizedString(@"ERROR", nil)
+                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"STAFF_NO_SIGNATURE", nil)
+                                                               andButton:NSLocalizedString(@"OK", nil)];
+            }
+        }];
+    }
 }
 
 @end
