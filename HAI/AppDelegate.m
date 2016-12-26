@@ -24,15 +24,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Push notification.
-    [FIRApp configure];
-    
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
                                                                                          |UIUserNotificationTypeSound
                                                                                          |UIUserNotificationTypeAlert) categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+    // Push notification.
+    [FIRApp configure];
     
     // Override point for customization after application launch.
     
@@ -97,8 +97,32 @@
     return YES;
 }
 
+//func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+//    if notificationSettings.types != .None {
+//        application.registerForRemoteNotifications()
+//    }
+//}
+//
+//func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+//    let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+//    var tokenString = ""
+//    
+//    for i in 0..<deviceToken.length {
+//        tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+//    }
+//    
+//    //Tricky line
+//    FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Unknown)
+//    print("Device Token:", tokenString)
+//}
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     DLOG(@"%@", userInfo);
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[FIRInstanceID instanceID] setAPNSToken:deviceToken type:FIRInstanceIDAPNSTokenTypeSandbox];
+    [[FIRInstanceID instanceID] setAPNSToken:deviceToken type:FIRInstanceIDAPNSTokenTypeProd];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

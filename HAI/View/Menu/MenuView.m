@@ -87,6 +87,12 @@
     
     // Get firebase token.
     NSString *refreshedToken = [[FIRInstanceID instanceID] token];
+    if (refreshedToken == nil) {
+        ELOG(@"Refreshed Token is:%@", refreshedToken);
+        return;
+    } else {
+        DLOG(@"Refreshed Token is:%@", refreshedToken);
+    }
     
     // Send token to service.
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
