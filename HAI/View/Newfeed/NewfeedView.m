@@ -19,7 +19,7 @@
     NewfeedViewModel *vmNewfeed;
     NSInteger indexNewfeed;
     NSMutableArray<NSDictionary *> *arrNewfeed;
-    int pageno;
+    int pageno, pagemax;
 }
 
 - (void)viewDidLoad {
@@ -73,9 +73,11 @@
             
             if (((NSArray *) [response valueForKey:RESPONSE_NOTIFICATION]).count > 0) {
                 [arrNewfeed addObjectsFromArray:[response valueForKey:RESPONSE_NOTIFICATION]];
+                pagemax = [[response valueForKey:RESPONSE_PAGEMAX] intValue];
+                pageno++;
+                
                 [self.tbNewfeed reloadData];
                 [self saveNewfeedsFromArray];
-                pageno++;
             }
         } else {
             ELOG(@"%@", response);
@@ -104,8 +106,12 @@
         // Add to database if don't exist.
         if (!isExist) {
             NewfeedModel *newfeed = [[NewfeedModel alloc] init];
-            newfeed.newfeedID  = [arrNewfeed[i] valueForKey:@"id"];
-            newfeed.isReaded  = NO;
+            newfeed.newfeedID = [arrNewfeed[i] valueForKey:@"id"];
+            if (pageno > 1) { // Mark at readed if load more.
+                newfeed.isReaded = YES;
+            } else { // First load.
+                newfeed.isReaded = NO;
+            }
             
             [vmNewfeed.arrNewfeed addObject:newfeed];
         }
@@ -126,16 +132,22 @@
     cell.lbContent.text = [arrNewfeed[indexPath.row] valueForKey:@"content"];
     cell.lbTime.text = [arrNewfeed[indexPath.row] valueForKey:@"time"];
     
-    // Make regular font when this newfeed was not readed.
+    // Make white color when this newfeed was readed.
+    BOOL isReaded = NO;
     for (int i = 0; i < vmNewfeed.arrNewfeed.count; ++i) {
         if ([[arrNewfeed[indexPath.row] valueForKey:@"id"] isEqualToString:vmNewfeed.arrNewfeed[i].newfeedID] &&
             vmNewfeed.arrNewfeed[i].isReaded) {
             cell.backgroundColor = [UIColor whiteColor];
+            isReaded = YES;
             break;
         }
     }
+    if (!isReaded) { // Make heilight color when this newfeed was not readed.
+        cell.backgroundColor = [UIColor colorWithRed:251.0/255.0 green:224.0/255.0 blue:177.0/255.0 alpha:1.0];
+    }
     
-    if (indexPath.row == (arrNewfeed.count - 1)) { // Reach to last item will load more newfeed.
+    if (pageno != pagemax &&
+        indexPath.row == (arrNewfeed.count - 1)) { // Reach to last item will load more newfeed.
         [self getAllNewfeeds];
     }
     

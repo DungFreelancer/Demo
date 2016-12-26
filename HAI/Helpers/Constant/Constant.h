@@ -97,6 +97,7 @@
 #define RESPONSE_TITLE @"title"
 #define RESPONSE_AGENCES @"agences"
 #define RESPONSE_NOTIFICATION @"notifications"
+#define RESPONSE_PAGEMAX @"pagemax"
 
 // PREFERENCE-------------------------------------------------------------------
 
