@@ -38,6 +38,7 @@
     [self.btnSend.layer setShadowWithRadius:1.0f];
     [self.btnSend.layer setBorderWithColor:self.btnSend.tintColor.CGColor];
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    [self.txtCode becomeFirstResponder];
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];

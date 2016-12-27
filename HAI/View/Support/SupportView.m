@@ -31,6 +31,7 @@
     [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtComment setTextColor:[UIColor lightGrayColor]];
     self.txtComment.delegate = self;
+    [self.txtComment becomeFirstResponder];
     
     self.tbSupport.dataSource = self;
     self.tbSupport.delegate = self;
