@@ -110,6 +110,15 @@
 }
 
 - (void)checkLoginStatus {
+    if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
+        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
+        [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                       withTitle:NSLocalizedString(@"ERROR", nil)
+                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
+                                                       andButton:NSLocalizedString(@"OK", nil)];
+        return;
+    }
+    
     BOOL alreadyLogin = [USER_DEFAULT boolForKey:PREF_ALRAEDY_LOGIN];
     NSString *userName = [USER_DEFAULT valueForKey:PREF_USER];
     NSString *token = [USER_DEFAULT valueForKey:RESPONSE_TOKEN];
