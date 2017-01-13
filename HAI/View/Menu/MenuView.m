@@ -15,6 +15,7 @@
 #import "CheckInViewModel.h"
 #import "Constant.h"
 #import <Firebase.h>
+#import <MXParallaxHeader/MXParallaxHeader.h>
 
 @implementation MenuView {
     NSArray<NSString *> *function;
@@ -71,8 +72,11 @@
     title.textColor = [UIColor whiteColor];
     title.textAlignment = NSTextAlignmentLeft;
     
-    [imgBanner addSubview:title];
-    [self.tblMenu setTableHeaderView:imgBanner];
+    self.tblMenu.parallaxHeader.view = imgBanner;
+    self.tblMenu.parallaxHeader.height = self.view.frame.size.height / 3;
+    self.tblMenu.parallaxHeader.mode = MXParallaxHeaderModeFill;
+    self.tblMenu.parallaxHeader.minimumHeight = 20;
+    [self.tblMenu.parallaxHeader.view addSubview:title];
 }
 
 - (void)registerPushNotification {

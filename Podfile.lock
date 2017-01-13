@@ -46,6 +46,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - MBProgressHUD (1.0.0)
   - MTBBarcodeScanner (3.1.0)
+  - MXParallaxHeader (0.6.0)
   - Reachability (3.2)
 
 DEPENDENCIES:
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - MBProgressHUD (~> 1.0)
   - MTBBarcodeScanner (~> 3.0)
+  - MXParallaxHeader (~> 0.6)
   - Reachability (~> 3.2)
 
 SPEC CHECKSUMS:
@@ -68,8 +70,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MTBBarcodeScanner: 6d397077f1a4a886050df8e66584a59a1dc429e7
+  MXParallaxHeader: 2997592b8349baf8557ae0e4346f6b17e141de39
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-PODFILE CHECKSUM: 769685076abfa2ad650f1c69b577651d61b2ec68
+PODFILE CHECKSUM: b8cecd2519fa5cf5417fab49bd523fb1ab939d93
 
 COCOAPODS: 1.1.1

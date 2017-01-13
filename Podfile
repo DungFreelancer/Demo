@@ -8,4 +8,5 @@ target ‘HAI’ do
   pod 'MTBBarcodeScanner', '~> 3.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'MXParallaxHeader', '~> 0.6'
 end
