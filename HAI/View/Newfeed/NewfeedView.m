@@ -156,7 +156,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Make this newfeed was readed.
-    vmNewfeed.arrNewfeed[indexPath.row].isReaded = YES;
+    for (int i = 0; i < vmNewfeed.arrNewfeed.count; ++i) {
+        if ([[arrNewfeed[indexPath.row] valueForKey:@"id"] isEqualToString:vmNewfeed.arrNewfeed[i].newfeedID]) {
+            vmNewfeed.arrNewfeed[i].isReaded = YES;
+        }
+    }
+
     [vmNewfeed saveNewfeeds];
     [self.tbNewfeed reloadData];
     
