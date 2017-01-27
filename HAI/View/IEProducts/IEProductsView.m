@@ -136,6 +136,8 @@
         [self.txtReceiver setEnabled:NO];
         self.txtReceiver.text = @"";
         [self.txtReceiver setBackgroundColor:[UIColor lightGrayColor]];
+        self.lbTotal.text = @"0";
+        self.txtCode.text = @"";
         
         [arrCodes removeAllObjects];
         [self.tbCode reloadData];
@@ -143,6 +145,8 @@
         [self.lbReceiver setEnabled:YES];
         [self.txtReceiver setEnabled:YES];
         [self.txtReceiver setBackgroundColor:[UIColor clearColor]];
+        self.lbTotal.text = @"0";
+        self.txtCode.text = @"";
         
         [arrCodes removeAllObjects];
         [self.tbCode reloadData];
@@ -156,9 +160,6 @@
     }
     
     [self onClickSave:nil];
-}
-
-- (IBAction)onClick:(id)sender {
 }
 
 - (IBAction)onClickSave:(id)sender {
