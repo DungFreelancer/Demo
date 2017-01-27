@@ -34,7 +34,7 @@
     
     // Get function list.
     function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
-//    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"products", @"setting", nil];
+//    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"product", @"setting", nil];
     
     [self registerPushNotification];
 }
@@ -51,32 +51,14 @@
 }
 
 - (void)setBanner {
-    // Banner's image.
+    // Random banner's image.
     NSString *name = [NSString stringWithFormat:@"banner_%d", arc4random_uniform(7) + 1];
-    UIImageView *imgBanner = [[UIImageView alloc] initWithImage:[UIImage imageNamed:name]];
-    [imgBanner setFrame:CGRectMake(0,
-                                   0,
-                                   self.view.frame.size.width,
-                                   self.view.frame.size.height / 3)];
+    self.imgBanner.image = [UIImage imageNamed:name];
     
-    // Banner's title.
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(32, imgBanner.frame.size.height - 70 - 16, 70, 70)];
-    title.text = @"HAI";
-    title.font = [UIFont systemFontOfSize:50];
-    title.numberOfLines = 1;
-    title.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
-    title.adjustsFontSizeToFitWidth = YES;
-    title.minimumScaleFactor = 10.0f/12.0f;
-    title.clipsToBounds = YES;
-    title.backgroundColor = [UIColor clearColor];
-    title.textColor = [UIColor whiteColor];
-    title.textAlignment = NSTextAlignmentLeft;
-    
-    self.tblMenu.parallaxHeader.view = imgBanner;
+    self.tblMenu.parallaxHeader.view = self.viewBanner;
     self.tblMenu.parallaxHeader.height = self.view.frame.size.height / 3;
     self.tblMenu.parallaxHeader.mode = MXParallaxHeaderModeFill;
     self.tblMenu.parallaxHeader.minimumHeight = 20;
-    [self.tblMenu.parallaxHeader.view addSubview:title];
 }
 
 - (void)registerPushNotification {

@@ -11,5 +11,7 @@
 @interface MenuView : BaseView <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tblMenu;
+@property (weak, nonatomic) IBOutlet UIImageView *imgBanner;
+@property (strong, nonatomic) IBOutlet UIView *viewBanner;
 
 @end
