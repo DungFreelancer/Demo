@@ -8,6 +8,8 @@
 
 #import "BaseView.h"
 
-@interface ProductsManagerView : BaseView
+@interface ProductsManagerView : BaseView <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *clFunction;
 
 @end

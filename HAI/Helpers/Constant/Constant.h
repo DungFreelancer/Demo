@@ -44,6 +44,7 @@
 #define API_UPDATE_REG @"http://api.nongduochai.vn/api/rest/updatereg"
 #define API_FIND_AGENCY @"http://api.nongduochai.vn/api/rest/findagency"
 #define API_GET_NOTIFICATION @"http://api.nongduochai.vn/api/rest/getnotification"
+#define API_FUNCTION_PRODUCT @"http://api.nongduochai.vn/api/rest/functionproduct"
 
 #define PARAM_USER @"user"
 #define PARAM_TOKEN @"token"
