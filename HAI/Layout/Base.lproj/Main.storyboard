@@ -988,20 +988,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không tìm thấy thông tin sản phẩm này." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YV-A1-3a8">
-                                <rect key="frame" x="8" y="239" width="302" height="21"/>
+                                <rect key="frame" x="8" y="280" width="302" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G2W-PD-kgV">
-                                <rect key="frame" x="0.0" y="237" width="320" height="331"/>
+                                <rect key="frame" x="0.0" y="280" width="320" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tracking_cell" id="rb3-Ju-6fc" customClass="TrackingCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rb3-Ju-6fc" id="bNB-XL-d96">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Import Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2p-qf-K6d">
@@ -1070,20 +1070,32 @@
                                     <segue destination="YPn-ty-c7b" kind="show" identifier="segue_scan_card" id="Nyx-HU-1Gu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dq-6a-eEw">
+                                <rect key="frame" x="16" y="237" width="288" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="s71-Hs-Cms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a5A-iq-tJ4" firstAttribute="trailing" secondItem="UAP-q1-9Sg" secondAttribute="trailingMargin" id="0ab-4M-Vzc"/>
+                            <constraint firstItem="7dq-6a-eEw" firstAttribute="leading" secondItem="UAP-q1-9Sg" secondAttribute="leading" constant="16" id="0mk-Kk-BAw"/>
                             <constraint firstItem="4zB-6Z-Dyk" firstAttribute="leading" secondItem="UAP-q1-9Sg" secondAttribute="leading" constant="16" id="EmY-Ha-dnp"/>
                             <constraint firstItem="ypf-BD-0fe" firstAttribute="top" secondItem="G2W-PD-kgV" secondAttribute="bottom" id="Kbr-i3-Yil"/>
                             <constraint firstItem="qLK-DO-nEy" firstAttribute="trailing" secondItem="UAP-q1-9Sg" secondAttribute="trailingMargin" constant="-8" id="MEt-eq-cpl"/>
                             <constraint firstItem="Gjj-LW-sNY" firstAttribute="top" secondItem="a5A-iq-tJ4" secondAttribute="bottom" constant="16" id="MdJ-2O-zyO"/>
+                            <constraint firstItem="7dq-6a-eEw" firstAttribute="top" secondItem="4zB-6Z-Dyk" secondAttribute="bottom" constant="8" id="O0f-rJ-IrU"/>
                             <constraint firstItem="a5A-iq-tJ4" firstAttribute="leading" secondItem="UAP-q1-9Sg" secondAttribute="leadingMargin" id="SHt-pc-TDC"/>
+                            <constraint firstItem="G2W-PD-kgV" firstAttribute="top" secondItem="7dq-6a-eEw" secondAttribute="bottom" constant="2" id="SOV-K8-xCj"/>
                             <constraint firstItem="a5A-iq-tJ4" firstAttribute="top" secondItem="Oke-Tr-hxu" secondAttribute="bottom" constant="16" id="TCD-5C-oAp"/>
-                            <constraint firstItem="7YV-A1-3a8" firstAttribute="top" secondItem="4zB-6Z-Dyk" secondAttribute="bottom" constant="10" id="U1n-x7-WjT"/>
+                            <constraint firstItem="7YV-A1-3a8" firstAttribute="top" secondItem="4zB-6Z-Dyk" secondAttribute="bottom" constant="51" id="U1n-x7-WjT"/>
                             <constraint firstItem="qLK-DO-nEy" firstAttribute="top" secondItem="Oke-Tr-hxu" secondAttribute="bottom" constant="20" id="XsQ-VC-EbX"/>
                             <constraint firstItem="4zB-6Z-Dyk" firstAttribute="top" secondItem="Gjj-LW-sNY" secondAttribute="bottom" constant="24" id="ZnV-Bv-8Ym"/>
-                            <constraint firstItem="G2W-PD-kgV" firstAttribute="top" secondItem="4zB-6Z-Dyk" secondAttribute="bottom" constant="8" id="fl9-WL-K4s"/>
+                            <constraint firstAttribute="trailing" secondItem="7dq-6a-eEw" secondAttribute="trailing" constant="16" id="drf-RF-1Ho"/>
                             <constraint firstItem="7YV-A1-3a8" firstAttribute="leading" secondItem="UAP-q1-9Sg" secondAttribute="leading" constant="8" id="gen-D6-DtS"/>
                             <constraint firstItem="Gjj-LW-sNY" firstAttribute="leading" secondItem="UAP-q1-9Sg" secondAttribute="leadingMargin" id="lE9-LM-M4a"/>
                             <constraint firstItem="Gjj-LW-sNY" firstAttribute="width" secondItem="UAP-q1-9Sg" secondAttribute="width" multiplier="2/5" id="pfd-9C-rIs"/>
@@ -1094,13 +1106,14 @@
                     <navigationItem key="navigationItem" title="Kiểm tra sản phẩm" id="1sE-zm-mgV"/>
                     <connections>
                         <outlet property="btnCheck" destination="Gjj-LW-sNY" id="uYa-1S-2UJ"/>
+                        <outlet property="lbName" destination="7dq-6a-eEw" id="VSY-bv-4hn"/>
                         <outlet property="tbTracking" destination="G2W-PD-kgV" id="gWG-TM-5ST"/>
                         <outlet property="txtCode" destination="a5A-iq-tJ4" id="YmB-e6-xii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQp-lR-0UH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="-128"/>
+            <point key="canvasLocation" x="1130.625" y="-128.87323943661971"/>
         </scene>
         <!--Quét Mã-->
         <scene sceneID="pQZ-dr-AOm">
@@ -2816,7 +2829,7 @@
         <image name="signture" width="200" height="119"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SBv-ep-Q9b"/>
+        <segue reference="Nyx-HU-1Gu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33725490196078434" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtCode;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheck;
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
 @property (weak, nonatomic) IBOutlet UITableView *tbTracking;
 
 - (IBAction)onClickCheck:(id)sender;

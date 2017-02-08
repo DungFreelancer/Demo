@@ -99,6 +99,8 @@
 #define RESPONSE_AGENCES @"agences"
 #define RESPONSE_NOTIFICATION @"notifications"
 #define RESPONSE_PAGEMAX @"pagemax"
+#define RESPONSE_TRACKING @"tracking"
+#define RESPONSE_NAME @"name"
 
 // PREFERENCE-------------------------------------------------------------------
 

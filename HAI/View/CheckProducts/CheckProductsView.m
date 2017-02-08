@@ -36,6 +36,7 @@
     [self.btnCheck.layer setBorderWithColor:self.btnCheck.tintColor.CGColor];
     
     [self.txtCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
+    self.lbName.hidden = YES;
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
@@ -82,11 +83,14 @@
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
-            arrTracking = [response valueForKey:@"tracking"];
+            self.lbName.text = [response valueForKey:RESPONSE_NAME];
+            self.lbName.hidden = NO;
+            arrTracking = [response valueForKey:RESPONSE_TRACKING];
             [self.tbTracking reloadData];
             [self cleanAllView];
         } else {
             ELOG(@"%@", response);
+            self.lbName.hidden = YES;
             [[UtilityClass sharedInstance] showAlertOnViewController:self
                                                            withTitle:NSLocalizedString(@"ERROR", nil)
                                                           andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"PRODUCTS_ERROR", nil)
