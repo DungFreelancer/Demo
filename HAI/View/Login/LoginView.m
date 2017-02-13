@@ -33,6 +33,7 @@
     
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    [singleTapGestureRecognizer setCancelsTouchesInView:NO];
     [self.view addGestureRecognizer:singleTapGestureRecognizer];
     
     // Check login status.
