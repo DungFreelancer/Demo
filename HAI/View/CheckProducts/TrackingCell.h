@@ -11,6 +11,7 @@
 @interface TrackingCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lbName;
+@property (weak, nonatomic) IBOutlet UILabel *lbStatus;
 @property (weak, nonatomic) IBOutlet UILabel *lbImportTime;
 @property (weak, nonatomic) IBOutlet UILabel *lbExportTime;
 

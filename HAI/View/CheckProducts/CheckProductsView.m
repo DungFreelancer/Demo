@@ -130,6 +130,7 @@
     TrackingCell *cell = (TrackingCell *) [tableView dequeueReusableCellWithIdentifier:@"tracking_cell" forIndexPath:indexPath];
     
     cell.lbName.text = [arrTracking[indexPath.row] valueForKey:@"name"];
+    cell.lbStatus.text = [arrTracking[indexPath.row] valueForKey:@"status"];
     cell.lbImportTime.text = [arrTracking[indexPath.row]valueForKey:@"importTime"];
     cell.lbExportTime.text = [arrTracking[indexPath.row] valueForKey:@"exportTime"];
     
