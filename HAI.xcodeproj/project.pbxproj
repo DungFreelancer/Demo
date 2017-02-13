@@ -363,7 +363,7 @@
 				9A5F19C51D8E907700B2E5AB /* Helpers */,
 				9A5F19C71D8E907B00B2E5AB /* Model */,
 				9A1DDCE61DACEB1D00E7AE23 /* ViewModel */,
-				9A5F19C61D8E907900B2E5AB /* View */,
+				9A5F19C61D8E907900B2E5AB /* ViewController */,
 				9A5F19C81D8E907C00B2E5AB /* Layout */,
 				9A5F19921D8E905700B2E5AB /* AppDelegate.h */,
 				9A5F19931D8E905700B2E5AB /* AppDelegate.m */,
@@ -416,7 +416,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		9A5F19C61D8E907900B2E5AB /* View */ = {
+		9A5F19C61D8E907900B2E5AB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				9AB212921D9AC2830007E1CB /* Base */,
@@ -443,6 +443,7 @@
 				9A3B709E1DF1CD2B00427F28 /* UserInformation */,
 				9A35B3DD1E044BAB0058E3DD /* Contacts */,
 			);
+			name = ViewController;
 			path = View;
 			sourceTree = "<group>";
 		};
