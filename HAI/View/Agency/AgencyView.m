@@ -25,6 +25,11 @@
     self.tbAgency.delegate = self;
     self.tbAgency.tableFooterView = [[UIView alloc] init]; // Remove separator at bottom.
     self.txtAgency.delegate = self;
+    
+    // Handle single tap.
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    [singleTapGestureRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
 }
 
 - (IBAction)onClickAgency:(id)sender {
@@ -67,6 +72,8 @@
             
             arrAgency = [response valueForKey:RESPONSE_AGENCES];
             [self.tbAgency reloadData];
+            
+            [self.txtAgency resignFirstResponder];
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
@@ -103,6 +110,11 @@
     [self.delegate didChooseAgency:[arrAgency[indexPath.row] valueForKey:@"code"]];
     
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+// MARK: - UIGestureRecognizerDelegate
+- (void)handleSingleTapGesture {
+    [self.txtAgency resignFirstResponder];
 }
 
 @end

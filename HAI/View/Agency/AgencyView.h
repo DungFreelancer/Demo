@@ -14,7 +14,7 @@
 
 @end
 
-@interface AgencyView : BaseView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface AgencyView : BaseView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) id<AgencyViewDelegate> delegate;
 
