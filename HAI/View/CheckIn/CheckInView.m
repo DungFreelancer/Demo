@@ -72,11 +72,15 @@
 }
 
 - (IBAction)onClickTakePicture:(UIButton *)sender {
+#if TARGET_IPHONE_SIMULATOR
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePickerController.allowsEditing = YES;
     [self presentViewController:imagePickerController animated:YES completion:nil];
+#else
+    DLOG(@"This function works only on real device!!!");
+#endif
 }
 
 - (IBAction)onClickCheckIn:(UIButton *)sender {
