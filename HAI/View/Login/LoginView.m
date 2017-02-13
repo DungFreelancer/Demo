@@ -58,8 +58,11 @@
     
     NSString *userName = self.txtUserName.text;
     NSString *password = self.txtPassword.text;
-    [[NetworkHelper sharedInstance] requestGetBasicAuthorization:API_LOGIN userName:userName password:password completion:^(id response, NSError *error) {
-        
+    NSString* identifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    [[NetworkHelper sharedInstance] requestGetBasicAuthorization:[NSString stringWithFormat:@"%@?imei=%@", API_LOGIN, identifier]
+                                                        userName:userName
+                                                        password:password
+                                                      completion:^(id response, NSError *error) {
         [[HUDHelper sharedInstance] hideLoading];
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
