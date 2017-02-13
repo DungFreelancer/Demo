@@ -33,7 +33,6 @@
     [self setBanner];
     
     // Get function list.
-    function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
 //    function = [[NSArray alloc] initWithObjects:@"checkin", @"checkstaff", @"event", @"newfeed", @"product", @"setting", nil];
     
     [self registerPushNotification];
@@ -93,6 +92,8 @@
         
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
+            function = [response valueForKey:RESPONSE_FUNCTION];
+            [self.tblMenu reloadData];
             
             // Show encount on event cell.
             encount = [[response valueForKey:RESPONSE_ECOUNT] intValue];

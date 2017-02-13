@@ -67,7 +67,6 @@
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
             NSString *token = [response valueForKey:RESPONSE_TOKEN];
-            NSArray<NSString *> *function = [response valueForKey:RESPONSE_FUNCTION];
             NSString *role = [response valueForKey:RESPONSE_ROLE];
             
             // Check session.
@@ -91,7 +90,6 @@
                     [USER_DEFAULT setBool:YES forKey:PREF_ALRAEDY_LOGIN];
                     [USER_DEFAULT setObject:userName forKey:PREF_USER];
                     [USER_DEFAULT setObject:token forKey:PREF_TOKEN];
-                    [USER_DEFAULT setObject:function forKey:PREF_FUNCTION];
                     [USER_DEFAULT setObject:role forKey:PREF_ROLE];
                     [USER_DEFAULT synchronize];
                 } else {
