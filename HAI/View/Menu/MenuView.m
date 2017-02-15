@@ -74,7 +74,7 @@
     NSString *refreshedToken = [[FIRInstanceID instanceID] token];
     if (refreshedToken == nil) {
         ELOG(@"Refreshed Token is:%@", refreshedToken);
-        return;
+        refreshedToken = @"";
     } else {
         DLOG(@"Refreshed Token is:%@", refreshedToken);
     }
