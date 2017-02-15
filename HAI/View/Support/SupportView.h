@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tbSupport;
 
 - (IBAction)onClickSendRequest:(id)sender;
+- (IBAction)onClickType:(id)sender;
 
 @end

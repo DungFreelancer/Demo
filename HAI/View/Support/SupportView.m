@@ -105,6 +105,10 @@
     }];    
 }
 
+- (IBAction)onClickType:(id)sender {
+    [self.txtComment becomeFirstResponder];
+}
+
 - (void)saveLogSupport {
     NSString *type;
     if ([self.segType selectedSegmentIndex] == 0) {
