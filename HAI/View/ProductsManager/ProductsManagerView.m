@@ -67,15 +67,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell;
-    if (indexPath.row == 0) {
-        // Move import product to first.
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:arrFuction[1] forIndexPath:indexPath];
-    } else if (indexPath.row == 1) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:arrFuction[0] forIndexPath:indexPath];
-    } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:arrFuction[indexPath.row] forIndexPath:indexPath];
-    }
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:arrFuction[indexPath.row] forIndexPath:indexPath];
     
     return cell;
 }
