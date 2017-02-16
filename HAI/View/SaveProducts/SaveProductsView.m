@@ -18,6 +18,7 @@
 @implementation SaveProductsView {
     NSMutableArray<NSString *> *arrCode;
     NSArray<NSDictionary *> *arrResult;
+    NSString *message;
 }
 
 - (void)viewDidLoad {
@@ -61,6 +62,7 @@
     } else if ([segue.identifier isEqualToString:@"segue_result"]) {
         ResultView *viewResult = [segue destinationViewController];
         viewResult.arrResult = arrResult;
+        viewResult.strMessage = message;
     }
 }
 
@@ -109,6 +111,7 @@
             [self cleanAllView];
             
             arrResult = [response valueForKey:RESPONSE_CODES];
+            message = [response valueForKey:RESPONSE_MESSAGE];
             [self performSegueWithIdentifier:@"segue_result" sender:nil];
         } else {
             ELOG(@"%@", response);

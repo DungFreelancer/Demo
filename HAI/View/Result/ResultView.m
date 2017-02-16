@@ -18,6 +18,8 @@
     
     self.tbResult.dataSource = self;
     self.tbResult.delegate = self;
+    
+    self.lbMessage.text = self.strMessage;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

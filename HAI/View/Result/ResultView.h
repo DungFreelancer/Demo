@@ -10,6 +10,8 @@
 
 @interface ResultView : BaseView <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) NSString *strMessage;
+@property (weak, nonatomic) IBOutlet UILabel *lbMessage;
 @property (weak, nonatomic) NSArray<NSDictionary *> *arrResult;
 @property (weak, nonatomic) IBOutlet UITableView *tbResult;
 
