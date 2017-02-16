@@ -74,7 +74,7 @@
 #define PARAM_COMMENT @"comment"
 #define PARAM_RECEIVER @"receiver"
 #define PARAM_LATITUDE @"latitude"
-#define PARAM_LONGTITUDE @"longtitude"
+#define PARAM_LONGTITUDE @"longitude"
 #define PARAM_DATE @"date"
 #define PARAM_CODE @"code"
 #define PARAM_TYPE @"type"
