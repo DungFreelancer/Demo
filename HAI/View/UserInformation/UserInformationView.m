@@ -44,13 +44,47 @@
         if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
             DLOG(@"%@", response);
             
-            self.lbName.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_FULLNAME]];
-            self.lbType.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_TYPE]];
-            self.lbAddress.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_ADDRESS]];
-            self.lbPhone.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_PHONE]];
-            self.lbBirthday.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_BIRTHDAY]];
-            self.lbArea.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_AREA]];
-            self.lbUser.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_USER]];
+            if ([response valueForKey:RESPONSE_FULLNAME] == [NSNull null]) {
+                self.lbName.text = @"";
+            } else {
+                self.lbName.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_FULLNAME]];
+            }
+            
+            if ([response valueForKey:RESPONSE_TYPE] == [NSNull null]) {
+                self.lbType.text = @"";
+            } else {
+                self.lbType.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_TYPE]];
+            }
+            
+            if ([response valueForKey:RESPONSE_ADDRESS] == [NSNull null]) {
+                self.lbAddress.text = @"";
+            } else {
+                self.lbAddress.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_ADDRESS]];
+            }
+            
+            if ([response valueForKey:RESPONSE_PHONE] == [NSNull null]) {
+                self.lbPhone.text = @"";
+            } else {
+                self.lbPhone.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_PHONE]];
+            }
+            
+            if ([response valueForKey:RESPONSE_BIRTHDAY] == [NSNull null]) {
+                self.lbBirthday.text = @"";
+            } else {
+                self.lbBirthday.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_BIRTHDAY]];
+            }
+            
+            if ([response valueForKey:RESPONSE_AREA] == [NSNull null]) {
+                self.lbArea.text = @"";
+            } else {
+                self.lbArea.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_AREA]];
+            }
+            
+            if ([response valueForKey:RESPONSE_USER] == [NSNull null]) {
+                self.lbUser.text = @"";
+            } else {
+                self.lbUser.text = [NSString stringWithFormat:@"%@", [response valueForKey:RESPONSE_USER]];
+            }
         } else {
             ELOG(@"%@", response);
             [[UtilityClass sharedInstance] showAlertOnViewController:self
