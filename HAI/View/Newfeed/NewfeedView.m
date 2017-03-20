@@ -44,6 +44,7 @@
         viewND.titleNF = [arrNewfeed[indexNewfeed] valueForKey:@"title"];
         viewND.contentNF = [arrNewfeed[indexNewfeed] valueForKey:@"content"];
         viewND.timeNF = [arrNewfeed[indexNewfeed] valueForKey:@"time"];
+        viewND.urlPhotoNF = [arrNewfeed[indexNewfeed] valueForKey:@"image"];
     }
 }
 

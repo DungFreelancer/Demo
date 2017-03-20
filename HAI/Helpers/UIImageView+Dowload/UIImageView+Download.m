@@ -21,20 +21,22 @@
         [self setImage:placehold];
     }
     
-    if (url) {
-        UIActivityIndicatorView *ai=[[UIActivityIndicatorView alloc]initWithFrame:CGRectMake((self.frame.size.width-37)/2, (self.frame.size.height-37)/2, 37, 37)];
+    if (url && ![url isEqualToString:@""]) {
+        UIActivityIndicatorView *ai = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.frame.size.width-37)/2,
+                                                                                                (self.frame.size.height-37)/2,
+                                                                                                37,
+                                                                                                37)];
         [ai setHidesWhenStopped:YES];
-        ai.activityIndicatorViewStyle=UIActivityIndicatorViewStyleGray;
+        ai.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
         [ai setTintColor:[UIColor redColor]];
         [self addSubview:ai];
         [ai startAnimating];
         
         // Load cache image from folder what isn't library folder.
-        if ([url rangeOfString:@"/Library/"].location != NSNotFound)
-        {
+        if ([url rangeOfString:@"/Library/"].location != NSNotFound) {
             [ai stopAnimating];
             ai = nil;
-            NSData *imageData=[NSData dataWithContentsOfFile:url];
+            NSData *imageData = [NSData dataWithContentsOfFile:url];
             UIImage* image = [[UIImage alloc] initWithData:imageData];
             if (image) {
                 [self setImage:image];
@@ -48,17 +50,15 @@
         NSCharacterSet *set = [NSCharacterSet URLFragmentAllowedCharacterSet];
         NSString *strImgName = [[[url stringByAddingPercentEncodingWithAllowedCharacters:set] componentsSeparatedByString:@"/"] lastObject];
         
-        NSString *imagePath = [NSString stringWithFormat:@"%@%@",[APP_DELEGATE applicationCacheDirectoryString],strImgName];
+        NSString *imagePath = [NSString stringWithFormat:@"%@%@", [[UtilityClass sharedInstance] applicationCacheDirectoryString], strImgName];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *aURL=[url stringByAddingPercentEncodingWithAllowedCharacters:set];
         
-        if([strImgName isEqualToString:@"picture?type=large"])
-        {
+        if ([strImgName isEqualToString:@"picture?type=large"]) {
             [fileManager removeItemAtPath:imagePath error:nil];
         }
         
-        if ([fileManager fileExistsAtPath:imagePath]==NO)
-        {
+        if ([fileManager fileExistsAtPath:imagePath] == NO) {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
             dispatch_async(queue, ^(void) {
                 
@@ -73,7 +73,7 @@
                 }
                 
                 UIImage* image = [[UIImage alloc] initWithData:imageData];
-                UIImage *imgUpload = [[UtilityClass sharedInstance]scaleAndRotateImage:image];
+                UIImage *imgUpload = [[UtilityClass sharedInstance] scaleAndRotateImage:image];
                 NSData *dataS = UIImagePNGRepresentation(imgUpload);
                 [dataS writeToFile:imagePath atomically:YES];
                 
@@ -85,8 +85,7 @@
                     block(YES);
                 });
             });
-        }
-        else{
+        } else {
             [ai stopAnimating];
             ai = nil;
             
@@ -100,6 +99,8 @@
             imageData = nil;
             block(YES);
         }
+    } else {
+        block(NO);
     }
 }
 

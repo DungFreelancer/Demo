@@ -7,6 +7,7 @@
 //
 
 #import "NewfeedDetailView.h"
+#import "UIImageView+Download.h"
 
 @implementation NewfeedDetailView
 
@@ -22,6 +23,7 @@
     self.lbTitle.text = self.titleNF;
     self.lbTime.text = self.timeNF;
     self.lbContent.text = self.contentNF;
+    [self.imgPhoto downloadFromURL:self.urlPhotoNF withPlaceholder:nil handleCompletion:^(BOOL success) {}];
 }
 
 @end
