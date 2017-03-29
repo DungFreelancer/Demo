@@ -38,6 +38,7 @@
     
     [self.txtComment.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     [self.txtComment setTextColor:[UIColor darkTextColor]];
+    self.txtComment.delegate = self;
     
     [self.txtAgencyCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     self.txtAgencyCode.delegate = self;
@@ -244,16 +245,25 @@
 // MARK: - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.txtAgencyCode) {
-        [self.txtAgencyCode resignFirstResponder];
+        [self handleSingleTapGesture];
     }
     
     return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([UIScreen mainScreen].bounds.size.height == 568 &&
+        textView == self.txtComment) {
+        [self.svCheckIn setContentOffset:CGPointMake(0, 130) animated:YES];
+    }
 }
 
 // MARK: - UIGestureRecognizerDelegate
 - (void)handleSingleTapGesture {
     [self.txtAgencyCode resignFirstResponder];
     [self.txtComment resignFirstResponder];
+    
+    [self.svCheckIn setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 @end

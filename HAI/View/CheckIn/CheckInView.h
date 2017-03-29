@@ -10,8 +10,9 @@
 #import "AgencyView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface CheckInView : BaseView <AgencyViewDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
+@interface CheckInView : BaseView <AgencyViewDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *svCheckIn;
 @property (weak, nonatomic) IBOutlet UITextField *txtAgencyCode;
 @property (weak, nonatomic) IBOutlet UITextView *txtComment;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) NSString *contentNF;
 @property (weak, nonatomic) NSString *urlPhotoNF;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *svNewfeed;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHightContent;
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lbTime;
 @property (weak, nonatomic) IBOutlet UITextView *lbContent;

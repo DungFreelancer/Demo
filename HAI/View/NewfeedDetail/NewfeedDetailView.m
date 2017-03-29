@@ -23,7 +23,10 @@
     self.lbTitle.text = self.titleNF;
     self.lbTime.text = self.timeNF;
     self.lbContent.text = self.contentNF;
+    self.lbContent.editable = NO;
     [self.imgPhoto downloadFromURL:self.urlPhotoNF withPlaceholder:nil handleCompletion:^(BOOL success) {}];
+    
+    self.constraintHightContent.constant = self.lbContent.contentSize.height;
 }
 
 @end
