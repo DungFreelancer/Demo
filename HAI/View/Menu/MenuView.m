@@ -67,6 +67,11 @@
                                                        withTitle:NSLocalizedString(@"ERROR", nil)
                                                       andMessage:NSLocalizedString(@"NO_INTERNET", nil)
                                                        andButton:NSLocalizedString(@"OK", nil)];
+        
+        // Use offline menu.
+        function = [USER_DEFAULT objectForKey:PREF_FUNCTION];
+        [self.tblMenu reloadData];
+        
         return;
     }
     
@@ -94,6 +99,9 @@
             DLOG(@"%@", response);
             function = [response valueForKey:RESPONSE_FUNCTION];
             [self.tblMenu reloadData];
+            
+            [USER_DEFAULT setObject:[response valueForKey:RESPONSE_FUNCTION] forKey:PREF_FUNCTION];
+            [USER_DEFAULT synchronize];
             
             // Show encount on event cell.
             encount = [[response valueForKey:RESPONSE_ECOUNT] intValue];
