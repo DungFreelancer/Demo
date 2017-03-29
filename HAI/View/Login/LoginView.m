@@ -113,39 +113,34 @@
 
 - (void)checkLoginStatus {
     if ([[NetworkHelper sharedInstance]  isConnected] == NO) {
-        ELOG(@"%@", NSLocalizedString(@"NO_INTERNET", nil));
-        [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                       withTitle:NSLocalizedString(@"ERROR", nil)
-                                                      andMessage:NSLocalizedString(@"NO_INTERNET", nil)
-                                                       andButton:NSLocalizedString(@"OK", nil)];
-        return;
-    }
-    
-    BOOL alreadyLogin = [USER_DEFAULT boolForKey:PREF_ALRAEDY_LOGIN];
-    NSString *userName = [USER_DEFAULT valueForKey:PREF_USER];
-    NSString *token = [USER_DEFAULT valueForKey:RESPONSE_TOKEN];
-    
-    if (alreadyLogin) {
-        // Check session.
-        NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@", API_LOGIN_SESSION, PARAM_USER, userName, PARAM_TOKEN, token];
-        [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
+        [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+    } else {
+        BOOL alreadyLogin = [USER_DEFAULT boolForKey:PREF_ALRAEDY_LOGIN];
+        NSString *userName = [USER_DEFAULT valueForKey:PREF_USER];
+        NSString *token = [USER_DEFAULT valueForKey:RESPONSE_TOKEN];
         
-        [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
+        if (alreadyLogin) {
+            // Check session.
+            NSString *url = [NSString stringWithFormat:@"%@?%@=%@&%@=%@", API_LOGIN_SESSION, PARAM_USER, userName, PARAM_TOKEN, token];
+            [[HUDHelper sharedInstance] showLoadingWithTitle:NSLocalizedString(@"LOADING", nil) onView:self.view];
             
-            [[HUDHelper sharedInstance] hideLoading];
-            if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
-                DLOG(@"%@", response);
-                [self performSegueWithIdentifier:@"segue_menu" sender:nil];
-            } else {
-                ELOG(@"%@", response);
-                [[UtilityClass sharedInstance] showAlertOnViewController:self
-                                                               withTitle:NSLocalizedString(@"ERROR", nil)
-                                                              andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"LOGIN_SESSION", nil)
-                                                               andButton:NSLocalizedString(@"OK", nil)];
-                [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
-                [USER_DEFAULT synchronize];
-            }
-        }];
+            [[NetworkHelper sharedInstance] requestGet:url paramaters:nil completion:^(id response, NSError *error) {
+                
+                [[HUDHelper sharedInstance] hideLoading];
+                if ([[response valueForKey:RESPONSE_ID] isEqualToString:@"1"]) {
+                    DLOG(@"%@", response);
+                    [self performSegueWithIdentifier:@"segue_menu" sender:nil];
+                } else {
+                    ELOG(@"%@", response);
+                    [[UtilityClass sharedInstance] showAlertOnViewController:self
+                                                                   withTitle:NSLocalizedString(@"ERROR", nil)
+                                                                  andMessage:[response valueForKey:RESPONSE_MESSAGE] //NSLocalizedString(@"LOGIN_SESSION", nil)
+                                                                   andButton:NSLocalizedString(@"OK", nil)];
+                    [USER_DEFAULT setBool:NO forKey:PREF_ALRAEDY_LOGIN];
+                    [USER_DEFAULT synchronize];
+                }
+            }];
+        }
     }
 }
 
