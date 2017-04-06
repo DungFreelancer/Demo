@@ -22,10 +22,10 @@
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
         
         instance.manager = [AFHTTPSessionManager manager];
-        instance.manager.requestSerializer.timeoutInterval = 600;
-        instance.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@[@"text/html",@"application/json"], nil];
         instance.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         instance.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//        instance.manager.requestSerializer.timeoutInterval = 600;
+//        instance.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@[@"text/html",@"application/json"], nil];
 //        instance.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //        instance.manager.responseSerializer.acceptableContentTypes=[NSSet setWithObject:@"application/x-www-form-urlencoded"];
     });
