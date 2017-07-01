@@ -26,8 +26,6 @@
 		9A5F19971D8E905700B2E5AB /* CheckStaffView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19961D8E905700B2E5AB /* CheckStaffView.m */; };
 		9A5F199A1D8E905700B2E5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F19981D8E905700B2E5AB /* Main.storyboard */; };
 		9A5F199F1D8E905700B2E5AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F199E1D8E905700B2E5AB /* Assets.xcassets */; };
-		9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */; };
-		9A5F19B81D8E905700B2E5AB /* TemplateObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */; };
 		9A5F19D71D8EA2CB00B2E5AB /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19D61D8EA2CB00B2E5AB /* Constant.m */; };
 		9A5F19DB1D8EA41E00B2E5AB /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DA1D8EA41E00B2E5AB /* UIImageView+Download.m */; };
 		9A5F19DF1D8EA9A700B2E5AB /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F19DE1D8EA9A700B2E5AB /* UIView+RoundedCorners.m */; };
@@ -119,11 +117,7 @@
 		9A5F199E1D8E905700B2E5AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5F19A31D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5F19A81D8E905700B2E5AB /* HAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TemplateObjCTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		9A5F19AE1D8E905700B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5F19B31D8E905700B2E5AB /* HAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TemplateObjCUITests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		9A5F19B91D8E905800B2E5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5F19CB1D8E914800B2E5AB /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Constant.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		9A5F19D61D8EA2CB00B2E5AB /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Constant.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9A5F19D91D8EA40500B2E5AB /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIImageView+Download.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -338,8 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				9A5F198E1D8E905700B2E5AB /* HAI */,
-				9A5F19AB1D8E905700B2E5AB /* HAITests */,
-				9A5F19B61D8E905700B2E5AB /* HAIUITests */,
 				48C97E043069A5E7511F1953 /* Frameworks */,
 				AC335B873EECD59726E39A67 /* Pods */,
 				9A5F198D1D8E905700B2E5AB /* Products */,
@@ -381,24 +373,6 @@
 				9A5F19901D8E905700B2E5AB /* main.m */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9A5F19AB1D8E905700B2E5AB /* HAITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A5F19AE1D8E905700B2E5AB /* Info.plist */,
-				9A5F19AC1D8E905700B2E5AB /* TemplateObjCTests.m */,
-			);
-			path = HAITests;
-			sourceTree = "<group>";
-		};
-		9A5F19B61D8E905700B2E5AB /* HAIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A5F19B91D8E905800B2E5AB /* Info.plist */,
-				9A5F19B71D8E905700B2E5AB /* TemplateObjCUITests.m */,
-			);
-			path = HAIUITests;
 			sourceTree = "<group>";
 		};
 		9A5F19C51D8E907700B2E5AB /* Helpers */ = {
@@ -988,7 +962,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5F19AD1D8E905700B2E5AB /* TemplateObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,7 +969,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5F19B81D8E905700B2E5AB /* TemplateObjCUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
