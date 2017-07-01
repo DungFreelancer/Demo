@@ -14,22 +14,24 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Firebase/Core (3.15.0):
-    - FirebaseAnalytics (= 3.7.0)
-    - FirebaseCore (= 3.5.2)
-  - Firebase/Messaging (3.15.0):
+  - Firebase/Core (4.0.3):
+    - FirebaseAnalytics (= 4.0.2)
+    - FirebaseCore (= 4.0.3)
+  - Firebase/Messaging (4.0.3):
     - Firebase/Core
-    - FirebaseMessaging (= 1.2.2)
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
-    - FirebaseInstanceID (~> 1.0)
+    - FirebaseMessaging (= 2.0.0)
+  - FirebaseAnalytics (4.0.2):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.5.2):
+  - FirebaseCore (4.0.3):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.9)
-  - FirebaseMessaging (1.2.2):
-    - FirebaseAnalytics (~> 3.7)
-    - FirebaseInstanceID (~> 1.0)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -40,7 +42,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MTBBarcodeScanner (3.1.0)
   - MXParallaxHeader (0.6.1)
-  - Protobuf (3.2.1)
+  - Protobuf (3.3.0)
   - Reachability (3.2)
 
 DEPENDENCIES:
@@ -54,18 +56,18 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
-  FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
+  Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
+  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
+  FirebaseCore: c709067051de07bdaffdc4e735cd7299a23c463a
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MTBBarcodeScanner: 6d397077f1a4a886050df8e66584a59a1dc429e7
   MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
-  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
 PODFILE CHECKSUM: b8cecd2519fa5cf5417fab49bd523fb1ab939d93
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
