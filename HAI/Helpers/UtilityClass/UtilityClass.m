@@ -8,7 +8,9 @@
 
 #import "UtilityClass.h"
 
-@implementation UtilityClass
+@implementation UtilityClass {
+    CLLocationManager *locationManager;
+}
 
 #pragma mark - Init And Shared Object
 
@@ -56,6 +58,11 @@
 - (NSURL *)applicationDocumentsDirectoryURL
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)removePersistentDomain {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
 
 # pragma mark - Scale and Rotate according to Orientation
@@ -371,6 +378,17 @@
         }
     }
     return dayDiff;
+}
+
+- (CLLocationCoordinate2D)getLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return coordinate;
 }
 
 @end

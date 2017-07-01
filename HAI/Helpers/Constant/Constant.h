@@ -18,6 +18,8 @@
 
 #define IS_IPHONE   [[[UIDevice currentDevice] model] isEqualToString:@"iPhone"]
 
+#define SCREEN_SIZE [UIScreen mainScreen].bounds.size
+
 #ifdef DEBUG
 #   define DLOG(FORMAT, ...) printf("🔵%s[line %d]: %s🔵\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
 #   define ELOG(FORMAT, ...) printf("🔴%s[line %d]: %s🔴\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
