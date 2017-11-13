@@ -25,8 +25,8 @@
     
     self.clFunction.dataSource = self;
     self.clFunction.delegate = self;
-//    arrFuction = [[NSMutableArray alloc] initWithObjects:@"importproduct", @"savepoint", @"tracking", nil];
-    [self showMenu];
+    arrFuction = [[NSMutableArray alloc] initWithObjects:@"importproduct", @"savepoint", @"tracking", nil];
+//    [self showMenu];
 }
 
 - (void)showMenu {
