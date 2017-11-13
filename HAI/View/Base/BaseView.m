@@ -7,6 +7,7 @@
 //
 
 #import "BaseView.h"
+#import "Constant.h"
 
 @implementation BaseView
 
@@ -26,6 +27,11 @@
     btnLeft.frame = CGRectMake(0, 0, 30, 30);
     [btnLeft addTarget:self action:@selector(onClickBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
     [btnLeft setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11")) {
+        [btnLeft.widthAnchor constraintEqualToConstant:30].active = YES;
+        [btnLeft.heightAnchor constraintEqualToConstant:30].active = YES;
+    }
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
     self.navigationItem.hidesBackButton = YES;

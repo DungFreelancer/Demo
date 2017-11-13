@@ -2206,6 +2206,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnCheckIn" destination="Hbi-Fb-Zoi" id="Zv4-cM-Ohl"/>
+                        <outlet property="btnHistory" destination="DhN-mt-Z0I" id="OKd-lO-Jq7"/>
                         <outlet property="btnTakePicture" destination="d4t-JV-cVJ" id="h9E-gw-yGy"/>
                         <outlet property="imgPicture" destination="GIf-gE-UWy" id="sBx-pg-h6Z"/>
                         <outlet property="onClickCheckIn" destination="Hbi-Fb-Zoi" id="Wvf-3q-7ib"/>

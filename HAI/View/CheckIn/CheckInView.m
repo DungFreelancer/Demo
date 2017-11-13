@@ -43,6 +43,10 @@
     [self.txtAgencyCode.layer setBorderWithColor:[UIColor darkGrayColor].CGColor];
     self.txtAgencyCode.delegate = self;
     
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11")) {
+        self.btnHistory.imageEdgeInsets = UIEdgeInsetsMake(5, 25, 5, 5);
+    }
+    
     // Handle single tap.
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     [singleTapGestureRecognizer setCancelsTouchesInView:NO];
